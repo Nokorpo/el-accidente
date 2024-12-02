@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dvc5023xednjw"]
 
-[ext_resource type="Script" path="res://src/menu/start_button.gd" id="1_3roje"]
-[ext_resource type="PackedScene" uid="uid://jf5thsgby0og" path="res://src/menu/game.tscn" id="2_deqdo"]
+[ext_resource type="Script" path="res://scenes/menu/start_button.gd" id="1_3roje"]
+[ext_resource type="PackedScene" uid="uid://jf5thsgby0og" path="res://scenes/menu/game.tscn" id="2_deqdo"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
