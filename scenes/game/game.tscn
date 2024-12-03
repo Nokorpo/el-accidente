@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://7asaea7mswd5"]
+[gd_scene load_steps=14 format=3 uid="uid://7asaea7mswd5"]
 
 [ext_resource type="Texture2D" uid="uid://1542cwvcv282" path="res://assets/sprites/checkerboard.svg" id="1_rlkg2"]
+[ext_resource type="Texture2D" uid="uid://b0gqbk4xvkell" path="res://assets/sprites/square.svg" id="2_1usxs"]
 [ext_resource type="Texture2D" uid="uid://c3yopepsnhpw5" path="res://assets/sprites/player/running_1.png" id="2_dgebg"]
 [ext_resource type="Texture2D" uid="uid://ckgr3t0q3r28y" path="res://assets/sprites/player/running_2.png" id="3_tfg8x"]
 [ext_resource type="Texture2D" uid="uid://34pkmv4a34hd" path="res://assets/sprites/player/running_3.png" id="4_ctwh0"]
@@ -119,6 +120,14 @@ libraries = {
 "": SubResource("AnimationLibrary_s5m0i")
 }
 autoplay = "cycle"
+
+[node name="Ground" type="Node2D" parent="."]
+
+[node name="Sprite2D2" type="Sprite2D" parent="Ground"]
+modulate = Color(0.462176, 0.0500627, 0, 1)
+position = Vector2(1220, 1036)
+scale = Vector2(10, 1)
+texture = ExtResource("2_1usxs")
 
 [node name="Player" type="Node2D" parent="."]
 position = Vector2(140, 434)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dvc5023xednjw"]
 
 [ext_resource type="Script" path="res://scenes/menu/start_button.gd" id="1_3roje"]
-[ext_resource type="PackedScene" uid="uid://jf5thsgby0og" path="res://scenes/menu/game.tscn" id="2_deqdo"]
+[ext_resource type="PackedScene" uid="uid://7asaea7mswd5" path="res://scenes/game/game.tscn" id="2_l74ea"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -12,9 +12,20 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="StartButton" type="Button" parent="."]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+custom_minimum_size = Vector2(400, 250)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -15.5
+offset_right = 23.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
 text = "Start"
 script = ExtResource("1_3roje")
-game_scene = ExtResource("2_deqdo")
+game_scene = ExtResource("2_l74ea")
