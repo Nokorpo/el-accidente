@@ -1,0 +1,148 @@
+[gd_scene load_steps=13 format=3 uid="uid://7asaea7mswd5"]
+
+[ext_resource type="Texture2D" uid="uid://1542cwvcv282" path="res://assets/sprites/checkerboard.svg" id="1_rlkg2"]
+[ext_resource type="Texture2D" uid="uid://c3yopepsnhpw5" path="res://assets/sprites/player/running_1.png" id="2_dgebg"]
+[ext_resource type="Texture2D" uid="uid://ckgr3t0q3r28y" path="res://assets/sprites/player/running_2.png" id="3_tfg8x"]
+[ext_resource type="Texture2D" uid="uid://34pkmv4a34hd" path="res://assets/sprites/player/running_3.png" id="4_ctwh0"]
+[ext_resource type="Texture2D" uid="uid://c5raco04jqqc0" path="res://assets/sprites/player/running_4.png" id="5_meo5q"]
+
+[sub_resource type="Animation" id="Animation_3vrwe"]
+resource_name = "cycle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-378, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_m5g3s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s5m0i"]
+_data = {
+"RESET": SubResource("Animation_m5g3s"),
+"cycle": SubResource("Animation_3vrwe")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w4hqa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dgebg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tfg8x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ctwh0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_meo5q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="Animation" id="Animation_rpxfr"]
+resource_name = "cycle"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2834, 748), Vector2(-4840, 748)]
+}
+
+[sub_resource type="Animation" id="Animation_3gpr4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2834, 748)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h06gs"]
+_data = {
+"RESET": SubResource("Animation_3gpr4"),
+"cycle": SubResource("Animation_rpxfr")
+}
+
+[node name="Game" type="Node2D"]
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+texture_filter = 1
+texture_repeat = 2
+texture = ExtResource("1_rlkg2")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 3040, 1140)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_s5m0i")
+}
+autoplay = "cycle"
+
+[node name="Player" type="Node2D" parent="."]
+position = Vector2(140, 434)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+position = Vector2(315, 331)
+sprite_frames = SubResource("SpriteFrames_w4hqa")
+autoplay = "default"
+
+[node name="Foreground" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Foreground"]
+modulate = Color(0.933333, 0.254902, 0.286275, 1)
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(2834, 748)
+scale = Vector2(1, 2)
+texture = ExtResource("1_rlkg2")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 180, 180)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Foreground/Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_h06gs")
+}
+autoplay = "cycle"
