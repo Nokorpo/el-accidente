@@ -24,3 +24,19 @@ mouse_filter = 2
 
 [node name="Curtain" parent="UI" instance=ExtResource("1_m567w")]
 layout_mode = 1
+
+[node name="PleaseRotateScreen" type="PanelContainer" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="PleaseRotateScreen"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 120
+text = "Porfa, gira el movil anda"
