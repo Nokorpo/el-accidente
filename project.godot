@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="El Accidente"
-run/main_scene="res://scenes/core/scene_manager/scene_manager.tscn"
+run/main_scene="res://scenes/menu/main_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 EventBus="*res://scenes/core/events/event_bus.gd"
+SceneManager="*res://scenes/core/scene_manager/scene_manager.tscn"
 
 [display]
 
