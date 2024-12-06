@@ -30,6 +30,10 @@ window/size/window_height_override=589
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_height"
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://localization/localization.en.translation", "res://localization/localization.es.translation")
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
