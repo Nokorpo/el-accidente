@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://7asaea7mswd5"]
+[gd_scene load_steps=14 format=3 uid="uid://7asaea7mswd5"]
 
-[ext_resource type="Texture2D" uid="uid://1542cwvcv282" path="res://assets/sprites/checkerboard.svg" id="1_rlkg2"]
-[ext_resource type="Texture2D" uid="uid://b0gqbk4xvkell" path="res://assets/sprites/square.svg" id="2_1usxs"]
+[ext_resource type="Texture2D" uid="uid://1542cwvcv282" path="res://assets/checkerboard.svg" id="1_rlkg2"]
+[ext_resource type="Texture2D" uid="uid://b0gqbk4xvkell" path="res://assets/square.svg" id="2_1usxs"]
 [ext_resource type="PackedScene" uid="uid://7pnca5lreux0" path="res://scenes/player/player.tscn" id="3_x7o86"]
+[ext_resource type="Script" path="res://scenes/game/camera.gd" id="4_ugxuf"]
 
 [sub_resource type="Animation" id="Animation_m5g3s"]
 length = 0.001
@@ -36,10 +37,18 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(-378, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_k4xom"]
+resource_name = "test1"
+
+[sub_resource type="Animation" id="Animation_tf6te"]
+resource_name = "test2"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s5m0i"]
 _data = {
 "RESET": SubResource("Animation_m5g3s"),
-"cycle": SubResource("Animation_3vrwe")
+"cycle": SubResource("Animation_3vrwe"),
+"test1": SubResource("Animation_k4xom"),
+"test2": SubResource("Animation_tf6te")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nfb1a"]
@@ -138,3 +147,9 @@ libraries = {
 "": SubResource("AnimationLibrary_h06gs")
 }
 autoplay = "cycle"
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
+position = Vector2(395, 753)
+position_smoothing_enabled = true
+script = ExtResource("4_ugxuf")
+player = NodePath("../Player")
