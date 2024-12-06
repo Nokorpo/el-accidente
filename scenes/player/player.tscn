@@ -1,10 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://7pnca5lreux0"]
+[gd_scene load_steps=13 format=3 uid="uid://7pnca5lreux0"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_d1qh6"]
 [ext_resource type="Texture2D" uid="uid://c3yopepsnhpw5" path="res://assets/sprites/player/running_1.png" id="1_km3vg"]
 [ext_resource type="Texture2D" uid="uid://ckgr3t0q3r28y" path="res://assets/sprites/player/running_2.png" id="2_22rff"]
 [ext_resource type="Texture2D" uid="uid://34pkmv4a34hd" path="res://assets/sprites/player/running_3.png" id="3_t8ift"]
 [ext_resource type="Texture2D" uid="uid://c5raco04jqqc0" path="res://assets/sprites/player/running_4.png" id="4_xl4ps"]
+[ext_resource type="Script" path="res://scenes/shared/state_machine/state_machine.gd" id="6_nqn7r"]
+[ext_resource type="Script" path="res://scenes/player/running_state.gd" id="6_vilqo"]
+[ext_resource type="Script" path="res://scenes/player/dashing_state.gd" id="7_jw2we"]
+[ext_resource type="Script" path="res://scenes/player/tutorial_stop_state.gd" id="7_yfuy2"]
+[ext_resource type="Script" path="res://scenes/player/slowing_down_state.gd" id="8_jy070"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w4hqa"]
 animations = [{
@@ -40,3 +45,24 @@ frame_progress = 0.516147
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_5b3hn")
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("6_nqn7r")
+
+[node name="TutorialStopState" type="Node" parent="StateMachine"]
+script = ExtResource("7_yfuy2")
+
+[node name="RunningState" type="Node" parent="StateMachine"]
+script = ExtResource("6_vilqo")
+
+[node name="SlowingDownState" type="Node" parent="StateMachine"]
+script = ExtResource("8_jy070")
+speed_when_completely_slowed_down = 2.0
+
+[node name="DashingState" type="Node" parent="StateMachine"]
+script = ExtResource("7_jw2we")
+
+[node name="Timer" type="Timer" parent="StateMachine/DashingState"]
+wait_time = 0.2
+
+[connection signal="timeout" from="StateMachine/DashingState/Timer" to="StateMachine/DashingState" method="_finish_dash"]
