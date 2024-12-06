@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dvc5023xednjw"]
 
 [ext_resource type="Script" path="res://scenes/menu/start_button.gd" id="1_3roje"]
-[ext_resource type="PackedScene" uid="uid://7asaea7mswd5" path="res://scenes/game/game.tscn" id="2_l74ea"]
+[ext_resource type="PackedScene" uid="uid://dlu20o1crio6y" path="res://scenes/game/level_blockout.tscn" id="2_q0bu5"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -28,4 +28,4 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 100
 text = "Start"
 script = ExtResource("1_3roje")
-game_scene = ExtResource("2_l74ea")
+game_scene = ExtResource("2_q0bu5")
