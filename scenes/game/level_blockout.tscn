@@ -79,6 +79,34 @@ libraries = {
 }
 autoplay = "cycle"
 
+[node name="Pulsa para empezar" type="Label" parent="Background"]
+offset_left = 249.0
+offset_top = 358.0
+offset_right = 631.0
+offset_bottom = 413.0
+theme_override_font_sizes/font_size = 40
+text = "Pulsa para empezar"
+
+[node name="Pulsar es freno" type="Label" parent="Background"]
+offset_left = 937.0
+offset_top = 358.0
+offset_right = 1763.0
+offset_bottom = 413.0
+theme_override_font_sizes/font_size = 40
+text = "Al apretar la pantalla
+Berta se frenará"
+horizontal_alignment = 1
+
+[node name="Suelta para dash" type="Label" parent="Background"]
+offset_left = 2167.0
+offset_top = 388.0
+offset_right = 2670.0
+offset_bottom = 443.0
+theme_override_font_sizes/font_size = 40
+text = "Aprieta la pantalla y suelta
+para hacer un dash"
+horizontal_alignment = 1
+
 [node name="Player" parent="." instance=ExtResource("2_6eacj")]
 position = Vector2(426, 613)
 
