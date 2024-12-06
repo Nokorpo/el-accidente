@@ -31,10 +31,10 @@ func change_state(state_type: Variant) -> void:
 	call_deferred("_change_state", state_type)
 
 func _change_state(state_type: Variant) -> void:
-	print("Change from state %s to %s" % [
-		current_state.get_script().get_global_name(),
-		state_type.get_global_name()
-	])
+	#print("Change from state %s to %s" % [
+		#current_state.get_script().get_global_name(),
+		#state_type.get_global_name()
+	#])
 	var state = null
 	for item in states:
 		if is_instance_of(item, state_type):
