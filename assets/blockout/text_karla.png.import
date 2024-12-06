@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0gqbk4xvkell"
-path="res://.godot/imported/square.svg-1b15b59af6f252d35105a192b05f5640.ctex"
+uid="uid://bkrgh10hjo18s"
+path="res://.godot/imported/text_karla.png-5a14274c7916ea03fa6172fab35d5078.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/square.svg"
-dest_files=["res://.godot/imported/square.svg-1b15b59af6f252d35105a192b05f5640.ctex"]
+source_file="res://assets/blockout/text_karla.png"
+dest_files=["res://.godot/imported/text_karla.png-5a14274c7916ea03fa6172fab35d5078.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
