@@ -19,9 +19,11 @@ func _on_exit_state() -> void:
 
 func _process(_delta: float) -> void:
 	if active:
+		var elapsed_time: float = (Time.get_ticks_msec() - _time_entered)/1000
+		var percent = min(1, elapsed_time/time_until_slowed_down)
 		node.speed = lerp(_original_speed,
 			time_until_slowed_down,
-			time_until_slowed_down)
+			percent)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
