@@ -1,5 +1,6 @@
 extends StateMachineState
 class_name RunningState
+## State that lets the player character continue running, without user input.
 
 var _original_speed: float
 

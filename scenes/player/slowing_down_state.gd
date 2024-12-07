@@ -1,5 +1,7 @@
 extends StateMachineState
 class_name SlowingDownState
+## State for when the user is pressing the screen. The player slows down up to
+## a minimum speed.
 
 ## How long it takes for the character to be completely slowed down, in seconds
 @export var time_until_slowed_down: float = 1

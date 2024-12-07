@@ -1,4 +1,5 @@
 extends Camera2D
+## Follows the player character
 
 @export var player: Player
 
