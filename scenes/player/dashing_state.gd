@@ -1,6 +1,7 @@
 extends StateMachineState
 class_name DashingState
 
+## How long it takes the dash to finish, in seconds
 @export var time_to_complete_dash: float = 0.2
 
 var _target_position: Vector2

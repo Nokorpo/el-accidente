@@ -62,7 +62,7 @@ script = ExtResource("6_vilqo")
 
 [node name="SlowingDownState" type="Node" parent="StateMachine"]
 script = ExtResource("8_jy070")
-speed_when_completely_slowed_down = 2.0
+speed_when_lowed_down = 2.0
 
 [node name="DashingState" type="Node" parent="StateMachine"]
 script = ExtResource("7_jw2we")
