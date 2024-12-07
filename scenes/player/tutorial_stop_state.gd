@@ -1,5 +1,7 @@
 extends StateMachineState
 class_name TutorialStopState
+## Initial state for the player character. We wait for the user to touch the
+## screen before making it move.
 
 var _original_speed: float
 

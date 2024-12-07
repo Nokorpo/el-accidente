@@ -1,4 +1,6 @@
 extends Node
+## Main communication between scenes. It can also be used to abstract events
+## from the game world so anyone can subscribe to them (eg. for achievements).
 
 @warning_ignore("unused_signal") # Used in multiple places in the code
 signal change_scene(event_data: ChangeSceneEvent)

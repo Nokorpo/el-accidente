@@ -1,5 +1,7 @@
 class_name Player
 extends CharacterBody2D
+## Player character physics controller. It should only handle physics,
+## no game logic.
 
 const SPEED_FPS_MULTIPLIER: float = 3600
 

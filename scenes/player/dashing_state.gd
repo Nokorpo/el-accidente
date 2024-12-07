@@ -1,5 +1,7 @@
 extends StateMachineState
 class_name DashingState
+## State for when the user releases the screen and the player character dashes
+## forward at high speed.
 
 ## How long it takes the dash to finish, in seconds
 @export var time_to_complete_dash: float = 0.2
