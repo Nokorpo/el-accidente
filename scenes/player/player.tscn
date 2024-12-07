@@ -66,8 +66,3 @@ speed_when_completely_slowed_down = 2.0
 
 [node name="DashingState" type="Node" parent="StateMachine"]
 script = ExtResource("7_jw2we")
-
-[node name="Timer" type="Timer" parent="StateMachine/DashingState"]
-wait_time = 0.2
-
-[connection signal="timeout" from="StateMachine/DashingState/Timer" to="StateMachine/DashingState" method="_finish_dash"]

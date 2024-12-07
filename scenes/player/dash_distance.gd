@@ -2,11 +2,11 @@
 extends Marker2D
 
 func _process(delta: float) -> void:
-	if Engine.is_editor_hint():
+	if OS.has_feature("editor"):
 		queue_redraw()
 
 func _draw() -> void:
-	if Engine.is_editor_hint():
+	if OS.has_feature("editor"):
 		var transform: Transform2D = get_global_transform().inverse()
 		var parent_position: Vector2 = transform * get_parent().global_position
 		draw_line(parent_position, Vector2.ZERO, Color.LIGHT_BLUE, 4)
