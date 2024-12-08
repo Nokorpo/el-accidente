@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ika0vwy70au0"]
 
 [ext_resource type="Texture2D" uid="uid://2r6dvfv031fl" path="res://assets/blockout/elevator_platform.svg" id="1_bvos0"]
-[ext_resource type="Script" path="res://assets/blockout/elevator_platform.gd" id="2_vk32q"]
+[ext_resource type="Script" path="res://scenes/shared/level/elevator_platform.gd" id="2_vk32q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oii5x"]
 size = Vector2(377, 377)
