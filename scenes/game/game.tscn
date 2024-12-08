@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://7asaea7mswd5"]
+[gd_scene load_steps=17 format=3 uid="uid://7asaea7mswd5"]
 
 [ext_resource type="Texture2D" uid="uid://1542cwvcv282" path="res://assets/checkerboard.svg" id="1_rlkg2"]
 [ext_resource type="Texture2D" uid="uid://b0gqbk4xvkell" path="res://assets/square.svg" id="2_1usxs"]
 [ext_resource type="PackedScene" uid="uid://7pnca5lreux0" path="res://scenes/player/player.tscn" id="3_x7o86"]
 [ext_resource type="Script" path="res://scenes/game/camera.gd" id="4_ugxuf"]
+[ext_resource type="Shader" path="res://assets/blockout/blockout_floor.gdshader" id="5_a650s"]
 
 [sub_resource type="Animation" id="Animation_m5g3s"]
 length = 0.001
@@ -92,6 +93,11 @@ _data = {
 "cycle": SubResource("Animation_rpxfr")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bk2w6"]
+shader = ExtResource("5_a650s")
+
+[sub_resource type="QuadMesh" id="QuadMesh_xo3nc"]
+
 [node name="Game" type="Node2D"]
 
 [node name="Background" type="Node2D" parent="."]
@@ -148,8 +154,30 @@ libraries = {
 }
 autoplay = "cycle"
 
+[node name="Shapes" type="Node2D" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="Shapes"]
+visibility_layer = 32
+position = Vector2(1051, 402)
+polygon = PackedVector2Array(28, -201, 685, -46, 532, 677, -49, 672, -292, 12)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Shapes"]
+visibility_layer = 32
+position = Vector2(764, 677)
+polygon = PackedVector2Array(971, -307, 1732, -155, 1675, 408, 823, 384)
+
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
 position = Vector2(395, 753)
 position_smoothing_enabled = true
 script = ExtResource("4_ugxuf")
 player = NodePath("../Player")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Camera2D"]
+z_index = 1000
+material = SubResource("ShaderMaterial_bk2w6")
+position = Vector2(10.5001, 2.625)
+scale = Vector2(2661, 1260.75)
+mesh = SubResource("QuadMesh_xo3nc")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+canvas_cull_mask = 4293918752
