@@ -1,20 +1,21 @@
-[gd_scene load_steps=23 format=3 uid="uid://dlu20o1crio6y"]
+[gd_scene load_steps=26 format=3 uid="uid://dlu20o1crio6y"]
 
 [ext_resource type="Texture2D" uid="uid://1542cwvcv282" path="res://assets/checkerboard.svg" id="1_1t6kp"]
 [ext_resource type="Script" path="res://scenes/game/camera.gd" id="1_soqif"]
 [ext_resource type="PackedScene" uid="uid://7pnca5lreux0" path="res://scenes/player/player.tscn" id="2_6eacj"]
 [ext_resource type="PackedScene" uid="uid://dv8swtjsfo8ho" path="res://assets/blockout/blockout_floor.tscn" id="6_3iueb"]
 [ext_resource type="PackedScene" uid="uid://ct6kggpfqatuw" path="res://assets/blockout/blockout_slope.tscn" id="7_xbxs2"]
+[ext_resource type="PackedScene" uid="uid://bvpn2yd6dqc2j" path="res://scenes/shared/level/camera_offset_area.tscn" id="8_5g181"]
 [ext_resource type="Texture2D" uid="uid://c44ota5vl320h" path="res://icon.svg" id="8_r6wbw"]
 [ext_resource type="Texture2D" uid="uid://bqpf46ae2fuhy" path="res://assets/blockout/text_albert.png" id="9_dtl8g"]
 [ext_resource type="Texture2D" uid="uid://j1dvhk2wehq6" path="res://assets/blockout/text_barbara.png" id="9_syyt0"]
 [ext_resource type="Texture2D" uid="uid://bkrgh10hjo18s" path="res://assets/blockout/text_karla.png" id="10_asufd"]
-[ext_resource type="PackedScene" uid="uid://x4n61sjituka" path="res://assets/blockout/blockout_spikes.tscn" id="12_g6egw"]
-[ext_resource type="Script" path="res://assets/blockout/elevator_platform.gd" id="13_8y0gi"]
-[ext_resource type="PackedScene" uid="uid://g1wph10l7f0q" path="res://assets/blockout/blockout_breaking_platform.tscn" id="13_snwy4"]
+[ext_resource type="PackedScene" uid="uid://x4n61sjituka" path="res://scenes/shared/level/blockout_spikes.tscn" id="12_g6egw"]
+[ext_resource type="Script" path="res://scenes/shared/level/elevator_platform.gd" id="13_8y0gi"]
+[ext_resource type="PackedScene" uid="uid://g1wph10l7f0q" path="res://scenes/shared/level/blockout_breaking_platform.tscn" id="13_snwy4"]
 [ext_resource type="Texture2D" uid="uid://2r6dvfv031fl" path="res://assets/blockout/elevator_platform.svg" id="14_7w2el"]
 [ext_resource type="Texture2D" uid="uid://chumwrl4pm0ft" path="res://assets/blockout/flame.svg" id="14_pqh0s"]
-[ext_resource type="PackedScene" uid="uid://do1hn4iduqesi" path="res://assets/blockout/blockout_intermittent_platform.tscn" id="15_28a4h"]
+[ext_resource type="PackedScene" uid="uid://do1hn4iduqesi" path="res://scenes/shared/level/blockout_intermittent_platform.tscn" id="15_28a4h"]
 [ext_resource type="Texture2D" uid="uid://c0wpifu0rg1j1" path="res://assets/blockout/spike.svg" id="15_mi78c"]
 
 [sub_resource type="Animation" id="Animation_m5g3s"]
@@ -55,8 +56,14 @@ _data = {
 "cycle": SubResource("Animation_3vrwe")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ds1x"]
-size = Vector2(88, 546)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h8vqj"]
+size = Vector2(122, 574)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xyj5a"]
+size = Vector2(122, 574)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p33e6"]
+size = Vector2(122, 574)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oii5x"]
 size = Vector2(377, 377)
@@ -65,12 +72,6 @@ size = Vector2(377, 377)
 size = Vector2(324, 112)
 
 [node name="Game" type="Node2D"]
-
-[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
-position = Vector2(395, 753)
-position_smoothing_enabled = true
-script = ExtResource("1_soqif")
-player = NodePath("../Player")
 
 [node name="Background" type="Node2D" parent="."]
 
@@ -119,6 +120,17 @@ horizontal_alignment = 1
 [node name="Player" parent="." groups=["player"] instance=ExtResource("2_6eacj")]
 position = Vector2(426, 613)
 
+[node name="Camera2D" type="Camera2D" parent="Player" node_paths=PackedStringArray("player")]
+position = Vector2(851, -24)
+position_smoothing_enabled = true
+drag_vertical_enabled = true
+drag_top_margin = 0.6
+drag_bottom_margin = 0.9
+editor_draw_limits = true
+editor_draw_drag_margin = true
+script = ExtResource("1_soqif")
+player = NodePath("..")
+
 [node name="Characters" type="Node2D" parent="."]
 
 [node name="Albert" type="Sprite2D" parent="Characters"]
@@ -153,33 +165,55 @@ texture = ExtResource("9_syyt0")
 
 [node name="Foreground" type="Node2D" parent="."]
 
-[node name="CameraUpAreas" type="Node2D" parent="."]
+[node name="CameraOffsetChangeAreas" type="Node2D" parent="."]
 
-[node name="CameraUpArea" type="Area2D" parent="CameraUpAreas"]
-position = Vector2(19930, 726)
+[node name="CameraOffsetArea4" parent="CameraOffsetChangeAreas" node_paths=PackedStringArray("camera") instance=ExtResource("8_5g181")]
+position = Vector2(60748, 698)
+camera = NodePath("../../Player/Camera2D")
+offset_quantity = -600.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraUpAreas/CameraUpArea"]
-shape = SubResource("RectangleShape2D_2ds1x")
+[node name="CameraUp" type="Area2D" parent="CameraOffsetChangeAreas/CameraOffsetArea4"]
+position = Vector2(-1339, 0)
 
-[node name="CameraUpArea2" type="Area2D" parent="CameraUpAreas"]
-position = Vector2(27624, 486)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraOffsetChangeAreas/CameraOffsetArea4/CameraUp"]
+position = Vector2(0, -14)
+shape = SubResource("RectangleShape2D_h8vqj")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraUpAreas/CameraUpArea2"]
-shape = SubResource("RectangleShape2D_2ds1x")
+[node name="CameraOffsetArea2" parent="CameraOffsetChangeAreas" node_paths=PackedStringArray("camera") instance=ExtResource("8_5g181")]
+position = Vector2(21070, 834)
+camera = NodePath("../../Player/Camera2D")
+offset_quantity = -600.0
 
-[node name="CameraResetAreas" type="Node2D" parent="."]
+[node name="CameraUp" type="Area2D" parent="CameraOffsetChangeAreas/CameraOffsetArea2"]
+position = Vector2(-1339, 0)
 
-[node name="CameraResetArea" type="Area2D" parent="CameraResetAreas"]
-position = Vector2(22626, 578)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraOffsetChangeAreas/CameraOffsetArea2/CameraUp"]
+position = Vector2(0, -14)
+shape = SubResource("RectangleShape2D_xyj5a")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraResetAreas/CameraResetArea"]
-shape = SubResource("RectangleShape2D_2ds1x")
+[node name="ResetCamera" type="Area2D" parent="CameraOffsetChangeAreas/CameraOffsetArea2"]
+position = Vector2(1272, 0)
 
-[node name="CameraResetArea2" type="Area2D" parent="CameraResetAreas"]
-position = Vector2(28637, 491)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraOffsetChangeAreas/CameraOffsetArea2/ResetCamera"]
+shape = SubResource("RectangleShape2D_p33e6")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraResetAreas/CameraResetArea2"]
-shape = SubResource("RectangleShape2D_2ds1x")
+[node name="CameraOffsetArea3" parent="CameraOffsetChangeAreas" node_paths=PackedStringArray("camera") instance=ExtResource("8_5g181")]
+position = Vector2(28254, 489)
+camera = NodePath("../../Player/Camera2D")
+offset_quantity = -700.0
+
+[node name="CameraUp" type="Area2D" parent="CameraOffsetChangeAreas/CameraOffsetArea3"]
+position = Vector2(-538, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraOffsetChangeAreas/CameraOffsetArea3/CameraUp"]
+position = Vector2(0, -14)
+shape = SubResource("RectangleShape2D_xyj5a")
+
+[node name="ResetCamera" type="Area2D" parent="CameraOffsetChangeAreas/CameraOffsetArea3"]
+position = Vector2(336, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraOffsetChangeAreas/CameraOffsetArea3/ResetCamera"]
+shape = SubResource("RectangleShape2D_p33e6")
 
 [node name="Intro" type="Node2D" parent="."]
 
@@ -302,7 +336,7 @@ position = Vector2(25523, 1205)
 scale = Vector2(6.46032, 0.293651)
 
 [node name="Floor25" parent="Storyboard/Floors" instance=ExtResource("6_3iueb")]
-position = Vector2(31064.8, 1219.25)
+position = Vector2(31064.8, 1171.25)
 scale = Vector2(2.44974, 0.218254)
 
 [node name="Floor27" parent="Storyboard/Floors" instance=ExtResource("6_3iueb")]
@@ -589,7 +623,7 @@ shape = SubResource("RectangleShape2D_hyael")
 position = Vector2(0, -2069.47)
 
 [node name="ElevatorPlatform4" type="Node2D" parent="Storyboard/Floors"]
-position = Vector2(32087.8, 1289.5)
+position = Vector2(32087.8, 1241.5)
 scale = Vector2(2.96297, 0.584656)
 script = ExtResource("13_8y0gi")
 mov_speed = 200
@@ -795,6 +829,11 @@ position = Vector2(33.0137, 48.8889)
 scale = Vector2(0.289591, 0.888889)
 texture = ExtResource("8_r6wbw")
 
+[connection signal="body_entered" from="CameraOffsetChangeAreas/CameraOffsetArea4/CameraUp" to="CameraOffsetChangeAreas/CameraOffsetArea4" method="change_offset"]
+[connection signal="body_entered" from="CameraOffsetChangeAreas/CameraOffsetArea2/CameraUp" to="CameraOffsetChangeAreas/CameraOffsetArea2" method="change_offset"]
+[connection signal="body_entered" from="CameraOffsetChangeAreas/CameraOffsetArea2/ResetCamera" to="CameraOffsetChangeAreas/CameraOffsetArea2" method="reset_offset"]
+[connection signal="body_entered" from="CameraOffsetChangeAreas/CameraOffsetArea3/CameraUp" to="CameraOffsetChangeAreas/CameraOffsetArea3" method="change_offset"]
+[connection signal="body_entered" from="CameraOffsetChangeAreas/CameraOffsetArea3/ResetCamera" to="CameraOffsetChangeAreas/CameraOffsetArea3" method="reset_offset"]
 [connection signal="area_entered" from="Storyboard/Floors/ElevatorPlatform/Platform/Area2D" to="Storyboard/Floors/ElevatorPlatform" method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Storyboard/Floors/ElevatorPlatform/Platform/Area2D" to="Storyboard/Floors/ElevatorPlatform" method="_on_area_2d_body_entered"]
 [connection signal="area_entered" from="Storyboard/Floors/ElevatorPlatform4/Platform/Area2D" to="Storyboard/Floors/ElevatorPlatform4" method="_on_area_2d_area_entered"]
