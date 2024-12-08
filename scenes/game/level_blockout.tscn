@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dv8swtjsfo8ho" path="res://assets/blockout/blockout_floor.tscn" id="6_3iueb"]
 [ext_resource type="PackedScene" uid="uid://ct6kggpfqatuw" path="res://assets/blockout/blockout_slope.tscn" id="7_xbxs2"]
 [ext_resource type="PackedScene" uid="uid://bvpn2yd6dqc2j" path="res://scenes/shared/level/camera_offset_area.tscn" id="8_5g181"]
-[ext_resource type="Texture2D" uid="uid://c44ota5vl320h" path="res://icon.svg" id="8_r6wbw"]
+[ext_resource type="Texture2D" uid="uid://b7i8n3m0fowoe" path="res://icon.png" id="8_r6wbw"]
 [ext_resource type="Texture2D" uid="uid://bqpf46ae2fuhy" path="res://assets/blockout/text_albert.png" id="9_dtl8g"]
 [ext_resource type="Texture2D" uid="uid://j1dvhk2wehq6" path="res://assets/blockout/text_barbara.png" id="9_syyt0"]
 [ext_resource type="Texture2D" uid="uid://bkrgh10hjo18s" path="res://assets/blockout/text_karla.png" id="10_asufd"]
