@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xohcov0vdwq6"
-path="res://.godot/imported/decelerate_3.png-410077c6b5b88918f99df3d0389241a7.ctex"
+uid="uid://dhjw3cgo4i1ej"
+path="res://.godot/imported/decelerating_1.png-cb23885e8dd8dd5bfdbf45e3aecda1b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/player/decelerate_3.png"
-dest_files=["res://.godot/imported/decelerate_3.png-410077c6b5b88918f99df3d0389241a7.ctex"]
+source_file="res://assets/sprites/player/decelerating_1.png"
+dest_files=["res://.godot/imported/decelerating_1.png-cb23885e8dd8dd5bfdbf45e3aecda1b4.ctex"]
 
 [params]
 
