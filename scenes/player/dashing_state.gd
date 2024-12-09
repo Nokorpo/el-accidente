@@ -22,6 +22,7 @@ func _on_enter_state() -> void:
 
 	node.speed = 0
 	active = true
+	%AnimatedSprite2D.play("dash")
 
 func _on_exit_state() -> void:
 	active = false
