@@ -6,7 +6,7 @@ class_name DeceleratingState
 ## How long it takes for the character to be completely slowed down, in seconds
 @export var time_until_slowed_down: float = 1
 ## Player speed when completely slowed down
-@export var speed_when_lowed_down: float = 6
+@export var speed_when_lowed_down: float = 7
 ## How long it takes for the slow down to resolve into a dash, in seconds
 @export var time_until_dash: float = .5
 var _original_speed: float

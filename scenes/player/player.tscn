@@ -80,10 +80,11 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5b3hn"]
 radius = 57.0
-height = 200.0
+height = 248.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_d1qh6")
+speed = 15.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
@@ -92,7 +93,7 @@ animation = &"decelerating"
 autoplay = "running"
 
 [node name="DashDistance" type="Marker2D" parent="."]
-position = Vector2(348, 0)
+position = Vector2(486, 0)
 script = ExtResource("6_xxku5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
