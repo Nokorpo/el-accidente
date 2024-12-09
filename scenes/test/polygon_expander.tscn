@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckwkxlksrdrbm"]
+
+[ext_resource type="Script" path="res://scenes/shared/tools/polygon_expander.gd" id="1_dr8px"]
+
+[node name="PolygonExpander" type="Node2D"]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 100, 0, 0, 100)
+script = ExtResource("1_dr8px")
+
+[node name="PolygonExpander" type="StaticBody2D" parent="Polygon2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Polygon2D/PolygonExpander"]
+visible = false
+polygon = PackedVector2Array(0, 0, 100, 0, 0, 100)

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cyrcwplmklrm6"]
+
+[node name="PolygonExpander" type="StaticBody2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
