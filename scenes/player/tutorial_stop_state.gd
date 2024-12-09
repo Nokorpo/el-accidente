@@ -16,4 +16,4 @@ func _on_exit_state() -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.is_pressed():
-			state_machine.change_state(SlowingDownState)
+			state_machine.change_state(DeceleratingState)

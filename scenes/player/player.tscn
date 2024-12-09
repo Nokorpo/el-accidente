@@ -9,14 +9,14 @@
 [ext_resource type="Texture2D" uid="uid://c5tkhdi6h6qtl" path="res://assets/sprites/player/dash_3.png" id="4_mvnyi"]
 [ext_resource type="Texture2D" uid="uid://c5raco04jqqc0" path="res://assets/sprites/player/running_4.png" id="4_xl4ps"]
 [ext_resource type="Texture2D" uid="uid://batfm2aqnhspe" path="res://assets/sprites/player/dash_4.png" id="5_tme58"]
-[ext_resource type="Texture2D" uid="uid://dhjw3cgo4i1ej" path="res://assets/sprites/player/decelerate_1.png" id="6_ax0uf"]
+[ext_resource type="Texture2D" uid="uid://dhjw3cgo4i1ej" path="res://assets/sprites/player/decelerating_1.png" id="6_ax0uf"]
 [ext_resource type="Script" path="res://scenes/shared/state_machine/state_machine.gd" id="6_nqn7r"]
 [ext_resource type="Script" path="res://scenes/player/running_state.gd" id="6_vilqo"]
 [ext_resource type="Script" path="res://scenes/player/dash_distance.gd" id="6_xxku5"]
-[ext_resource type="Texture2D" uid="uid://dg8xweynedywm" path="res://assets/sprites/player/decelerate_2.png" id="7_8g26c"]
+[ext_resource type="Texture2D" uid="uid://dg8xweynedywm" path="res://assets/sprites/player/decelerating_2.png" id="7_8g26c"]
 [ext_resource type="Script" path="res://scenes/player/dashing_state.gd" id="7_jw2we"]
 [ext_resource type="Script" path="res://scenes/player/tutorial_stop_state.gd" id="7_yfuy2"]
-[ext_resource type="Texture2D" uid="uid://xohcov0vdwq6" path="res://assets/sprites/player/decelerate_3.png" id="8_14b37"]
+[ext_resource type="Texture2D" uid="uid://xohcov0vdwq6" path="res://assets/sprites/player/decelerating_3.png" id="8_14b37"]
 [ext_resource type="Script" path="res://scenes/player/slowing_down_state.gd" id="8_jy070"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w4hqa"]
@@ -49,7 +49,7 @@ animations = [{
 "texture": ExtResource("8_14b37")
 }],
 "loop": false,
-"name": &"deccelerating",
+"name": &"decelerating",
 "speed": 4.0
 }, {
 "frames": [{
@@ -88,7 +88,7 @@ script = ExtResource("1_d1qh6")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_w4hqa")
-animation = &"stop"
+animation = &"decelerating"
 autoplay = "running"
 
 [node name="DashDistance" type="Marker2D" parent="."]
@@ -107,7 +107,7 @@ script = ExtResource("7_yfuy2")
 [node name="RunningState" type="Node" parent="StateMachine"]
 script = ExtResource("6_vilqo")
 
-[node name="SlowingDownState" type="Node" parent="StateMachine"]
+[node name="DeceleratingState" type="Node" parent="StateMachine"]
 script = ExtResource("8_jy070")
 speed_when_lowed_down = 2.0
 

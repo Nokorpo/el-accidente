@@ -1,5 +1,5 @@
 extends StateMachineState
-class_name SlowingDownState
+class_name DeceleratingState
 ## State for when the user is pressing the screen. The player slows down up to
 ## a minimum speed.
 
@@ -17,7 +17,7 @@ func _on_enter_state() -> void:
 	active = true
 	_original_speed = node.speed
 	_time_entered = Time.get_ticks_msec()
-	%AnimatedSprite2D.play("deccelerating")
+	%AnimatedSprite2D.play("decelerating")
 
 func _on_exit_state() -> void:
 	active = false
