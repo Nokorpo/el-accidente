@@ -13,10 +13,12 @@ uniform vec4 color: source_color;
 // Used to compensate for alpha values.
 uniform float tolerance: hint_range(0.0, 0.999) = 0.0;
 
+varying vec2 world_pos;
 
 // Compensate UV for outline.
 void vertex() {
 	VERTEX = vec2(VERTEX.x * (1.0 + TEXTURE_PIXEL_SIZE.x * max(maxLineWidth, minLineWidth) * 2.0), VERTEX.y * (1.0 + TEXTURE_PIXEL_SIZE.y * max(maxLineWidth, minLineWidth) * 2.0));
+	world_pos = (MODEL_MATRIX * vec4(VERTEX, 0.0, 1.0)).xy;
 }
 
 // Checks a fragment for the edge of an uv.
@@ -105,7 +107,7 @@ void fragment() {
 		if (newColor.a <= tolerance || border(uv)) {
 			float timeStep = floor(TIME * speed);
 			vec2 size = TEXTURE_PIXEL_SIZE;
-			size *= get_line_width(uv / TEXTURE_PIXEL_SIZE, timeStep);
+			size *= get_line_width(world_pos, timeStep);
 			vec4 finalColor = step(1.0 - tolerance, in_range(size, TEXTURE, uv)) * color;
 			newColor = finalColor;
 		}
