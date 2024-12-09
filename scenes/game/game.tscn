@@ -1,10 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://7asaea7mswd5"]
+[gd_scene load_steps=18 format=3 uid="uid://7asaea7mswd5"]
 
 [ext_resource type="Texture2D" uid="uid://1542cwvcv282" path="res://assets/checkerboard.svg" id="1_rlkg2"]
 [ext_resource type="Texture2D" uid="uid://b0gqbk4xvkell" path="res://assets/square.svg" id="2_1usxs"]
 [ext_resource type="PackedScene" uid="uid://7pnca5lreux0" path="res://scenes/player/player.tscn" id="3_x7o86"]
+[ext_resource type="Shader" path="res://test.gdshader" id="4_0ipk6"]
 [ext_resource type="Script" path="res://scenes/game/camera.gd" id="4_ugxuf"]
-[ext_resource type="Shader" path="res://assets/blockout/blockout_floor.gdshader" id="5_a650s"]
 
 [sub_resource type="Animation" id="Animation_m5g3s"]
 length = 0.001
@@ -93,12 +93,23 @@ _data = {
 "cycle": SubResource("Animation_rpxfr")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_bk2w6"]
-shader = ExtResource("5_a650s")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fneo4"]
+shader = ExtResource("4_0ipk6")
+shader_parameter/maxLineWidth = 30.0
+shader_parameter/minLineWidth = 5.0
+shader_parameter/speed = 1.0
+shader_parameter/blockSize = 20.0
+shader_parameter/color = Color(0.498871, 0, 0.0553161, 1)
+shader_parameter/tolerance = 0.85
 
 [sub_resource type="QuadMesh" id="QuadMesh_xo3nc"]
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_nwpyu"]
+viewport_path = NodePath("SubViewport")
+
 [node name="Game" type="Node2D"]
+light_mask = 33
+visibility_layer = 33
 
 [node name="Background" type="Node2D" parent="."]
 z_index = -10
@@ -115,7 +126,6 @@ region_rect = Rect2(0, 0, 3040, 1140)
 libraries = {
 "": SubResource("AnimationLibrary_s5m0i")
 }
-autoplay = "cycle"
 
 [node name="Ground" type="Node2D" parent="."]
 
@@ -135,6 +145,7 @@ shape = SubResource("RectangleShape2D_nfb1a")
 position = Vector2(395, 753)
 
 [node name="Foreground" type="Node2D" parent="."]
+visible = false
 z_index = 10
 
 [node name="Sprite2D" type="Sprite2D" parent="Foreground"]
@@ -154,19 +165,8 @@ libraries = {
 }
 autoplay = "cycle"
 
-[node name="Shapes" type="Node2D" parent="."]
-
-[node name="Polygon2D" type="Polygon2D" parent="Shapes"]
-visibility_layer = 32
-position = Vector2(1051, 402)
-polygon = PackedVector2Array(28, -201, 685, -46, 532, 677, -49, 672, -292, 12)
-
-[node name="Polygon2D2" type="Polygon2D" parent="Shapes"]
-visibility_layer = 32
-position = Vector2(764, 677)
-polygon = PackedVector2Array(971, -307, 1732, -155, 1675, 408, 823, 384)
-
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
+visibility_layer = 33
 position = Vector2(395, 753)
 position_smoothing_enabled = true
 script = ExtResource("4_ugxuf")
@@ -174,10 +174,44 @@ player = NodePath("../Player")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Camera2D"]
 z_index = 1000
-material = SubResource("ShaderMaterial_bk2w6")
-position = Vector2(10.5001, 2.625)
-scale = Vector2(2661, 1260.75)
+material = SubResource("ShaderMaterial_fneo4")
+scale = Vector2(2556, -1179)
 mesh = SubResource("QuadMesh_xo3nc")
+texture = SubResource("ViewportTexture_nwpyu")
 
 [node name="SubViewport" type="SubViewport" parent="."]
-canvas_cull_mask = 4293918752
+transparent_bg = true
+canvas_cull_mask = 4293918753
+size = Vector2i(2556, 1179)
+
+[node name="Camera2D" type="Camera2D" parent="SubViewport" node_paths=PackedStringArray("player")]
+light_mask = 33
+visibility_layer = 33
+position = Vector2(395, 753)
+script = ExtResource("4_ugxuf")
+player = NodePath("../../Player")
+
+[node name="Shapes" type="Node2D" parent="SubViewport"]
+light_mask = 33
+visibility_layer = 33
+
+[node name="Polygon2D3" type="Polygon2D" parent="SubViewport/Shapes"]
+light_mask = 33
+visibility_layer = 33
+position = Vector2(-565, 721)
+color = Color(0.641679, 0.210863, 0.147785, 1)
+polygon = PackedVector2Array(200, -7, 99, 202, -79, 31, 54, -173)
+
+[node name="Polygon2D" type="Polygon2D" parent="SubViewport/Shapes"]
+light_mask = 33
+visibility_layer = 33
+position = Vector2(1051, 402)
+color = Color(0.641679, 0.210863, 0.147785, 1)
+polygon = PackedVector2Array(28, -201, 685, -46, 532, 677, -49, 672, -292, 12)
+
+[node name="Polygon2D2" type="Polygon2D" parent="SubViewport/Shapes"]
+light_mask = 33
+visibility_layer = 33
+position = Vector2(764, 677)
+color = Color(0.641679, 0.210863, 0.147785, 1)
+polygon = PackedVector2Array(971, -307, 1732, -155, 1675, 408, 823, 384)

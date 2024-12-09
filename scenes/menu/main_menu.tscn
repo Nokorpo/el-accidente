@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dvc5023xednjw"]
+[gd_scene load_steps=4 format=3 uid="uid://dvc5023xednjw"]
 
 [ext_resource type="Script" path="res://scenes/menu/start_button.gd" id="1_3roje"]
 [ext_resource type="PackedScene" uid="uid://dlu20o1crio6y" path="res://scenes/game/level_blockout.tscn" id="2_q0bu5"]
+[ext_resource type="PackedScene" uid="uid://7asaea7mswd5" path="res://scenes/game/game.tscn" id="3_d3vt6"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -29,3 +30,23 @@ theme_override_font_sizes/font_size = 100
 text = "Start"
 script = ExtResource("1_3roje")
 game_scene = ExtResource("2_q0bu5")
+
+[node name="StartButton2" type="Button" parent="."]
+custom_minimum_size = Vector2(400, 250)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 314.0
+offset_top = -116.5
+offset_right = 714.0
+offset_bottom = 133.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
+text = "Debug
+scene"
+script = ExtResource("1_3roje")
+game_scene = ExtResource("3_d3vt6")
