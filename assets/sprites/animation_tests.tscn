@@ -1,64 +1,64 @@
 [gd_scene load_steps=58 format=3 uid="uid://df6sl8kqi2823"]
 
-[ext_resource type="Texture2D" uid="uid://dvd7ufry3gwnc" path="res://assets/sprites/player/dash_1.png" id="1_sqmbo"]
-[ext_resource type="Texture2D" uid="uid://dckfu2wn166it" path="res://assets/sprites/player/dash_2.png" id="2_iomb0"]
-[ext_resource type="Texture2D" uid="uid://c5tkhdi6h6qtl" path="res://assets/sprites/player/dash_3.png" id="3_03fda"]
-[ext_resource type="Texture2D" uid="uid://batfm2aqnhspe" path="res://assets/sprites/player/dash_4.png" id="4_uvtl6"]
-[ext_resource type="Texture2D" uid="uid://dhjw3cgo4i1ej" path="res://assets/sprites/player/decelerate_1.png" id="5_vdmms"]
-[ext_resource type="Texture2D" uid="uid://dg8xweynedywm" path="res://assets/sprites/player/decelerate_2.png" id="6_3ulnt"]
-[ext_resource type="Texture2D" uid="uid://xohcov0vdwq6" path="res://assets/sprites/player/decelerate_3.png" id="7_1x2rl"]
-[ext_resource type="Texture2D" uid="uid://c3yopepsnhpw5" path="res://assets/sprites/player/running_1.png" id="8_e86ar"]
-[ext_resource type="Texture2D" uid="uid://ckgr3t0q3r28y" path="res://assets/sprites/player/running_2.png" id="9_fqwrm"]
-[ext_resource type="Texture2D" uid="uid://34pkmv4a34hd" path="res://assets/sprites/player/running_3.png" id="10_pyhc8"]
-[ext_resource type="Texture2D" uid="uid://c5raco04jqqc0" path="res://assets/sprites/player/running_4.png" id="11_010bi"]
-[ext_resource type="Texture2D" uid="uid://dlhnpcvy1fc03" path="res://assets/sprites/obstacles/car_fire/carfire_1.png" id="12_l6ahw"]
-[ext_resource type="Texture2D" uid="uid://8kb44jfqim3r" path="res://assets/sprites/obstacles/car_fire/carfire_2.png" id="13_woslf"]
-[ext_resource type="Texture2D" uid="uid://qf37dr8ma0aj" path="res://assets/sprites/obstacles/car_fire/carfire_3.png" id="14_ciqqk"]
-[ext_resource type="Texture2D" uid="uid://bc2v6n8nqhpig" path="res://assets/sprites/obstacles/car_fire/carfire_4.png" id="15_xeu3s"]
-[ext_resource type="Texture2D" uid="uid://c2jkd5s3x5m66" path="res://assets/sprites/obstacles/deer/deer_flee1.png" id="16_qt2nr"]
-[ext_resource type="Texture2D" uid="uid://do1a5n0bhw6yb" path="res://assets/sprites/obstacles/deer/deer_flee2.png" id="17_42wbc"]
-[ext_resource type="Texture2D" uid="uid://blh6hkx3q2c0j" path="res://assets/sprites/obstacles/deer/deer_flee3.png" id="18_nb16p"]
-[ext_resource type="Texture2D" uid="uid://s8rkb81rlyq1" path="res://assets/sprites/obstacles/deer/deer_flee4.png" id="19_5kteq"]
-[ext_resource type="Texture2D" uid="uid://y4bk5lk42l1k" path="res://assets/sprites/obstacles/deer/deer_flee5.png" id="20_m0mnh"]
-[ext_resource type="Texture2D" uid="uid://mnvedi6d5irk" path="res://assets/sprites/obstacles/deer/deer_idle1.png" id="21_1i8ht"]
-[ext_resource type="Texture2D" uid="uid://cad6pwwq8nac1" path="res://assets/sprites/obstacles/deer/deer_idle2.png" id="22_03k51"]
-[ext_resource type="Texture2D" uid="uid://cmea3gojmrstp" path="res://assets/sprites/obstacles/breaking_platform/breaking_platform1.png" id="23_afdqs"]
-[ext_resource type="Texture2D" uid="uid://cd0acx4jpona6" path="res://assets/sprites/obstacles/breaking_platform/breaking_platform2.png" id="24_cxnml"]
-[ext_resource type="Texture2D" uid="uid://dgr8ys0iple7q" path="res://assets/sprites/obstacles/breaking_platform/breaking_platform3.png" id="25_dupun"]
-[ext_resource type="Texture2D" uid="uid://pxupeyrry401" path="res://assets/sprites/obstacles/breaking_platform/breaking_platform4.png" id="26_7yxkh"]
-[ext_resource type="Texture2D" uid="uid://iwi0kiieafvs" path="res://assets/sprites/npc/albert_idle1.png" id="27_ff0q1"]
-[ext_resource type="Texture2D" uid="uid://c2bj660bg27hd" path="res://assets/sprites/npc/albert_idle2.png" id="28_vtqmq"]
-[ext_resource type="Texture2D" uid="uid://lm0w33pgt0m5" path="res://assets/sprites/npc/barbara_idle1.png" id="29_tykxh"]
-[ext_resource type="Texture2D" uid="uid://c5owh2tsqoqb5" path="res://assets/sprites/npc/barbara_idle2.png" id="30_cckkx"]
-[ext_resource type="Texture2D" uid="uid://ppolqe0ioqig" path="res://assets/sprites/npc/karla_idle1.png" id="31_87uww"]
-[ext_resource type="Texture2D" uid="uid://biv1lqglmvo16" path="res://assets/sprites/npc/karla_idle2.png" id="32_b8dtj"]
-[ext_resource type="Texture2D" uid="uid://cictl77apdn4c" path="res://assets/sprites/car/car_brake1.png" id="33_ld6fd"]
-[ext_resource type="Texture2D" uid="uid://nogw7tg8e4n3" path="res://assets/sprites/car/car_brake2.png" id="34_4us08"]
-[ext_resource type="Texture2D" uid="uid://bsepj8qmd0hkl" path="res://assets/sprites/car/car_brake3.png" id="35_nlv54"]
-[ext_resource type="Texture2D" uid="uid://bfpkmyiiqskyl" path="res://assets/sprites/car/car_brake4.png" id="36_l2wkp"]
-[ext_resource type="Texture2D" uid="uid://bjxqxq3rsigig" path="res://assets/sprites/car/car_dash1.png" id="37_62qil"]
-[ext_resource type="Texture2D" uid="uid://by721lrc01thf" path="res://assets/sprites/car/car_dash2.png" id="38_u8gov"]
-[ext_resource type="Texture2D" uid="uid://ba0tvtoddut88" path="res://assets/sprites/car/car_dash3.png" id="39_rdq0t"]
-[ext_resource type="Texture2D" uid="uid://bmyyqijkxukxs" path="res://assets/sprites/car/car_dash4.png" id="40_a8nyo"]
-[ext_resource type="Texture2D" uid="uid://clahbbxxbgunk" path="res://assets/sprites/car/car_run1.png" id="41_272ut"]
-[ext_resource type="Texture2D" uid="uid://dnfh4r5bgckxo" path="res://assets/sprites/car/car_run2.png" id="42_tykbr"]
-[ext_resource type="Texture2D" uid="uid://b0biukxncuyiu" path="res://assets/sprites/car/car_run3.png" id="43_86wmw"]
-[ext_resource type="Texture2D" uid="uid://qyp2alpqtdj2" path="res://assets/sprites/car/car_run4.png" id="44_u6tbw"]
+[ext_resource type="Texture2D" uid="uid://dvd7ufry3gwnc" path="res://assets/sprites/player/dash_1.png" id="1_vxsdh"]
+[ext_resource type="Texture2D" uid="uid://dckfu2wn166it" path="res://assets/sprites/player/dash_2.png" id="2_bnqki"]
+[ext_resource type="Texture2D" uid="uid://c5tkhdi6h6qtl" path="res://assets/sprites/player/dash_3.png" id="3_m6od1"]
+[ext_resource type="Texture2D" uid="uid://batfm2aqnhspe" path="res://assets/sprites/player/dash_4.png" id="4_ppkgu"]
+[ext_resource type="Texture2D" uid="uid://dhjw3cgo4i1ej" path="res://assets/sprites/player/decelerate_1.png" id="5_fejqc"]
+[ext_resource type="Texture2D" uid="uid://dg8xweynedywm" path="res://assets/sprites/player/decelerate_2.png" id="6_ku5eb"]
+[ext_resource type="Texture2D" uid="uid://xohcov0vdwq6" path="res://assets/sprites/player/decelerate_3.png" id="7_553s1"]
+[ext_resource type="Texture2D" uid="uid://c3yopepsnhpw5" path="res://assets/sprites/player/running_1.png" id="8_uynv5"]
+[ext_resource type="Texture2D" uid="uid://ckgr3t0q3r28y" path="res://assets/sprites/player/running_2.png" id="9_cwk3o"]
+[ext_resource type="Texture2D" uid="uid://34pkmv4a34hd" path="res://assets/sprites/player/running_3.png" id="10_bhsyb"]
+[ext_resource type="Texture2D" uid="uid://c5raco04jqqc0" path="res://assets/sprites/player/running_4.png" id="11_4uetv"]
+[ext_resource type="Texture2D" uid="uid://dlhnpcvy1fc03" path="res://assets/sprites/obstacles/car_fire/carfire_1.png" id="12_kvue5"]
+[ext_resource type="Texture2D" uid="uid://8kb44jfqim3r" path="res://assets/sprites/obstacles/car_fire/carfire_2.png" id="13_4rjqr"]
+[ext_resource type="Texture2D" uid="uid://qf37dr8ma0aj" path="res://assets/sprites/obstacles/car_fire/carfire_3.png" id="14_ingdd"]
+[ext_resource type="Texture2D" uid="uid://bc2v6n8nqhpig" path="res://assets/sprites/obstacles/car_fire/carfire_4.png" id="15_7q5ys"]
+[ext_resource type="Texture2D" uid="uid://c2jkd5s3x5m66" path="res://assets/sprites/obstacles/deer/deer_flee1.png" id="16_5cy7c"]
+[ext_resource type="Texture2D" uid="uid://do1a5n0bhw6yb" path="res://assets/sprites/obstacles/deer/deer_flee2.png" id="17_1vs2v"]
+[ext_resource type="Texture2D" uid="uid://blh6hkx3q2c0j" path="res://assets/sprites/obstacles/deer/deer_flee3.png" id="18_skprp"]
+[ext_resource type="Texture2D" uid="uid://s8rkb81rlyq1" path="res://assets/sprites/obstacles/deer/deer_flee4.png" id="19_77xmd"]
+[ext_resource type="Texture2D" uid="uid://y4bk5lk42l1k" path="res://assets/sprites/obstacles/deer/deer_flee5.png" id="20_c5vdl"]
+[ext_resource type="Texture2D" uid="uid://mnvedi6d5irk" path="res://assets/sprites/obstacles/deer/deer_idle1.png" id="21_ywl7f"]
+[ext_resource type="Texture2D" uid="uid://cad6pwwq8nac1" path="res://assets/sprites/obstacles/deer/deer_idle2.png" id="22_2511k"]
+[ext_resource type="Texture2D" uid="uid://cmea3gojmrstp" path="res://assets/sprites/obstacles/breaking_platform/breaking_platform1.png" id="23_x2x33"]
+[ext_resource type="Texture2D" uid="uid://cd0acx4jpona6" path="res://assets/sprites/obstacles/breaking_platform/breaking_platform2.png" id="24_mobky"]
+[ext_resource type="Texture2D" uid="uid://dgr8ys0iple7q" path="res://assets/sprites/obstacles/breaking_platform/breaking_platform3.png" id="25_5gtgu"]
+[ext_resource type="Texture2D" uid="uid://pxupeyrry401" path="res://assets/sprites/obstacles/breaking_platform/breaking_platform4.png" id="26_iwywl"]
+[ext_resource type="Texture2D" uid="uid://iwi0kiieafvs" path="res://assets/sprites/npc/albert_idle1.png" id="27_rewji"]
+[ext_resource type="Texture2D" uid="uid://c2bj660bg27hd" path="res://assets/sprites/npc/albert_idle2.png" id="28_105kp"]
+[ext_resource type="Texture2D" uid="uid://lm0w33pgt0m5" path="res://assets/sprites/npc/barbara_idle1.png" id="29_lqo8c"]
+[ext_resource type="Texture2D" uid="uid://c5owh2tsqoqb5" path="res://assets/sprites/npc/barbara_idle2.png" id="30_ixnqj"]
+[ext_resource type="Texture2D" uid="uid://ppolqe0ioqig" path="res://assets/sprites/npc/karla_idle1.png" id="31_3qi21"]
+[ext_resource type="Texture2D" uid="uid://biv1lqglmvo16" path="res://assets/sprites/npc/karla_idle2.png" id="32_xhfx7"]
+[ext_resource type="Texture2D" uid="uid://cictl77apdn4c" path="res://assets/sprites/car/car_brake1.png" id="33_2tpa0"]
+[ext_resource type="Texture2D" uid="uid://nogw7tg8e4n3" path="res://assets/sprites/car/car_brake2.png" id="34_kq6nl"]
+[ext_resource type="Texture2D" uid="uid://bsepj8qmd0hkl" path="res://assets/sprites/car/car_brake3.png" id="35_u2cax"]
+[ext_resource type="Texture2D" uid="uid://bfpkmyiiqskyl" path="res://assets/sprites/car/car_brake4.png" id="36_7d8oa"]
+[ext_resource type="Texture2D" uid="uid://bjxqxq3rsigig" path="res://assets/sprites/car/car_dash1.png" id="37_1f8cd"]
+[ext_resource type="Texture2D" uid="uid://by721lrc01thf" path="res://assets/sprites/car/car_dash2.png" id="38_6rbwt"]
+[ext_resource type="Texture2D" uid="uid://ba0tvtoddut88" path="res://assets/sprites/car/car_dash3.png" id="39_ndh8u"]
+[ext_resource type="Texture2D" uid="uid://bmyyqijkxukxs" path="res://assets/sprites/car/car_dash4.png" id="40_pwrrs"]
+[ext_resource type="Texture2D" uid="uid://clahbbxxbgunk" path="res://assets/sprites/car/car_run1.png" id="41_lnnvj"]
+[ext_resource type="Texture2D" uid="uid://dnfh4r5bgckxo" path="res://assets/sprites/car/car_run2.png" id="42_ajjgr"]
+[ext_resource type="Texture2D" uid="uid://b0biukxncuyiu" path="res://assets/sprites/car/car_run3.png" id="43_5ln6x"]
+[ext_resource type="Texture2D" uid="uid://qyp2alpqtdj2" path="res://assets/sprites/car/car_run4.png" id="44_wmxck"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1vmdk"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_sqmbo")
+"texture": ExtResource("1_vxsdh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_iomb0")
+"texture": ExtResource("2_bnqki")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_03fda")
+"texture": ExtResource("3_m6od1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_uvtl6")
+"texture": ExtResource("4_ppkgu")
 }],
 "loop": true,
 "name": &"default",
@@ -69,13 +69,13 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_vdmms")
+"texture": ExtResource("5_fejqc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_3ulnt")
+"texture": ExtResource("6_ku5eb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_1x2rl")
+"texture": ExtResource("7_553s1")
 }],
 "loop": true,
 "name": &"default",
@@ -86,16 +86,16 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_e86ar")
+"texture": ExtResource("8_uynv5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_fqwrm")
+"texture": ExtResource("9_cwk3o")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_pyhc8")
+"texture": ExtResource("10_bhsyb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_010bi")
+"texture": ExtResource("11_4uetv")
 }],
 "loop": true,
 "name": &"default",
@@ -106,16 +106,16 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("12_l6ahw")
+"texture": ExtResource("12_kvue5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_woslf")
+"texture": ExtResource("13_4rjqr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_ciqqk")
+"texture": ExtResource("14_ingdd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_xeu3s")
+"texture": ExtResource("15_7q5ys")
 }],
 "loop": true,
 "name": &"default",
@@ -126,19 +126,19 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("16_qt2nr")
+"texture": ExtResource("16_5cy7c")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_42wbc")
+"texture": ExtResource("17_1vs2v")
 }, {
 "duration": 1.0,
-"texture": ExtResource("18_nb16p")
+"texture": ExtResource("18_skprp")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_5kteq")
+"texture": ExtResource("19_77xmd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("20_m0mnh")
+"texture": ExtResource("20_c5vdl")
 }],
 "loop": true,
 "name": &"default",
@@ -149,10 +149,10 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("21_1i8ht")
+"texture": ExtResource("21_ywl7f")
 }, {
 "duration": 1.0,
-"texture": ExtResource("22_03k51")
+"texture": ExtResource("22_2511k")
 }],
 "loop": true,
 "name": &"default",
@@ -163,16 +163,16 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("23_afdqs")
+"texture": ExtResource("23_x2x33")
 }, {
 "duration": 1.0,
-"texture": ExtResource("24_cxnml")
+"texture": ExtResource("24_mobky")
 }, {
 "duration": 1.0,
-"texture": ExtResource("25_dupun")
+"texture": ExtResource("25_5gtgu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("26_7yxkh")
+"texture": ExtResource("26_iwywl")
 }],
 "loop": true,
 "name": &"default",
@@ -183,10 +183,10 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("27_ff0q1")
+"texture": ExtResource("27_rewji")
 }, {
 "duration": 1.0,
-"texture": ExtResource("28_vtqmq")
+"texture": ExtResource("28_105kp")
 }],
 "loop": true,
 "name": &"default",
@@ -197,10 +197,10 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("29_tykxh")
+"texture": ExtResource("29_lqo8c")
 }, {
 "duration": 1.0,
-"texture": ExtResource("30_cckkx")
+"texture": ExtResource("30_ixnqj")
 }],
 "loop": true,
 "name": &"default",
@@ -211,10 +211,10 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("31_87uww")
+"texture": ExtResource("31_3qi21")
 }, {
 "duration": 1.0,
-"texture": ExtResource("32_b8dtj")
+"texture": ExtResource("32_xhfx7")
 }],
 "loop": true,
 "name": &"default",
@@ -225,16 +225,16 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("33_ld6fd")
+"texture": ExtResource("33_2tpa0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("34_4us08")
+"texture": ExtResource("34_kq6nl")
 }, {
 "duration": 1.0,
-"texture": ExtResource("35_nlv54")
+"texture": ExtResource("35_u2cax")
 }, {
 "duration": 1.0,
-"texture": ExtResource("36_l2wkp")
+"texture": ExtResource("36_7d8oa")
 }],
 "loop": true,
 "name": &"default",
@@ -245,16 +245,16 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("37_62qil")
+"texture": ExtResource("37_1f8cd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("38_u8gov")
+"texture": ExtResource("38_6rbwt")
 }, {
 "duration": 1.0,
-"texture": ExtResource("39_rdq0t")
+"texture": ExtResource("39_ndh8u")
 }, {
 "duration": 1.0,
-"texture": ExtResource("40_a8nyo")
+"texture": ExtResource("40_pwrrs")
 }],
 "loop": true,
 "name": &"default",
@@ -265,16 +265,16 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("41_272ut")
+"texture": ExtResource("41_lnnvj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("42_tykbr")
+"texture": ExtResource("42_ajjgr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("43_86wmw")
+"texture": ExtResource("43_5ln6x")
 }, {
 "duration": 1.0,
-"texture": ExtResource("44_u6tbw")
+"texture": ExtResource("44_wmxck")
 }],
 "loop": true,
 "name": &"default",
@@ -282,6 +282,7 @@ animations = [{
 }]
 
 [node name="Tests" type="Node2D"]
+editor_description = "Animation testing"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1143, 315)
@@ -337,13 +338,13 @@ autoplay = "default"
 position = Vector2(687, 905)
 sprite_frames = SubResource("SpriteFrames_1y2ps")
 autoplay = "default"
-frame_progress = 0.386087
+frame_progress = 0.0575665
 
 [node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="."]
 position = Vector2(1319, 922)
 sprite_frames = SubResource("SpriteFrames_6idre")
 autoplay = "default"
-frame_progress = 0.372913
+frame_progress = 0.0443909
 
 [node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="."]
 position = Vector2(1891, 929)
