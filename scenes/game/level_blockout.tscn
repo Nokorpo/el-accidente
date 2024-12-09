@@ -1,8 +1,9 @@
-[gd_scene load_steps=26 format=3 uid="uid://dlu20o1crio6y"]
+[gd_scene load_steps=27 format=3 uid="uid://dlu20o1crio6y"]
 
 [ext_resource type="Texture2D" uid="uid://1542cwvcv282" path="res://assets/checkerboard.svg" id="1_1t6kp"]
 [ext_resource type="Script" path="res://scenes/game/camera.gd" id="1_soqif"]
 [ext_resource type="PackedScene" uid="uid://7pnca5lreux0" path="res://scenes/player/player.tscn" id="2_6eacj"]
+[ext_resource type="Texture2D" uid="uid://bg1c2cm51tdwu" path="res://assets/blockout/breaking_platform.svg" id="4_tm6d4"]
 [ext_resource type="PackedScene" uid="uid://dv8swtjsfo8ho" path="res://assets/blockout/blockout_floor.tscn" id="6_3iueb"]
 [ext_resource type="PackedScene" uid="uid://ct6kggpfqatuw" path="res://assets/blockout/blockout_slope.tscn" id="7_xbxs2"]
 [ext_resource type="PackedScene" uid="uid://bvpn2yd6dqc2j" path="res://scenes/shared/level/camera_offset_area.tscn" id="8_5g181"]
@@ -118,18 +119,76 @@ para hacer un dash"
 horizontal_alignment = 1
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("2_6eacj")]
-position = Vector2(426, 613)
+position = Vector2(402, 619)
 
 [node name="Camera2D" type="Camera2D" parent="Player" node_paths=PackedStringArray("player")]
 position = Vector2(851, -24)
+limit_top = 0
+limit_bottom = 1187
 position_smoothing_enabled = true
 drag_vertical_enabled = true
-drag_top_margin = 0.6
+drag_top_margin = 0.7
 drag_bottom_margin = 0.9
 editor_draw_limits = true
 editor_draw_drag_margin = true
 script = ExtResource("1_soqif")
 player = NodePath("..")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(8, 36)
+scale = Vector2(1, 0.213336)
+texture = ExtResource("4_tm6d4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/Sprite2D"]
+position = Vector2(-90, 126.561)
+scale = Vector2(0.239998, 1.15083)
+texture = ExtResource("4_tm6d4")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Player/Sprite2D"]
+position = Vector2(98, -370.308)
+rotation = -0.103006
+scale = Vector2(0.0399951, 1.15083)
+texture = ExtResource("4_tm6d4")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Player/Sprite2D"]
+position = Vector2(-101, -365.621)
+rotation = -3.09796
+scale = Vector2(0.04, 1.151)
+texture = ExtResource("4_tm6d4")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Player"]
+position = Vector2(-94, 63)
+scale = Vector2(0.239998, 0.245512)
+texture = ExtResource("4_tm6d4")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Player"]
+position = Vector2(64, 63)
+scale = Vector2(0.239998, 0.245512)
+texture = ExtResource("4_tm6d4")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Player"]
+position = Vector2(106, -43)
+rotation = -0.0220493
+scale = Vector2(0.0397928, 0.27137)
+skew = -0.429162
+texture = ExtResource("4_tm6d4")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Player"]
+position = Vector2(-93, -42)
+rotation = -3.13228
+scale = Vector2(0.0399637, 0.250401)
+skew = 0.192556
+texture = ExtResource("4_tm6d4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Player"]
+position = Vector2(8, 30.6602)
+scale = Vector2(1, 0.241589)
+texture = ExtResource("4_tm6d4")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Player"]
+position = Vector2(2, -103)
+scale = Vector2(0.497298, 0.0722759)
+texture = ExtResource("4_tm6d4")
 
 [node name="Characters" type="Node2D" parent="."]
 
@@ -366,9 +425,9 @@ rotation = -1.57078
 scale = Vector2(0.56606, 1.57134)
 
 [node name="Slope8" parent="Storyboard/Floors" instance=ExtResource("7_xbxs2")]
-position = Vector2(19312.9, 1120.73)
-rotation = -1.57078
-scale = Vector2(0.676697, 2.99917)
+position = Vector2(19213, 1045)
+rotation = -1.51362
+scale = Vector2(0.676697, 3.5515)
 
 [node name="Slope10" parent="Storyboard/Floors" instance=ExtResource("7_xbxs2")]
 position = Vector2(23306, 158.334)
@@ -828,6 +887,15 @@ texture = ExtResource("8_r6wbw")
 position = Vector2(33.0137, 48.8889)
 scale = Vector2(0.289591, 0.888889)
 texture = ExtResource("8_r6wbw")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, 1187)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(0, 50.4)
+scale = Vector2(1, 0.958)
+color = Color(0.404511, 0.404511, 0.404511, 1)
+polygon = PackedVector2Array(0, 700, 0, 1200, 2600, 1200, 2600, 700, 1308.09, 700)
 
 [connection signal="body_entered" from="CameraOffsetChangeAreas/CameraOffsetArea4/CameraUp" to="CameraOffsetChangeAreas/CameraOffsetArea4" method="change_offset"]
 [connection signal="body_entered" from="CameraOffsetChangeAreas/CameraOffsetArea2/CameraUp" to="CameraOffsetChangeAreas/CameraOffsetArea2" method="change_offset"]
