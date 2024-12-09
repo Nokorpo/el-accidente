@@ -95,12 +95,12 @@ _data = {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fneo4"]
 shader = ExtResource("4_0ipk6")
-shader_parameter/maxLineWidth = 30.0
+shader_parameter/maxLineWidth = 10.0
 shader_parameter/minLineWidth = 5.0
 shader_parameter/speed = 1.0
 shader_parameter/blockSize = 20.0
-shader_parameter/color = Color(0.498871, 0, 0.0553161, 1)
-shader_parameter/tolerance = 0.85
+shader_parameter/color = Color(0.523598, 0.0710228, 0.134326, 1)
+shader_parameter/tolerance = 0.9
 
 [sub_resource type="QuadMesh" id="QuadMesh_xo3nc"]
 
@@ -184,13 +184,6 @@ transparent_bg = true
 canvas_cull_mask = 4293918753
 size = Vector2i(2556, 1179)
 
-[node name="Camera2D" type="Camera2D" parent="SubViewport" node_paths=PackedStringArray("player")]
-light_mask = 33
-visibility_layer = 33
-position = Vector2(395, 753)
-script = ExtResource("4_ugxuf")
-player = NodePath("../../Player")
-
 [node name="Shapes" type="Node2D" parent="SubViewport"]
 light_mask = 33
 visibility_layer = 33
@@ -198,20 +191,55 @@ visibility_layer = 33
 [node name="Polygon2D3" type="Polygon2D" parent="SubViewport/Shapes"]
 light_mask = 33
 visibility_layer = 33
-position = Vector2(-565, 721)
+position = Vector2(7, 319)
 color = Color(0.641679, 0.210863, 0.147785, 1)
 polygon = PackedVector2Array(200, -7, 99, 202, -79, 31, 54, -173)
 
 [node name="Polygon2D" type="Polygon2D" parent="SubViewport/Shapes"]
 light_mask = 33
 visibility_layer = 33
-position = Vector2(1051, 402)
+position = Vector2(703, 628)
 color = Color(0.641679, 0.210863, 0.147785, 1)
 polygon = PackedVector2Array(28, -201, 685, -46, 532, 677, -49, 672, -292, 12)
 
 [node name="Polygon2D2" type="Polygon2D" parent="SubViewport/Shapes"]
 light_mask = 33
 visibility_layer = 33
-position = Vector2(764, 677)
+position = Vector2(-407, -109)
 color = Color(0.641679, 0.210863, 0.147785, 1)
-polygon = PackedVector2Array(971, -307, 1732, -155, 1675, 408, 823, 384)
+polygon = PackedVector2Array(971, -307, 1732, -155, 1785, 696, 813, 356)
+
+[node name="Polygon2D6" type="Polygon2D" parent="SubViewport/Shapes"]
+light_mask = 33
+visibility_layer = 33
+position = Vector2(72, 688)
+color = Color(0.641679, 0.210863, 0.147785, 1)
+polygon = PackedVector2Array(12, 83, -76, 23, -80, -101, -36, -181, 20, -117, 88, -185, 128, -117, 112, 43)
+
+[node name="Polygon2D7" type="Polygon2D" parent="SubViewport/Shapes"]
+light_mask = 33
+visibility_layer = 33
+position = Vector2(395, 478)
+color = Color(0.641679, 0.210863, 0.147785, 1)
+polygon = PackedVector2Array(-70, -1, -48, 48, -18, 27, 6, 49, 35, 1, 22, -4, 4, 24, -17, 6, -43, 25, -56, -8, -56, -8)
+
+[node name="Polygon2D8" type="Polygon2D" parent="SubViewport/Shapes"]
+light_mask = 33
+visibility_layer = 33
+position = Vector2(269, 425)
+color = Color(0.641679, 0.210863, 0.147785, 1)
+polygon = PackedVector2Array(-54, -1, -28, -1, -8, -27, 26, -27, 46, 1, 29, 26, -7, 26, -28, -1, -54, -1, -17, 47, 34, 47, 69, 2, 41, -46, -20, -46)
+
+[node name="Polygon2D9" type="Polygon2D" parent="SubViewport/Shapes"]
+light_mask = 33
+visibility_layer = 33
+position = Vector2(468, 425)
+color = Color(0.641679, 0.210863, 0.147785, 1)
+polygon = PackedVector2Array(-54, -1, -28, -1, -8, -27, 26, -27, 46, 1, 29, 26, -7, 26, -28, -1, -54, -1, -17, 47, 34, 47, 69, 2, 41, -46, -20, -46)
+
+[node name="Camera2D" type="Camera2D" parent="SubViewport" node_paths=PackedStringArray("player")]
+light_mask = 33
+visibility_layer = 33
+position = Vector2(395, 753)
+script = ExtResource("4_ugxuf")
+player = NodePath("../../Player")
