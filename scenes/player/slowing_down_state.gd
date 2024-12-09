@@ -7,6 +7,8 @@ class_name SlowingDownState
 @export var time_until_slowed_down: float = 1
 ## Player speed when completely slowed down
 @export var speed_when_lowed_down: float = 6
+## How long it takes for the slow down to resolve into a dash, in seconds
+@export var time_until_dash: float = .5
 var _original_speed: float
 var _time_entered: float
 var active: bool = false
@@ -28,6 +30,9 @@ func _process(_delta: float) -> void:
 			percent)
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
-		if not event.is_pressed():
+	if event is InputEventMouseButton and not event.is_pressed():
+		var elapsed_time: float = (Time.get_ticks_msec() - _time_entered)/1000
+		if elapsed_time >= time_until_dash:
 			state_machine.change_state(DashingState)
+		else:
+			state_machine.change_state(RunningState)
