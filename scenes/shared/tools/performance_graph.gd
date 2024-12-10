@@ -16,7 +16,7 @@ func _draw() -> void:
 	if not Engine.is_editor_hint() and is_node_ready() and points.size() > 2:
 		draw_polyline(points, Color.GREEN, 5)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not Engine.is_editor_hint() and OS.has_feature("editor"):
 		var fps: float = Engine.get_frames_per_second()
 		fps_value.text = str(fps)

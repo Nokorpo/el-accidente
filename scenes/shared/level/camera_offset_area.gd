@@ -7,7 +7,7 @@ var initial_offset: float
 var current_offset: float
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	camera.offset.y = lerp(camera.offset.y, current_offset, .01)
 
 func change_offset(body):

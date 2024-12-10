@@ -3,7 +3,7 @@ extends Marker2D
 ## Target distance for the player's dash. When the dash is over, the player
 ## character should be where this marker was when the dash was triggered.
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if OS.has_feature("editor"):
 		queue_redraw()
 
