@@ -4,7 +4,7 @@ class_name DashingState
 ## forward at high speed.
 
 ## How long it takes the dash to finish, in seconds
-@export var time_to_complete_dash: float = 0.2
+@export var time_to_complete_dash: float = 0.15
 
 var _target_position: Vector2
 var _time_entered: float
