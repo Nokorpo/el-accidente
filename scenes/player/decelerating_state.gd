@@ -11,16 +11,11 @@ class_name DeceleratingState
 @export var time_until_dash: float = .3
 var _original_speed: float
 var _time_entered: float
-var active: bool = false
 
 func _on_enter_state() -> void:
-	active = true
 	_original_speed = node.speed
 	_time_entered = Time.get_ticks_msec()
 	%AnimatedSprite2D.play("decelerating")
-
-func _on_exit_state() -> void:
-	active = false
 
 func _process(_delta: float) -> void:
 	if active:
@@ -30,10 +25,16 @@ func _process(_delta: float) -> void:
 			time_until_slowed_down,
 			percent)
 
+		if Input.is_action_just_released("action"):
+			resolve()
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and not event.is_pressed():
-		var elapsed_time: float = (Time.get_ticks_msec() - _time_entered)/1000
-		if elapsed_time >= time_until_dash:
-			state_machine.change_state(DashingState)
-		else:
-			state_machine.change_state(RunningState)
+		resolve()
+
+func resolve() -> void:
+	var elapsed_time: float = (Time.get_ticks_msec() - _time_entered)/1000
+	if elapsed_time >= time_until_dash:
+		state_machine.change_state(DashingState)
+	else:
+		state_machine.change_state(RunningState)

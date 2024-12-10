@@ -1,6 +1,7 @@
 extends Node
 class_name StateMachineState
 
+var active: bool
 var state_machine: StateMachine
 var node: Node
 
