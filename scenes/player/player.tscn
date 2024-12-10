@@ -71,7 +71,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_tme58")
+"texture": ExtResource("4_mvnyi")
 }],
 "loop": true,
 "name": &"stop",
@@ -89,10 +89,9 @@ speed = 15.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_w4hqa")
-animation = &"decelerating"
+animation = &"stop"
 autoplay = "running"
-frame = 2
-frame_progress = 1.0
+frame_progress = 0.23216
 
 [node name="DashDistance" type="Marker2D" parent="."]
 position = Vector2(486, 0)
