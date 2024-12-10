@@ -17,7 +17,7 @@
 [ext_resource type="Script" path="res://scenes/player/dashing_state.gd" id="7_jw2we"]
 [ext_resource type="Script" path="res://scenes/player/tutorial_stop_state.gd" id="7_yfuy2"]
 [ext_resource type="Texture2D" uid="uid://xohcov0vdwq6" path="res://assets/sprites/player/decelerating_3.png" id="8_14b37"]
-[ext_resource type="Script" path="res://scenes/player/slowing_down_state.gd" id="8_jy070"]
+[ext_resource type="Script" path="res://scenes/player/decelerating_state.gd" id="8_jy070"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w4hqa"]
 animations = [{
