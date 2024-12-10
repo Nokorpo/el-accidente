@@ -24,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://c0wpifu0rg1j1" path="res://assets/blockout/spike.svg" id="18_wdn2q"]
 [ext_resource type="Script" path="res://scenes/shared/tools/polygon_expander.gd" id="19_70n6j"]
 [ext_resource type="Script" path="res://scenes/shared/level/change_speed_area.gd" id="19_rdjve"]
-[ext_resource type="PackedScene" uid="uid://btyebcvnehuyo" path="res://scenes/shared/level/blinking_platform.tscn" id="20_d7r8p"]
+[ext_resource type="PackedScene" path="res://scenes/shared/level/blinking_platform.tscn" id="20_d7r8p"]
 [ext_resource type="Texture2D" uid="uid://dlhnpcvy1fc03" path="res://assets/sprites/obstacles/car_fire/carfire_1.png" id="24_tjtu4"]
 [ext_resource type="Texture2D" uid="uid://8kb44jfqim3r" path="res://assets/sprites/obstacles/car_fire/carfire_2.png" id="25_0n20j"]
 [ext_resource type="Texture2D" uid="uid://qf37dr8ma0aj" path="res://assets/sprites/obstacles/car_fire/carfire_3.png" id="26_rgi6q"]
