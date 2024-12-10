@@ -9,8 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://c5tkhdi6h6qtl" path="res://assets/sprites/player/dash_3.png" id="4_mvnyi"]
 [ext_resource type="Texture2D" uid="uid://c5raco04jqqc0" path="res://assets/sprites/player/running_4.png" id="4_xl4ps"]
 [ext_resource type="Texture2D" uid="uid://batfm2aqnhspe" path="res://assets/sprites/player/dash_4.png" id="5_tme58"]
-[ext_resource type="Texture2D" uid="uid://dhjw3cgo4i1ej" path="res://assets/sprites/player/decelerating_1.png" id="6_ax0uf"]
 [ext_resource type="Script" path="res://scenes/shared/state_machine/state_machine.gd" id="6_nqn7r"]
+[ext_resource type="Texture2D" uid="uid://d4gk2dtnbo6g4" path="res://assets/sprites/player/decelerating_1_v2.png" id="6_o4al5"]
 [ext_resource type="Script" path="res://scenes/player/running_state.gd" id="6_vilqo"]
 [ext_resource type="Script" path="res://scenes/player/dash_distance.gd" id="6_xxku5"]
 [ext_resource type="Texture2D" uid="uid://dg8xweynedywm" path="res://assets/sprites/player/decelerating_2.png" id="7_8g26c"]
@@ -40,7 +40,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_ax0uf")
+"texture": ExtResource("6_o4al5")
 }, {
 "duration": 1.0,
 "texture": ExtResource("7_8g26c")
@@ -91,6 +91,8 @@ unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_w4hqa")
 animation = &"decelerating"
 autoplay = "running"
+frame = 2
+frame_progress = 1.0
 
 [node name="DashDistance" type="Marker2D" parent="."]
 position = Vector2(486, 0)
