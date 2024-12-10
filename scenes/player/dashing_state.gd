@@ -11,7 +11,6 @@ var _time_entered: float
 var _original_position: Vector2
 var _original_speed: float
 
-var active: bool = false
 
 func _on_enter_state() -> void:
 	_original_speed = node.speed
@@ -21,11 +20,9 @@ func _on_enter_state() -> void:
 	node.is_affected_by_gravity = false
 
 	node.speed = 0
-	active = true
 	%AnimatedSprite2D.play("dash")
 
 func _on_exit_state() -> void:
-	active = false
 	node.speed = _original_speed
 	node.is_affected_by_gravity = true
 

@@ -42,9 +42,11 @@ func _change_state(state_type: Variant) -> void:
 	if state == null:
 		push_error("Could not change state. There is no state of type %s." % state_type)
 	current_state._on_exit_state()
+	current_state.active = false
 	current_state.process_mode = Node.PROCESS_MODE_DISABLED
 	current_state = state
 	current_state.process_mode = Node.PROCESS_MODE_INHERIT
+	current_state.active = true
 	current_state._on_enter_state()
 
 ## Represents an abstract "step", like the tick of a clock. It can be
