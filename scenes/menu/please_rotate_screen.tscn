@@ -12,7 +12,9 @@ border_width_bottom = 128
 border_color = Color(0, 0, 0, 0.862745)
 border_blend = true
 
-[node name="PleaseRotateScreen" type="PanelContainer"]
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="PleaseRotateScreen" type="PanelContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -23,18 +25,18 @@ size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_h6tvh")
 script = ExtResource("1_2201l")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="PleaseRotateScreen"]
 layout_mode = 2
 theme_override_constants/separation = 48
 alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="PleaseRotateScreen/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 96
 text = "rotate_screen"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="PleaseRotateScreen/VBoxContainer"]
 layout_mode = 2
 texture = ExtResource("2_ftawx")
 stretch_mode = 3
