@@ -23,8 +23,11 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	move_and_slide()
-	
+
 	if global_position.y >= respawn_depth_threshold:
+		respawn()
+
+	if Input.is_action_just_pressed("reset"):
 		respawn()
 
 func respawn() -> void:
