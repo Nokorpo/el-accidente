@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://df6sl8kqi2823"]
+[gd_scene load_steps=57 format=3 uid="uid://df6sl8kqi2823"]
 
 [ext_resource type="Texture2D" uid="uid://dvd7ufry3gwnc" path="res://assets/sprites/player/dash_1.png" id="1_vxsdh"]
 [ext_resource type="Texture2D" uid="uid://dckfu2wn166it" path="res://assets/sprites/player/dash_2.png" id="2_bnqki"]
@@ -18,8 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://c2jkd5s3x5m66" path="res://assets/sprites/obstacles/deer/deer_flee1.png" id="16_5cy7c"]
 [ext_resource type="Texture2D" uid="uid://do1a5n0bhw6yb" path="res://assets/sprites/obstacles/deer/deer_flee2.png" id="17_1vs2v"]
 [ext_resource type="Texture2D" uid="uid://blh6hkx3q2c0j" path="res://assets/sprites/obstacles/deer/deer_flee3.png" id="18_skprp"]
-[ext_resource type="Texture2D" uid="uid://s8rkb81rlyq1" path="res://assets/sprites/obstacles/deer/deer_flee4.png" id="19_77xmd"]
-[ext_resource type="Texture2D" uid="uid://y4bk5lk42l1k" path="res://assets/sprites/obstacles/deer/deer_flee5.png" id="20_c5vdl"]
+[ext_resource type="Texture2D" uid="uid://s8rkb81rlyq1" path="res://assets/sprites/obstacles/deer/deer_flee4.png" id="20_c5vdl"]
 [ext_resource type="Texture2D" uid="uid://mnvedi6d5irk" path="res://assets/sprites/obstacles/deer/deer_idle1.png" id="21_ywl7f"]
 [ext_resource type="Texture2D" uid="uid://cad6pwwq8nac1" path="res://assets/sprites/obstacles/deer/deer_idle2.png" id="22_2511k"]
 [ext_resource type="Texture2D" uid="uid://cmea3gojmrstp" path="res://assets/sprites/obstacles/breaking_platform/breaking_platform1.png" id="23_x2x33"]
@@ -133,9 +132,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("18_skprp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_77xmd")
 }, {
 "duration": 1.0,
 "texture": ExtResource("20_c5vdl")
