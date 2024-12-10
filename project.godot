@@ -21,6 +21,7 @@ EventBus="*res://scenes/core/events/event_bus.gd"
 SceneManager="*res://scenes/core/scene_manager/scene_manager.tscn"
 PleaseRotateScreen="*res://scenes/menu/please_rotate_screen.tscn"
 ForceFullscreenOnTouch="*res://scenes/core/force_fullscreen_on_touch.gd"
+PerformanceGraph="*res://scenes/shared/tools/performance_graph.tscn"
 
 [display]
 
