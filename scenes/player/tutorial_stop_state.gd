@@ -14,10 +14,11 @@ func _on_exit_state() -> void:
 	node.speed = _original_speed
 
 func _process(_delta) -> void:
-	if Input.is_action_just_pressed("action"):
-		state_machine.change_state(DeceleratingState)
+	if active:
+		if Input.is_action_just_pressed("action"):
+			state_machine.change_state(DeceleratingState)
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
-		if event.is_pressed():
+	if active:
+		if event is InputEventMouseButton and event.is_pressed():
 			state_machine.change_state(DeceleratingState)

@@ -2,6 +2,8 @@
 extends Node
 class_name StateMachine
 
+const PRINT_DEBUG_MESSAGES: bool = false
+
 @onready var node: Node = $".."
 var states: Array[StateMachineState]
 var current_state: StateMachineState = null
@@ -20,6 +22,7 @@ func initialize_node_state_instances() -> void:
 			child._start(self, node)
 			states.append(child)
 	current_state = states[0]
+	current_state.active = true
 	current_state.process_mode = Node.PROCESS_MODE_INHERIT
 	current_state._on_enter_state()
 
@@ -28,13 +31,25 @@ func initialize_node_state_instances() -> void:
 ## a state is changed before its _on_enter or _en_leave methods can
 ## be executed.
 func change_state(state_type: Variant) -> void:
+	if PRINT_DEBUG_MESSAGES:
+		print("Change from state %s to %s" % [
+			current_state.get_script().get_global_name(),
+			state_type.get_global_name()
+		])
+		var stack = get_stack().slice(1)[0]
+		var string_format: String = "[color=66CCFF]%-12s - Caller %s:%s"
+		print_rich(string_format % [_get_time(), stack["source"], stack["line"]])
+
+	current_state.active = false
 	call_deferred("_change_state", state_type)
 
+static func _get_time() -> String:
+	var time: float = Time.get_unix_time_from_system()
+	var hhmmss: String = Time.get_time_string_from_unix_time(time)
+	var millis: int = floor((fmod(time,1)) * 1000)
+	return "%s.%s" % [hhmmss, str(millis)]
+
 func _change_state(state_type: Variant) -> void:
-	#print("Change from state %s to %s" % [
-		#current_state.get_script().get_global_name(),
-		#state_type.get_global_name()
-	#])
 	var state = null
 	for item in states:
 		if item.get_script().get_global_name() == state_type.get_global_name():
