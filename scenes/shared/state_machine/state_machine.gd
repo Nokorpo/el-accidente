@@ -37,7 +37,7 @@ func _change_state(state_type: Variant) -> void:
 	#])
 	var state = null
 	for item in states:
-		if is_instance_of(item, state_type):
+		if item.get_script().get_global_name() == state_type.get_global_name():
 			state = item
 	if state == null:
 		push_error("Could not change state. There is no state of type %s." % state_type)
