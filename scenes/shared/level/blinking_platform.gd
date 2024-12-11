@@ -1,9 +1,9 @@
 extends Node2D
 
-@export var time_visible: float = 1
+@export var time_visible: float = 1.6
 @export var time_to_transition_to_invisible: float = 1
 @export var time_invisible: float = 1
-@export var time_to_transition_to_visible: float = 1
+@export var time_to_transition_to_visible: float = 0.5
 
 func _ready():
 	start_disappearing()
