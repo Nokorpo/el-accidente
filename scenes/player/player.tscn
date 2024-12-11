@@ -92,7 +92,6 @@ unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_w4hqa")
 animation = &"stop"
 autoplay = "running"
-frame_progress = 0.23216
 
 [node name="DashDistance" type="Marker2D" parent="."]
 unique_name_in_owner = true

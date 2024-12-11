@@ -1,28 +1,57 @@
-[gd_scene load_steps=5 format=3 uid="uid://g1wph10l7f0q"]
+[gd_scene load_steps=9 format=3 uid="uid://g1wph10l7f0q"]
 
-[ext_resource type="Texture2D" uid="uid://bg1c2cm51tdwu" path="res://assets/blockout/breaking_platform.svg" id="1_jxh37"]
+[ext_resource type="Texture2D" uid="uid://cd0acx4jpona6" path="res://assets/sprites/obstacles/breaking_platform/breaking_platform2.png" id="1_wr2e0"]
+[ext_resource type="Texture2D" uid="uid://dgr8ys0iple7q" path="res://assets/sprites/obstacles/breaking_platform/breaking_platform3.png" id="2_1liy8"]
 [ext_resource type="Script" path="res://scenes/shared/level/breaking_platform.gd" id="2_51euf"]
+[ext_resource type="Texture2D" uid="uid://pxupeyrry401" path="res://assets/sprites/obstacles/breaking_platform/breaking_platform4.png" id="3_x1nh5"]
+[ext_resource type="Texture2D" uid="uid://cmea3gojmrstp" path="res://assets/sprites/obstacles/breaking_platform/breaking_platform1.png" id="4_ltoov"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qbo3w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wr2e0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1liy8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_x1nh5")
+}],
+"loop": false,
+"name": &"breaking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ltoov")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oii5x"]
-size = Vector2(377, 377)
+size = Vector2(563, 81)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bh2eb"]
-size = Vector2(334, 16)
+size = Vector2(396, 24)
 
-[node name="BreakingPlatform" type="Sprite2D"]
-texture = ExtResource("1_jxh37")
+[node name="BreakingPlatform" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_qbo3w")
 script = ExtResource("2_51euf")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-0.5, -0.5)
+position = Vector2(4.5, -16.5)
 shape = SubResource("RectangleShape2D_oii5x")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-4, -198)
+position = Vector2(-4, -70)
 shape = SubResource("RectangleShape2D_bh2eb")
 
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

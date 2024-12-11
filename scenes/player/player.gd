@@ -6,7 +6,7 @@ extends CharacterBody2D
 const SPEED_FPS_MULTIPLIER: float = 3600
 
 ## Player speed in pixels/second
-@export var speed: float = 10.0
+@export var speed: float = 8
 ## At which depth the player will respawn
 @export var respawn_depth_threshold: float = 2000
 
