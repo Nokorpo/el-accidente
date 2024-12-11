@@ -111,6 +111,7 @@ script = ExtResource("7_yfuy2")
 
 [node name="RunningState" type="Node" parent="StateMachine"]
 script = ExtResource("6_vilqo")
+can_decelerate_while_falling = false
 
 [node name="DeceleratingState" type="Node" parent="StateMachine"]
 script = ExtResource("8_jy070")
