@@ -45,6 +45,7 @@ func change_state(state_type: Variant) -> void:
 
 static func _get_time() -> String:
 	var time: float = Time.get_unix_time_from_system()
+	@warning_ignore("narrowing_conversion")
 	var hhmmss: String = Time.get_time_string_from_unix_time(time)
 	var millis: int = floor((fmod(time,1)) * 1000)
 	return "%s.%s" % [hhmmss, str(millis)]
