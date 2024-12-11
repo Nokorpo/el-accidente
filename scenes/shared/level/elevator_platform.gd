@@ -6,6 +6,9 @@ var is_moving: bool = false
 @onready var destination_position = $DetinationPosition.global_position
 @onready var start_position = $Platform.global_position
 
+func _ready() -> void:
+	EventBus.reload_level.connect(reset)
+
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("player"):
 		is_moving = true
@@ -18,3 +21,7 @@ func move(delta):
 
 func _process(delta):
 	move(delta)
+
+func reset() -> void:
+	is_moving = false
+	$Platform.global_position = start_position
