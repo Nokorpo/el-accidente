@@ -19,8 +19,9 @@ const EXPANSION = preload("res://scenes/shared/tools/polygon_expander.tscn")
 
 func _ready() -> void:
 	if Engine.is_editor_hint():
-		_delete_old_expansion()
-		_add_expansion()
+		if not has_node("PolygonExpander"):
+			_delete_old_expansion()
+			_add_expansion()
 
 func _delete_old_expansion() -> void:
 	for child in get_children():
