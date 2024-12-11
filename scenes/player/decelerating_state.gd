@@ -29,8 +29,9 @@ func _process(_delta: float) -> void:
 			resolve()
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and not event.is_pressed():
-		resolve()
+	if active:
+		if event is InputEventMouseButton and not event.is_pressed():
+			resolve()
 
 func resolve() -> void:
 	var elapsed_time: float = (Time.get_ticks_msec() - _time_entered)/1000
