@@ -32,3 +32,4 @@ func _physics_process(delta: float) -> void:
 
 func respawn() -> void:
 	global_position = _checkpoint
+	EventBus.reload_level.emit()

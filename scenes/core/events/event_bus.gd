@@ -9,3 +9,6 @@ class ChangeSceneEvent extends Resource:
 	var scene: PackedScene
 	func _init(_scene: PackedScene) -> void:
 		scene = _scene
+
+@warning_ignore("unused_signal")
+signal reload_level()
