@@ -10,14 +10,20 @@ func _start(sm: StateMachine, node: Node) -> void:
 	_original_speed = node.speed
 
 func _on_enter_state() -> void:
+	if Input.is_action_pressed("action"):
+		state_machine.change_state(DeceleratingState)
+		return
 	node.speed = _original_speed
 	%AnimatedSprite2D.play("running")
 
 func _process(_delta) -> void:
-	if Input.is_action_just_pressed("action"):
-		state_machine.change_state(DeceleratingState)
+	if active:
+		if Input.is_action_just_pressed("action"):
+			state_machine.change_state(DeceleratingState)
+		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+			state_machine.change_state(DeceleratingState)
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
-		if event.is_pressed():
+	if active:
+		if event is InputEventMouseButton and event.is_pressed():
 			state_machine.change_state(DeceleratingState)
