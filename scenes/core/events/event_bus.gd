@@ -12,3 +12,8 @@ class ChangeSceneEvent extends Resource:
 
 @warning_ignore("unused_signal")
 signal reload_level()
+
+@warning_ignore("unused_signal")
+signal request_pause()
+@warning_ignore("unused_signal")
+signal request_continue()

@@ -13,6 +13,7 @@ border_color = Color(0, 0, 0, 0.862745)
 border_blend = true
 
 [node name="CanvasLayer" type="CanvasLayer"]
+process_mode = 3
 
 [node name="PleaseRotateScreen" type="PanelContainer" parent="."]
 anchors_preset = 15

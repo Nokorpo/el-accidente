@@ -4,9 +4,12 @@ func _ready() -> void:
 	hide()
 
 func _process(_delta: float) -> void:
-	if _is_screen_in_portrait():
+	var is_in_portrait: bool = _is_screen_in_portrait()
+	if is_in_portrait and not visible:
+		EventBus.request_pause.emit()
 		show()
-	elif visible:
+	elif not is_in_portrait and visible:
+		EventBus.request_continue.emit()
 		hide()
 
 func _is_screen_in_portrait() -> bool:
