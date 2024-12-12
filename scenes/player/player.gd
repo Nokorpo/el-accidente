@@ -33,6 +33,10 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("reset"):
 		respawn()
 
+## Sets the new checkpoint, in global coordinates
+func set_checkpoint(new_checkpoint: Vector2) -> void:
+	self._checkpoint = new_checkpoint
+
 func respawn() -> void:
 	global_position = _checkpoint
 	_camera.position_smoothing_enabled = false
