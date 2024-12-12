@@ -16,6 +16,7 @@ var _checkpoint: Vector2 = Vector2.ZERO
 var _camera: Camera2D = null
 var _initial_camera_position: Vector2
 
+
 func _ready() -> void:
 	if has_node("Camera2D"):
 		_camera = get_node("Camera2D")
@@ -40,6 +41,7 @@ func set_checkpoint(new_checkpoint: Vector2) -> void:
 	self._checkpoint = new_checkpoint
 
 func respawn() -> void:
+	EventBus
 	global_position = _checkpoint
 	_camera.position_smoothing_enabled = false
 	_camera.global_position = _checkpoint

@@ -1,8 +1,9 @@
-[gd_scene load_steps=50 format=3 uid="uid://7asaea7mswd5"]
+[gd_scene load_steps=57 format=3 uid="uid://7asaea7mswd5"]
 
 [ext_resource type="PackedScene" uid="uid://cpi1lm68o7bl7" path="res://scenes/shared/vfx/touch_feedback_frame.tscn" id="1_s3sr5"]
 [ext_resource type="Texture2D" uid="uid://1542cwvcv282" path="res://assets/checkerboard.svg" id="1_yo0yp"]
 [ext_resource type="PackedScene" uid="uid://7pnca5lreux0" path="res://scenes/player/player.tscn" id="2_h8ti8"]
+[ext_resource type="PackedScene" uid="uid://dmru827iaxo66" path="res://scenes/menu/curtain.tscn" id="2_ket6m"]
 [ext_resource type="Script" path="res://scenes/game/camera.gd" id="3_on1ws"]
 [ext_resource type="Texture2D" uid="uid://dwgqhciluwalr" path="res://assets/sprites/car/car.png" id="4_myuxr"]
 [ext_resource type="Texture2D" uid="uid://iwi0kiieafvs" path="res://assets/sprites/npc/albert_idle1.png" id="5_fjoce"]
@@ -28,8 +29,13 @@
 [ext_resource type="PackedScene" uid="uid://btyebcvnehuyo" path="res://scenes/shared/level/blinking_platform.tscn" id="20_d7r8p"]
 [ext_resource type="Texture2D" uid="uid://dlhnpcvy1fc03" path="res://assets/sprites/obstacles/car_fire/carfire_1.png" id="24_tjtu4"]
 [ext_resource type="Texture2D" uid="uid://8kb44jfqim3r" path="res://assets/sprites/obstacles/car_fire/carfire_2.png" id="25_0n20j"]
+[ext_resource type="Texture2D" uid="uid://b4hujf0ynigxi" path="res://assets/sprites/vfx/vfxspikes_1.png" id="25_40qg4"]
 [ext_resource type="Texture2D" uid="uid://qf37dr8ma0aj" path="res://assets/sprites/obstacles/car_fire/carfire_3.png" id="26_rgi6q"]
+[ext_resource type="Texture2D" uid="uid://dr76qw1ownw0c" path="res://assets/sprites/vfx/vfxspikes_2.png" id="26_x1aa5"]
+[ext_resource type="Texture2D" uid="uid://mw2iwy44n4va" path="res://assets/sprites/vfx/vfxspikes_3.png" id="27_1skqe"]
 [ext_resource type="Texture2D" uid="uid://bc2v6n8nqhpig" path="res://assets/sprites/obstacles/car_fire/carfire_4.png" id="27_owdr3"]
+[ext_resource type="Texture2D" uid="uid://cci23wnj5iup0" path="res://assets/sprites/vfx/vfxspikes_4.png" id="28_1xd26"]
+[ext_resource type="Texture2D" uid="uid://del8tiiy5ndi2" path="res://assets/sprites/vfx/vfxspikes_5.png" id="29_ytu2h"]
 [ext_resource type="Texture2D" uid="uid://mnvedi6d5irk" path="res://assets/sprites/obstacles/deer/deer_idle1.png" id="30_7q80s"]
 [ext_resource type="Texture2D" uid="uid://cad6pwwq8nac1" path="res://assets/sprites/obstacles/deer/deer_idle2.png" id="31_7p4aj"]
 [ext_resource type="Texture2D" uid="uid://cictl77apdn4c" path="res://assets/sprites/car/car_brake1.png" id="32_7tejx"]
@@ -138,6 +144,29 @@ size = Vector2(375.918, 184.235)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bqy6x"]
 size = Vector2(224, 387)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_3cwx4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_40qg4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_x1aa5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_1skqe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_1xd26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_ytu2h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_bavkr"]
 animations = [{
 "frames": [{
@@ -177,6 +206,7 @@ animations = [{
 [node name="TouchFeedbackFrame" parent="." instance=ExtResource("1_s3sr5")]
 
 [node name="Background" type="Node2D" parent="."]
+visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Background"]
 visible = false
@@ -542,14 +572,14 @@ polygon = PackedVector2Array(-337.891, 0, -337.891, 1200.57, 1013.68, 1200.57, 1
 position = Vector2(36322.4, -13)
 scale = Vector2(0.443927, 0.140767)
 color = Color(0.196032, 0.205695, 0.224258, 1)
-polygon = PackedVector2Array(0, 0, 0, 5775.51, 292.844, 5775.51, 292.844, 1868.34, 2883.35, 1868.34, 2883.35, 2933.93, 4460.19, 2933.93, 6374.91, 0)
+polygon = PackedVector2Array(0, 0, 1.35156, 5470.03, 289.688, 5470.03, 292.844, 1868.34, 2883.35, 1868.34, 2883.35, 2933.93, 4460.19, 2933.93, 6374.91, 0)
 script = ExtResource("19_70n6j")
 
 [node name="PolygonExpander" type="StaticBody2D" parent="Storyboard/Floors/Polygon2D22"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Storyboard/Floors/Polygon2D22/PolygonExpander"]
 visible = false
-polygon = PackedVector2Array(0, 0, 0, 5775.51, 292.844, 5775.51, 292.844, 1868.34, 2883.35, 1868.34, 2883.35, 2933.93, 4460.19, 2933.93, 6374.91, 0)
+polygon = PackedVector2Array(0, 0, 1.35156, 5470.03, 289.688, 5470.03, 292.844, 1868.34, 2883.35, 1868.34, 2883.35, 2933.93, 4460.19, 2933.93, 6374.91, 0)
 
 [node name="Polygon2D19" type="Polygon2D" parent="Storyboard/Floors"]
 position = Vector2(31592, 705)
@@ -1005,7 +1035,7 @@ scale = Vector2(1.3129, 1)
 
 [node name="BreakingPlatform5" parent="Storyboard/Platforms" instance=ExtResource("13_g1vww")]
 z_index = -1
-position = Vector2(35945, 768)
+position = Vector2(35945, 733)
 scale = Vector2(1.30967, 1)
 
 [node name="BlinkingPlatform" parent="Storyboard/Platforms" instance=ExtResource("20_d7r8p")]
@@ -1061,6 +1091,75 @@ position = Vector2(34801, 447)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Storyboard/Checkpoints/Checkpoint5"]
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_bqy6x")
+
+[node name="VFX" type="Node2D" parent="Storyboard"]
+
+[node name="SpikeVFX" type="AnimatedSprite2D" parent="Storyboard/VFX"]
+position = Vector2(11306, 551)
+sprite_frames = SubResource("SpriteFrames_3cwx4")
+autoplay = "default"
+frame_progress = 0.00550691
+
+[node name="SpikeVFX3" type="AnimatedSprite2D" parent="Storyboard/VFX"]
+position = Vector2(12705, 137)
+sprite_frames = SubResource("SpriteFrames_3cwx4")
+autoplay = "default"
+frame_progress = 0.451435
+
+[node name="SpikeVFX6" type="AnimatedSprite2D" parent="Storyboard/VFX"]
+position = Vector2(14002, 344)
+sprite_frames = SubResource("SpriteFrames_3cwx4")
+autoplay = "default"
+frame_progress = 0.451435
+
+[node name="SpikeVFX7" type="AnimatedSprite2D" parent="Storyboard/VFX"]
+position = Vector2(14385, 331)
+sprite_frames = SubResource("SpriteFrames_3cwx4")
+autoplay = "default"
+frame_progress = 0.451435
+
+[node name="SpikeVFX8" type="AnimatedSprite2D" parent="Storyboard/VFX"]
+position = Vector2(14184, 369)
+sprite_frames = SubResource("SpriteFrames_3cwx4")
+autoplay = "default"
+frame_progress = 0.451435
+
+[node name="SpikeVFX9" type="AnimatedSprite2D" parent="Storyboard/VFX"]
+position = Vector2(15000.5, 244.5)
+sprite_frames = SubResource("SpriteFrames_3cwx4")
+autoplay = "default"
+frame_progress = 0.451435
+
+[node name="SpikeVFX10" type="AnimatedSprite2D" parent="Storyboard/VFX"]
+position = Vector2(15383.5, 231.5)
+sprite_frames = SubResource("SpriteFrames_3cwx4")
+autoplay = "default"
+frame_progress = 0.451435
+
+[node name="SpikeVFX11" type="AnimatedSprite2D" parent="Storyboard/VFX"]
+position = Vector2(15182.5, 269.5)
+sprite_frames = SubResource("SpriteFrames_3cwx4")
+autoplay = "default"
+frame_progress = 0.451435
+
+[node name="SpikeVFX5" type="AnimatedSprite2D" parent="Storyboard/VFX"]
+position = Vector2(12732, 32)
+sprite_frames = SubResource("SpriteFrames_3cwx4")
+autoplay = "default"
+frame_progress = 0.451435
+
+[node name="SpikeVFX4" type="AnimatedSprite2D" parent="Storyboard/VFX"]
+position = Vector2(12735, 327)
+sprite_frames = SubResource("SpriteFrames_3cwx4")
+autoplay = "default"
+frame_progress = 0.451435
+
+[node name="SpikeVFX2" type="AnimatedSprite2D" parent="Storyboard/VFX"]
+position = Vector2(11335, 842)
+sprite_frames = SubResource("SpriteFrames_3cwx4")
+autoplay = "default"
+frame = 4
+frame_progress = 0.635246
 
 [node name="Climax" type="Node2D" parent="."]
 
@@ -1410,6 +1509,11 @@ sprite_frames = SubResource("SpriteFrames_xnj04")
 [node name="PlayerPos" type="Marker2D" parent="."]
 position = Vector2(402, 577)
 scale = Vector2(1.08, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Curtain" parent="CanvasLayer" instance=ExtResource("2_ket6m")]
+z_index = 2
 
 [connection signal="body_entered" from="CameraOffsetChangeAreas/CameraOffsetArea4/CameraUp" to="CameraOffsetChangeAreas/CameraOffsetArea4" method="change_offset"]
 [connection signal="body_entered" from="CameraOffsetChangeAreas/CameraOffsetArea2/CameraUp" to="CameraOffsetChangeAreas/CameraOffsetArea2" method="change_offset"]
