@@ -1,9 +1,10 @@
-[gd_scene load_steps=57 format=3 uid="uid://7asaea7mswd5"]
+[gd_scene load_steps=58 format=3 uid="uid://7asaea7mswd5"]
 
 [ext_resource type="PackedScene" uid="uid://cpi1lm68o7bl7" path="res://scenes/shared/vfx/touch_feedback_frame.tscn" id="1_s3sr5"]
 [ext_resource type="Texture2D" uid="uid://1542cwvcv282" path="res://assets/checkerboard.svg" id="1_yo0yp"]
 [ext_resource type="PackedScene" uid="uid://7pnca5lreux0" path="res://scenes/player/player.tscn" id="2_h8ti8"]
-[ext_resource type="PackedScene" uid="uid://dmru827iaxo66" path="res://scenes/menu/curtain.tscn" id="2_ket6m"]
+[ext_resource type="PackedScene" path="res://scenes/menu/curtain.tscn" id="2_ket6m"]
+[ext_resource type="PackedScene" uid="uid://bajeqjukfftik" path="res://scenes/menu/pause_menu.tscn" id="2_tv26u"]
 [ext_resource type="Script" path="res://scenes/game/camera.gd" id="3_on1ws"]
 [ext_resource type="Texture2D" uid="uid://dwgqhciluwalr" path="res://assets/sprites/car/car.png" id="4_myuxr"]
 [ext_resource type="Texture2D" uid="uid://iwi0kiieafvs" path="res://assets/sprites/npc/albert_idle1.png" id="5_fjoce"]
@@ -204,6 +205,8 @@ animations = [{
 [node name="Game" type="Node2D"]
 
 [node name="TouchFeedbackFrame" parent="." instance=ExtResource("1_s3sr5")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("2_tv26u")]
 
 [node name="Background" type="Node2D" parent="."]
 visible = false

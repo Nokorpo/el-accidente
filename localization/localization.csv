@@ -1,5 +1,6 @@
-keys,en,es
-current_language,English,Español
-rotate_screen,Please rotate your screen,Por favor rota tu pantalla
-game_title,The accident,El accidente
-play,Play,Jugar
+keys,en,es,cat
+current_language,English,Español,Català
+rotate_screen,Please rotate your screen,Por favor rota tu pantalla,"Si us plau, gira la pantalla"
+game_title,The accident,El accidente,El accident
+play,Play,Jugar,Jugar
+game_paused,Game paused,Juego pausado,Joc pausat
