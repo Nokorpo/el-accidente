@@ -14,11 +14,13 @@ var is_affected_by_gravity: bool = true
 
 var _checkpoint: Vector2 = Vector2.ZERO
 var _camera: Camera2D = null
+var _initial_camera_position: Vector2
 
 func _ready() -> void:
 	if has_node("Camera2D"):
 		_camera = get_node("Camera2D")
 	_checkpoint = global_position
+	_initial_camera_position = _camera.position
 
 func _physics_process(delta: float) -> void:
 	velocity.x = lerp( velocity.x,  speed * SPEED_FPS_MULTIPLIER * delta, .9)
@@ -41,6 +43,7 @@ func respawn() -> void:
 	global_position = _checkpoint
 	_camera.position_smoothing_enabled = false
 	_camera.global_position = _checkpoint
+	_camera.position = _initial_camera_position
 	EventBus.reload_level.emit()
 	await get_tree().process_frame
 	_camera.position_smoothing_enabled = true
