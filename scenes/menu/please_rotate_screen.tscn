@@ -14,6 +14,7 @@ border_blend = true
 
 [node name="CanvasLayer" type="CanvasLayer"]
 process_mode = 3
+script = ExtResource("1_2201l")
 
 [node name="PleaseRotateScreen" type="PanelContainer" parent="."]
 anchors_preset = 15
@@ -24,7 +25,6 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_h6tvh")
-script = ExtResource("1_2201l")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PleaseRotateScreen"]
 layout_mode = 2
@@ -41,3 +41,16 @@ horizontal_alignment = 1
 layout_mode = 2
 texture = ExtResource("2_ftawx")
 stretch_mode = 3
+
+[node name="Ignore" type="Button" parent="PleaseRotateScreen/VBoxContainer"]
+custom_minimum_size = Vector2(0, 256)
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "continue_anyway"
+
+[node name="TimeToRotate" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 5.0
+
+[connection signal="pressed" from="PleaseRotateScreen/VBoxContainer/Ignore" to="." method="_on_ignore_pressed"]
+[connection signal="timeout" from="TimeToRotate" to="." method="_on_time_to_rotate_timeout"]
