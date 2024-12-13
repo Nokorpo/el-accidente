@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://7asaea7mswd5"]
+[gd_scene load_steps=80 format=3 uid="uid://7asaea7mswd5"]
 
 [ext_resource type="PackedScene" uid="uid://bajeqjukfftik" path="res://scenes/menu/pause_menu.tscn" id="1_kottx"]
 [ext_resource type="PackedScene" uid="uid://cpi1lm68o7bl7" path="res://scenes/shared/vfx/touch_feedback_frame.tscn" id="1_s3sr5"]
@@ -59,10 +59,10 @@
 [ext_resource type="Texture2D" uid="uid://del8tiiy5ndi2" path="res://assets/sprites/vfx/vfxspikes_5.png" id="29_ytu2h"]
 [ext_resource type="Texture2D" uid="uid://mnvedi6d5irk" path="res://assets/sprites/obstacles/deer/deer_idle1.png" id="30_7q80s"]
 [ext_resource type="Texture2D" uid="uid://cad6pwwq8nac1" path="res://assets/sprites/obstacles/deer/deer_idle2.png" id="31_7p4aj"]
-[ext_resource type="Texture2D" uid="uid://cictl77apdn4c" path="res://assets/sprites/car/car_brake1.png" id="32_7tejx"]
 [ext_resource type="Texture2D" uid="uid://b46vs02g8lpko" path="res://assets/sprites/background/back/fase1_3.png" id="45_h3ped"]
 [ext_resource type="Texture2D" uid="uid://dv0lsmbgda3of" path="res://assets/sprites/background/front/bongos.png" id="51_yb13k"]
 [ext_resource type="Texture2D" uid="uid://hxq7xcp21l3u" path="res://assets/sprites/background/front/nota4.png" id="54_40vf5"]
+[ext_resource type="PackedScene" uid="uid://b8hege0352ly5" path="res://scenes/game/enter_car_animation.tscn" id="56_o8es4"]
 [ext_resource type="Texture2D" uid="uid://drw1ysibkccu8" path="res://assets/sprites/background/front/arbol.png" id="65_q646x"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s1hoo"]
@@ -153,6 +153,9 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8026j"]
+size = Vector2(300, 400)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bavkr"]
 animations = [{
@@ -1705,9 +1708,11 @@ speed_increment = 11.52
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Climax/SpeedChangerArea2"]
 shape = SubResource("RectangleShape2D_ahdys")
 
-[node name="CarBrake1" type="Sprite2D" parent="Climax"]
-position = Vector2(38238, 583)
-texture = ExtResource("32_7tejx")
+[node name="EnterCarAnimation" parent="Climax" instance=ExtResource("56_o8es4")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Climax/EnterCarAnimation"]
+position = Vector2(-320, -27)
+shape = SubResource("RectangleShape2D_8026j")
 
 [node name="Obstacles" type="Node2D" parent="Climax"]
 

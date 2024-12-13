@@ -1,75 +1,16 @@
-[gd_scene load_steps=20 format=3 uid="uid://7pnca5lreux0"]
+[gd_scene load_steps=13 format=3 uid="uid://7pnca5lreux0"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_d1qh6"]
-[ext_resource type="Texture2D" uid="uid://c3yopepsnhpw5" path="res://assets/sprites/player/running_1.png" id="1_km3vg"]
-[ext_resource type="Texture2D" uid="uid://ckgr3t0q3r28y" path="res://assets/sprites/player/running_2.png" id="2_22rff"]
-[ext_resource type="Texture2D" uid="uid://dvd7ufry3gwnc" path="res://assets/sprites/player/dash_1.png" id="2_g0nfu"]
-[ext_resource type="Texture2D" uid="uid://dckfu2wn166it" path="res://assets/sprites/player/dash_2.png" id="3_7ucq6"]
-[ext_resource type="Texture2D" uid="uid://34pkmv4a34hd" path="res://assets/sprites/player/running_3.png" id="3_t8ift"]
-[ext_resource type="Texture2D" uid="uid://c5tkhdi6h6qtl" path="res://assets/sprites/player/dash_3.png" id="4_mvnyi"]
-[ext_resource type="Texture2D" uid="uid://c5raco04jqqc0" path="res://assets/sprites/player/running_4.png" id="4_xl4ps"]
+[ext_resource type="SpriteFrames" uid="uid://dhak0faey7tlk" path="res://scenes/player/running_sprite_frames.tres" id="2_vgcp4"]
+[ext_resource type="SpriteFrames" uid="uid://jfvaa13kkw0" path="res://scenes/player/car_sprite_frames.tres" id="3_bq7r4"]
 [ext_resource type="Script" path="res://scenes/shared/state_machine/state_machine.gd" id="6_nqn7r"]
 [ext_resource type="Script" path="res://scenes/player/running_state.gd" id="6_vilqo"]
 [ext_resource type="Script" path="res://scenes/player/dash_distance.gd" id="6_xxku5"]
-[ext_resource type="Texture2D" uid="uid://dg8xweynedywm" path="res://assets/sprites/player/decelerating_2.png" id="7_8g26c"]
 [ext_resource type="Script" path="res://scenes/player/dashing_state.gd" id="7_jw2we"]
 [ext_resource type="Script" path="res://scenes/player/tutorial_stop_state.gd" id="7_yfuy2"]
-[ext_resource type="Texture2D" uid="uid://xohcov0vdwq6" path="res://assets/sprites/player/decelerating_3.png" id="8_14b37"]
 [ext_resource type="Script" path="res://scenes/player/decelerating_state.gd" id="8_jy070"]
+[ext_resource type="Script" path="res://scenes/player/stop_state.gd" id="14_in1hi"]
 [ext_resource type="Script" path="res://scenes/player/dashing_cut_short_state.gd" id="19_5bnt7"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_w4hqa"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_g0nfu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_7ucq6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_mvnyi")
-}],
-"loop": false,
-"name": &"dash",
-"speed": 4.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_8g26c")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_14b37")
-}],
-"loop": false,
-"name": &"decelerating",
-"speed": 4.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_km3vg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_22rff")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_t8ift")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_xl4ps")
-}],
-"loop": true,
-"name": &"running",
-"speed": 4.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_mvnyi")
-}],
-"loop": true,
-"name": &"stop",
-"speed": 5.0
-}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5b3hn"]
 radius = 57.0
@@ -78,12 +19,13 @@ height = 248.0
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_d1qh6")
 speed = 15.0
+running_sprite_frames = ExtResource("2_vgcp4")
+car_sprite_frames = ExtResource("3_bq7r4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
-sprite_frames = SubResource("SpriteFrames_w4hqa")
-animation = &"stop"
-autoplay = "running"
+sprite_frames = ExtResource("2_vgcp4")
+animation = &"dash"
 
 [node name="DashDistance" type="Marker2D" parent="."]
 unique_name_in_owner = true
@@ -105,6 +47,9 @@ script = ExtResource("6_nqn7r")
 [node name="TutorialStopState" type="Node" parent="StateMachine"]
 script = ExtResource("7_yfuy2")
 
+[node name="StopState" type="Node" parent="StateMachine"]
+script = ExtResource("14_in1hi")
+
 [node name="RunningState" type="Node" parent="StateMachine"]
 script = ExtResource("6_vilqo")
 can_decelerate_while_falling = false
@@ -118,3 +63,6 @@ script = ExtResource("7_jw2we")
 
 [node name="DashingCutShortState" type="Node" parent="StateMachine"]
 script = ExtResource("19_5bnt7")
+
+[connection signal="requested_continue" from="." to="StateMachine/StopState" method="start_running"]
+[connection signal="requested_stop_for_animation" from="." to="StateMachine/StopState" method="force_enter_stop_state"]
