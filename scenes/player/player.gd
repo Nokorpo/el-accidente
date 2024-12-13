@@ -22,6 +22,7 @@ func _ready() -> void:
 		_camera = get_node("Camera2D")
 	_checkpoint = global_position
 	_initial_camera_position = _camera.position
+	EventBus.reload_level.connect(respawn)
 
 func _physics_process(delta: float) -> void:
 	velocity.x = lerp( velocity.x,  speed * SPEED_FPS_MULTIPLIER * delta, .9)
@@ -31,10 +32,10 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 	if global_position.y >= respawn_depth_threshold:
-		respawn()
-
+		EventBus.play_curtain_animation.emit()
+	
 	if Input.is_action_just_pressed("reset"):
-		respawn()
+		EventBus.play_curtain_animation.emit()
 
 ## Sets the new checkpoint, in global coordinates
 func set_checkpoint(new_checkpoint: Vector2) -> void:
@@ -45,6 +46,6 @@ func respawn() -> void:
 	_camera.position_smoothing_enabled = false
 	_camera.global_position = _checkpoint
 	_camera.position = _initial_camera_position
-	EventBus.reload_level.emit()
+	
 	await get_tree().process_frame
 	_camera.position_smoothing_enabled = true
