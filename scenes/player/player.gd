@@ -32,14 +32,17 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 	if global_position.y >= respawn_depth_threshold:
-		EventBus.play_curtain_animation.emit()
+		die()
 	
 	if Input.is_action_just_pressed("reset"):
-		EventBus.play_curtain_animation.emit()
+		die()
 
 ## Sets the new checkpoint, in global coordinates
 func set_checkpoint(new_checkpoint: Vector2) -> void:
 	self._checkpoint = new_checkpoint
+
+func die() -> void:
+	EventBus.play_curtain_animation.emit()
 
 func respawn() -> void:
 	global_position = _checkpoint
