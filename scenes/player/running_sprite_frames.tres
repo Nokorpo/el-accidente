@@ -1,0 +1,64 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://dhak0faey7tlk"]
+
+[ext_resource type="Texture2D" uid="uid://dvd7ufry3gwnc" path="res://assets/sprites/player/dash_1.png" id="1_jjp2w"]
+[ext_resource type="Texture2D" uid="uid://dckfu2wn166it" path="res://assets/sprites/player/dash_2.png" id="2_ke20q"]
+[ext_resource type="Texture2D" uid="uid://c5tkhdi6h6qtl" path="res://assets/sprites/player/dash_3.png" id="3_pnql6"]
+[ext_resource type="Texture2D" uid="uid://dg8xweynedywm" path="res://assets/sprites/player/decelerating_2.png" id="4_ep3kt"]
+[ext_resource type="Texture2D" uid="uid://xohcov0vdwq6" path="res://assets/sprites/player/decelerating_3.png" id="5_ty20i"]
+[ext_resource type="Texture2D" uid="uid://c3yopepsnhpw5" path="res://assets/sprites/player/running_1.png" id="6_q2wp2"]
+[ext_resource type="Texture2D" uid="uid://ckgr3t0q3r28y" path="res://assets/sprites/player/running_2.png" id="7_fxe7b"]
+[ext_resource type="Texture2D" uid="uid://34pkmv4a34hd" path="res://assets/sprites/player/running_3.png" id="8_b87ay"]
+[ext_resource type="Texture2D" uid="uid://c5raco04jqqc0" path="res://assets/sprites/player/running_4.png" id="9_ww6bt"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jjp2w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ke20q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pnql6")
+}],
+"loop": false,
+"name": &"dash",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ep3kt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ty20i")
+}],
+"loop": false,
+"name": &"decelerating",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_q2wp2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fxe7b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_b87ay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ww6bt")
+}],
+"loop": true,
+"name": &"running",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_pnql6")
+}],
+"loop": true,
+"name": &"stop",
+"speed": 5.0
+}]

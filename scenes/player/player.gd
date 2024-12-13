@@ -3,12 +3,20 @@ extends CharacterBody2D
 ## Player character physics controller. It should only handle physics,
 ## no game logic.
 
+signal requested_stop_for_animation
+signal requested_continue
+
 const SPEED_FPS_MULTIPLIER: float = 3600
 
 ## Player speed in pixels/second
 @export var speed: float = 8
 ## At which depth the player will respawn
 @export var respawn_depth_threshold: float = 2000
+## SpriteFrames used when player is running
+@export var running_sprite_frames: SpriteFrames
+## SpriteFrames used when player is in the car
+@export var car_sprite_frames: SpriteFrames
+
 
 var is_affected_by_gravity: bool = true
 
@@ -20,9 +28,10 @@ var _initial_camera_position: Vector2
 func _ready() -> void:
 	if has_node("Camera2D"):
 		_camera = get_node("Camera2D")
+		_initial_camera_position = _camera.position
 	_checkpoint = global_position
-	_initial_camera_position = _camera.position
 	EventBus.reload_level.connect(respawn)
+	$AnimatedSprite2D.sprite_frames = running_sprite_frames
 
 func _physics_process(delta: float) -> void:
 	velocity.x = lerp( velocity.x,  speed * SPEED_FPS_MULTIPLIER * delta, .9)
@@ -52,3 +61,14 @@ func respawn() -> void:
 	
 	await get_tree().process_frame
 	_camera.position_smoothing_enabled = true
+
+# FIXME no se me ocurre otra manera de hacer estos métodos, pero joden la interfaz del player
+# haciendo que tenga muchas responsabilidades T_T
+func change_sprite_to_car() -> void:
+	$AnimatedSprite2D.sprite_frames = car_sprite_frames
+
+func stop_for_animation() -> void:
+	requested_stop_for_animation.emit()
+
+func animation_finished() -> void:
+	requested_continue.emit()
