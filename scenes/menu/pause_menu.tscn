@@ -4,20 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://cnevswtx5c7ey" path="res://assets/sprites/ui/pause.svg" id="2_o3dwb"]
 [ext_resource type="Texture2D" uid="uid://c6kl3fblr1ude" path="res://assets/sprites/ui/play.svg" id="3_5fh1h"]
 
-[node name="PauseMenu" type="CanvasLayer"]
-script = ExtResource("1_jkd5t")
-pause_image = ExtResource("2_o3dwb")
-continue_image = ExtResource("3_5fh1h")
-
-[node name="Control" type="Control" parent="."]
+[node name="PauseMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_jkd5t")
+pause_image = ExtResource("2_o3dwb")
+continue_image = ExtResource("3_5fh1h")
 
-[node name="Panel" type="Panel" parent="Control"]
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,7 +23,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Control/Panel"]
+[node name="Label" type="Label" parent="Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -43,7 +41,7 @@ text = "game_paused"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="TextureButton" parent="Control"]
+[node name="Button" type="TextureButton" parent="."]
 process_mode = 3
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 1
@@ -57,5 +55,4 @@ focus_mode = 0
 toggle_mode = true
 texture_normal = ExtResource("2_o3dwb")
 
-[connection signal="button_down" from="Control/Button" to="." method="_on_button_button_down"]
-[connection signal="toggled" from="Control/Button" to="." method="_on_button_toggled"]
+[connection signal="toggled" from="Button" to="." method="_on_button_toggled"]

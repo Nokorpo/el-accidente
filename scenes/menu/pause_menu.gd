@@ -1,11 +1,11 @@
-extends CanvasLayer
+extends Control
 
 @export var pause_image: Texture
 @export var continue_image: Texture
 
 @onready var pause_counter: int = 0
-@onready var button: TextureButton = $Control/Button
-@onready var background: Panel = $Control/Panel
+@onready var button: TextureButton = $Button
+@onready var background: Panel = $Panel
 
 func _ready() -> void:
 	EventBus.request_pause.connect(pause_requested)

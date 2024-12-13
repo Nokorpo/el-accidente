@@ -11,9 +11,7 @@ shader_parameter/color = Color(1, 1, 1, 0.4)
 
 [sub_resource type="Texture2DRD" id="Texture2DRD_bn8gx"]
 
-[node name="TouchFeedbackFrame" type="CanvasLayer"]
-
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TouchFeedbackFrame" type="TextureRect"]
 material = SubResource("ShaderMaterial_8w0qa")
 anchors_preset = 15
 anchor_right = 1.0
