@@ -1,44 +1,69 @@
-[gd_scene load_steps=57 format=3 uid="uid://7asaea7mswd5"]
+[gd_scene load_steps=82 format=3 uid="uid://7asaea7mswd5"]
 
 [ext_resource type="PackedScene" uid="uid://cpi1lm68o7bl7" path="res://scenes/shared/vfx/touch_feedback_frame.tscn" id="1_s3sr5"]
 [ext_resource type="Texture2D" uid="uid://1542cwvcv282" path="res://assets/checkerboard.svg" id="1_yo0yp"]
 [ext_resource type="PackedScene" uid="uid://7pnca5lreux0" path="res://scenes/player/player.tscn" id="2_h8ti8"]
 [ext_resource type="PackedScene" uid="uid://dmru827iaxo66" path="res://scenes/menu/curtain.tscn" id="2_ket6m"]
 [ext_resource type="Script" path="res://scenes/game/camera.gd" id="3_on1ws"]
-[ext_resource type="Texture2D" uid="uid://dwgqhciluwalr" path="res://assets/sprites/car/car.png" id="4_myuxr"]
+[ext_resource type="Texture2D" uid="uid://chdo2lhdiiig" path="res://assets/sprites/background/back/fase1b_1.png" id="5_fe277"]
 [ext_resource type="Texture2D" uid="uid://iwi0kiieafvs" path="res://assets/sprites/npc/albert_idle1.png" id="5_fjoce"]
 [ext_resource type="Texture2D" uid="uid://c2bj660bg27hd" path="res://assets/sprites/npc/albert_idle2.png" id="6_atd2q"]
 [ext_resource type="Texture2D" uid="uid://bqpf46ae2fuhy" path="res://assets/blockout/text_albert.png" id="6_to4o8"]
+[ext_resource type="Texture2D" uid="uid://fbh8dxemh1ny" path="res://assets/sprites/background/back/fase1b_2.png" id="6_w5p6q"]
+[ext_resource type="Texture2D" uid="uid://cv0bron66viwi" path="res://assets/sprites/background/front/cajas.png" id="7_4nehl"]
+[ext_resource type="Texture2D" uid="uid://djwf8agbxyawr" path="res://assets/sprites/background/back/fase2b_1.png" id="7_8at2x"]
 [ext_resource type="Texture2D" uid="uid://bkrgh10hjo18s" path="res://assets/blockout/text_karla.png" id="7_ukmt1"]
+[ext_resource type="Texture2D" uid="uid://dqkw8wrefwcbq" path="res://assets/sprites/background/front/perchero.png" id="8_1wjlg"]
 [ext_resource type="Texture2D" uid="uid://j1dvhk2wehq6" path="res://assets/blockout/text_barbara.png" id="8_5xrow"]
 [ext_resource type="Texture2D" uid="uid://ppolqe0ioqig" path="res://assets/sprites/npc/karla_idle1.png" id="8_tb0m2"]
 [ext_resource type="PackedScene" uid="uid://bvpn2yd6dqc2j" path="res://scenes/shared/level/camera_offset_area.tscn" id="9_hjerv"]
 [ext_resource type="Texture2D" uid="uid://biv1lqglmvo16" path="res://assets/sprites/npc/karla_idle2.png" id="9_t4j05"]
-[ext_resource type="PackedScene" uid="uid://dv8swtjsfo8ho" path="res://assets/blockout/blockout_floor.tscn" id="10_uyuub"]
+[ext_resource type="Texture2D" uid="uid://b5xl615n03qki" path="res://assets/sprites/background/front/nota1.png" id="10_cxmue"]
+[ext_resource type="Texture2D" uid="uid://d1d4tatndlu4i" path="res://assets/sprites/background/back/fase3b_3.png" id="11_1tlbr"]
 [ext_resource type="Texture2D" uid="uid://lm0w33pgt0m5" path="res://assets/sprites/npc/barbara_idle1.png" id="11_753bg"]
+[ext_resource type="Texture2D" uid="uid://d2p40ersnb67h" path="res://assets/sprites/background/back/fase2b_2.png" id="12_38u3a"]
+[ext_resource type="Texture2D" uid="uid://r57klsm2v8ww" path="res://assets/sprites/background/back/fase3b_4.png" id="12_bnajj"]
 [ext_resource type="PackedScene" uid="uid://x4n61sjituka" path="res://scenes/shared/level/blockout_spikes.tscn" id="12_nqo6j"]
 [ext_resource type="Texture2D" uid="uid://c5owh2tsqoqb5" path="res://assets/sprites/npc/barbara_idle2.png" id="12_wvsqd"]
 [ext_resource type="PackedScene" uid="uid://g1wph10l7f0q" path="res://scenes/shared/level/blockout_breaking_platform.tscn" id="13_g1vww"]
+[ext_resource type="Texture2D" uid="uid://bdwxf0r7diuea" path="res://assets/sprites/background/back/fase2b_3.png" id="13_rvqy5"]
+[ext_resource type="Texture2D" uid="uid://dkfwlu0e7yois" path="res://assets/sprites/background/back/fase2_4.png" id="14_te1nf"]
 [ext_resource type="Script" path="res://scenes/shared/level/elevator_platform.gd" id="15_4ntac"]
+[ext_resource type="Texture2D" uid="uid://lcfrkykxna7y" path="res://assets/sprites/background/front/nota2.png" id="15_a17nd"]
 [ext_resource type="Texture2D" uid="uid://2r6dvfv031fl" path="res://assets/blockout/elevator_platform.svg" id="16_3o8ko"]
+[ext_resource type="Texture2D" uid="uid://dju3gj8rxy761" path="res://assets/sprites/background/front/nota3.png" id="16_ej48n"]
+[ext_resource type="Texture2D" uid="uid://cldny8fywn81i" path="res://assets/sprites/background/front/nota5.png" id="17_01be2"]
 [ext_resource type="PackedScene" uid="uid://b8krget0mvlo4" path="res://scenes/shared/level/checkpoint.tscn" id="17_8ibhx"]
 [ext_resource type="Texture2D" uid="uid://chumwrl4pm0ft" path="res://assets/blockout/flame.svg" id="17_ey7y6"]
 [ext_resource type="Texture2D" uid="uid://c0wpifu0rg1j1" path="res://assets/blockout/spike.svg" id="18_wdn2q"]
 [ext_resource type="Script" path="res://scenes/shared/tools/polygon_expander.gd" id="19_70n6j"]
+[ext_resource type="Texture2D" uid="uid://b0gqbk4xvkell" path="res://assets/square.svg" id="19_lqmj0"]
 [ext_resource type="Script" path="res://scenes/shared/level/change_speed_area.gd" id="19_rdjve"]
 [ext_resource type="PackedScene" uid="uid://btyebcvnehuyo" path="res://scenes/shared/level/blinking_platform.tscn" id="20_d7r8p"]
+[ext_resource type="Texture2D" uid="uid://byfywnr4wvyoy" path="res://assets/sprites/background/back/fase3b_5.png" id="20_yqg68"]
+[ext_resource type="Texture2D" uid="uid://ofs4cy7qk235" path="res://assets/sprites/background/front/valla.png" id="21_86dl3"]
+[ext_resource type="Texture2D" uid="uid://cht0xkxjyjhen" path="res://assets/sprites/background/back/fase3b_1.png" id="21_lpv2t"]
+[ext_resource type="Texture2D" uid="uid://b85g63mjpxi3d" path="res://assets/sprites/background/back/fase3b_2.png" id="22_mg1hn"]
 [ext_resource type="Texture2D" uid="uid://dlhnpcvy1fc03" path="res://assets/sprites/obstacles/car_fire/carfire_1.png" id="24_tjtu4"]
 [ext_resource type="Texture2D" uid="uid://8kb44jfqim3r" path="res://assets/sprites/obstacles/car_fire/carfire_2.png" id="25_0n20j"]
 [ext_resource type="Texture2D" uid="uid://b4hujf0ynigxi" path="res://assets/sprites/vfx/vfxspikes_1.png" id="25_40qg4"]
 [ext_resource type="Texture2D" uid="uid://qf37dr8ma0aj" path="res://assets/sprites/obstacles/car_fire/carfire_3.png" id="26_rgi6q"]
+[ext_resource type="Texture2D" uid="uid://dip7jr04u2oe" path="res://assets/sprites/background/back/fase3b_6.png" id="26_rtaw7"]
 [ext_resource type="Texture2D" uid="uid://dr76qw1ownw0c" path="res://assets/sprites/vfx/vfxspikes_2.png" id="26_x1aa5"]
 [ext_resource type="Texture2D" uid="uid://mw2iwy44n4va" path="res://assets/sprites/vfx/vfxspikes_3.png" id="27_1skqe"]
 [ext_resource type="Texture2D" uid="uid://bc2v6n8nqhpig" path="res://assets/sprites/obstacles/car_fire/carfire_4.png" id="27_owdr3"]
+[ext_resource type="Texture2D" uid="uid://kf7dypvt150l" path="res://assets/sprites/background/front/cámara.png" id="27_reio1"]
 [ext_resource type="Texture2D" uid="uid://cci23wnj5iup0" path="res://assets/sprites/vfx/vfxspikes_4.png" id="28_1xd26"]
+[ext_resource type="Texture2D" uid="uid://dc1un4hweuogu" path="res://assets/sprites/background/front/coche_colgante.png" id="28_itrb3"]
+[ext_resource type="Texture2D" uid="uid://getqmfkxho01" path="res://assets/sprites/background/front/músicos.png" id="29_e4dia"]
 [ext_resource type="Texture2D" uid="uid://del8tiiy5ndi2" path="res://assets/sprites/vfx/vfxspikes_5.png" id="29_ytu2h"]
 [ext_resource type="Texture2D" uid="uid://mnvedi6d5irk" path="res://assets/sprites/obstacles/deer/deer_idle1.png" id="30_7q80s"]
 [ext_resource type="Texture2D" uid="uid://cad6pwwq8nac1" path="res://assets/sprites/obstacles/deer/deer_idle2.png" id="31_7p4aj"]
 [ext_resource type="Texture2D" uid="uid://cictl77apdn4c" path="res://assets/sprites/car/car_brake1.png" id="32_7tejx"]
+[ext_resource type="Texture2D" uid="uid://b46vs02g8lpko" path="res://assets/sprites/background/back/fase1_3.png" id="45_h3ped"]
+[ext_resource type="Texture2D" uid="uid://dv0lsmbgda3of" path="res://assets/sprites/background/front/bongos.png" id="51_yb13k"]
+[ext_resource type="Texture2D" uid="uid://hxq7xcp21l3u" path="res://assets/sprites/background/front/nota4.png" id="54_40vf5"]
+[ext_resource type="Texture2D" uid="uid://drw1ysibkccu8" path="res://assets/sprites/background/front/arbol.png" id="65_q646x"]
 
 [sub_resource type="Animation" id="Animation_m5g3s"]
 length = 0.001
@@ -205,8 +230,9 @@ animations = [{
 
 [node name="TouchFeedbackFrame" parent="." instance=ExtResource("1_s3sr5")]
 
+[node name="Backgrounds" type="Node2D" parent="."]
+
 [node name="Background" type="Node2D" parent="."]
-visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Background"]
 visible = false
@@ -251,36 +277,6 @@ text = "Deja de mantener pulsado
 para hacer un dash"
 horizontal_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="Background"]
-z_index = -3
-offset_left = -7.0
-offset_top = -112.0
-offset_right = 1834.0
-offset_bottom = 996.0
-scale = Vector2(4.16, 1.32)
-color = Color(0.551568, 0.708664, 0.727004, 1)
-metadata/_edit_lock_ = true
-
-[node name="ColorRect2" type="ColorRect" parent="Background"]
-z_index = -3
-offset_left = 7646.0
-offset_top = -608.0
-offset_right = 14951.0
-offset_bottom = 876.0
-scale = Vector2(4.16, 1.32)
-color = Color(0.768727, 0.802357, 0.733265, 1)
-metadata/_edit_lock_ = true
-
-[node name="ColorRect3" type="ColorRect" parent="Background"]
-z_index = -3
-offset_left = 38036.0
-offset_top = -608.0
-offset_right = 48510.0
-offset_bottom = 876.0
-scale = Vector2(4.16, 1.32)
-color = Color(0.814368, 0.349332, 0.311487, 1)
-metadata/_edit_lock_ = true
-
 [node name="Player" parent="." groups=["player"] instance=ExtResource("2_h8ti8")]
 position = Vector2(402, 577)
 speed = 11.0
@@ -298,14 +294,10 @@ editor_draw_drag_margin = true
 script = ExtResource("3_on1ws")
 player = NodePath("..")
 
-[node name="Coche" type="Sprite2D" parent="Player"]
-visible = false
-texture = ExtResource("4_myuxr")
-
 [node name="Characters" type="Node2D" parent="."]
 
 [node name="Albert" type="AnimatedSprite2D" parent="Characters"]
-position = Vector2(4204, 822)
+position = Vector2(4285, 822)
 sprite_frames = SubResource("SpriteFrames_s1hoo")
 autoplay = "default"
 
@@ -325,7 +317,7 @@ scale = Vector2(0.835086, 0.841157)
 texture = ExtResource("7_ukmt1")
 
 [node name="Barbara" type="AnimatedSprite2D" parent="Characters"]
-position = Vector2(20249, 912)
+position = Vector2(20174, 912)
 sprite_frames = SubResource("SpriteFrames_6dqdf")
 autoplay = "default"
 
@@ -354,16 +346,15 @@ camera = NodePath("../../Player/Camera2D")
 offset_quantity = -600.0
 
 [node name="CameraUp" type="Area2D" parent="CameraOffsetChangeAreas/CameraOffsetArea2"]
-position = Vector2(-496, 0)
+position = Vector2(-434, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraOffsetChangeAreas/CameraOffsetArea2/CameraUp"]
 shape = SubResource("RectangleShape2D_xyj5a")
 
 [node name="ResetCamera" type="Area2D" parent="CameraOffsetChangeAreas/CameraOffsetArea2"]
-position = Vector2(1088, -197)
+position = Vector2(1747, -197)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraOffsetChangeAreas/CameraOffsetArea2/ResetCamera"]
-position = Vector2(100, 0)
 shape = SubResource("RectangleShape2D_p33e6")
 
 [node name="Intro" type="Node2D" parent="."]
@@ -409,13 +400,89 @@ script = ExtResource("19_70n6j")
 visible = false
 polygon = PackedVector2Array(0, 42, -0.000488281, 250, 1862.46, 250, 2154.81, -330, 1521.57, -330)
 
+[node name="Background" type="Node2D" parent="Intro"]
+z_index = -10
+
+[node name="Fase1b3" type="Sprite2D" parent="Intro/Background"]
+z_index = -4
+position = Vector2(4135.89, 465)
+scale = Vector2(0.772222, 0.772222)
+texture = ExtResource("5_fe277")
+
+[node name="Fase1b2" type="Sprite2D" parent="Intro/Background"]
+z_index = -5
+position = Vector2(6144.45, 454)
+rotation = 3.14159
+scale = Vector2(0.828565, -0.811296)
+texture = ExtResource("6_w5p6q")
+
+[node name="Fase13" type="Sprite2D" parent="Intro/Background"]
+z_index = -4
+position = Vector2(8234.34, 446)
+rotation = 3.14159
+scale = Vector2(0.780179, -0.775827)
+texture = ExtResource("45_h3ped")
+
+[node name="Square" type="Sprite2D" parent="Intro/Background"]
+modulate = Color(0.713726, 0.827451, 0.803922, 1)
+position = Vector2(6798, 1076)
+scale = Vector2(1.95385, 1.87692)
+texture = ExtResource("19_lqmj0")
+
+[node name="Square4" type="Sprite2D" parent="Intro/Background"]
+modulate = Color(0.298039, 0.415686, 0.392157, 1)
+position = Vector2(3024.5, 575.5)
+scale = Vector2(2.56154, 9.96154)
+texture = ExtResource("19_lqmj0")
+
+[node name="Square5" type="Sprite2D" parent="Intro/Background"]
+modulate = Color(0.298039, 0.415686, 0.392157, 1)
+position = Vector2(1444, 576)
+scale = Vector2(22.6154, 9.96154)
+texture = ExtResource("19_lqmj0")
+
+[node name="Square2" type="Sprite2D" parent="Intro/Background"]
+modulate = Color(0.309804, 0.427451, 0.403922, 1)
+position = Vector2(7162, 1059)
+scale = Vector2(3.67692, 1.96923)
+texture = ExtResource("19_lqmj0")
+
+[node name="Square3" type="Sprite2D" parent="Intro/Background"]
+modulate = Color(0.603922, 0.717647, 0.694118, 1)
+position = Vector2(9010, 1056.5)
+scale = Vector2(3.78461, 2.03846)
+texture = ExtResource("19_lqmj0")
+
+[node name="BackgroundObjects" type="Node2D" parent="Intro"]
+
+[node name="Cajas" type="Sprite2D" parent="Intro/BackgroundObjects"]
+z_index = -3
+position = Vector2(98, 559)
+texture = ExtResource("7_4nehl")
+
+[node name="Cajas2" type="Sprite2D" parent="Intro/BackgroundObjects"]
+z_index = -3
+position = Vector2(1545, 641)
+texture = ExtResource("7_4nehl")
+
+[node name="Perchero" type="Sprite2D" parent="Intro/BackgroundObjects"]
+position = Vector2(6350, 784.5)
+scale = Vector2(0.790094, 0.790094)
+texture = ExtResource("8_1wjlg")
+
+[node name="Valla" type="Sprite2D" parent="Intro/BackgroundObjects"]
+z_index = -1
+position = Vector2(4052, 845)
+scale = Vector2(0.72807, 0.72807)
+texture = ExtResource("21_86dl3")
+
 [node name="Storyboard" type="Node2D" parent="."]
 
 [node name="SpeedChangerArea" type="Area2D" parent="Storyboard" node_paths=PackedStringArray("player")]
 position = Vector2(7718, 583)
 script = ExtResource("19_rdjve")
 player = NodePath("../../Player")
-speed_increment = 1.2
+speed_increment = 9.6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Storyboard/SpeedChangerArea"]
 shape = SubResource("RectangleShape2D_ahdys")
@@ -1161,12 +1228,163 @@ autoplay = "default"
 frame = 4
 frame_progress = 0.635246
 
+[node name="Background" type="Node2D" parent="Storyboard"]
+z_index = -10
+
+[node name="Fase2b1" type="Sprite2D" parent="Storyboard/Background"]
+z_index = -5
+position = Vector2(10498, 576)
+scale = Vector2(0.980952, 0.980952)
+texture = ExtResource("7_8at2x")
+
+[node name="Fase2b2" type="Sprite2D" parent="Storyboard/Background"]
+z_index = -4
+position = Vector2(21636.2, 361)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("7_8at2x")
+
+[node name="Fase2b3" type="Sprite2D" parent="Storyboard/Background"]
+z_index = -5
+position = Vector2(36472, 588)
+scale = Vector2(0.996825, 0.996825)
+texture = ExtResource("7_8at2x")
+
+[node name="Fase2b4" type="Sprite2D" parent="Storyboard/Background"]
+position = Vector2(16486, 599)
+scale = Vector2(0.97619, 0.97619)
+texture = ExtResource("12_38u3a")
+
+[node name="Fase2b5" type="Sprite2D" parent="Storyboard/Background"]
+z_index = -5
+position = Vector2(23961, 247)
+scale = Vector2(0.97619, 0.97619)
+texture = ExtResource("12_38u3a")
+
+[node name="Fase2b6" type="Sprite2D" parent="Storyboard/Background"]
+position = Vector2(31671, 263)
+scale = Vector2(0.97619, 0.97619)
+texture = ExtResource("12_38u3a")
+
+[node name="Fase2b7" type="Sprite2D" parent="Storyboard/Background"]
+position = Vector2(18972, 592)
+scale = Vector2(0.983333, 0.983333)
+texture = ExtResource("13_rvqy5")
+
+[node name="Fase2b8" type="Sprite2D" parent="Storyboard/Background"]
+position = Vector2(29147, 592)
+scale = Vector2(0.983333, 0.983333)
+texture = ExtResource("13_rvqy5")
+
+[node name="Fase24" type="Sprite2D" parent="Storyboard/Background"]
+position = Vector2(13134, 613)
+scale = Vector2(0.975397, 0.975397)
+texture = ExtResource("14_te1nf")
+
+[node name="Fase26" type="Sprite2D" parent="Storyboard/Background"]
+position = Vector2(33753, 598)
+scale = Vector2(0.975397, 0.975397)
+texture = ExtResource("14_te1nf")
+
+[node name="Fase25" type="Sprite2D" parent="Storyboard/Background"]
+position = Vector2(26666, 580)
+scale = Vector2(0.975397, 0.975397)
+texture = ExtResource("14_te1nf")
+
+[node name="Square4" type="Sprite2D" parent="Storyboard/Background"]
+modulate = Color(1, 0.945098, 0.72549, 1)
+position = Vector2(11804, 218.75)
+scale = Vector2(1.15384, 3.54231)
+texture = ExtResource("19_lqmj0")
+
+[node name="Square5" type="Sprite2D" parent="Storyboard/Background"]
+modulate = Color(1, 0.956863, 0.796078, 1)
+position = Vector2(14817, 653)
+scale = Vector2(6.6, 9.41154)
+texture = ExtResource("19_lqmj0")
+
+[node name="Square6" type="Sprite2D" parent="Storyboard/Background"]
+modulate = Color(1, 0.956863, 0.796078, 1)
+position = Vector2(31525, 1026.5)
+scale = Vector2(15.1539, 3.40769)
+texture = ExtResource("19_lqmj0")
+
+[node name="Square7" type="Sprite2D" parent="Storyboard/Background"]
+modulate = Color(1, 0.956863, 0.796078, 1)
+position = Vector2(35125, 296.5)
+scale = Vector2(1.72308, 5.17692)
+texture = ExtResource("19_lqmj0")
+
+[node name="Square9" type="Sprite2D" parent="Storyboard/Background"]
+modulate = Color(1, 0.956863, 0.796078, 1)
+position = Vector2(37843, 1095)
+scale = Vector2(1.32309, 2)
+texture = ExtResource("19_lqmj0")
+
+[node name="Square8" type="Sprite2D" parent="Storyboard/Background"]
+modulate = Color(1, 0.956863, 0.796078, 1)
+position = Vector2(25321, 482.25)
+scale = Vector2(1.72308, 3.95769)
+texture = ExtResource("19_lqmj0")
+
+[node name="BackgroundObjects" type="Node2D" parent="Storyboard"]
+
+[node name="Nota1" type="Sprite2D" parent="Storyboard/BackgroundObjects"]
+position = Vector2(10284, 336)
+texture = ExtResource("10_cxmue")
+
+[node name="Valla2" type="Sprite2D" parent="Storyboard/BackgroundObjects"]
+z_index = -1
+position = Vector2(1916, 596)
+scale = Vector2(0.72807, 0.72807)
+texture = ExtResource("21_86dl3")
+
+[node name="Nota2" type="Sprite2D" parent="Storyboard/BackgroundObjects"]
+position = Vector2(14547, 611)
+texture = ExtResource("15_a17nd")
+
+[node name="Nota3" type="Sprite2D" parent="Storyboard/BackgroundObjects"]
+position = Vector2(35093, 72)
+texture = ExtResource("15_a17nd")
+
+[node name="Nota4" type="Sprite2D" parent="Storyboard/BackgroundObjects"]
+position = Vector2(15310, 309)
+texture = ExtResource("16_ej48n")
+
+[node name="Nota5" type="Sprite2D" parent="Storyboard/BackgroundObjects"]
+position = Vector2(18998, 416)
+texture = ExtResource("17_01be2")
+
+[node name="Nota6" type="Sprite2D" parent="Storyboard/BackgroundObjects"]
+position = Vector2(29191, 427)
+texture = ExtResource("17_01be2")
+
+[node name="Nota7" type="Sprite2D" parent="Storyboard/BackgroundObjects"]
+position = Vector2(21479, 91)
+texture = ExtResource("10_cxmue")
+
+[node name="Nota8" type="Sprite2D" parent="Storyboard/BackgroundObjects"]
+position = Vector2(30423, 471)
+texture = ExtResource("16_ej48n")
+
+[node name="Nota9" type="Sprite2D" parent="Storyboard/BackgroundObjects"]
+position = Vector2(30834, 94)
+texture = ExtResource("54_40vf5")
+
+[node name="Nota10" type="Sprite2D" parent="Storyboard/BackgroundObjects"]
+position = Vector2(36115, 387)
+texture = ExtResource("54_40vf5")
+
+[node name="Nota11" type="Sprite2D" parent="Storyboard/BackgroundObjects"]
+position = Vector2(25196, 425)
+texture = ExtResource("16_ej48n")
+
 [node name="Climax" type="Node2D" parent="."]
+z_index = -10
 
 [node name="Checkpoints" type="Node2D" parent="Climax"]
 
 [node name="Checkpoint6" parent="Climax/Checkpoints" instance=ExtResource("17_8ibhx")]
-position = Vector2(38950, 522)
+position = Vector2(38907, 522)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Climax/Checkpoints/Checkpoint6"]
 shape = SubResource("RectangleShape2D_bqy6x")
@@ -1190,23 +1408,19 @@ position = Vector2(59194, 423)
 shape = SubResource("RectangleShape2D_bqy6x")
 
 [node name="CarBrake1" type="Sprite2D" parent="Climax"]
-position = Vector2(38677, 583)
+position = Vector2(38238, 583)
 texture = ExtResource("32_7tejx")
 
 [node name="SpeedChangerArea2" type="Area2D" parent="Climax" node_paths=PackedStringArray("player")]
 position = Vector2(38643, 513)
 script = ExtResource("19_rdjve")
 player = NodePath("../../Player")
-speed_increment = 1.2
+speed_increment = 11.52
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Climax/SpeedChangerArea2"]
 shape = SubResource("RectangleShape2D_ahdys")
 
 [node name="Floors" type="Node2D" parent="Climax"]
-
-[node name="Tree" parent="Climax/Floors" instance=ExtResource("10_uyuub")]
-position = Vector2(81185, 583.5)
-scale = Vector2(2.3651, 3.50529)
 
 [node name="Polygon2D23" type="Polygon2D" parent="Climax/Floors"]
 position = Vector2(37599.4, 715)
@@ -1342,14 +1556,14 @@ polygon = PackedVector2Array(0.90625, 603.835, 0, 3161.26, 18176, 3203.88, 18184
 position = Vector2(80745, 1209.77)
 scale = Vector2(0.337099, 0.13136)
 color = Color(0.196032, 0.205695, 0.224258, 1)
-polygon = PackedVector2Array(0, 0, 0, -1065.59, -6577.39, -1065.59, -14007.3, -4262.37, -20519.4, -4262.37, -27837.5, -4276.57, -27832.6, 42.6165)
+polygon = PackedVector2Array(1231.09, 0, 1222.19, -1065.59, -6577.39, -1065.59, -14007.3, -4262.37, -20519.4, -4262.37, -27837.5, -4276.57, -27832.6, 42.6165)
 script = ExtResource("19_70n6j")
 
 [node name="PolygonExpander" type="StaticBody2D" parent="Climax/Floors/Polygon2D34"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Climax/Floors/Polygon2D34/PolygonExpander"]
 visible = false
-polygon = PackedVector2Array(0, 0, 0, -1065.59, -6577.39, -1065.59, -14007.3, -4262.37, -20519.4, -4262.37, -27837.5, -4276.57, -27832.6, 42.6165)
+polygon = PackedVector2Array(1231.09, 0, 1222.19, -1065.59, -6577.39, -1065.59, -14007.3, -4262.37, -20519.4, -4262.37, -27837.5, -4276.57, -27832.6, 42.6165)
 
 [node name="Polygon2D25" type="Polygon2D" parent="Climax/Floors"]
 position = Vector2(48184.6, 1000)
@@ -1444,7 +1658,7 @@ sprite_frames = SubResource("SpriteFrames_bavkr")
 autoplay = "default"
 
 [node name="Flame" type="Sprite2D" parent="Climax/Obstacles"]
-position = Vector2(41290, 802)
+position = Vector2(41266, 802)
 scale = Vector2(0.132275, 1)
 texture = ExtResource("17_ey7y6")
 
@@ -1471,12 +1685,12 @@ scale = Vector2(0.132275, 1)
 texture = ExtResource("17_ey7y6")
 
 [node name="Flame7" type="Sprite2D" parent="Climax/Obstacles"]
-position = Vector2(63112, 697)
+position = Vector2(62753, 697)
 scale = Vector2(0.132275, 1)
 texture = ExtResource("17_ey7y6")
 
 [node name="Flame11" type="Sprite2D" parent="Climax/Obstacles"]
-position = Vector2(64236, 667)
+position = Vector2(63804, 667)
 scale = Vector2(0.132275, 1)
 texture = ExtResource("17_ey7y6")
 
@@ -1504,6 +1718,171 @@ texture = ExtResource("17_ey7y6")
 position = Vector2(66094, 677)
 sprite_frames = SubResource("SpriteFrames_xnj04")
 
+[node name="Background" type="Node2D" parent="Climax"]
+z_index = -10
+
+[node name="Fase3b5" type="Sprite2D" parent="Climax/Background"]
+z_index = -6
+position = Vector2(38354.7, 379)
+scale = Vector2(0.544444, 0.544444)
+texture = ExtResource("20_yqg68")
+
+[node name="Fase3b1" type="Sprite2D" parent="Climax/Background"]
+position = Vector2(46548, 576)
+texture = ExtResource("21_lpv2t")
+
+[node name="Fase3b15" type="Sprite2D" parent="Climax/Background"]
+position = Vector2(60172, 566)
+texture = ExtResource("21_lpv2t")
+
+[node name="Fase3b17" type="Sprite2D" parent="Climax/Background"]
+position = Vector2(70746.1, 556.216)
+rotation = 3.14159
+scale = Vector2(1.03775, -1.03775)
+texture = ExtResource("21_lpv2t")
+
+[node name="Fase3b9" type="Sprite2D" parent="Climax/Background"]
+position = Vector2(49619, 244.525)
+rotation = 3.14159
+scale = Vector2(1.36827, -1.51658)
+texture = ExtResource("21_lpv2t")
+
+[node name="Fase3b11" type="Sprite2D" parent="Climax/Background"]
+position = Vector2(57589.4, 91.0587)
+scale = Vector2(1.01924, 1.13025)
+texture = ExtResource("21_lpv2t")
+
+[node name="Fase3b2" type="Sprite2D" parent="Climax/Background"]
+position = Vector2(44153, 478)
+scale = Vector2(0.850397, 0.850397)
+texture = ExtResource("22_mg1hn")
+
+[node name="Fase3b10" type="Sprite2D" parent="Climax/Background"]
+position = Vector2(54927.7, 556)
+scale = Vector2(1.03563, 1.02202)
+texture = ExtResource("22_mg1hn")
+
+[node name="Fase3b18" type="Sprite2D" parent="Climax/Background"]
+position = Vector2(75149, 231.968)
+scale = Vector2(0.672276, 0.663442)
+texture = ExtResource("22_mg1hn")
+
+[node name="Fase3b13" type="Sprite2D" parent="Climax/Background"]
+position = Vector2(66817, 457)
+scale = Vector2(1.03563, 1.02202)
+texture = ExtResource("22_mg1hn")
+
+[node name="Fase3b3" type="Sprite2D" parent="Climax/Background"]
+position = Vector2(40181.6, 485)
+scale = Vector2(0.864286, 0.864286)
+texture = ExtResource("11_1tlbr")
+
+[node name="Fase3b7" type="Sprite2D" parent="Climax/Background"]
+position = Vector2(52474, 263)
+scale = Vector2(0.864, 0.864)
+texture = ExtResource("11_1tlbr")
+
+[node name="Fase3b8" type="Sprite2D" parent="Climax/Background"]
+position = Vector2(63901, 329)
+scale = Vector2(0.864, 0.864)
+texture = ExtResource("11_1tlbr")
+
+[node name="Fase3b4" type="Sprite2D" parent="Climax/Background"]
+position = Vector2(65888.6, 396)
+scale = Vector2(0.665079, 0.665079)
+texture = ExtResource("12_bnajj")
+
+[node name="Fase3b16" type="Sprite2D" parent="Climax/Background"]
+position = Vector2(72951, 234)
+scale = Vector2(0.665079, 0.665079)
+texture = ExtResource("12_bnajj")
+
+[node name="Fase3b12" type="Sprite2D" parent="Climax/Background"]
+position = Vector2(68533, 396)
+rotation = 3.14159
+scale = Vector2(0.665, -0.665)
+texture = ExtResource("12_bnajj")
+
+[node name="Fase3b6" type="Sprite2D" parent="Climax/Background"]
+position = Vector2(42352, 490)
+scale = Vector2(0.819048, 0.819048)
+texture = ExtResource("21_lpv2t")
+
+[node name="Fase3b14" type="Sprite2D" parent="Climax/Background"]
+position = Vector2(79767, 338)
+scale = Vector2(1.05704, 1.05704)
+texture = ExtResource("26_rtaw7")
+
+[node name="Fase3b19" type="Sprite2D" parent="Climax/Background"]
+position = Vector2(77216.5, 508)
+scale = Vector2(0.912676, 0.912676)
+texture = ExtResource("26_rtaw7")
+
+[node name="Square10" type="Sprite2D" parent="Climax/Background"]
+modulate = Color(0.827451, 0.501961, 0.435294, 1)
+position = Vector2(62116, 576.5)
+scale = Vector2(10.5846, 9.63846)
+texture = ExtResource("19_lqmj0")
+
+[node name="Square12" type="Sprite2D" parent="Climax/Background"]
+modulate = Color(0.537255, 0.211765, 0.14902, 1)
+z_index = 10
+position = Vector2(39017, 523.625)
+scale = Vector2(0.630761, 3.00577)
+texture = ExtResource("19_lqmj0")
+
+[node name="Square11" type="Sprite2D" parent="Climax/Background"]
+modulate = Color(0.827451, 0.501961, 0.435294, 1)
+z_index = -10
+position = Vector2(73993.5, 292.75)
+scale = Vector2(4.57694, 5.82692)
+texture = ExtResource("19_lqmj0")
+
+[node name="BackgroudObjects" type="Node2D" parent="Climax"]
+
+[node name="Bongos" type="Sprite2D" parent="Climax/BackgroudObjects"]
+z_index = -1
+position = Vector2(46573, 791)
+scale = Vector2(0.548872, 0.548872)
+texture = ExtResource("51_yb13k")
+
+[node name="Bongos2" type="Sprite2D" parent="Climax/BackgroudObjects"]
+z_index = -1
+position = Vector2(60208, 555)
+scale = Vector2(0.641604, 0.641604)
+texture = ExtResource("51_yb13k")
+
+[node name="Cámara" type="Sprite2D" parent="Climax/BackgroudObjects"]
+z_index = -1
+position = Vector2(74793, 330.25)
+scale = Vector2(0.622577, 0.622577)
+texture = ExtResource("27_reio1")
+
+[node name="CocheColgante" type="Sprite2D" parent="Climax/BackgroudObjects"]
+position = Vector2(39910, 237)
+scale = Vector2(0.647674, 0.647674)
+texture = ExtResource("28_itrb3")
+
+[node name="CocheColgante2" type="Sprite2D" parent="Climax/BackgroudObjects"]
+position = Vector2(63198, 169)
+scale = Vector2(0.647674, 0.647674)
+texture = ExtResource("28_itrb3")
+
+[node name="Músicos" type="Sprite2D" parent="Climax/BackgroudObjects"]
+position = Vector2(42469, 833)
+scale = Vector2(0.471394, 0.471394)
+texture = ExtResource("29_e4dia")
+
+[node name="Músicos2" type="Sprite2D" parent="Climax/BackgroudObjects"]
+z_index = -1
+position = Vector2(62187, 683)
+scale = Vector2(0.573856, 0.573856)
+texture = ExtResource("29_e4dia")
+
+[node name="Arbol" type="Sprite2D" parent="Climax/BackgroudObjects"]
+position = Vector2(80585, 376)
+texture = ExtResource("65_q646x")
+
 [node name="Marker2D" type="Marker2D" parent="."]
 
 [node name="PlayerPos" type="Marker2D" parent="."]
@@ -1511,6 +1890,7 @@ position = Vector2(402, 577)
 scale = Vector2(1.08, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Curtain" parent="CanvasLayer" instance=ExtResource("2_ket6m")]
 z_index = 2
