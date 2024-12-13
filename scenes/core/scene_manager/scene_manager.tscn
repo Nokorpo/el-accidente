@@ -7,8 +7,10 @@
 script = ExtResource("1_e6e1x")
 
 [node name="CurrentScene" type="Node" parent="."]
+process_mode = 1
 
 [node name="PersistedObjects" type="Node" parent="."]
+process_mode = 1
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
