@@ -41,7 +41,6 @@ func set_checkpoint(new_checkpoint: Vector2) -> void:
 	self._checkpoint = new_checkpoint
 
 func respawn() -> void:
-	EventBus
 	global_position = _checkpoint
 	_camera.position_smoothing_enabled = false
 	_camera.global_position = _checkpoint
