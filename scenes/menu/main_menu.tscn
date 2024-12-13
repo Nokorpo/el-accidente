@@ -1,7 +1,64 @@
-[gd_scene load_steps=3 format=3 uid="uid://dvc5023xednjw"]
+[gd_scene load_steps=12 format=3 uid="uid://dvc5023xednjw"]
 
-[ext_resource type="Script" path="res://scenes/menu/start_button.gd" id="1_3roje"]
+[ext_resource type="Texture2D" uid="uid://c0i246c02q8gk" path="res://assets/sprites/ui/main_menu.png" id="1_fpx04"]
+[ext_resource type="Script" path="res://scenes/menu/main_menu.gd" id="1_km1cr"]
 [ext_resource type="PackedScene" uid="uid://7asaea7mswd5" path="res://scenes/game/game.tscn" id="2_c8g6f"]
+[ext_resource type="Texture2D" uid="uid://bic47lqk4gorf" path="res://assets/sprites/ui/main_menu_title.png" id="2_c701q"]
+[ext_resource type="Script" path="res://scenes/menu/language.gd" id="2_rvkaa"]
+[ext_resource type="Texture2D" uid="uid://uq8uowpq3sal" path="res://assets/sprites/ui/play_menu.svg" id="3_g0gho"]
+[ext_resource type="PackedScene" uid="uid://bfw08rk4ijmja" path="res://scenes/menu/credits/credits.tscn" id="7_u7whb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_veald"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3skot"]
+content_margin_left = 24.0
+content_margin_top = 24.0
+content_margin_right = 24.0
+content_margin_bottom = 24.0
+bg_color = Color(0.988235, 0.854902, 0.662745, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.160784, 0.227451, 0.231373, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_color = Color(0.140399, 0.201054, 0.19749, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 8)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qr01m"]
+content_margin_left = 24.0
+content_margin_top = 24.0
+content_margin_right = 24.0
+content_margin_bottom = 24.0
+bg_color = Color(1, 0.916667, 0.8, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.414, 0.5907, 0.6, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_color = Color(0.35, 0.5, 0.49, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="Theme" id="Theme_6yi6j"]
+Button/colors/font_color = Color(0.160784, 0.227451, 0.231373, 1)
+Button/colors/font_focus_color = Color(0.160784, 0.227451, 0.231373, 1)
+Button/colors/font_hover_color = Color(0.204625, 0.283791, 0.288443, 1)
+Button/colors/font_hover_pressed_color = Color(0.297576, 0.400394, 0.406416, 1)
+Button/colors/font_pressed_color = Color(0.424258, 0.548688, 0.55591, 1)
+Button/font_sizes/font_size = 42
+Button/styles/focus = SubResource("StyleBoxEmpty_veald")
+Button/styles/hover = SubResource("StyleBoxFlat_3skot")
+Button/styles/normal = SubResource("StyleBoxFlat_3skot")
+Button/styles/pressed = SubResource("StyleBoxFlat_qr01m")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -10,33 +67,82 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_6yi6j")
+script = ExtResource("1_km1cr")
+game_scene = ExtResource("2_c8g6f")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 2556.0
+offset_bottom = 1179.0
+texture = ExtResource("1_fpx04")
+
+[node name="OtherButtons" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -592.0
+offset_top = -269.0
+offset_right = -48.0
+offset_bottom = -41.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/separation = 16
+
+[node name="Language" type="Button" parent="OtherButtons"]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+text = "current_language"
+script = ExtResource("2_rvkaa")
+
+[node name="Credits" type="Button" parent="OtherButtons"]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "credits"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -1061.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 256
-theme_override_constants/margin_top = 256
+theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 256
-theme_override_constants/margin_bottom = 256
+theme_override_constants/margin_bottom = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 16
 alignment = 1
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Title" type="TextureRect" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 92
-text = "game_title"
-horizontal_alignment = 1
+texture = ExtResource("2_c701q")
+stretch_mode = 4
 
 [node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(400, 250)
+unique_name_in_owner = true
+custom_minimum_size = Vector2(528, 400)
 layout_mode = 2
-theme_override_font_sizes/font_size = 100
-text = "play"
-script = ExtResource("1_3roje")
-game_scene = ExtResource("2_c8g6f")
+size_flags_horizontal = 0
+mouse_default_cursor_shape = 2
+text = "
+"
+icon = ExtResource("3_g0gho")
+icon_alignment = 1
+
+[node name="Credits" parent="." instance=ExtResource("7_u7whb")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="OtherButtons/Credits" to="." method="_on_credits_pressed"]
