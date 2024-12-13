@@ -1342,6 +1342,7 @@ scale = Vector2(0.72807, 0.72807)
 texture = ExtResource("21_86dl3")
 
 [node name="Nota2" type="Sprite2D" parent="Storyboard/BackgroundObjects"]
+z_index = -1
 position = Vector2(14547, 611)
 texture = ExtResource("15_a17nd")
 
@@ -1358,6 +1359,7 @@ position = Vector2(18998, 416)
 texture = ExtResource("17_01be2")
 
 [node name="Nota6" type="Sprite2D" parent="Storyboard/BackgroundObjects"]
+z_index = -2
 position = Vector2(29191, 427)
 texture = ExtResource("17_01be2")
 
@@ -1374,10 +1376,12 @@ position = Vector2(30834, 94)
 texture = ExtResource("54_40vf5")
 
 [node name="Nota10" type="Sprite2D" parent="Storyboard/BackgroundObjects"]
+z_index = -2
 position = Vector2(36115, 387)
 texture = ExtResource("54_40vf5")
 
 [node name="Nota11" type="Sprite2D" parent="Storyboard/BackgroundObjects"]
+z_index = -2
 position = Vector2(25196, 425)
 texture = ExtResource("16_ej48n")
 
