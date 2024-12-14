@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://7pnca5lreux0"]
+[gd_scene load_steps=15 format=3 uid="uid://7pnca5lreux0"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_d1qh6"]
 [ext_resource type="SpriteFrames" uid="uid://dhak0faey7tlk" path="res://scenes/player/running_sprite_frames.tres" id="2_vgcp4"]
@@ -16,7 +16,18 @@
 radius = 57.0
 height = 248.0
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="GDScript" id="GDScript_3wrxf"]
+script/source = "extends CharacterBody2D
+
+
+func die():
+	get_parent().die()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_42xye"]
+size = Vector2(442, 103)
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_d1qh6")
 speed = 15.0
 running_sprite_frames = ExtResource("2_vgcp4")
@@ -24,7 +35,7 @@ car_sprite_frames = ExtResource("3_bq7r4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
-sprite_frames = ExtResource("2_vgcp4")
+sprite_frames = ExtResource("3_bq7r4")
 animation = &"dash"
 
 [node name="DashDistance" type="Marker2D" parent="."]
@@ -63,6 +74,17 @@ script = ExtResource("7_jw2we")
 
 [node name="DashingCutShortState" type="Node" parent="StateMachine"]
 script = ExtResource("19_5bnt7")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
+collision_layer = 2
+collision_mask = 2
+script = SubResource("GDScript_3wrxf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D"]
+unique_name_in_owner = true
+position = Vector2(0, 47.5)
+shape = SubResource("RectangleShape2D_42xye")
+disabled = true
 
 [connection signal="requested_continue" from="." to="StateMachine/StopState" method="start_running"]
 [connection signal="requested_stop_for_animation" from="." to="StateMachine/StopState" method="force_enter_stop_state"]
