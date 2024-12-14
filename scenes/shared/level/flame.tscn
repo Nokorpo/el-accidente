@@ -1,7 +1,68 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhh7m57vhkbu3"]
+[gd_scene load_steps=10 format=3 uid="uid://bhh7m57vhkbu3"]
 
-[ext_resource type="Texture2D" uid="uid://chumwrl4pm0ft" path="res://assets/blockout/flame.svg" id="1_252ja"]
 [ext_resource type="Script" path="res://scenes/shared/level/flame.gd" id="1_kmupw"]
+[ext_resource type="Texture2D" uid="uid://c0ptphm8wy010" path="res://assets/sprites/obstacles/fire_obstacle/fireobstacle_1.png" id="2_73akv"]
+[ext_resource type="Texture2D" uid="uid://pcodysm0d0fp" path="res://assets/sprites/obstacles/fire_obstacle/fireobstacle_5.png" id="3_tkovh"]
+[ext_resource type="Texture2D" uid="uid://c44mjbnhfeetl" path="res://assets/sprites/obstacles/fire_obstacle/fireobstacle_6.png" id="4_fogwo"]
+[ext_resource type="Texture2D" uid="uid://do0ywrsa7f0p3" path="res://assets/sprites/obstacles/fire_obstacle/fireobstacle_4.png" id="5_br1l8"]
+[ext_resource type="Texture2D" uid="uid://dgxciwsai01el" path="res://assets/sprites/obstacles/fire_obstacle/fireobstacle_3.png" id="6_dr6r8"]
+[ext_resource type="Texture2D" uid="uid://de3td1uciytk1" path="res://assets/sprites/obstacles/fire_obstacle/fireobstacle_2.png" id="7_kp52a"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ufdbl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_73akv")
+}],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_tkovh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fogwo")
+}],
+"loop": true,
+"name": &"on_loop",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_br1l8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dr6r8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kp52a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_73akv")
+}],
+"loop": false,
+"name": &"turn_off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_73akv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kp52a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dr6r8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_br1l8")
+}],
+"loop": false,
+"name": &"turn_on",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2nlc1"]
 radius = 15.0
@@ -10,13 +71,11 @@ height = 348.0
 [node name="Flame" type="Area2D"]
 script = ExtResource("1_kmupw")
 
-[node name="Flame" type="Sprite2D" parent="."]
-scale = Vector2(0.132275, 1)
-texture = ExtResource("1_252ja")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ufdbl")
+animation = &"turn_off"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_2nlc1")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
