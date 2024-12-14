@@ -8,13 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://chdo2lhdiiig" path="res://assets/sprites/background/back/fase1b_1.png" id="5_fe277"]
 [ext_resource type="Texture2D" uid="uid://iwi0kiieafvs" path="res://assets/sprites/npc/albert_idle1.png" id="5_fjoce"]
 [ext_resource type="Texture2D" uid="uid://c2bj660bg27hd" path="res://assets/sprites/npc/albert_idle2.png" id="6_atd2q"]
-[ext_resource type="Texture2D" uid="uid://bqpf46ae2fuhy" path="res://assets/blockout/text_albert.png" id="6_to4o8"]
 [ext_resource type="Texture2D" uid="uid://fbh8dxemh1ny" path="res://assets/sprites/background/back/fase1b_2.png" id="6_w5p6q"]
 [ext_resource type="Texture2D" uid="uid://cv0bron66viwi" path="res://assets/sprites/background/front/cajas.png" id="7_4nehl"]
 [ext_resource type="Texture2D" uid="uid://djwf8agbxyawr" path="res://assets/sprites/background/back/fase2b_1.png" id="7_8at2x"]
-[ext_resource type="Texture2D" uid="uid://bkrgh10hjo18s" path="res://assets/blockout/text_karla.png" id="7_ukmt1"]
 [ext_resource type="Texture2D" uid="uid://dqkw8wrefwcbq" path="res://assets/sprites/background/front/perchero.png" id="8_1wjlg"]
-[ext_resource type="Texture2D" uid="uid://j1dvhk2wehq6" path="res://assets/blockout/text_barbara.png" id="8_5xrow"]
+[ext_resource type="Texture2D" uid="uid://r3x1i2ddadj6" path="res://assets/sprites/ui/speech_bubble.png" id="8_lpro2"]
 [ext_resource type="Texture2D" uid="uid://ppolqe0ioqig" path="res://assets/sprites/npc/karla_idle1.png" id="8_tb0m2"]
 [ext_resource type="PackedScene" uid="uid://bvpn2yd6dqc2j" path="res://scenes/shared/level/camera_offset_area.tscn" id="9_hjerv"]
 [ext_resource type="Texture2D" uid="uid://biv1lqglmvo16" path="res://assets/sprites/npc/karla_idle2.png" id="9_t4j05"]
@@ -43,6 +41,8 @@
 [ext_resource type="Texture2D" uid="uid://ofs4cy7qk235" path="res://assets/sprites/background/front/valla.png" id="21_86dl3"]
 [ext_resource type="Texture2D" uid="uid://cht0xkxjyjhen" path="res://assets/sprites/background/back/fase3b_1.png" id="21_lpv2t"]
 [ext_resource type="Texture2D" uid="uid://b85g63mjpxi3d" path="res://assets/sprites/background/back/fase3b_2.png" id="22_mg1hn"]
+[ext_resource type="Texture2D" uid="uid://d25nypr7swher" path="res://assets/sprites/ui/tutorial_bubble.png" id="23_kk7ov"]
+[ext_resource type="FontFile" uid="uid://dquwkgfgkdbdq" path="res://assets/fonts/Onest-Bold.ttf" id="24_ldjh4"]
 [ext_resource type="Texture2D" uid="uid://dlhnpcvy1fc03" path="res://assets/sprites/obstacles/car_fire/carfire_1.png" id="24_tjtu4"]
 [ext_resource type="Texture2D" uid="uid://8kb44jfqim3r" path="res://assets/sprites/obstacles/car_fire/carfire_2.png" id="25_0n20j"]
 [ext_resource type="Texture2D" uid="uid://b4hujf0ynigxi" path="res://assets/sprites/vfx/vfxspikes_1.png" id="25_40qg4"]
@@ -62,7 +62,7 @@
 [ext_resource type="Texture2D" uid="uid://dv0lsmbgda3of" path="res://assets/sprites/background/front/bongos.png" id="51_yb13k"]
 [ext_resource type="Texture2D" uid="uid://hxq7xcp21l3u" path="res://assets/sprites/background/front/nota4.png" id="54_40vf5"]
 [ext_resource type="PackedScene" uid="uid://b8hege0352ly5" path="res://scenes/game/enter_car_animation.tscn" id="56_o8es4"]
-[ext_resource type="PackedScene" uid="uid://bhh7m57vhkbu3" path="res://scenes/shared/level/flame.tscn" id="62_scnoy"]
+[ext_resource type="PackedScene" path="res://scenes/shared/level/flame.tscn" id="62_scnoy"]
 [ext_resource type="Texture2D" uid="uid://drw1ysibkccu8" path="res://assets/sprites/background/front/arbol.png" id="65_q646x"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s1hoo"]
@@ -226,30 +226,65 @@ position = Vector2(4285, 822)
 sprite_frames = SubResource("SpriteFrames_s1hoo")
 autoplay = "default"
 
-[node name="TextAlbert" type="Sprite2D" parent="Characters/Albert"]
-position = Vector2(7.11084, -163.5)
-scale = Vector2(0.836603, 1.12094)
-texture = ExtResource("6_to4o8")
+[node name="SpeechBubble" type="Sprite2D" parent="Characters/Albert"]
+position = Vector2(9, -287)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("8_lpro2")
+
+[node name="Text Albert" type="Label" parent="Characters/Albert"]
+offset_left = -329.0
+offset_top = -341.0
+offset_right = 353.0
+offset_bottom = -276.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_ldjh4")
+theme_override_font_sizes/font_size = 50
+text = "¿Qué estás haciendo, Berta?"
 
 [node name="Karla" type="AnimatedSprite2D" parent="Characters"]
 position = Vector2(5586, 823)
 sprite_frames = SubResource("SpriteFrames_k245c")
 autoplay = "default"
 
-[node name="TextKarla" type="Sprite2D" parent="Characters/Karla"]
-position = Vector2(23, -207)
-scale = Vector2(0.835086, 0.841157)
-texture = ExtResource("7_ukmt1")
+[node name="SpeechBubble2" type="Sprite2D" parent="Characters/Karla"]
+position = Vector2(6, -288)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("8_lpro2")
+
+[node name="SpeechBubble3" type="Sprite2D" parent="Characters/Karla"]
+position = Vector2(14592, -215)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("8_lpro2")
+
+[node name="Text Karla" type="Label" parent="Characters/Karla"]
+offset_left = -340.0
+offset_top = -415.0
+offset_right = 349.0
+offset_bottom = -214.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_ldjh4")
+theme_override_font_sizes/font_size = 50
+text = "¿No crees que estás dándole
+demasiadas vueltas a la
+causa del accidente?"
+horizontal_alignment = 1
 
 [node name="Barbara" type="AnimatedSprite2D" parent="Characters"]
 position = Vector2(20174, 912)
 sprite_frames = SubResource("SpriteFrames_6dqdf")
 autoplay = "default"
 
-[node name="TextBarbara" type="Sprite2D" parent="Characters/Barbara"]
-position = Vector2(8.36603, -200)
-scale = Vector2(0.836603, 0.96094)
-texture = ExtResource("8_5xrow")
+[node name="Text Barbara" type="Label" parent="Characters/Barbara"]
+offset_left = -344.0
+offset_top = -403.0
+offset_right = 360.0
+offset_bottom = -202.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_ldjh4")
+theme_override_font_sizes/font_size = 50
+text = "No es bueno tener miedo
+pero es bueno haberlo tenido"
+horizontal_alignment = 1
 
 [node name="CameraOffsetChangeAreas" type="Node2D" parent="."]
 
@@ -389,6 +424,7 @@ position = Vector2(1545, 641)
 texture = ExtResource("7_4nehl")
 
 [node name="Perchero" type="Sprite2D" parent="Intro/BackgroundObjects"]
+z_index = -1
 position = Vector2(6350, 784.5)
 scale = Vector2(0.790094, 0.790094)
 texture = ExtResource("8_1wjlg")
@@ -401,29 +437,51 @@ texture = ExtResource("21_86dl3")
 
 [node name="Text" type="Node2D" parent="Intro"]
 
+[node name="TutorialBubble" type="Sprite2D" parent="Intro/Text"]
+position = Vector2(431, 277.25)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("23_kk7ov")
+
+[node name="TutorialBubble2" type="Sprite2D" parent="Intro/Text"]
+position = Vector2(1237, 277.25)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("23_kk7ov")
+
+[node name="TutorialBubble3" type="Sprite2D" parent="Intro/Text"]
+position = Vector2(2224, 277.25)
+scale = Vector2(1.64563, 1.5)
+texture = ExtResource("23_kk7ov")
+
 [node name="Pulsa para empezar" type="Label" parent="Intro/Text"]
-offset_left = 249.0
-offset_top = 358.0
-offset_right = 631.0
-offset_bottom = 413.0
-theme_override_font_sizes/font_size = 40
+offset_left = 195.0
+offset_top = 223.25
+offset_right = 664.0
+offset_bottom = 288.25
+theme_override_colors/font_color = Color(0.137255, 0.141176, 0.14902, 1)
+theme_override_fonts/font = ExtResource("24_ldjh4")
+theme_override_font_sizes/font_size = 50
 text = "Pulsa para empezar"
 
 [node name="Pulsar es freno" type="Label" parent="Intro/Text"]
-offset_left = 959.0
-offset_top = 360.0
-offset_right = 1785.0
-offset_bottom = 415.0
-theme_override_font_sizes/font_size = 40
-text = "Mantén pulsada la pantalla para frenar"
+offset_left = 826.0
+offset_top = 187.0
+offset_right = 1652.0
+offset_bottom = 320.0
+theme_override_colors/font_color = Color(0.137255, 0.141176, 0.14902, 1)
+theme_override_fonts/font = ExtResource("24_ldjh4")
+theme_override_font_sizes/font_size = 50
+text = "Mantén pulsada la 
+pantalla para frenar"
 horizontal_alignment = 1
 
 [node name="Suelta para dash" type="Label" parent="Intro/Text"]
-offset_left = 2129.0
-offset_top = 349.0
-offset_right = 2640.0
-offset_bottom = 462.0
-theme_override_font_sizes/font_size = 40
+offset_left = 1913.0
+offset_top = 188.0
+offset_right = 2540.0
+offset_bottom = 321.0
+theme_override_colors/font_color = Color(0.137255, 0.141176, 0.14902, 1)
+theme_override_fonts/font = ExtResource("24_ldjh4")
+theme_override_font_sizes/font_size = 48
 text = "Deja de mantener pulsado
 para hacer un dash"
 horizontal_alignment = 1
@@ -809,6 +867,7 @@ texture = ExtResource("19_lqmj0")
 [node name="BackgroundObjects" type="Node2D" parent="Storyboard"]
 
 [node name="Nota1" type="Sprite2D" parent="Storyboard/BackgroundObjects"]
+z_index = -1
 position = Vector2(10284, 336)
 texture = ExtResource("10_cxmue")
 
@@ -828,10 +887,12 @@ position = Vector2(35093, 72)
 texture = ExtResource("15_a17nd")
 
 [node name="Nota4" type="Sprite2D" parent="Storyboard/BackgroundObjects"]
+z_index = -1
 position = Vector2(15310, 309)
 texture = ExtResource("16_ej48n")
 
 [node name="Nota5" type="Sprite2D" parent="Storyboard/BackgroundObjects"]
+z_index = -1
 position = Vector2(18998, 416)
 texture = ExtResource("17_01be2")
 
@@ -845,6 +906,7 @@ position = Vector2(21479, 91)
 texture = ExtResource("10_cxmue")
 
 [node name="Nota8" type="Sprite2D" parent="Storyboard/BackgroundObjects"]
+z_index = -1
 position = Vector2(30423, 471)
 texture = ExtResource("16_ej48n")
 
