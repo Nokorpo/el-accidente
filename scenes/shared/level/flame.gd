@@ -4,11 +4,14 @@ extends Area2D
 @export var time_off: float = 1
 @export var time_for_transition: float = 0.5
 
-@onready var _timer: Timer = $Timer
+static var _timer: Timer
 
 var _is_active: bool = false
 
 func _ready() -> void:
+	if _timer == null:
+		_timer = Timer.new()
+		get_tree().root.add_child(_timer)
 	_timer.timeout.connect(toggle_fire)
 	_is_active = false
 	_timer.start(time_off)
