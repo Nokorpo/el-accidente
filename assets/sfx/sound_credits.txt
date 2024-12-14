@@ -28,4 +28,62 @@ Author: joanfelipsound
 License: Creative Commons 0
 Source: https://freesound.org/people/joanfelipsound/sounds/57939/
 
----
+---car_dash
+Original title: Rev.ogg
+Author: egomassive
+License: Creative Commons 0
+Source: https://freesound.org/people/egomassive/sounds/536755/
+
+---car_decelerate
+Original title: car screech.wav
+Author: 
+SGAK
+License: Creative Commons 0
+Source: https://freesound.org/people/SGAK/sounds/467794/
+
+---spotlight_flick
+Original title: FXLM neon lights flicker bathroom.wav
+Author: LudwigMuller
+License: Creative Commons 0
+Source: https://freesound.org/people/LudwigMueller/sounds/202612/
+
+---spotlight_break
+Original title: Glass Break
+Author: unfa
+License: Creative Commons 0
+Source: https://freesound.org/people/unfa/sounds/221528/
+
+---deer_run_loop
+Original title: Galopar de un caballo.wav
+Author: alexito116
+License: Creative Commons 0
+Source: https://freesound.org/people/alexito116/sounds/686418/
+
+---combust
+Original title: Combust.wav
+Author: GrimGrum
+License: Creative Commons 0
+Source: https://freesound.org/people/GrimGrum/sounds/412558/
+
+---fire_car
+Original title: auto performance car pull away fast take off big continuous rev.wav
+Author: kyles
+License: Creative Commons 0
+Source: https://freesound.org/people/kyles/sounds/450778/
++
+Original title: Tree Burns Down
+Author: qubodup
+License: Creative Commons 0
+Source: https://freesound.org/people/qubodup/sounds/442677/
+
+---flamethrower
+Original title: Flamethrower_Weapon_Short_Medium_Bursts.wav
+Author: AslakHostaker
+License: Creative Commons 0
+Source: https://freesound.org/people/AslakHostaker/sounds/395038/
+
+---character_speech
+Original title: approving hm.wav
+Author: trimono
+License: Creative Commons 0
+Source: https://freesound.org/people/trimono/sounds/519112/
