@@ -12,6 +12,7 @@ func _ready() -> void:
 func reset() -> void:
 	_player = null
 	_already_fired = false
+	car_sprite.visible = true
 
 func _process(_delta: float) -> void:
 	if _player != null and not _already_fired:
@@ -28,6 +29,7 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _on_time_standing_besides_car_timeout() -> void:
 	_player.change_sprite_to_car()
+	car_sprite.visible = false
 	#_player.speed = _original_speed
 	_player.animation_finished()
 	
