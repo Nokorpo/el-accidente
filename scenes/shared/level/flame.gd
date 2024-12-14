@@ -11,10 +11,10 @@ var _is_active: bool = false
 func _ready() -> void:
 	if _timer == null:
 		_timer = Timer.new()
-		get_tree().root.add_child(_timer)
+		get_tree().root.add_child.call_deferred(_timer)
 	_timer.timeout.connect(toggle_fire)
 	_is_active = false
-	_timer.start(time_off)
+	_timer.start.call_deferred(time_off)
 
 # TODO placeholder until we have the animations.
 # We will have to subscribe to the animation to know when it finishes
