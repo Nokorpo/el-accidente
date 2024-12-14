@@ -62,7 +62,7 @@
 [ext_resource type="Texture2D" uid="uid://dv0lsmbgda3of" path="res://assets/sprites/background/front/bongos.png" id="51_yb13k"]
 [ext_resource type="Texture2D" uid="uid://hxq7xcp21l3u" path="res://assets/sprites/background/front/nota4.png" id="54_40vf5"]
 [ext_resource type="PackedScene" uid="uid://b8hege0352ly5" path="res://scenes/game/enter_car_animation.tscn" id="56_o8es4"]
-[ext_resource type="PackedScene" path="res://scenes/shared/level/flame.tscn" id="62_scnoy"]
+[ext_resource type="PackedScene" uid="uid://bhh7m57vhkbu3" path="res://scenes/shared/level/flame.tscn" id="62_scnoy"]
 [ext_resource type="Texture2D" uid="uid://drw1ysibkccu8" path="res://assets/sprites/background/front/arbol.png" id="65_q646x"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s1hoo"]
@@ -202,8 +202,8 @@ z_index = 2
 
 [node name="PauseMenu" parent="UI" instance=ExtResource("1_kottx")]
 
-[node name="Player" parent="." groups=["player"] instance=ExtResource("2_h8ti8")]
-position = Vector2(402, 577)
+[node name="Player" parent="." instance=ExtResource("2_h8ti8")]
+position = Vector2(36775, 577)
 speed = 11.0
 
 [node name="Camera2D" type="Camera2D" parent="Player" node_paths=PackedStringArray("player")]

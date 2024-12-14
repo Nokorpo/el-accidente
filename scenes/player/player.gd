@@ -66,6 +66,7 @@ func respawn() -> void:
 # haciendo que tenga muchas responsabilidades T_T
 func change_sprite_to_car() -> void:
 	$AnimatedSprite2D.sprite_frames = car_sprite_frames
+	%CollisionShape2D2.disabled = false
 
 func stop_for_animation() -> void:
 	requested_stop_for_animation.emit()

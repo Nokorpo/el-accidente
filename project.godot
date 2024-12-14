@@ -32,6 +32,10 @@ window/size/window_height_override=589
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_height"
 
+[global_group]
+
+player=""
+
 [input]
 
 action={
