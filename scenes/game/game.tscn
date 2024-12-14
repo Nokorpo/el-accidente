@@ -34,7 +34,6 @@
 [ext_resource type="Texture2D" uid="uid://dju3gj8rxy761" path="res://assets/sprites/background/front/nota3.png" id="16_ej48n"]
 [ext_resource type="Texture2D" uid="uid://cldny8fywn81i" path="res://assets/sprites/background/front/nota5.png" id="17_01be2"]
 [ext_resource type="PackedScene" uid="uid://b8krget0mvlo4" path="res://scenes/shared/level/checkpoint.tscn" id="17_8ibhx"]
-[ext_resource type="Texture2D" uid="uid://chumwrl4pm0ft" path="res://assets/blockout/flame.svg" id="17_ey7y6"]
 [ext_resource type="Texture2D" uid="uid://c0wpifu0rg1j1" path="res://assets/blockout/spike.svg" id="18_wdn2q"]
 [ext_resource type="Script" path="res://scenes/shared/tools/polygon_expander.gd" id="19_70n6j"]
 [ext_resource type="Texture2D" uid="uid://b0gqbk4xvkell" path="res://assets/square.svg" id="19_lqmj0"]
@@ -63,6 +62,7 @@
 [ext_resource type="Texture2D" uid="uid://dv0lsmbgda3of" path="res://assets/sprites/background/front/bongos.png" id="51_yb13k"]
 [ext_resource type="Texture2D" uid="uid://hxq7xcp21l3u" path="res://assets/sprites/background/front/nota4.png" id="54_40vf5"]
 [ext_resource type="PackedScene" uid="uid://b8hege0352ly5" path="res://scenes/game/enter_car_animation.tscn" id="56_o8es4"]
+[ext_resource type="PackedScene" uid="uid://bhh7m57vhkbu3" path="res://scenes/shared/level/flame.tscn" id="62_scnoy"]
 [ext_resource type="Texture2D" uid="uid://drw1ysibkccu8" path="res://assets/sprites/background/front/arbol.png" id="65_q646x"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s1hoo"]
@@ -1780,62 +1780,45 @@ rotation = -0.0481859
 sprite_frames = SubResource("SpriteFrames_bavkr")
 autoplay = "default"
 
-[node name="Flame" type="Sprite2D" parent="Climax/Obstacles"]
+[node name="Flame" parent="Climax/Obstacles" instance=ExtResource("62_scnoy")]
 position = Vector2(41266, 802)
-scale = Vector2(0.132275, 1)
-texture = ExtResource("17_ey7y6")
 
-[node name="Flame5" type="Sprite2D" parent="Climax/Obstacles"]
+[node name="Flame2" parent="Climax/Obstacles" instance=ExtResource("62_scnoy")]
 position = Vector2(42254.2, 639)
 rotation = -3.13917
-scale = Vector2(0.132275, 1)
-texture = ExtResource("17_ey7y6")
+skew = -0.00238037
 
-[node name="Flame6" type="Sprite2D" parent="Climax/Obstacles"]
+[node name="Flame3" parent="Climax/Obstacles" instance=ExtResource("62_scnoy")]
+position = Vector2(43231.6, 802)
+
+[node name="Flame4" parent="Climax/Obstacles" instance=ExtResource("62_scnoy")]
 position = Vector2(44256.1, 639)
 rotation = -3.13917
-scale = Vector2(0.132275, 1)
-texture = ExtResource("17_ey7y6")
+skew = -0.00238037
 
-[node name="Flame2" type="Sprite2D" parent="Climax/Obstacles"]
-position = Vector2(43231.6, 802)
-scale = Vector2(0.132275, 1)
-texture = ExtResource("17_ey7y6")
-
-[node name="Flame3" type="Sprite2D" parent="Climax/Obstacles"]
+[node name="Flame5" parent="Climax/Obstacles" instance=ExtResource("62_scnoy")]
 position = Vector2(45623.6, 808)
-scale = Vector2(0.132275, 1)
-texture = ExtResource("17_ey7y6")
 
-[node name="Flame7" type="Sprite2D" parent="Climax/Obstacles"]
-position = Vector2(62753, 697)
-scale = Vector2(0.132275, 1)
-texture = ExtResource("17_ey7y6")
-
-[node name="Flame11" type="Sprite2D" parent="Climax/Obstacles"]
-position = Vector2(63804, 667)
-scale = Vector2(0.132275, 1)
-texture = ExtResource("17_ey7y6")
-
-[node name="Flame4" type="Sprite2D" parent="Climax/Obstacles"]
+[node name="Flame6" parent="Climax/Obstacles" instance=ExtResource("62_scnoy")]
 position = Vector2(53418.6, 613)
-scale = Vector2(0.132275, 1)
-texture = ExtResource("17_ey7y6")
 
-[node name="Flame8" type="Sprite2D" parent="Climax/Obstacles"]
+[node name="Flame7" parent="Climax/Obstacles" instance=ExtResource("62_scnoy")]
 position = Vector2(55543.6, 951.211)
-scale = Vector2(0.132275, 1.46672)
-texture = ExtResource("17_ey7y6")
+scale = Vector2(1, 1.467)
 
-[node name="Flame9" type="Sprite2D" parent="Climax/Obstacles"]
+[node name="Flame8" parent="Climax/Obstacles" instance=ExtResource("62_scnoy")]
 position = Vector2(55693.6, 951.211)
-scale = Vector2(0.132275, 1.46672)
-texture = ExtResource("17_ey7y6")
+scale = Vector2(1, 1.467)
 
-[node name="Flame10" type="Sprite2D" parent="Climax/Obstacles"]
+[node name="Flame9" parent="Climax/Obstacles" instance=ExtResource("62_scnoy")]
 position = Vector2(55843.6, 950.211)
-scale = Vector2(0.132275, 1.47202)
-texture = ExtResource("17_ey7y6")
+scale = Vector2(1, 1.472)
+
+[node name="Flame10" parent="Climax/Obstacles" instance=ExtResource("62_scnoy")]
+position = Vector2(62753, 697)
+
+[node name="Flame11" parent="Climax/Obstacles" instance=ExtResource("62_scnoy")]
+position = Vector2(63804, 667)
 
 [node name="Deer" type="AnimatedSprite2D" parent="Climax/Obstacles"]
 position = Vector2(66094, 677)

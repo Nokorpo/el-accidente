@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhh7m57vhkbu3"]
+
+[ext_resource type="Texture2D" uid="uid://chumwrl4pm0ft" path="res://assets/blockout/flame.svg" id="1_252ja"]
+[ext_resource type="Script" path="res://scenes/shared/level/flame.gd" id="1_kmupw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2nlc1"]
+radius = 15.0
+height = 348.0
+
+[node name="Flame" type="Area2D"]
+script = ExtResource("1_kmupw")
+
+[node name="Flame" type="Sprite2D" parent="."]
+scale = Vector2(0.132275, 1)
+texture = ExtResource("1_252ja")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_2nlc1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
