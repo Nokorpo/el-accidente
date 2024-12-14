@@ -82,6 +82,12 @@ Author: AslakHostaker
 License: Creative Commons 0
 Source: https://freesound.org/people/AslakHostaker/sounds/395038/
 
+---fire_loop
+Original title: Fire_Loop.wav
+Author: ReadeOnly
+License: Creative Commons 0
+Source: https://freesound.org/people/ReadeOnly/sounds/186924/
+
 ---character_speech
 Original title: approving hm.wav
 Author: trimono
