@@ -22,14 +22,18 @@ func toggle_fire() -> void:
 	if _is_active:
 		# TODO uncomment when we have animations. Keep here, we want monitoring
 		# to be disabled while the animation plays
-		#$AnimationPlayer.animation_finished.connect(toggle_fire)
+		#$AnimationPlayer.play("turn_on")
+		#await $AnimationPlayer.animation_finished
+		#$AnimationPlayer.play("on_loop")
 		monitoring = true
 		_timer.start(time_on)
 	else:
 		monitoring = false
 		# TODO uncomment when we have animations. Keep here, we want monitoring
 		# to be disabled while the animation plays
-		#$AnimationPlayer.animation_finished.connect(toggle_fire)
+		#$AnimationPlayer.play("turn_off")
+		#await $AnimationPlayer.animation_finished
+		#$AnimationPlayer.play("off")
 		_timer.start(time_off)
 
 	$Flame.visible = _is_active #TODO remove when we have animations
