@@ -57,10 +57,10 @@
 [ext_resource type="Texture2D" uid="uid://b46vs02g8lpko" path="res://assets/sprites/background/back/fase1_3.png" id="45_h3ped"]
 [ext_resource type="Texture2D" uid="uid://dv0lsmbgda3of" path="res://assets/sprites/background/front/bongos.png" id="51_yb13k"]
 [ext_resource type="Texture2D" uid="uid://hxq7xcp21l3u" path="res://assets/sprites/background/front/nota4.png" id="54_40vf5"]
+[ext_resource type="PackedScene" uid="uid://dcdkps22trsvq" path="res://scenes/shared/level/tree.tscn" id="55_c7rh1"]
 [ext_resource type="PackedScene" uid="uid://b8hege0352ly5" path="res://scenes/game/enter_car_animation.tscn" id="56_o8es4"]
 [ext_resource type="PackedScene" uid="uid://d2hk62x8s3bl2" path="res://scenes/shared/level/flaming_car.tscn" id="58_4cycx"]
 [ext_resource type="PackedScene" uid="uid://bhh7m57vhkbu3" path="res://scenes/shared/level/flame.tscn" id="62_scnoy"]
-[ext_resource type="Texture2D" uid="uid://drw1ysibkccu8" path="res://assets/sprites/background/front/arbol.png" id="65_q646x"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s1hoo"]
 animations = [{
@@ -183,12 +183,14 @@ z_index = 2
 [node name="PauseMenu" parent="UI" instance=ExtResource("1_kottx")]
 
 [node name="Player" parent="." instance=ExtResource("2_h8ti8")]
-position = Vector2(52633, 664)
+position = Vector2(402, 577)
 speed = 11.0
 
 [node name="Camera2D" type="Camera2D" parent="Player" node_paths=PackedStringArray("player")]
 position = Vector2(877, -24)
+limit_left = 0
 limit_top = 0
+limit_right = 81078
 limit_bottom = 1187
 position_smoothing_enabled = true
 drag_vertical_enabled = true
@@ -1727,9 +1729,9 @@ position = Vector2(62187, 683)
 scale = Vector2(0.573856, 0.573856)
 texture = ExtResource("29_e4dia")
 
-[node name="Arbol" type="Sprite2D" parent="Climax/BackgroudObjects"]
-position = Vector2(80585, 376)
-texture = ExtResource("65_q646x")
+[node name="Arbol" parent="Climax/BackgroudObjects" instance=ExtResource("55_c7rh1")]
+animation = &"idle"
+frame_progress = 0.0
 
 [node name="Checkpoints" type="Node2D" parent="Climax"]
 
@@ -1894,6 +1896,9 @@ sprite_frames = SubResource("SpriteFrames_xnj04")
 [node name="PlayerPos" type="Marker2D" parent="."]
 position = Vector2(402, 577)
 scale = Vector2(1.08, 1)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(81078, 626)
 
 [connection signal="body_entered" from="CameraOffsetChangeAreas/CameraOffsetArea4/CameraUp" to="CameraOffsetChangeAreas/CameraOffsetArea4" method="change_offset"]
 [connection signal="body_entered" from="CameraOffsetChangeAreas/CameraOffsetArea2/CameraUp" to="CameraOffsetChangeAreas/CameraOffsetArea2" method="change_offset"]
