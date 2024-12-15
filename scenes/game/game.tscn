@@ -40,7 +40,6 @@
 [ext_resource type="Texture2D" uid="uid://cht0xkxjyjhen" path="res://assets/sprites/background/back/fase3b_1.png" id="21_lpv2t"]
 [ext_resource type="Texture2D" uid="uid://b85g63mjpxi3d" path="res://assets/sprites/background/back/fase3b_2.png" id="22_mg1hn"]
 [ext_resource type="Texture2D" uid="uid://d25nypr7swher" path="res://assets/sprites/ui/tutorial_bubble.png" id="23_kk7ov"]
-[ext_resource type="FontFile" uid="uid://dquwkgfgkdbdq" path="res://assets/fonts/Onest-Bold.ttf" id="24_ldjh4"]
 [ext_resource type="Texture2D" uid="uid://b4hujf0ynigxi" path="res://assets/sprites/vfx/vfxspikes_1.png" id="25_40qg4"]
 [ext_resource type="Texture2D" uid="uid://dip7jr04u2oe" path="res://assets/sprites/background/back/fase3b_6.png" id="26_rtaw7"]
 [ext_resource type="Texture2D" uid="uid://dr76qw1ownw0c" path="res://assets/sprites/vfx/vfxspikes_2.png" id="26_x1aa5"]
@@ -52,6 +51,7 @@
 [ext_resource type="Texture2D" uid="uid://del8tiiy5ndi2" path="res://assets/sprites/vfx/vfxspikes_5.png" id="29_ytu2h"]
 [ext_resource type="Texture2D" uid="uid://mnvedi6d5irk" path="res://assets/sprites/obstacles/deer/deer_idle1.png" id="30_7q80s"]
 [ext_resource type="Texture2D" uid="uid://cad6pwwq8nac1" path="res://assets/sprites/obstacles/deer/deer_idle2.png" id="31_7p4aj"]
+[ext_resource type="Texture2D" uid="uid://d3xdglvq257ol" path="res://assets/sprites/background/back/story_transition.png" id="31_wio7d"]
 [ext_resource type="Texture2D" uid="uid://cs1ltlbgt23gh" path="res://assets/sprites/obstacles/elevator_platform.png" id="39_5x1kc"]
 [ext_resource type="Texture2D" uid="uid://b46vs02g8lpko" path="res://assets/sprites/background/back/fase1_3.png" id="45_h3ped"]
 [ext_resource type="Texture2D" uid="uid://dv0lsmbgda3of" path="res://assets/sprites/background/front/bongos.png" id="51_yb13k"]
@@ -225,7 +225,6 @@ offset_top = -341.0
 offset_right = 353.0
 offset_bottom = -276.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("24_ldjh4")
 theme_override_font_sizes/font_size = 50
 text = "¿Qué estás haciendo, Berta?"
 
@@ -239,18 +238,12 @@ position = Vector2(6, -288)
 scale = Vector2(1.8, 1.8)
 texture = ExtResource("8_lpro2")
 
-[node name="SpeechBubble3" type="Sprite2D" parent="Characters/Karla"]
-position = Vector2(14592, -215)
-scale = Vector2(1.8, 1.8)
-texture = ExtResource("8_lpro2")
-
 [node name="Text Karla" type="Label" parent="Characters/Karla"]
 offset_left = -340.0
 offset_top = -415.0
 offset_right = 349.0
 offset_bottom = -214.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("24_ldjh4")
 theme_override_font_sizes/font_size = 50
 text = "¿No crees que estás dándole
 demasiadas vueltas a la
@@ -262,13 +255,17 @@ position = Vector2(20174, 912)
 sprite_frames = SubResource("SpriteFrames_6dqdf")
 autoplay = "default"
 
+[node name="SpeechBubble3" type="Sprite2D" parent="Characters/Barbara"]
+position = Vector2(4, -304)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("8_lpro2")
+
 [node name="Text Barbara" type="Label" parent="Characters/Barbara"]
 offset_left = -344.0
 offset_top = -403.0
 offset_right = 360.0
 offset_bottom = -202.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("24_ldjh4")
 theme_override_font_sizes/font_size = 50
 text = "No es bueno tener miedo
 pero es bueno haberlo tenido"
@@ -446,7 +443,6 @@ offset_top = 223.25
 offset_right = 664.0
 offset_bottom = 288.25
 theme_override_colors/font_color = Color(0.137255, 0.141176, 0.14902, 1)
-theme_override_fonts/font = ExtResource("24_ldjh4")
 theme_override_font_sizes/font_size = 50
 text = "Pulsa para empezar"
 
@@ -456,7 +452,6 @@ offset_top = 187.0
 offset_right = 1652.0
 offset_bottom = 320.0
 theme_override_colors/font_color = Color(0.137255, 0.141176, 0.14902, 1)
-theme_override_fonts/font = ExtResource("24_ldjh4")
 theme_override_font_sizes/font_size = 50
 text = "Mantén pulsada la 
 pantalla para frenar"
@@ -468,7 +463,6 @@ offset_top = 188.0
 offset_right = 2540.0
 offset_bottom = 321.0
 theme_override_colors/font_color = Color(0.137255, 0.141176, 0.14902, 1)
-theme_override_fonts/font = ExtResource("24_ldjh4")
 theme_override_font_sizes/font_size = 48
 text = "Deja de mantener pulsado
 para hacer un dash"
@@ -763,7 +757,7 @@ z_index = -10
 
 [node name="Fase2b1" type="Sprite2D" parent="Storyboard/Background"]
 z_index = -5
-position = Vector2(10498, 576)
+position = Vector2(10432, 576)
 scale = Vector2(0.980952, 0.980952)
 texture = ExtResource("7_8at2x")
 
@@ -822,8 +816,14 @@ texture = ExtResource("14_te1nf")
 
 [node name="Square4" type="Sprite2D" parent="Storyboard/Background"]
 modulate = Color(1, 0.945098, 0.72549, 1)
-position = Vector2(11804, 218.75)
-scale = Vector2(1.15384, 3.54231)
+position = Vector2(11787, 218.75)
+scale = Vector2(1.41539, 3.54231)
+texture = ExtResource("19_lqmj0")
+
+[node name="Square10" type="Sprite2D" parent="Storyboard/Background"]
+modulate = Color(1, 0.945098, 0.72549, 1)
+position = Vector2(8851.5, 576)
+scale = Vector2(6.31538, 9.72308)
 texture = ExtResource("19_lqmj0")
 
 [node name="Square5" type="Sprite2D" parent="Storyboard/Background"]
@@ -846,8 +846,8 @@ texture = ExtResource("19_lqmj0")
 
 [node name="Square9" type="Sprite2D" parent="Storyboard/Background"]
 modulate = Color(1, 0.956863, 0.796078, 1)
-position = Vector2(37843, 1095)
-scale = Vector2(1.32309, 2)
+position = Vector2(37960, 802.5)
+scale = Vector2(3.12308, 6.5)
 texture = ExtResource("19_lqmj0")
 
 [node name="Square8" type="Sprite2D" parent="Storyboard/Background"]
@@ -855,6 +855,14 @@ modulate = Color(1, 0.956863, 0.796078, 1)
 position = Vector2(25321, 482.25)
 scale = Vector2(1.72308, 3.95769)
 texture = ExtResource("19_lqmj0")
+
+[node name="StoryboardTransition" type="Sprite2D" parent="Storyboard/Background"]
+position = Vector2(8701, 581)
+texture = ExtResource("31_wio7d")
+
+[node name="StoryboardTransition2" type="Sprite2D" parent="Storyboard/Background"]
+position = Vector2(37923, 581)
+texture = ExtResource("31_wio7d")
 
 [node name="BackgroundObjects" type="Node2D" parent="Storyboard"]
 
@@ -1775,6 +1783,7 @@ shape = SubResource("RectangleShape2D_ahdys")
 
 [node name="EnterCarAnimation" parent="Climax" instance=ExtResource("56_o8es4")]
 z_index = 20
+position = Vector2(38415, 583)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Climax/EnterCarAnimation"]
 position = Vector2(-320, -27)

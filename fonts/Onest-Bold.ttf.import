@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://dquwkgfgkdbdq"
-path="res://.godot/imported/Onest-Bold.ttf-b7c88497185f0fa65d88f090880625a7.fontdata"
+path="res://.godot/imported/Onest-Bold.ttf-07d934ae9206553efc6abff072c5e5e2.fontdata"
 
 [deps]
 
-source_file="res://assets/fonts/Onest-Bold.ttf"
-dest_files=["res://.godot/imported/Onest-Bold.ttf-b7c88497185f0fa65d88f090880625a7.fontdata"]
+source_file="res://fonts/Onest-Bold.ttf"
+dest_files=["res://.godot/imported/Onest-Bold.ttf-07d934ae9206553efc6abff072c5e5e2.fontdata"]
 
 [params]
 
