@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://btyebcvnehuyo"]
 
 [ext_resource type="Script" path="res://scenes/shared/level/blinking_platform.gd" id="1_5cjqr"]
-[ext_resource type="Texture2D" uid="uid://cmjbatharooxh" path="res://assets/blockout/intermitent_platform.svg" id="1_ujbnn"]
+[ext_resource type="Texture2D" uid="uid://cffe2n127hqvn" path="res://assets/sprites/obstacles/blinking_plattform.png" id="2_kgv2u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pltws"]
 size = Vector2(374, 68)
@@ -11,8 +11,8 @@ script = ExtResource("1_5cjqr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 9.53674e-07)
-scale = Vector2(1, 0.179894)
-texture = ExtResource("1_ujbnn")
+scale = Vector2(0.610114, 0.985075)
+texture = ExtResource("2_kgv2u")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
