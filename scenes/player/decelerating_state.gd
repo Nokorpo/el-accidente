@@ -16,6 +16,7 @@ func _on_enter_state() -> void:
 	_original_speed = node.speed
 	_time_entered = Time.get_ticks_msec()
 	%AnimatedSprite2D.play("decelerating")
+	AudioManager.sfx_decelerate.play()
 
 func _process(_delta: float) -> void:
 	if active:
@@ -39,3 +40,4 @@ func resolve() -> void:
 		state_machine.change_state(DashingState)
 	else:
 		state_machine.change_state(RunningState)
+	AudioManager.sfx_decelerate.stop()

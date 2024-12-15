@@ -16,4 +16,7 @@ func _on_collision_area_body_entered(body: Node2D) -> void:
 
 func _on_triggered(body: Node2D) -> void:
 	if body.is_in_group("player"):
+		AudioManager.sfx_flaming_car.play()
 		$AnimationPlayer.play("run")
+		await get_tree().create_timer(3.2).timeout
+		AudioManager.sfx_combust.play()

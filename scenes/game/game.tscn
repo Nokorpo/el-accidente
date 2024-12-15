@@ -189,7 +189,7 @@ z_index = 2
 [node name="PauseMenu" parent="UI" instance=ExtResource("1_kottx")]
 
 [node name="Player" parent="." instance=ExtResource("2_h8ti8")]
-position = Vector2(402, 577)
+position = Vector2(46279, 818)
 speed = 11.0
 
 [node name="Camera2D" type="Camera2D" parent="Player" node_paths=PackedStringArray("player")]
@@ -1706,6 +1706,7 @@ texture = ExtResource("19_lqmj0")
 position = Vector2(61304, 1221)
 
 [node name="FireA7" parent="Climax/Background" instance=ExtResource("62_stqg0")]
+z_index = 10
 position = Vector2(66714, 1221)
 
 [node name="FireA5" parent="Climax/Background" instance=ExtResource("62_stqg0")]
