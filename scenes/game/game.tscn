@@ -56,14 +56,14 @@
 [ext_resource type="Texture2D" uid="uid://b46vs02g8lpko" path="res://assets/sprites/background/back/fase1_3.png" id="45_h3ped"]
 [ext_resource type="Texture2D" uid="uid://dv0lsmbgda3of" path="res://assets/sprites/background/front/bongos.png" id="51_yb13k"]
 [ext_resource type="Texture2D" uid="uid://hxq7xcp21l3u" path="res://assets/sprites/background/front/nota4.png" id="54_40vf5"]
-[ext_resource type="PackedScene" path="res://scenes/shared/level/tree.tscn" id="55_c7rh1"]
+[ext_resource type="PackedScene" uid="uid://dcdkps22trsvq" path="res://scenes/shared/level/tree.tscn" id="55_c7rh1"]
 [ext_resource type="PackedScene" uid="uid://b8hege0352ly5" path="res://scenes/game/enter_car_animation.tscn" id="56_o8es4"]
 [ext_resource type="PackedScene" uid="uid://b1tu1bnym3cmy" path="res://scenes/shared/level/spotlight.tscn" id="57_hkjk8"]
 [ext_resource type="PackedScene" uid="uid://d2hk62x8s3bl2" path="res://scenes/shared/level/flaming_car.tscn" id="58_4cycx"]
 [ext_resource type="PackedScene" uid="uid://bhh7m57vhkbu3" path="res://scenes/shared/level/flame.tscn" id="62_scnoy"]
-[ext_resource type="PackedScene" path="res://scenes/shared/vfx/fire_a.tscn" id="62_stqg0"]
-[ext_resource type="PackedScene" path="res://scenes/shared/vfx/fire_b.tscn" id="63_17udh"]
-[ext_resource type="PackedScene" path="res://scenes/shared/vfx/fire_c.tscn" id="64_ff84q"]
+[ext_resource type="PackedScene" uid="uid://c2we07xieyt6x" path="res://scenes/shared/vfx/fire_a.tscn" id="62_stqg0"]
+[ext_resource type="PackedScene" uid="uid://behbyiklogyu8" path="res://scenes/shared/vfx/fire_b.tscn" id="63_17udh"]
+[ext_resource type="PackedScene" uid="uid://bwiu2f4s3s8j4" path="res://scenes/shared/vfx/fire_c.tscn" id="64_ff84q"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s1hoo"]
 animations = [{
