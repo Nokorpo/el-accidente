@@ -19,6 +19,7 @@ const SPEED_FPS_MULTIPLIER: float = 3600
 
 
 var is_affected_by_gravity: bool = true
+var is_using_car: bool = false
 
 var _checkpoint: Vector2 = Vector2.ZERO
 var _camera: Camera2D = null
@@ -32,6 +33,7 @@ func _ready() -> void:
 	_checkpoint = global_position
 	EventBus.reload_level.connect(respawn)
 	$AnimatedSprite2D.sprite_frames = running_sprite_frames
+	is_using_car = false
 
 func _physics_process(delta: float) -> void:
 	velocity.x = lerp( velocity.x,  speed * SPEED_FPS_MULTIPLIER * delta, .9)
@@ -66,6 +68,7 @@ func respawn() -> void:
 # FIXME no se me ocurre otra manera de hacer estos métodos, pero joden la interfaz del player
 # haciendo que tenga muchas responsabilidades T_T
 func change_sprite_to_car() -> void:
+	is_using_car = true
 	AudioManager.sfx_car_engine_start.play()
 	$AnimatedSprite2D.sprite_frames = car_sprite_frames
 	%CollisionShape2D2.disabled = false
