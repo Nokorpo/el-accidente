@@ -1,10 +1,9 @@
-[gd_scene load_steps=81 format=3 uid="uid://7asaea7mswd5"]
+[gd_scene load_steps=80 format=3 uid="uid://7asaea7mswd5"]
 
 [ext_resource type="PackedScene" uid="uid://bajeqjukfftik" path="res://scenes/menu/pause_menu.tscn" id="1_kottx"]
 [ext_resource type="PackedScene" uid="uid://cpi1lm68o7bl7" path="res://scenes/shared/vfx/touch_feedback_frame.tscn" id="1_s3sr5"]
 [ext_resource type="PackedScene" uid="uid://7pnca5lreux0" path="res://scenes/player/player.tscn" id="2_h8ti8"]
 [ext_resource type="PackedScene" uid="uid://cn1yo6i0mpxgs" path="res://scenes/menu/curtain.tscn" id="2_ket6m"]
-[ext_resource type="Script" path="res://scenes/game/camera.gd" id="3_on1ws"]
 [ext_resource type="Texture2D" uid="uid://chdo2lhdiiig" path="res://assets/sprites/background/back/fase1b_1.png" id="5_fe277"]
 [ext_resource type="Texture2D" uid="uid://iwi0kiieafvs" path="res://assets/sprites/npc/albert_idle1.png" id="5_fjoce"]
 [ext_resource type="Texture2D" uid="uid://c2bj660bg27hd" path="res://assets/sprites/npc/albert_idle2.png" id="6_atd2q"]
@@ -192,7 +191,7 @@ z_index = 2
 position = Vector2(402, 577)
 speed = 11.0
 
-[node name="Camera2D" type="Camera2D" parent="Player" node_paths=PackedStringArray("player")]
+[node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(877, -24)
 limit_left = 0
 limit_top = 0
@@ -204,8 +203,6 @@ drag_top_margin = 0.7
 drag_bottom_margin = 0.9
 editor_draw_limits = true
 editor_draw_drag_margin = true
-script = ExtResource("3_on1ws")
-player = NodePath("..")
 
 [node name="Characters" type="Node2D" parent="."]
 
@@ -1947,10 +1944,6 @@ position = Vector2(66094, 677)
 sprite_frames = SubResource("SpriteFrames_xnj04")
 
 [node name="VFX" type="Node2D" parent="Climax"]
-
-[node name="PlayerPos" type="Marker2D" parent="."]
-position = Vector2(402, 577)
-scale = Vector2(1.08, 1)
 
 [connection signal="body_entered" from="CameraOffsetChangeAreas/CameraOffsetArea4/CameraUp" to="CameraOffsetChangeAreas/CameraOffsetArea4" method="change_offset"]
 [connection signal="body_entered" from="CameraOffsetChangeAreas/CameraOffsetArea2/CameraUp" to="CameraOffsetChangeAreas/CameraOffsetArea2" method="change_offset"]
