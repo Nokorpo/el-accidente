@@ -6,4 +6,4 @@
 # Project specific ignores
 *.translation
 build
-
+**/*~
