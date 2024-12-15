@@ -28,7 +28,6 @@
 [ext_resource type="Texture2D" uid="uid://dkfwlu0e7yois" path="res://assets/sprites/background/back/fase2_4.png" id="14_te1nf"]
 [ext_resource type="Script" path="res://scenes/shared/level/elevator_platform.gd" id="15_4ntac"]
 [ext_resource type="Texture2D" uid="uid://lcfrkykxna7y" path="res://assets/sprites/background/front/nota2.png" id="15_a17nd"]
-[ext_resource type="Texture2D" uid="uid://2r6dvfv031fl" path="res://assets/blockout/elevator_platform.svg" id="16_3o8ko"]
 [ext_resource type="Texture2D" uid="uid://dju3gj8rxy761" path="res://assets/sprites/background/front/nota3.png" id="16_ej48n"]
 [ext_resource type="Texture2D" uid="uid://cldny8fywn81i" path="res://assets/sprites/background/front/nota5.png" id="17_01be2"]
 [ext_resource type="PackedScene" uid="uid://b8krget0mvlo4" path="res://scenes/shared/level/checkpoint.tscn" id="17_8ibhx"]
@@ -58,6 +57,7 @@
 [ext_resource type="Texture2D" uid="uid://del8tiiy5ndi2" path="res://assets/sprites/vfx/vfxspikes_5.png" id="29_ytu2h"]
 [ext_resource type="Texture2D" uid="uid://mnvedi6d5irk" path="res://assets/sprites/obstacles/deer/deer_idle1.png" id="30_7q80s"]
 [ext_resource type="Texture2D" uid="uid://cad6pwwq8nac1" path="res://assets/sprites/obstacles/deer/deer_idle2.png" id="31_7p4aj"]
+[ext_resource type="Texture2D" uid="uid://cs1ltlbgt23gh" path="res://assets/sprites/obstacles/elevator_platform.png" id="39_5x1kc"]
 [ext_resource type="Texture2D" uid="uid://b46vs02g8lpko" path="res://assets/sprites/background/back/fase1_3.png" id="45_h3ped"]
 [ext_resource type="Texture2D" uid="uid://dv0lsmbgda3of" path="res://assets/sprites/background/front/bongos.png" id="51_yb13k"]
 [ext_resource type="Texture2D" uid="uid://hxq7xcp21l3u" path="res://assets/sprites/background/front/nota4.png" id="54_40vf5"]
@@ -117,7 +117,7 @@ size = Vector2(122, 574)
 size = Vector2(122, 574)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oii5x"]
-size = Vector2(377, 377)
+size = Vector2(496.227, 437.238)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hyael"]
 size = Vector2(324, 112)
@@ -129,7 +129,7 @@ size = Vector2(224, 387)
 size = Vector2(88, 544)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uvcv2"]
-size = Vector2(375.918, 184.235)
+size = Vector2(496.861, 443.705)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3cwx4"]
 animations = [{
@@ -203,7 +203,7 @@ z_index = 2
 [node name="PauseMenu" parent="UI" instance=ExtResource("1_kottx")]
 
 [node name="Player" parent="." instance=ExtResource("2_h8ti8")]
-position = Vector2(36775, 577)
+position = Vector2(52633, 664)
 speed = 11.0
 
 [node name="Camera2D" type="Camera2D" parent="Player" node_paths=PackedStringArray("player")]
@@ -496,18 +496,23 @@ position = Vector2(55630.6, 349)
 scale = Vector2(1, 0.921384)
 
 [node name="ElevatorPlatform5" type="Node2D" parent="Storyboard/Floors"]
-position = Vector2(53968.6, 916)
+z_index = -1
+position = Vector2(53905, 927)
 scale = Vector2(2.24297, 0.584656)
 script = ExtResource("15_4ntac")
 mov_speed = 200
 
 [node name="Platform" type="Sprite2D" parent="Storyboard/Floors/ElevatorPlatform5"]
-texture = ExtResource("16_3o8ko")
+z_index = -10
+position = Vector2(25.749, 611.897)
+scale = Vector2(0.750298, 3.76252)
+texture = ExtResource("39_5x1kc")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Storyboard/Floors/ElevatorPlatform5/Platform"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Storyboard/Floors/ElevatorPlatform5/Platform/StaticBody2D"]
 position = Vector2(-0.5, -0.5)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_oii5x")
 
 [node name="Area2D" type="Area2D" parent="Storyboard/Floors/ElevatorPlatform5/Platform"]
@@ -517,7 +522,7 @@ position = Vector2(0, -246)
 shape = SubResource("RectangleShape2D_hyael")
 
 [node name="DetinationPosition" type="Marker2D" parent="Storyboard/Floors/ElevatorPlatform5"]
-position = Vector2(0, -860.335)
+position = Vector2(26.0362, -420.76)
 
 [node name="Polygon2D4" type="Polygon2D" parent="Storyboard/Floors"]
 position = Vector2(10118, 1060)
@@ -1191,19 +1196,22 @@ position = Vector2(12769, -14)
 [node name="Platforms" type="Node2D" parent="Storyboard"]
 
 [node name="ElevatorPlatform" type="Node2D" parent="Storyboard/Platforms"]
+z_index = -1
 position = Vector2(11041, 1122)
 scale = Vector2(1.92063, 0.314815)
 script = ExtResource("15_4ntac")
 mov_speed = 200
 
 [node name="Platform" type="Sprite2D" parent="Storyboard/Platforms/ElevatorPlatform"]
-texture = ExtResource("16_3o8ko")
+position = Vector2(-2.85875, 1069.31)
+scale = Vector2(0.783601, 5.71285)
+texture = ExtResource("39_5x1kc")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Storyboard/Platforms/ElevatorPlatform/Platform"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Storyboard/Platforms/ElevatorPlatform/Platform/StaticBody2D"]
 z_index = 1
-position = Vector2(-1.0415, -90.5295)
+position = Vector2(-1.0415, 0.759338)
 shape = SubResource("RectangleShape2D_uvcv2")
 
 [node name="Area2D" type="Area2D" parent="Storyboard/Platforms/ElevatorPlatform/Platform"]
@@ -1213,16 +1221,19 @@ position = Vector2(0, -246)
 shape = SubResource("RectangleShape2D_hyael")
 
 [node name="DetinationPosition" type="Marker2D" parent="Storyboard/Platforms/ElevatorPlatform"]
-position = Vector2(0, -2069.47)
+position = Vector2(0, -971.999)
 
 [node name="ElevatorPlatform4" type="Node2D" parent="Storyboard/Platforms"]
-position = Vector2(37038.2, 1241.5)
+z_index = -1
+position = Vector2(37104, 1256)
 scale = Vector2(2.96297, 0.584656)
 script = ExtResource("15_4ntac")
 mov_speed = 200
 
 [node name="Platform" type="Sprite2D" parent="Storyboard/Platforms/ElevatorPlatform4"]
-texture = ExtResource("16_3o8ko")
+position = Vector2(-10.2609, 525.522)
+scale = Vector2(0.710693, 3.37256)
+texture = ExtResource("39_5x1kc")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Storyboard/Platforms/ElevatorPlatform4/Platform"]
 
@@ -1237,21 +1248,24 @@ position = Vector2(0, -246)
 shape = SubResource("RectangleShape2D_hyael")
 
 [node name="DetinationPosition" type="Marker2D" parent="Storyboard/Platforms/ElevatorPlatform4"]
-position = Vector2(0, -1511.15)
+position = Vector2(-10.125, -839.81)
 
 [node name="ElevatorPlatform2" type="Node2D" parent="Storyboard/Platforms"]
+z_index = -1
 position = Vector2(14224, 797)
 scale = Vector2(1.65079, 0.314815)
 script = ExtResource("15_4ntac")
 mov_speed = 150
 
 [node name="Platform" type="Sprite2D" parent="Storyboard/Platforms/ElevatorPlatform2"]
-texture = ExtResource("16_3o8ko")
+position = Vector2(-3.92853, 1080)
+scale = Vector2(0.779226, 5.65024)
+texture = ExtResource("39_5x1kc")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Storyboard/Platforms/ElevatorPlatform2/Platform"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Storyboard/Platforms/ElevatorPlatform2/Platform/StaticBody2D"]
-position = Vector2(-0.5, -0.5)
+position = Vector2(-0.5, -0.500061)
 shape = SubResource("RectangleShape2D_oii5x")
 
 [node name="Area2D" type="Area2D" parent="Storyboard/Platforms/ElevatorPlatform2/Platform"]
@@ -1261,16 +1275,19 @@ position = Vector2(0, -246)
 shape = SubResource("RectangleShape2D_hyael")
 
 [node name="DetinationPosition" type="Marker2D" parent="Storyboard/Platforms/ElevatorPlatform2"]
-position = Vector2(0, -1184.82)
+position = Vector2(0, 92.1175)
 
 [node name="ElevatorPlatform3" type="Node2D" parent="Storyboard/Platforms"]
+z_index = -1
 position = Vector2(15230, 716)
 scale = Vector2(1.65079, 0.314815)
 script = ExtResource("15_4ntac")
 mov_speed = 150
 
 [node name="Platform" type="Sprite2D" parent="Storyboard/Platforms/ElevatorPlatform3"]
-texture = ExtResource("16_3o8ko")
+position = Vector2(3.93812, 1165.76)
+scale = Vector2(0.793642, 6.14307)
+texture = ExtResource("39_5x1kc")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Storyboard/Platforms/ElevatorPlatform3/Platform"]
 
@@ -1285,7 +1302,7 @@ position = Vector2(0, -246)
 shape = SubResource("RectangleShape2D_hyael")
 
 [node name="DetinationPosition" type="Marker2D" parent="Storyboard/Platforms/ElevatorPlatform3"]
-position = Vector2(0, -1270.59)
+position = Vector2(0, 162)
 
 [node name="BreakingPlatform" parent="Storyboard/Platforms" instance=ExtResource("13_g1vww")]
 z_index = -1
@@ -1771,6 +1788,7 @@ speed_increment = 11.52
 shape = SubResource("RectangleShape2D_ahdys")
 
 [node name="EnterCarAnimation" parent="Climax" instance=ExtResource("56_o8es4")]
+z_index = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Climax/EnterCarAnimation"]
 position = Vector2(-320, -27)
@@ -1843,44 +1861,44 @@ sprite_frames = SubResource("SpriteFrames_bavkr")
 autoplay = "default"
 
 [node name="Flame" parent="Climax/Obstacles" instance=ExtResource("62_scnoy")]
-position = Vector2(41266, 802)
+position = Vector2(41266, 775)
 
 [node name="Flame2" parent="Climax/Obstacles" instance=ExtResource("62_scnoy")]
-position = Vector2(42254.2, 639)
+position = Vector2(42276, 681)
 rotation = -3.13917
 skew = -0.00238037
 
 [node name="Flame3" parent="Climax/Obstacles" instance=ExtResource("62_scnoy")]
-position = Vector2(43231.6, 802)
+position = Vector2(43231.6, 773)
 
 [node name="Flame4" parent="Climax/Obstacles" instance=ExtResource("62_scnoy")]
-position = Vector2(44256.1, 639)
+position = Vector2(44256.1, 683)
 rotation = -3.13917
 skew = -0.00238037
 
 [node name="Flame5" parent="Climax/Obstacles" instance=ExtResource("62_scnoy")]
-position = Vector2(45623.6, 808)
+position = Vector2(45614, 772)
 
 [node name="Flame6" parent="Climax/Obstacles" instance=ExtResource("62_scnoy")]
-position = Vector2(53418.6, 613)
+position = Vector2(53418.6, 575)
 
 [node name="Flame7" parent="Climax/Obstacles" instance=ExtResource("62_scnoy")]
-position = Vector2(55543.6, 951.211)
+position = Vector2(55543.6, 893)
 scale = Vector2(1, 1.467)
 
 [node name="Flame8" parent="Climax/Obstacles" instance=ExtResource("62_scnoy")]
-position = Vector2(55693.6, 951.211)
+position = Vector2(55693.6, 893)
 scale = Vector2(1, 1.467)
 
 [node name="Flame9" parent="Climax/Obstacles" instance=ExtResource("62_scnoy")]
-position = Vector2(55843.6, 950.211)
+position = Vector2(55843.6, 892)
 scale = Vector2(1, 1.472)
 
 [node name="Flame10" parent="Climax/Obstacles" instance=ExtResource("62_scnoy")]
-position = Vector2(62753, 697)
+position = Vector2(62753, 643)
 
 [node name="Flame11" parent="Climax/Obstacles" instance=ExtResource("62_scnoy")]
-position = Vector2(63804, 667)
+position = Vector2(63804, 622)
 
 [node name="Deer" type="AnimatedSprite2D" parent="Climax/Obstacles"]
 position = Vector2(66094, 677)
