@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://7asaea7mswd5"]
+[gd_scene load_steps=80 format=3 uid="uid://7asaea7mswd5"]
 
 [ext_resource type="PackedScene" uid="uid://bajeqjukfftik" path="res://scenes/menu/pause_menu.tscn" id="1_kottx"]
 [ext_resource type="PackedScene" uid="uid://cpi1lm68o7bl7" path="res://scenes/shared/vfx/touch_feedback_frame.tscn" id="1_s3sr5"]
@@ -61,6 +61,9 @@
 [ext_resource type="PackedScene" uid="uid://b8hege0352ly5" path="res://scenes/game/enter_car_animation.tscn" id="56_o8es4"]
 [ext_resource type="PackedScene" uid="uid://d2hk62x8s3bl2" path="res://scenes/shared/level/flaming_car.tscn" id="58_4cycx"]
 [ext_resource type="PackedScene" uid="uid://bhh7m57vhkbu3" path="res://scenes/shared/level/flame.tscn" id="62_scnoy"]
+[ext_resource type="PackedScene" uid="uid://c2we07xieyt6x" path="res://scenes/shared/vfx/fire_a.tscn" id="62_stqg0"]
+[ext_resource type="PackedScene" uid="uid://behbyiklogyu8" path="res://scenes/shared/vfx/fire_b.tscn" id="63_17udh"]
+[ext_resource type="PackedScene" uid="uid://bwiu2f4s3s8j4" path="res://scenes/shared/vfx/fire_c.tscn" id="64_ff84q"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s1hoo"]
 animations = [{
@@ -183,7 +186,7 @@ z_index = 2
 [node name="PauseMenu" parent="UI" instance=ExtResource("1_kottx")]
 
 [node name="Player" parent="." instance=ExtResource("2_h8ti8")]
-position = Vector2(77081, 577)
+position = Vector2(36949, 769)
 speed = 11.0
 
 [node name="Camera2D" type="Camera2D" parent="Player" node_paths=PackedStringArray("player")]
@@ -1828,7 +1831,7 @@ position = Vector2(61731, 757)
 rotation = -0.0261799
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Climax/Obstacles/FlamingCar"]
-position = Vector2(-1782.65, -227.742)
+position = Vector2(-1190.6, -107.203)
 shape = SubResource("RectangleShape2D_gwkp1")
 
 [node name="FlamingCar2" parent="Climax/Obstacles" instance=ExtResource("58_4cycx")]
@@ -1863,7 +1866,7 @@ rotation = -3.13917
 skew = -0.00238037
 
 [node name="Flame5" parent="Climax/Obstacles" instance=ExtResource("62_scnoy")]
-position = Vector2(45614, 772)
+position = Vector2(46819, 776)
 
 [node name="Flame6" parent="Climax/Obstacles" instance=ExtResource("62_scnoy")]
 position = Vector2(53418.6, 575)
@@ -1898,6 +1901,34 @@ scale = Vector2(1.08, 1)
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(81078, 626)
+
+[node name="FireA" parent="." instance=ExtResource("62_stqg0")]
+position = Vector2(61304, 1221)
+
+[node name="FireA7" parent="." instance=ExtResource("62_stqg0")]
+position = Vector2(66714, 1221)
+
+[node name="FireA5" parent="." instance=ExtResource("62_stqg0")]
+position = Vector2(74178, 1296)
+scale = Vector2(1.5, 1.5)
+
+[node name="FireA2" parent="." instance=ExtResource("63_17udh")]
+position = Vector2(69596, 1190)
+
+[node name="FireA3" parent="." instance=ExtResource("64_ff84q")]
+position = Vector2(71213, 1187)
+
+[node name="FireA6" parent="." instance=ExtResource("64_ff84q")]
+position = Vector2(74993, 1303)
+scale = Vector2(2, 2)
+
+[node name="FireA8" parent="." instance=ExtResource("64_ff84q")]
+position = Vector2(39548, 1280)
+scale = Vector2(1.5, 1.5)
+
+[node name="FireA4" parent="." instance=ExtResource("64_ff84q")]
+position = Vector2(45817, 1236)
+scale = Vector2(0.754151, 0.754151)
 
 [connection signal="body_entered" from="CameraOffsetChangeAreas/CameraOffsetArea4/CameraUp" to="CameraOffsetChangeAreas/CameraOffsetArea4" method="change_offset"]
 [connection signal="body_entered" from="CameraOffsetChangeAreas/CameraOffsetArea2/CameraUp" to="CameraOffsetChangeAreas/CameraOffsetArea2" method="change_offset"]
