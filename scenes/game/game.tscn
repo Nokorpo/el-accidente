@@ -183,7 +183,7 @@ z_index = 2
 [node name="PauseMenu" parent="UI" instance=ExtResource("1_kottx")]
 
 [node name="Player" parent="." instance=ExtResource("2_h8ti8")]
-position = Vector2(402, 577)
+position = Vector2(77081, 577)
 speed = 11.0
 
 [node name="Camera2D" type="Camera2D" parent="Player" node_paths=PackedStringArray("player")]
@@ -273,7 +273,7 @@ horizontal_alignment = 1
 [node name="CameraOffsetArea4" parent="CameraOffsetChangeAreas" node_paths=PackedStringArray("camera") instance=ExtResource("9_hjerv")]
 position = Vector2(78721, 792)
 camera = NodePath("../../Player/Camera2D")
-offset_quantity = -100.0
+offset_quantity = 10.0
 
 [node name="CameraUp" type="Area2D" parent="CameraOffsetChangeAreas/CameraOffsetArea4"]
 
@@ -1730,8 +1730,7 @@ scale = Vector2(0.573856, 0.573856)
 texture = ExtResource("29_e4dia")
 
 [node name="Arbol" parent="Climax/BackgroudObjects" instance=ExtResource("55_c7rh1")]
-animation = &"idle"
-frame_progress = 0.0
+position = Vector2(80457, 428)
 
 [node name="Checkpoints" type="Node2D" parent="Climax"]
 

@@ -1,10 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://dcdkps22trsvq"]
+[gd_scene load_steps=18 format=3 uid="uid://dcdkps22trsvq"]
 
 [ext_resource type="Texture2D" uid="uid://d0xgwd2s7ldye" path="res://assets/sprites/background/front/firetree_2.png" id="1_786bl"]
 [ext_resource type="Texture2D" uid="uid://voc41ldwx0kh" path="res://assets/sprites/background/front/firetree_3.png" id="2_iq8sg"]
 [ext_resource type="Texture2D" uid="uid://de6fqih8h2mji" path="res://assets/sprites/background/front/firetree_4.png" id="3_uxxxn"]
 [ext_resource type="Texture2D" uid="uid://cjkjr4mxicjow" path="res://assets/sprites/background/front/firetree_5.png" id="4_15g6c"]
 [ext_resource type="Texture2D" uid="uid://cmoiwoo1qdtfl" path="res://assets/sprites/background/front/firetree_1.png" id="5_4uq1n"]
+[ext_resource type="Script" path="res://scenes/shared/level/tree.gd" id="6_mx1n6"]
+[ext_resource type="Texture2D" uid="uid://clahbbxxbgunk" path="res://assets/sprites/car/car_run1.png" id="7_u1j80"]
+[ext_resource type="Texture2D" uid="uid://c2d6is40imp3d" path="res://assets/sprites/vfx/firec_1.png" id="8_6hleq"]
+[ext_resource type="Texture2D" uid="uid://cmj42ecoctsx1" path="res://assets/sprites/vfx/firec_2.png" id="9_ty2m7"]
+[ext_resource type="Texture2D" uid="uid://bovf8r5xa56lj" path="res://assets/sprites/vfx/firec_3.png" id="10_ahwtv"]
+[ext_resource type="Texture2D" uid="uid://diqmde22x7muw" path="res://assets/sprites/vfx/firec_4.png" id="11_q6gdh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vpoe3"]
 animations = [{
@@ -34,9 +40,72 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_txqsk"]
+size = Vector2(84, 840)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_se7u7"]
+size = Vector2(261, 835)
+
+[sub_resource type="Animation" id="Animation_qtk2t"]
+resource_name = "car_crash"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gnhwv"]
+_data = {
+"car_crash": SubResource("Animation_qtk2t")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rvl4y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_6hleq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ty2m7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ahwtv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_q6gdh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Arbol" type="AnimatedSprite2D"]
-z_index = -1
-position = Vector2(80457, 420)
+z_index = -2
 sprite_frames = SubResource("SpriteFrames_vpoe3")
-animation = &"fire"
-frame_progress = 0.918484
+animation = &"idle"
+script = ExtResource("6_mx1n6")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(22, 279)
+shape = SubResource("RectangleShape2D_txqsk")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(190.5, 277.5)
+shape = SubResource("RectangleShape2D_se7u7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gnhwv")
+}
+
+[node name="CarRun1" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-147, 515.152)
+texture = ExtResource("7_u1j80")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(12, 397.152)
+rotation = 0.118607
+sprite_frames = SubResource("SpriteFrames_rvl4y")
+frame_progress = 0.541531
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
