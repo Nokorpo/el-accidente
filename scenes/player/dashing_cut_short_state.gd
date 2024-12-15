@@ -10,6 +10,7 @@ func _on_enter_state() -> void:
 	_time_entered = Time.get_ticks_msec()
 	node.is_affected_by_gravity = false
 	node.speed = 0
+	dash_vfx.play("dash")
 
 	var _will_collide: RayCast2D = %WillCollideWithWall
 	var would_be_distance: float = _original_position.distance_to(_target_position)
