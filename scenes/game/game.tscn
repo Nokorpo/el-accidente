@@ -1495,7 +1495,7 @@ polygon = PackedVector2Array(0, 0, 0, 1775.99, 3629.59, 1775.99, 3629.59, 0)
 position = Vector2(55918.6, 737)
 scale = Vector2(0.143205, 0.286601)
 color = Color(0.196032, 0.205695, 0.224258, 1)
-polygon = PackedVector2Array(0, 0, 0, 1775.99, 35976.4, 1789.95, 35976.4, 219.818, 32121.8, 219.818, 16557.6, -1001.39, 12935.7, -1001.39, 3629.59, 0)
+polygon = PackedVector2Array(0, 0, 0, 1775.99, 35976.4, 1789.95, 35976.4, 219.818, 32121.8, 219.818, 21314.9, -464.06, 13054, -446.614, 3629.59, 0)
 script = ExtResource("19_70n6j")
 
 [node name="PolygonExpander" type="StaticBody2D" parent="Climax/Floors/Polygon2D32"]
@@ -1813,6 +1813,15 @@ speed_increment = 11.52
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Climax/SpeedChangerArea2"]
 shape = SubResource("RectangleShape2D_ahdys")
 
+[node name="SpeedChangerArea3" type="Area2D" parent="Climax" node_paths=PackedStringArray("player")]
+position = Vector2(76046, 384)
+script = ExtResource("19_rdjve")
+player = NodePath("../../Player")
+speed_increment = 16.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Climax/SpeedChangerArea3"]
+shape = SubResource("RectangleShape2D_ahdys")
+
 [node name="EnterCarAnimation" parent="Climax" instance=ExtResource("56_o8es4")]
 z_index = 20
 position = Vector2(38415, 583)
@@ -1855,7 +1864,7 @@ shape = SubResource("RectangleShape2D_dks5j")
 position = Vector2(57214, 341)
 
 [node name="Trigger" type="CollisionShape2D" parent="Climax/Obstacles/Spotlight5"]
-position = Vector2(-1110, 258.313)
+position = Vector2(-1043, 258)
 shape = SubResource("RectangleShape2D_dks5j")
 
 [node name="Spikes44" parent="Climax/Obstacles" instance=ExtResource("12_nqo6j")]
@@ -1958,3 +1967,4 @@ scale = Vector2(1.08, 1)
 [connection signal="area_entered" from="Storyboard/Platforms/ElevatorPlatform3/Platform/Area2D" to="Storyboard/Platforms/ElevatorPlatform3" method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Storyboard/Platforms/ElevatorPlatform3/Platform/Area2D" to="Storyboard/Platforms/ElevatorPlatform3" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Climax/SpeedChangerArea2" to="Climax/SpeedChangerArea2" method="_on_body_entered"]
+[connection signal="body_entered" from="Climax/SpeedChangerArea3" to="Climax/SpeedChangerArea3" method="_on_body_entered"]
