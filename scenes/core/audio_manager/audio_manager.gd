@@ -11,11 +11,7 @@ extends Node
 @onready var sfx_combust = $Combust
 @onready var sfx_deer_run = $DeerRun
 @onready var sfx_flaming_car = $FlamingCar
-@onready var sfx_dire_loop = $FireLoop
 @onready var sfx_flame_thrower = $FlameThrower
 @onready var sfx_spotlight_break = $SpotlightBreak
 @onready var sfx_spotlight_flick = $SpotlightFlick
 @onready var sfx_transition = $Transition
-
-func _ready():
-	pass
