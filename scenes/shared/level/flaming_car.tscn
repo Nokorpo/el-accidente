@@ -1,0 +1,162 @@
+[gd_scene load_steps=16 format=3 uid="uid://d2hk62x8s3bl2"]
+
+[ext_resource type="Script" path="res://scenes/shared/level/flaming_car.gd" id="1_1q7dl"]
+[ext_resource type="Shader" path="res://scenes/shared/vfx/burn_dissolve.gdshader" id="1_hdwex"]
+[ext_resource type="Texture2D" uid="uid://dlhnpcvy1fc03" path="res://assets/sprites/obstacles/car_fire/carfire_1.png" id="1_vxf86"]
+[ext_resource type="Texture2D" uid="uid://8kb44jfqim3r" path="res://assets/sprites/obstacles/car_fire/carfire_2.png" id="2_h3ijm"]
+[ext_resource type="Texture2D" uid="uid://qf37dr8ma0aj" path="res://assets/sprites/obstacles/car_fire/carfire_3.png" id="3_mq6f4"]
+[ext_resource type="Texture2D" uid="uid://bc2v6n8nqhpig" path="res://assets/sprites/obstacles/car_fire/carfire_4.png" id="4_j4pow"]
+
+[sub_resource type="Gradient" id="Gradient_1xn1i"]
+offsets = PackedFloat32Array(0, 0.150729, 0.171799, 0.296596, 0.316045, 0.444084, 0.463533, 0.593193, 0.611021, 0.714749, 0.734198, 0.863857, 0.880952, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1, 0.255659, 0.255659, 0.255659, 1, 0.254902, 0.254902, 0.254902, 1, 0.337255, 0.337255, 0.337255, 1, 0.33687, 0.33687, 0.33687, 1, 0.421836, 0.421836, 0.421836, 1, 0.423529, 0.423529, 0.423529, 1, 0.62506, 0.62506, 0.62506, 1, 0.623529, 0.623529, 0.623529, 1, 0.776471, 0.776471, 0.776471, 1, 0.776471, 0.776471, 0.776471, 1, 0.986752, 0.986752, 0.986752, 1, 0.988235, 0.988235, 0.988235, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_nydx1"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_pw50a"]
+height = 256
+color_ramp = SubResource("Gradient_1xn1i")
+noise = SubResource("FastNoiseLite_nydx1")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bw8la"]
+shader = ExtResource("1_hdwex")
+shader_parameter/dissolve_value = 1.0
+shader_parameter/burn_size = 0.1
+shader_parameter/burn_color = Color(0.929412, 0.560784, 0.192157, 1)
+shader_parameter/dissolve_texture = SubResource("NoiseTexture2D_pw50a")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bavkr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vxf86")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_h3ijm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mq6f4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_j4pow")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_336nd"]
+radius = 40.0
+height = 400.0
+
+[sub_resource type="Animation" id="Animation_8tvwj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionArea:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1600, 0)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionArea/AnimatedSprite2D:material:shader_parameter/dissolve_value")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionArea:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_iivhk"]
+resource_name = "run"
+length = 4.0
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionArea:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.73, 3.73),
+"transitions": PackedFloat32Array(0.3, 1, 1),
+"update": 0,
+"values": [Vector2(1600, 0), Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionArea/AnimatedSprite2D:material:shader_parameter/dissolve_value")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.53, 3.73)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionArea:monitoring")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3.33),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6mnqc"]
+_data = {
+"RESET": SubResource("Animation_8tvwj"),
+"run": SubResource("Animation_iivhk")
+}
+
+[node name="FlamingCar" type="Area2D"]
+position = Vector2(325, 154)
+script = ExtResource("1_1q7dl")
+
+[node name="CollisionArea" type="Area2D" parent="."]
+position = Vector2(1600, 0)
+collision_mask = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionArea"]
+material = SubResource("ShaderMaterial_bw8la")
+sprite_frames = SubResource("SpriteFrames_bavkr")
+autoplay = "default"
+frame_progress = 0.288984
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea"]
+position = Vector2(-50, 50)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_336nd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6mnqc")
+}
+autoplay = "RESET"
+
+[connection signal="body_entered" from="." to="." method="_on_triggered"]
+[connection signal="body_entered" from="CollisionArea" to="." method="_on_collision_area_body_entered"]

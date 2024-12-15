@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://7asaea7mswd5"]
+[gd_scene load_steps=77 format=3 uid="uid://7asaea7mswd5"]
 
 [ext_resource type="PackedScene" uid="uid://bajeqjukfftik" path="res://scenes/menu/pause_menu.tscn" id="1_kottx"]
 [ext_resource type="PackedScene" uid="uid://cpi1lm68o7bl7" path="res://scenes/shared/vfx/touch_feedback_frame.tscn" id="1_s3sr5"]
@@ -42,14 +42,10 @@
 [ext_resource type="Texture2D" uid="uid://b85g63mjpxi3d" path="res://assets/sprites/background/back/fase3b_2.png" id="22_mg1hn"]
 [ext_resource type="Texture2D" uid="uid://d25nypr7swher" path="res://assets/sprites/ui/tutorial_bubble.png" id="23_kk7ov"]
 [ext_resource type="FontFile" uid="uid://dquwkgfgkdbdq" path="res://assets/fonts/Onest-Bold.ttf" id="24_ldjh4"]
-[ext_resource type="Texture2D" uid="uid://dlhnpcvy1fc03" path="res://assets/sprites/obstacles/car_fire/carfire_1.png" id="24_tjtu4"]
-[ext_resource type="Texture2D" uid="uid://8kb44jfqim3r" path="res://assets/sprites/obstacles/car_fire/carfire_2.png" id="25_0n20j"]
 [ext_resource type="Texture2D" uid="uid://b4hujf0ynigxi" path="res://assets/sprites/vfx/vfxspikes_1.png" id="25_40qg4"]
-[ext_resource type="Texture2D" uid="uid://qf37dr8ma0aj" path="res://assets/sprites/obstacles/car_fire/carfire_3.png" id="26_rgi6q"]
 [ext_resource type="Texture2D" uid="uid://dip7jr04u2oe" path="res://assets/sprites/background/back/fase3b_6.png" id="26_rtaw7"]
 [ext_resource type="Texture2D" uid="uid://dr76qw1ownw0c" path="res://assets/sprites/vfx/vfxspikes_2.png" id="26_x1aa5"]
 [ext_resource type="Texture2D" uid="uid://mw2iwy44n4va" path="res://assets/sprites/vfx/vfxspikes_3.png" id="27_1skqe"]
-[ext_resource type="Texture2D" uid="uid://bc2v6n8nqhpig" path="res://assets/sprites/obstacles/car_fire/carfire_4.png" id="27_owdr3"]
 [ext_resource type="Texture2D" uid="uid://kf7dypvt150l" path="res://assets/sprites/background/front/cámara.png" id="27_reio1"]
 [ext_resource type="Texture2D" uid="uid://cci23wnj5iup0" path="res://assets/sprites/vfx/vfxspikes_4.png" id="28_1xd26"]
 [ext_resource type="Texture2D" uid="uid://dc1un4hweuogu" path="res://assets/sprites/background/front/coche_colgante.png" id="28_itrb3"]
@@ -62,6 +58,7 @@
 [ext_resource type="Texture2D" uid="uid://dv0lsmbgda3of" path="res://assets/sprites/background/front/bongos.png" id="51_yb13k"]
 [ext_resource type="Texture2D" uid="uid://hxq7xcp21l3u" path="res://assets/sprites/background/front/nota4.png" id="54_40vf5"]
 [ext_resource type="PackedScene" uid="uid://b8hege0352ly5" path="res://scenes/game/enter_car_animation.tscn" id="56_o8es4"]
+[ext_resource type="PackedScene" uid="uid://d2hk62x8s3bl2" path="res://scenes/shared/level/flaming_car.tscn" id="58_4cycx"]
 [ext_resource type="PackedScene" uid="uid://bhh7m57vhkbu3" path="res://scenes/shared/level/flame.tscn" id="62_scnoy"]
 [ext_resource type="Texture2D" uid="uid://drw1ysibkccu8" path="res://assets/sprites/background/front/arbol.png" id="65_q646x"]
 
@@ -157,25 +154,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8026j"]
 size = Vector2(300, 400)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_bavkr"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("24_tjtu4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_0n20j")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_rgi6q")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_owdr3")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gwkp1"]
+size = Vector2(478.505, 315.077)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xnj04"]
 animations = [{
@@ -512,7 +492,6 @@ texture = ExtResource("39_5x1kc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Storyboard/Floors/ElevatorPlatform5/Platform/StaticBody2D"]
 position = Vector2(-0.5, -0.5)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_oii5x")
 
 [node name="Area2D" type="Area2D" parent="Storyboard/Floors/ElevatorPlatform5/Platform"]
@@ -1843,22 +1822,28 @@ position = Vector2(56318.6, 248)
 z_index = 1
 position = Vector2(56318.6, 56)
 
-[node name="Car2" type="AnimatedSprite2D" parent="Climax/Obstacles"]
-position = Vector2(62065, 748)
-rotation = -0.0258238
-sprite_frames = SubResource("SpriteFrames_bavkr")
-autoplay = "default"
+[node name="FlamingCar" parent="Climax/Obstacles" instance=ExtResource("58_4cycx")]
+position = Vector2(61731, 757)
+rotation = -0.0261799
 
-[node name="Car3" type="AnimatedSprite2D" parent="Climax/Obstacles"]
-position = Vector2(74129, 512)
-sprite_frames = SubResource("SpriteFrames_bavkr")
-autoplay = "default"
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Climax/Obstacles/FlamingCar"]
+position = Vector2(-1782.65, -227.742)
+shape = SubResource("RectangleShape2D_gwkp1")
 
-[node name="Car4" type="AnimatedSprite2D" parent="Climax/Obstacles"]
+[node name="FlamingCar2" parent="Climax/Obstacles" instance=ExtResource("58_4cycx")]
 position = Vector2(69021, 536)
 rotation = -0.0481859
-sprite_frames = SubResource("SpriteFrames_bavkr")
-autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Climax/Obstacles/FlamingCar2"]
+position = Vector2(-1723.77, 15.9894)
+shape = SubResource("RectangleShape2D_gwkp1")
+
+[node name="FlamingCar3" parent="Climax/Obstacles" instance=ExtResource("58_4cycx")]
+position = Vector2(74129, 512)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Climax/Obstacles/FlamingCar3"]
+position = Vector2(-1723.77, 15.9894)
+shape = SubResource("RectangleShape2D_gwkp1")
 
 [node name="Flame" parent="Climax/Obstacles" instance=ExtResource("62_scnoy")]
 position = Vector2(41266, 775)
