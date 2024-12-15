@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://bfw08rk4ijmja"]
+[gd_scene load_steps=9 format=3 uid="uid://bfw08rk4ijmja"]
 
 [ext_resource type="Script" path="res://scenes/menu/credits/credits.gd" id="1_ipkvd"]
+[ext_resource type="Texture2D" uid="uid://u28jd1clllbq" path="res://scenes/menu/credits/sprites/where_talent_ignites.png" id="2_s564f"]
+[ext_resource type="Texture2D" uid="uid://brilskarcxw3e" path="res://scenes/menu/credits/sprites/nokorpo.svg" id="3_tg8of"]
+[ext_resource type="Texture2D" uid="uid://ch7at0w1hob3p" path="res://scenes/menu/credits/sprites/eu_next_generation.png" id="3_y3s7v"]
+[ext_resource type="Texture2D" uid="uid://dsllwl7rh73ov" path="res://scenes/menu/credits/sprites/prtr.png" id="4_mquob"]
+[ext_resource type="Texture2D" uid="uid://dcqvvccm3nv8d" path="res://scenes/menu/credits/sprites/gob_icex.png" id="5_bkbfc"]
+[ext_resource type="Texture2D" uid="uid://5pgfhu23a2ed" path="res://scenes/menu/credits/sprites/avshub.png" id="6_ulmxx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0q8p1"]
-bg_color = Color(0, 0, 0, 0.901961)
+bg_color = Color(0, 0, 0, 0.960784)
 
 [node name="Credits" type="PanelContainer"]
 anchors_preset = 15
@@ -16,16 +22,49 @@ script = ExtResource("1_ipkvd")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
-theme_override_constants/separation = 16
+theme_override_constants/separation = 128
 alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "credits"
-horizontal_alignment = 1
+texture = ExtResource("2_s564f")
+stretch_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="EU" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_y3s7v")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="prtr" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_mquob")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="prtr2" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_bkbfc")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="avshub" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("6_ulmxx")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Nokorpo" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_tg8of")
 
 [node name="Close" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(512, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 mouse_default_cursor_shape = 2
