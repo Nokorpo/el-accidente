@@ -56,13 +56,10 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("15_msi1p")
-}, {
-"duration": 1.0,
-"texture": null
 }],
 "loop": true,
 "name": &"running",
-"speed": 5.0
+"speed": 12.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nyr1t"]
@@ -127,14 +124,14 @@ script = ExtResource("7_yfuy2")
 [node name="StopState" type="Node" parent="StateMachine"]
 script = ExtResource("14_in1hi")
 
-[node name="RunningState" type="Node" parent="StateMachine" node_paths=PackedStringArray("run_vfx")]
+[node name="RunningState" type="Node" parent="StateMachine"]
 script = ExtResource("6_vilqo")
 can_decelerate_while_falling = false
-run_vfx = NodePath("../../RunVFX")
 
-[node name="DeceleratingState" type="Node" parent="StateMachine"]
+[node name="DeceleratingState" type="Node" parent="StateMachine" node_paths=PackedStringArray("_vfx")]
 script = ExtResource("8_jy070")
 speed_when_lowed_down = 2.0
+_vfx = NodePath("../../FootSparks")
 
 [node name="DashingState" type="Node" parent="StateMachine" node_paths=PackedStringArray("dash_vfx")]
 script = ExtResource("7_jw2we")
@@ -155,13 +152,16 @@ position = Vector2(0, 47.5)
 shape = SubResource("RectangleShape2D_42xye")
 disabled = true
 
-[node name="RunVFX" type="AnimatedSprite2D" parent="."]
-position = Vector2(-137, 107)
+[node name="FootSparks" type="AnimatedSprite2D" parent="."]
+position = Vector2(-89, 107)
 sprite_frames = SubResource("SpriteFrames_bk6tw")
+animation = &"running"
+autoplay = "default"
 
 [node name="DashVFX" type="AnimatedSprite2D" parent="."]
 position = Vector2(-162, -12)
 sprite_frames = SubResource("SpriteFrames_nyr1t")
+autoplay = "default"
 
 [connection signal="requested_continue" from="." to="StateMachine/StopState" method="start_running"]
 [connection signal="requested_stop_for_animation" from="." to="StateMachine/StopState" method="force_enter_stop_state"]

@@ -9,6 +9,7 @@ class_name DeceleratingState
 @export var speed_when_lowed_down: float = 11
 ## How long it takes for the slow down to resolve into a dash, in seconds
 @export var time_until_dash: float = .3
+@export var _vfx: AnimatedSprite2D
 var _original_speed: float
 var _time_entered: float
 
@@ -17,8 +18,14 @@ func _on_enter_state() -> void:
 	_time_entered = Time.get_ticks_msec()
 	%AnimatedSprite2D.play("decelerating")
 
+func _on_exit_state() -> void:
+	_vfx.play("default")
+
 func _process(_delta: float) -> void:
 	if active:
+		if _dash_ready() and _vfx.get_animation() != "running":
+			_vfx.play("running")
+		
 		var elapsed_time: float = (Time.get_ticks_msec() - _time_entered)/1000
 		var percent = min(1, elapsed_time/time_until_slowed_down)
 		node.speed = lerp(_original_speed,
@@ -34,8 +41,11 @@ func _input(event: InputEvent) -> void:
 			resolve()
 
 func resolve() -> void:
-	var elapsed_time: float = (Time.get_ticks_msec() - _time_entered)/1000
-	if elapsed_time >= time_until_dash:
+	if _dash_ready():
 		state_machine.change_state(DashingState)
 	else:
 		state_machine.change_state(RunningState)
+
+func _dash_ready() -> bool:
+	var elapsed_time: float = (Time.get_ticks_msec() - _time_entered) / 1000.0
+	return elapsed_time >= time_until_dash

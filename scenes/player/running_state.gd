@@ -3,7 +3,6 @@ class_name RunningState
 ## State that lets the player character continue running, without user input.
 
 @export var can_decelerate_while_falling: bool = true
-@export var run_vfx: AnimatedSprite2D
 
 var _original_speed: float
 
@@ -15,10 +14,6 @@ func _start(sm: StateMachine, node: Node) -> void:
 func _on_enter_state() -> void:
 	node.speed = _original_speed
 	%AnimatedSprite2D.play("running")
-	run_vfx.play ("running")
-
-func _on_exit_state() -> void:
-	run_vfx.play("default")
 
 func _process(_delta) -> void:
 	if active:
