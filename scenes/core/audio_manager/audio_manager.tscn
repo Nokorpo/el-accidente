@@ -3,6 +3,7 @@
 [ext_resource type="AudioStream" uid="uid://d0q32hftpayor" path="res://assets/sfx/dash.ogg" id="1_s0rse"]
 [ext_resource type="Script" path="res://scenes/core/audio_manager/audio_manager.gd" id="1_upyad"]
 [ext_resource type="AudioStream" uid="uid://mprgcbhmi8h3" path="res://assets/sfx/decelerate.ogg" id="2_j05n3"]
+[ext_resource type="AudioStream" uid="uid://b8s1os4d41qgv" path="res://assets/sfx/ritual_fire_dance.ogg" id="2_tisi7"]
 [ext_resource type="AudioStream" uid="uid://dwrdu2f6t016y" path="res://assets/sfx/car_crash.ogg" id="3_oj000"]
 [ext_resource type="AudioStream" uid="uid://d2ywbyej0b3of" path="res://assets/sfx/car_dash.ogg" id="4_yr0ns"]
 [ext_resource type="AudioStream" uid="uid://t6is7bcq1ipy" path="res://assets/sfx/car_decelerate.ogg" id="5_0j8je"]
@@ -12,7 +13,6 @@
 [ext_resource type="AudioStream" uid="uid://dv1r61d87w717" path="res://assets/sfx/combust.ogg" id="9_ucu45"]
 [ext_resource type="AudioStream" uid="uid://clmydnucm4keq" path="res://assets/sfx/deer_run.ogg" id="10_fsoy5"]
 [ext_resource type="AudioStream" uid="uid://dpk3hml1541oc" path="res://assets/sfx/fire_car.ogg" id="11_qk377"]
-[ext_resource type="AudioStream" uid="uid://ch3xambf7enpq" path="res://assets/sfx/fire_loop.ogg" id="12_hbr8b"]
 [ext_resource type="AudioStream" uid="uid://dtm64iew2wofd" path="res://assets/sfx/flamethrower.ogg" id="13_fybju"]
 [ext_resource type="AudioStream" uid="uid://et6t6u8mft5n" path="res://assets/sfx/spotlight_break.ogg" id="14_2d1ps"]
 [ext_resource type="AudioStream" uid="uid://bea74odm7j75n" path="res://assets/sfx/spotlight_flick.ogg" id="15_ulf51"]
@@ -22,6 +22,8 @@
 script = ExtResource("1_upyad")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_tisi7")
+autoplay = true
 
 [node name="Dash" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_s0rse")
@@ -55,9 +57,6 @@ stream = ExtResource("10_fsoy5")
 
 [node name="FlamingCar" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_qk377")
-
-[node name="FireLoop" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("12_hbr8b")
 
 [node name="FlameThrower" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_fybju")
