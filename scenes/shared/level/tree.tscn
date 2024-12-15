@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://dcdkps22trsvq"]
+
+[ext_resource type="Texture2D" uid="uid://d0xgwd2s7ldye" path="res://assets/sprites/background/front/firetree_2.png" id="1_786bl"]
+[ext_resource type="Texture2D" uid="uid://voc41ldwx0kh" path="res://assets/sprites/background/front/firetree_3.png" id="2_iq8sg"]
+[ext_resource type="Texture2D" uid="uid://de6fqih8h2mji" path="res://assets/sprites/background/front/firetree_4.png" id="3_uxxxn"]
+[ext_resource type="Texture2D" uid="uid://cjkjr4mxicjow" path="res://assets/sprites/background/front/firetree_5.png" id="4_15g6c"]
+[ext_resource type="Texture2D" uid="uid://cmoiwoo1qdtfl" path="res://assets/sprites/background/front/firetree_1.png" id="5_4uq1n"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vpoe3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_786bl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_iq8sg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uxxxn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_15g6c")
+}],
+"loop": true,
+"name": &"fire",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_4uq1n")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Arbol" type="AnimatedSprite2D"]
+z_index = -1
+position = Vector2(80457, 420)
+sprite_frames = SubResource("SpriteFrames_vpoe3")
+animation = &"fire"
+frame_progress = 0.918484
