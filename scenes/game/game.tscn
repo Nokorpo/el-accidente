@@ -1305,12 +1305,12 @@ scale = Vector2(1.30967, 1)
 
 [node name="BlinkingPlatform" parent="Storyboard/Platforms" instance=ExtResource("20_d7r8p")]
 z_index = -1
-position = Vector2(29594, 737)
+position = Vector2(29588, 737)
 scale = Vector2(2.74855, 1)
 
 [node name="BlinkingPlatform2" parent="Storyboard/Platforms" instance=ExtResource("20_d7r8p")]
 z_index = -1
-position = Vector2(31154, 741)
+position = Vector2(31147, 741)
 scale = Vector2(2.4, 1)
 
 [node name="BlinkingPlatform3" parent="Storyboard/Platforms" instance=ExtResource("20_d7r8p")]
