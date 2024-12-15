@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://7pnca5lreux0"]
+[gd_scene load_steps=24 format=3 uid="uid://7pnca5lreux0"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_d1qh6"]
 [ext_resource type="SpriteFrames" uid="uid://dhak0faey7tlk" path="res://scenes/player/running_sprite_frames.tres" id="2_vgcp4"]
@@ -9,7 +9,14 @@
 [ext_resource type="Script" path="res://scenes/player/dashing_state.gd" id="7_jw2we"]
 [ext_resource type="Script" path="res://scenes/player/tutorial_stop_state.gd" id="7_yfuy2"]
 [ext_resource type="Script" path="res://scenes/player/decelerating_state.gd" id="8_jy070"]
+[ext_resource type="Texture2D" uid="uid://dr20w1o45e2aq" path="res://assets/sprites/vfx/vfx_run1.png" id="12_wbw4p"]
+[ext_resource type="Texture2D" uid="uid://cys6gdo33t8xd" path="res://assets/sprites/vfx/vfx_run2.png" id="13_115f7"]
+[ext_resource type="Texture2D" uid="uid://dhoqqcpf2b0kg" path="res://assets/sprites/vfx/vfx_run3.png" id="14_fkroq"]
 [ext_resource type="Script" path="res://scenes/player/stop_state.gd" id="14_in1hi"]
+[ext_resource type="Texture2D" uid="uid://c8b17ym82tpw1" path="res://assets/sprites/vfx/vfx_run4.png" id="15_msi1p"]
+[ext_resource type="Texture2D" uid="uid://cowy1ne7xu2jw" path="res://assets/sprites/vfx/dash_vfx1.png" id="16_xvy7n"]
+[ext_resource type="Texture2D" uid="uid://bxe5dail8s2hg" path="res://assets/sprites/vfx/dash_vfx2.png" id="17_wcu3d"]
+[ext_resource type="Texture2D" uid="uid://cf488v7200h7b" path="res://assets/sprites/vfx/dash_vfx3.png" id="18_xcgcr"]
 [ext_resource type="Script" path="res://scenes/player/dashing_cut_short_state.gd" id="19_5bnt7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5b3hn"]
@@ -27,6 +34,65 @@ func die():
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_42xye"]
 size = Vector2(442, 103)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_bk6tw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_wbw4p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_115f7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_fkroq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_msi1p")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"running",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nyr1t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_xvy7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_wcu3d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_xcgcr")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"dash",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_d1qh6")
 speed = 15.0
@@ -35,7 +101,7 @@ car_sprite_frames = ExtResource("3_bq7r4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
-sprite_frames = ExtResource("3_bq7r4")
+sprite_frames = ExtResource("2_vgcp4")
 animation = &"dash"
 
 [node name="DashDistance" type="Marker2D" parent="."]
@@ -61,19 +127,22 @@ script = ExtResource("7_yfuy2")
 [node name="StopState" type="Node" parent="StateMachine"]
 script = ExtResource("14_in1hi")
 
-[node name="RunningState" type="Node" parent="StateMachine"]
+[node name="RunningState" type="Node" parent="StateMachine" node_paths=PackedStringArray("run_vfx")]
 script = ExtResource("6_vilqo")
 can_decelerate_while_falling = false
+run_vfx = NodePath("../../RunVFX")
 
 [node name="DeceleratingState" type="Node" parent="StateMachine"]
 script = ExtResource("8_jy070")
 speed_when_lowed_down = 2.0
 
-[node name="DashingState" type="Node" parent="StateMachine"]
+[node name="DashingState" type="Node" parent="StateMachine" node_paths=PackedStringArray("dash_vfx")]
 script = ExtResource("7_jw2we")
+dash_vfx = NodePath("../../DashVFX")
 
-[node name="DashingCutShortState" type="Node" parent="StateMachine"]
+[node name="DashingCutShortState" type="Node" parent="StateMachine" node_paths=PackedStringArray("dash_vfx")]
 script = ExtResource("19_5bnt7")
+dash_vfx = NodePath("../../DashVFX")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
 collision_layer = 2
@@ -85,6 +154,14 @@ unique_name_in_owner = true
 position = Vector2(0, 47.5)
 shape = SubResource("RectangleShape2D_42xye")
 disabled = true
+
+[node name="RunVFX" type="AnimatedSprite2D" parent="."]
+position = Vector2(-137, 107)
+sprite_frames = SubResource("SpriteFrames_bk6tw")
+
+[node name="DashVFX" type="AnimatedSprite2D" parent="."]
+position = Vector2(-162, -12)
+sprite_frames = SubResource("SpriteFrames_nyr1t")
 
 [connection signal="requested_continue" from="." to="StateMachine/StopState" method="start_running"]
 [connection signal="requested_stop_for_animation" from="." to="StateMachine/StopState" method="force_enter_stop_state"]

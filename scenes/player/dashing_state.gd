@@ -5,6 +5,7 @@ class_name DashingState
 
 ## How long it takes the dash to finish, in seconds
 @export var time_to_complete_dash: float = 0.15
+@export var dash_vfx: AnimatedSprite2D
 
 var _target_position: Vector2
 var _target_finish_time: float
@@ -21,6 +22,7 @@ func _on_enter_state() -> void:
 	node.is_affected_by_gravity = false
 	node.speed = 0
 	%AnimatedSprite2D.play("dash")
+	dash_vfx.play("dash")
 
 	if %WillCollideWithWall.is_colliding():
 		state_machine.change_state(DashingCutShortState)
@@ -29,6 +31,7 @@ func _on_enter_state() -> void:
 func _on_exit_state() -> void:
 	node.speed = _original_speed
 	node.is_affected_by_gravity = true
+	dash_vfx.play("default")
 
 func _process(_delta) -> void:
 	if active:
