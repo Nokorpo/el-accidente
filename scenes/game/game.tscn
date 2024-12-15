@@ -189,7 +189,7 @@ z_index = 2
 [node name="PauseMenu" parent="UI" instance=ExtResource("1_kottx")]
 
 [node name="Player" parent="." instance=ExtResource("2_h8ti8")]
-position = Vector2(36949, 769)
+position = Vector2(402, 577)
 speed = 11.0
 
 [node name="Camera2D" type="Camera2D" parent="Player" node_paths=PackedStringArray("player")]
@@ -822,8 +822,8 @@ texture = ExtResource("19_lqmj0")
 
 [node name="Square10" type="Sprite2D" parent="Storyboard/Background"]
 modulate = Color(1, 0.945098, 0.72549, 1)
-position = Vector2(8851.5, 576)
-scale = Vector2(6.31538, 9.72308)
+position = Vector2(8851.5, 574)
+scale = Vector2(6.31538, 10.2615)
 texture = ExtResource("19_lqmj0")
 
 [node name="Square5" type="Sprite2D" parent="Storyboard/Background"]
@@ -1702,6 +1702,37 @@ position = Vector2(73993.5, 292.75)
 scale = Vector2(4.57694, 5.82692)
 texture = ExtResource("19_lqmj0")
 
+[node name="FireA" parent="Climax/Background" instance=ExtResource("62_stqg0")]
+position = Vector2(61304, 1221)
+
+[node name="FireA7" parent="Climax/Background" instance=ExtResource("62_stqg0")]
+position = Vector2(66714, 1221)
+
+[node name="FireA5" parent="Climax/Background" instance=ExtResource("62_stqg0")]
+z_index = 10
+position = Vector2(74178, 1296)
+scale = Vector2(1.5, 1.5)
+
+[node name="FireA2" parent="Climax/Background" instance=ExtResource("63_17udh")]
+position = Vector2(69596, 1190)
+
+[node name="FireA3" parent="Climax/Background" instance=ExtResource("64_ff84q")]
+position = Vector2(71213, 1187)
+
+[node name="FireA6" parent="Climax/Background" instance=ExtResource("64_ff84q")]
+z_index = 10
+position = Vector2(74993, 1303)
+scale = Vector2(2, 2)
+
+[node name="FireA8" parent="Climax/Background" instance=ExtResource("64_ff84q")]
+z_index = 10
+position = Vector2(39548, 1280)
+scale = Vector2(1.5, 1.5)
+
+[node name="FireA4" parent="Climax/Background" instance=ExtResource("64_ff84q")]
+position = Vector2(45817, 1236)
+scale = Vector2(0.754151, 0.754151)
+
 [node name="BackgroudObjects" type="Node2D" parent="Climax"]
 
 [node name="Bongos" type="Sprite2D" parent="Climax/BackgroudObjects"]
@@ -1910,37 +1941,6 @@ sprite_frames = SubResource("SpriteFrames_xnj04")
 [node name="PlayerPos" type="Marker2D" parent="."]
 position = Vector2(402, 577)
 scale = Vector2(1.08, 1)
-
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(81078, 626)
-
-[node name="FireA" parent="." instance=ExtResource("62_stqg0")]
-position = Vector2(61304, 1221)
-
-[node name="FireA7" parent="." instance=ExtResource("62_stqg0")]
-position = Vector2(66714, 1221)
-
-[node name="FireA5" parent="." instance=ExtResource("62_stqg0")]
-position = Vector2(74178, 1296)
-scale = Vector2(1.5, 1.5)
-
-[node name="FireA2" parent="." instance=ExtResource("63_17udh")]
-position = Vector2(69596, 1190)
-
-[node name="FireA3" parent="." instance=ExtResource("64_ff84q")]
-position = Vector2(71213, 1187)
-
-[node name="FireA6" parent="." instance=ExtResource("64_ff84q")]
-position = Vector2(74993, 1303)
-scale = Vector2(2, 2)
-
-[node name="FireA8" parent="." instance=ExtResource("64_ff84q")]
-position = Vector2(39548, 1280)
-scale = Vector2(1.5, 1.5)
-
-[node name="FireA4" parent="." instance=ExtResource("64_ff84q")]
-position = Vector2(45817, 1236)
-scale = Vector2(0.754151, 0.754151)
 
 [connection signal="body_entered" from="CameraOffsetChangeAreas/CameraOffsetArea4/CameraUp" to="CameraOffsetChangeAreas/CameraOffsetArea4" method="change_offset"]
 [connection signal="body_entered" from="CameraOffsetChangeAreas/CameraOffsetArea2/CameraUp" to="CameraOffsetChangeAreas/CameraOffsetArea2" method="change_offset"]
