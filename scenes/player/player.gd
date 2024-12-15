@@ -67,6 +67,8 @@ func respawn() -> void:
 func change_sprite_to_car() -> void:
 	$AnimatedSprite2D.sprite_frames = car_sprite_frames
 	%CollisionShape2D2.disabled = false
+	$DashVFX.hide()
+	$RunVFX.hide()
 
 func stop_for_animation() -> void:
 	requested_stop_for_animation.emit()

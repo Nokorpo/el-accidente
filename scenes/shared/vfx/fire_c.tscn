@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://bwiu2f4s3s8j4"]
+
+[ext_resource type="Texture2D" uid="uid://c2d6is40imp3d" path="res://assets/sprites/vfx/firec_1.png" id="1_hxuth"]
+[ext_resource type="Texture2D" uid="uid://cmj42ecoctsx1" path="res://assets/sprites/vfx/firec_2.png" id="2_xiunw"]
+[ext_resource type="Texture2D" uid="uid://bovf8r5xa56lj" path="res://assets/sprites/vfx/firec_3.png" id="3_x8vq2"]
+[ext_resource type="Texture2D" uid="uid://diqmde22x7muw" path="res://assets/sprites/vfx/firec_4.png" id="4_g2alr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t13u3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hxuth")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xiunw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_x8vq2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g2alr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="FireA" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -186)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_t13u3")
+autoplay = "default"

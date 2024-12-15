@@ -101,7 +101,7 @@ car_sprite_frames = ExtResource("3_bq7r4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
-sprite_frames = ExtResource("3_bq7r4")
+sprite_frames = ExtResource("2_vgcp4")
 animation = &"stop"
 
 [node name="DashDistance" type="Marker2D" parent="."]

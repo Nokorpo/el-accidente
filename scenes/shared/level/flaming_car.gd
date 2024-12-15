@@ -7,7 +7,7 @@ func _ready() -> void:
 	reset()
 
 func reset() -> void:
-	#$AnimationPlayer.play("RESET")
+	$AnimationPlayer.play("RESET")
 	$CollisionArea.monitoring = true
 
 func _on_collision_area_body_entered(body: Node2D) -> void:
