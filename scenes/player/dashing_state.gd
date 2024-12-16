@@ -23,6 +23,7 @@ func _on_enter_state() -> void:
 	node.speed = 0
 	%AnimatedSprite2D.play("dash")
 	dash_vfx.play("dash")
+	AudioManager.sfx_dash.play()
 
 	if %WillCollideWithWall.is_colliding():
 		state_machine.change_state(DashingCutShortState)

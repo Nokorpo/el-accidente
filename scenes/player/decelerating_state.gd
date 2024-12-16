@@ -23,6 +23,7 @@ func _on_enter_state() -> void:
 
 func _on_exit_state() -> void:
 	_vfx.play("default")
+	AudioManager.sfx_decelerate.play()
 
 func _process(_delta: float) -> void:
 	if active:
@@ -48,7 +49,9 @@ func resolve() -> void:
 		state_machine.change_state(DashingState)
 	else:
 		state_machine.change_state(RunningState)
+	AudioManager.sfx_decelerate.stop()
 
 func _dash_ready() -> bool:
 	var elapsed_time: float = (Time.get_ticks_msec() - _time_entered) / 1000.0
 	return elapsed_time >= time_until_dash
+

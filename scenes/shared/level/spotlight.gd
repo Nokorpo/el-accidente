@@ -28,6 +28,7 @@ func _on_collision_area_body_entered(body: Node2D) -> void:
 
 func _on_triggered(body: Node2D) -> void:
 	if body.is_in_group("player"):
+		AudioManager.sfx_spotlight_flick.play()
 		animated_sprite.animation_finished.connect(_fall)
 		animated_sprite.play("trigger")
 

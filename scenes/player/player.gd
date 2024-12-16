@@ -51,6 +51,7 @@ func set_checkpoint(new_checkpoint: Vector2) -> void:
 	self._checkpoint = new_checkpoint
 
 func die() -> void:
+	AudioManager.sfx_transition.play()
 	EventBus.play_curtain_animation.emit()
 
 func respawn() -> void:
@@ -66,6 +67,7 @@ func respawn() -> void:
 # FIXME no se me ocurre otra manera de hacer estos métodos, pero joden la interfaz del player
 # haciendo que tenga muchas responsabilidades T_T
 func change_sprite_to_car() -> void:
+	AudioManager.sfx_car_engine_start.play()
 	$AnimatedSprite2D.sprite_frames = car_sprite_frames
 	%CollisionShape2D2.disabled = false
 	$DashVFX.hide()

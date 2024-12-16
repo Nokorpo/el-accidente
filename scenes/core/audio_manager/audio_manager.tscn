@@ -1,0 +1,72 @@
+[gd_scene load_steps=18 format=3 uid="uid://di76gaqtr8ku1"]
+
+[ext_resource type="AudioStream" uid="uid://d0q32hftpayor" path="res://assets/sfx/dash.ogg" id="1_s0rse"]
+[ext_resource type="Script" path="res://scenes/core/audio_manager/audio_manager.gd" id="1_upyad"]
+[ext_resource type="AudioStream" uid="uid://mprgcbhmi8h3" path="res://assets/sfx/decelerate.ogg" id="2_j05n3"]
+[ext_resource type="AudioStream" uid="uid://dwrdu2f6t016y" path="res://assets/sfx/car_crash.ogg" id="3_oj000"]
+[ext_resource type="AudioStream" uid="uid://d2ywbyej0b3of" path="res://assets/sfx/car_dash.ogg" id="4_yr0ns"]
+[ext_resource type="AudioStream" uid="uid://t6is7bcq1ipy" path="res://assets/sfx/car_decelerate.ogg" id="5_0j8je"]
+[ext_resource type="AudioStream" uid="uid://y0m4k3aarmcl" path="res://assets/sfx/car_engine_loop.ogg" id="6_q1tm6"]
+[ext_resource type="AudioStream" uid="uid://dfvgs0risgdry" path="res://assets/sfx/car_engine_start.ogg" id="7_as752"]
+[ext_resource type="AudioStream" uid="uid://dc5hob5e3mkn3" path="res://assets/sfx/character_speech.ogg" id="8_cavnj"]
+[ext_resource type="AudioStream" uid="uid://dv1r61d87w717" path="res://assets/sfx/combust.ogg" id="9_ucu45"]
+[ext_resource type="AudioStream" uid="uid://clmydnucm4keq" path="res://assets/sfx/deer_run.ogg" id="10_fsoy5"]
+[ext_resource type="AudioStream" uid="uid://dpk3hml1541oc" path="res://assets/sfx/fire_car.ogg" id="11_qk377"]
+[ext_resource type="AudioStream" uid="uid://ch3xambf7enpq" path="res://assets/sfx/fire_loop.ogg" id="12_hbr8b"]
+[ext_resource type="AudioStream" uid="uid://dtm64iew2wofd" path="res://assets/sfx/flamethrower.ogg" id="13_fybju"]
+[ext_resource type="AudioStream" uid="uid://et6t6u8mft5n" path="res://assets/sfx/spotlight_break.ogg" id="14_2d1ps"]
+[ext_resource type="AudioStream" uid="uid://bea74odm7j75n" path="res://assets/sfx/spotlight_flick.ogg" id="15_ulf51"]
+[ext_resource type="AudioStream" uid="uid://bw62vaugfqdk2" path="res://assets/sfx/transition.ogg" id="16_x5b64"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_upyad")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+
+[node name="Dash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_s0rse")
+
+[node name="Decelerate" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_j05n3")
+
+[node name="CarCrash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_oj000")
+
+[node name="CarDash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_yr0ns")
+
+[node name="CarDecelerate" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_0j8je")
+
+[node name="CarEngine" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_q1tm6")
+
+[node name="CarEngineStart" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_as752")
+
+[node name="CharacterSpeech" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_cavnj")
+
+[node name="Combust" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_ucu45")
+
+[node name="DeerRun" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_fsoy5")
+
+[node name="FlamingCar" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_qk377")
+
+[node name="FireLoop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_hbr8b")
+
+[node name="FlameThrower" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_fybju")
+
+[node name="SpotlightBreak" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_2d1ps")
+
+[node name="SpotlightFlick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_ulf51")
+
+[node name="Transition" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_x5b64")

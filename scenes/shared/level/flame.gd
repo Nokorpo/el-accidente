@@ -25,6 +25,7 @@ func toggle_fire() -> void:
 		sprite.play("on_loop")
 		monitoring = true
 		_timer.start(time_on)
+		AudioManager.sfx_flame_thrower.play()
 	else:
 		monitoring = false
 		sprite.play("turn_off")
