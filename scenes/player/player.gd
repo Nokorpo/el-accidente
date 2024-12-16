@@ -17,6 +17,8 @@ const SPEED_FPS_MULTIPLIER: float = 3600
 ## SpriteFrames used when player is in the car
 @export var car_sprite_frames: SpriteFrames
 
+@onready var is_touching_floor_raycast: RayCast2D = $IsTouchingFloor
+
 
 var is_affected_by_gravity: bool = true
 var is_using_car: bool = false
@@ -25,6 +27,8 @@ var _checkpoint: Vector2 = Vector2.ZERO
 var _camera: Camera2D = null
 var _initial_camera_position: Vector2
 var _is_already_dying: bool = false
+
+var _current_floor_angle: float = 0
 
 func _ready() -> void:
 	if has_node("Camera2D"):
@@ -36,18 +40,32 @@ func _ready() -> void:
 	is_using_car = false
 	_is_already_dying = false
 
+func _process(_delta: float) -> void:
+	$AnimatedSprite2D.rotation = lerp($AnimatedSprite2D.rotation, _current_floor_angle, .1)
+
 func _physics_process(delta: float) -> void:
 	velocity.x = lerp( velocity.x,  speed * SPEED_FPS_MULTIPLIER * delta, .9)
 	if not is_on_floor() and is_affected_by_gravity:
 		velocity += get_gravity() * delta
 
 	move_and_slide()
+	if is_touching_floor() and is_affected_by_gravity:
+		var normal: Vector2 = get_floor_raycast_normal()
+		_current_floor_angle = atan2(normal.y, normal.x) + PI/2
 
 	if global_position.y >= respawn_depth_threshold:
 		die()
 	
 	if Input.is_action_just_pressed("reset"):
 		die()
+
+## Raycast to know if we're touching the floor
+func is_touching_floor() -> bool:
+	return is_touching_floor_raycast.is_colliding()
+
+## Raycast to get the floor normal
+func get_floor_raycast_normal() -> Vector2:
+	return is_touching_floor_raycast.get_collision_normal()
 
 ## Sets the new checkpoint, in global coordinates
 func set_checkpoint(new_checkpoint: Vector2) -> void:

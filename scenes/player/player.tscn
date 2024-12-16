@@ -195,5 +195,9 @@ scale_amount_max = 2.5
 color = Color(0.843181, 0.698769, 0.424141, 1)
 color_ramp = SubResource("Gradient_o3ld7")
 
+[node name="IsTouchingFloor" type="RayCast2D" parent="."]
+position = Vector2(0, 103)
+target_position = Vector2(0, 64)
+
 [connection signal="requested_continue" from="." to="StateMachine/StopState" method="start_running"]
 [connection signal="requested_stop_for_animation" from="." to="StateMachine/StopState" method="force_enter_stop_state"]
