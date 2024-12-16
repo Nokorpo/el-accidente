@@ -14,9 +14,7 @@ config/name="El Accidente"
 run/main_scene="res://scenes/menu/main_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/bg_color=Color(0.04, 0.04, 0.04, 1)
-boot_splash/image="res://scenes/menu/credits/sprites/where_talent_ignites.png"
-boot_splash/fullsize=false
-boot_splash/use_filter=false
+boot_splash/image="res://boot_splash.png"
 config/icon="res://icon.png"
 
 [autoload]
