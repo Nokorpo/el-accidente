@@ -14,16 +14,17 @@ var _original_speed: float
 var _time_entered: float
 
 func _on_enter_state() -> void:
+	print(node.is_using_car)
 	_original_speed = node.speed
 	_time_entered = Time.get_ticks_msec()
 	%AnimatedSprite2D.play("decelerating")
-	await %AnimatedSprite2D.animation_finished
-	if active:
-		%AnimatedSprite2D.play("decelerating_glide")
 	if node.is_using_car:
 		AudioManager.sfx_car_decelerate.play()
 	else:
 		AudioManager.sfx_decelerate.play()
+	await %AnimatedSprite2D.animation_finished
+	if active:
+		%AnimatedSprite2D.play("decelerating_glide")
 
 func _on_exit_state() -> void:
 	_vfx.play("default")
@@ -58,4 +59,3 @@ func resolve() -> void:
 func _dash_ready() -> bool:
 	var elapsed_time: float = (Time.get_ticks_msec() - _time_entered) / 1000.0
 	return elapsed_time >= time_until_dash
-
