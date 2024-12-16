@@ -107,7 +107,8 @@ car_sprite_frames = ExtResource("3_bq7r4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 sprite_frames = ExtResource("2_vgcp4")
-animation = &"dash"
+animation = &"falling"
+frame_progress = 0.268109
 
 [node name="DashDistance" type="Marker2D" parent="."]
 unique_name_in_owner = true
@@ -132,9 +133,10 @@ script = ExtResource("7_yfuy2")
 [node name="StopState" type="Node" parent="StateMachine"]
 script = ExtResource("14_in1hi")
 
-[node name="RunningState" type="Node" parent="StateMachine"]
+[node name="RunningState" type="Node" parent="StateMachine" node_paths=PackedStringArray("_player")]
 script = ExtResource("6_vilqo")
 can_decelerate_while_falling = false
+_player = NodePath("../..")
 
 [node name="DeceleratingState" type="Node" parent="StateMachine" node_paths=PackedStringArray("_vfx")]
 script = ExtResource("8_jy070")

@@ -189,7 +189,7 @@ z_index = 2
 [node name="PauseMenu" parent="UI" instance=ExtResource("1_kottx")]
 
 [node name="Player" parent="." instance=ExtResource("2_h8ti8")]
-position = Vector2(40046, 660)
+position = Vector2(425, 576)
 speed = 11.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]

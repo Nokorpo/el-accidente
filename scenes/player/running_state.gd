@@ -3,6 +3,7 @@ class_name RunningState
 ## State that lets the player character continue running, without user input.
 
 @export var can_decelerate_while_falling: bool = true
+@export var _player: Player
 
 var _original_speed: float
 
@@ -21,6 +22,11 @@ func _process(_delta) -> void:
 			decelerate()
 		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 			decelerate()
+		
+		if _player.is_touching_floor():
+			%AnimatedSprite2D.play("running")
+		else:
+			%AnimatedSprite2D.play("falling")
 
 func _input(event: InputEvent) -> void:
 	if active and is_processing_input():

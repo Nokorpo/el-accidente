@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=12 format=3 uid="uid://dhak0faey7tlk"]
+[gd_resource type="SpriteFrames" load_steps=14 format=3 uid="uid://dhak0faey7tlk"]
 
 [ext_resource type="Texture2D" uid="uid://dvd7ufry3gwnc" path="res://assets/sprites/player/dash_1.png" id="1_jjp2w"]
 [ext_resource type="Texture2D" uid="uid://dckfu2wn166it" path="res://assets/sprites/player/dash_2.png" id="2_ke20q"]
@@ -9,7 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://ctqtwvlli6hok" path="res://assets/sprites/player/deceleratingidle_1.png" id="6_r811k"]
 [ext_resource type="Texture2D" uid="uid://dkn304o6henp4" path="res://assets/sprites/player/deceleratingidle_2.png" id="7_8yacf"]
 [ext_resource type="Texture2D" uid="uid://ckgr3t0q3r28y" path="res://assets/sprites/player/running_2.png" id="7_fxe7b"]
+[ext_resource type="Texture2D" uid="uid://bf6q4ayjxl65s" path="res://assets/sprites/player/falling_1.png" id="8_3ikdd"]
 [ext_resource type="Texture2D" uid="uid://34pkmv4a34hd" path="res://assets/sprites/player/running_3.png" id="8_b87ay"]
+[ext_resource type="Texture2D" uid="uid://c0fsfyv12o6ys" path="res://assets/sprites/player/falling_2.png" id="9_a2j6o"]
 [ext_resource type="Texture2D" uid="uid://c5raco04jqqc0" path="res://assets/sprites/player/running_4.png" id="9_ww6bt"]
 
 [resource]
@@ -48,6 +50,17 @@ animations = [{
 }],
 "loop": true,
 "name": &"decelerating_glide",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_3ikdd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_a2j6o")
+}],
+"loop": true,
+"name": &"falling",
 "speed": 5.0
 }, {
 "frames": [{
