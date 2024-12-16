@@ -1,7 +1,5 @@
 extends AnimatedSprite2D
 
-@export var end_scene: PackedScene = load("res://scenes/menu/main_menu.tscn")
-
 @onready var crashed_car: AnimatedSprite2D = $CrashedCar
 @onready var fire: AnimatedSprite2D = $Fire
 @onready var flashazo: TextureRect = $CanvasLayer/Flashazo
@@ -39,7 +37,7 @@ func _on_area_2d_body_entered(body):
 		tween.tween_property(flashazo, "modulate", Color.WHITE, 2)
 		await tween.finished
 		EventBus.change_scene.emit(EventBus.ChangeSceneEvent.new(
-			end_scene
+			load("res://scenes/menu/main_menu.tscn")
 		))
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bsohafgi0wbf0"]
+[gd_scene load_steps=19 format=3 uid="uid://dcdkps22trsvq"]
 
 [ext_resource type="Texture2D" uid="uid://d0xgwd2s7ldye" path="res://assets/sprites/background/front/firetree_2.png" id="1_786bl"]
 [ext_resource type="Texture2D" uid="uid://voc41ldwx0kh" path="res://assets/sprites/background/front/firetree_3.png" id="2_iq8sg"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://cjkjr4mxicjow" path="res://assets/sprites/background/front/firetree_5.png" id="4_15g6c"]
 [ext_resource type="Texture2D" uid="uid://cmoiwoo1qdtfl" path="res://assets/sprites/background/front/firetree_1.png" id="5_4uq1n"]
 [ext_resource type="Script" path="res://scenes/shared/level/tree.gd" id="6_mx1n6"]
-[ext_resource type="PackedScene" uid="uid://dvc5023xednjw" path="res://scenes/menu/main_menu.tscn" id="7_rl68d"]
 [ext_resource type="Texture2D" uid="uid://c2d6is40imp3d" path="res://assets/sprites/vfx/firec_1.png" id="8_6hleq"]
 [ext_resource type="SpriteFrames" uid="uid://jfvaa13kkw0" path="res://scenes/player/car_sprite_frames.tres" id="8_tg85y"]
 [ext_resource type="Texture2D" uid="uid://cmj42ecoctsx1" path="res://assets/sprites/vfx/firec_2.png" id="9_ty2m7"]
@@ -73,7 +72,6 @@ z_index = -2
 sprite_frames = SubResource("SpriteFrames_vpoe3")
 animation = &"idle"
 script = ExtResource("6_mx1n6")
-end_scene = ExtResource("7_rl68d")
 
 [node name="Area2D" type="Area2D" parent="."]
 
