@@ -65,6 +65,9 @@ func _change_state(state_type: Variant) -> void:
 	current_state.active = true
 	current_state._on_enter_state()
 
+func is_current_state(state_type: Variant) -> bool:
+	return current_state.get_script().get_global_name() == state_type.get_global_name()
+
 ## Represents an abstract "step", like the tick of a clock. It can be
 ## used in a state machine to reduce its CPU cost or to tie the execution
 ## to a timer/event instead of the _process or _physics_process callbacks.

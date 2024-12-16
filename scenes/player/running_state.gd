@@ -16,14 +16,14 @@ func _on_enter_state() -> void:
 	%AnimatedSprite2D.play("running")
 
 func _process(_delta) -> void:
-	if active:
+	if active and is_processing_input():
 		if Input.is_action_pressed("action"):
 			decelerate()
 		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 			decelerate()
 
 func _input(event: InputEvent) -> void:
-	if active:
+	if active and is_processing_input():
 		if event is InputEventMouseButton and event.is_pressed():
 			decelerate()
 

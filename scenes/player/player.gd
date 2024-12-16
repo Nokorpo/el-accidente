@@ -86,3 +86,9 @@ func stop_for_animation() -> void:
 
 func animation_finished() -> void:
 	requested_continue.emit()
+
+func disable_input() -> void:
+	var state_machine: StateMachine = $StateMachine
+	state_machine.propagate_call("set_process_input", [false])
+	if state_machine.is_current_state(DeceleratingState):
+		state_machine.change_state(DashingState)
