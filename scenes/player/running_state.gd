@@ -23,10 +23,11 @@ func _process(_delta) -> void:
 		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 			decelerate()
 		
-		if _player.is_touching_floor():
-			%AnimatedSprite2D.play("running")
-		else:
-			%AnimatedSprite2D.play("falling")
+		if %AnimatedSprite2D.sprite_frames.has_animation("falling"):
+			if _player.is_touching_floor():
+				%AnimatedSprite2D.play("running")
+			else:
+				%AnimatedSprite2D.play("falling")
 
 func _input(event: InputEvent) -> void:
 	if active and is_processing_input():
