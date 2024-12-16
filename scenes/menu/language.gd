@@ -3,22 +3,31 @@ extends Button
 
 const SUPPORTED_LANGUAGES := ["en", "es"]
 
+static var _first_time_loading := true
+
 func _ready() -> void:
 	pressed.connect(_on_toggle_language_pressed)
 	
-	var current_language := TranslationServer.get_locale()
-	if current_language not in SUPPORTED_LANGUAGES:
-		TranslationServer.set_locale("es")
-		_update_title("es")
+	if _first_time_loading:
+		var current_language := TranslationServer.get_locale()
+		if current_language not in SUPPORTED_LANGUAGES:
+			_set_locale(OS.get_locale_language())
+		_first_time_loading = false
 
 func _on_toggle_language_pressed() -> void:
 	match TranslationServer.get_locale():
 		"en":
-			TranslationServer.set_locale("es")
-			_update_title("es")
+			_set_locale("es")
 		"es", _:
+			_set_locale("en")
+
+func _set_locale(lang_code: String) -> void:
+	match lang_code:
+		"en":
 			TranslationServer.set_locale("en")
-			_update_title("en")
+		"es", _:
+			TranslationServer.set_locale("es")
+	_update_title(TranslationServer.get_locale())
 
 func _update_title(lang_code: String) -> void:
 	%Title.texture = load("res://assets/sprites/ui/main_menu_title_%s.png" % lang_code)
