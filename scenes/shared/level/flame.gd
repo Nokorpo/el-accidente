@@ -26,11 +26,13 @@ func toggle_fire() -> void:
 		await sprite.animation_finished
 		sprite.play("on_loop")
 		monitoring = true
+		$CollisionShape2D.debug_color = Color(Color.RED, 0.42)
 		_timer.start(time_on)
 		if _is_visible:
 			AudioManager.sfx_flame_thrower.play()
 	else:
 		monitoring = false
+		$CollisionShape2D.debug_color = Color(Color.SKY_BLUE, 0.42)
 		sprite.play("turn_off")
 		await sprite.animation_finished
 		sprite.play("off")

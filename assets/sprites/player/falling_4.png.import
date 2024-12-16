@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgxciwsai01el"
-path="res://.godot/imported/fireobstacle_3.png-1072615ddebe1941d0c517bc0943ae9a.ctex"
+uid="uid://dagchkic6i1kv"
+path="res://.godot/imported/falling_4.png-9a76df83681f39310a98a9bd4626b1f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/obstacles/fire_obstacle/fireobstacle_3.png"
-dest_files=["res://.godot/imported/fireobstacle_3.png-1072615ddebe1941d0c517bc0943ae9a.ctex"]
+source_file="res://assets/sprites/player/falling_4.png"
+dest_files=["res://.godot/imported/falling_4.png-9a76df83681f39310a98a9bd4626b1f0.ctex"]
 
 [params]
 

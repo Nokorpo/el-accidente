@@ -20,9 +20,9 @@
 [ext_resource type="Texture2D" uid="uid://lm0w33pgt0m5" path="res://assets/sprites/npc/barbara_idle1.png" id="11_753bg"]
 [ext_resource type="Texture2D" uid="uid://d2p40ersnb67h" path="res://assets/sprites/background/back/fase2b_2.png" id="12_38u3a"]
 [ext_resource type="Texture2D" uid="uid://r57klsm2v8ww" path="res://assets/sprites/background/back/fase3b_4.png" id="12_bnajj"]
-[ext_resource type="PackedScene" uid="uid://x4n61sjituka" path="res://scenes/shared/level/spikes.tscn" id="12_nqo6j"]
+[ext_resource type="PackedScene" path="res://scenes/shared/level/spikes.tscn" id="12_nqo6j"]
 [ext_resource type="Texture2D" uid="uid://c5owh2tsqoqb5" path="res://assets/sprites/npc/barbara_idle2.png" id="12_wvsqd"]
-[ext_resource type="PackedScene" uid="uid://g1wph10l7f0q" path="res://scenes/shared/level/breaking_platform.tscn" id="13_g1vww"]
+[ext_resource type="PackedScene" path="res://scenes/shared/level/breaking_platform.tscn" id="13_g1vww"]
 [ext_resource type="Texture2D" uid="uid://bdwxf0r7diuea" path="res://assets/sprites/background/back/fase2b_3.png" id="13_rvqy5"]
 [ext_resource type="Texture2D" uid="uid://dkfwlu0e7yois" path="res://assets/sprites/background/back/fase2_4.png" id="14_te1nf"]
 [ext_resource type="Script" path="res://scenes/shared/level/elevator_platform.gd" id="15_4ntac"]
@@ -55,15 +55,15 @@
 [ext_resource type="Texture2D" uid="uid://b46vs02g8lpko" path="res://assets/sprites/background/back/fase1_3.png" id="45_h3ped"]
 [ext_resource type="Texture2D" uid="uid://dv0lsmbgda3of" path="res://assets/sprites/background/front/bongos.png" id="51_yb13k"]
 [ext_resource type="Texture2D" uid="uid://hxq7xcp21l3u" path="res://assets/sprites/background/front/nota4.png" id="54_40vf5"]
-[ext_resource type="PackedScene" uid="uid://bsohafgi0wbf0" path="res://scenes/shared/level/tree.tscn" id="55_c7rh1"]
+[ext_resource type="PackedScene" uid="uid://dcdkps22trsvq" path="res://scenes/shared/level/tree.tscn" id="55_c7rh1"]
 [ext_resource type="PackedScene" uid="uid://b8hege0352ly5" path="res://scenes/game/enter_car_animation.tscn" id="56_o8es4"]
 [ext_resource type="PackedScene" uid="uid://b1tu1bnym3cmy" path="res://scenes/shared/level/spotlight.tscn" id="57_hkjk8"]
 [ext_resource type="PackedScene" uid="uid://d2hk62x8s3bl2" path="res://scenes/shared/level/flaming_car.tscn" id="58_4cycx"]
 [ext_resource type="Script" path="res://scenes/game/block_input.gd" id="58_mauon"]
 [ext_resource type="PackedScene" uid="uid://bhh7m57vhkbu3" path="res://scenes/shared/level/flame.tscn" id="62_scnoy"]
 [ext_resource type="PackedScene" uid="uid://c2we07xieyt6x" path="res://scenes/shared/vfx/fire_a.tscn" id="62_stqg0"]
-[ext_resource type="PackedScene" path="res://scenes/shared/vfx/fire_b.tscn" id="63_17udh"]
-[ext_resource type="PackedScene" path="res://scenes/shared/vfx/fire_c.tscn" id="64_ff84q"]
+[ext_resource type="PackedScene" uid="uid://behbyiklogyu8" path="res://scenes/shared/vfx/fire_b.tscn" id="63_17udh"]
+[ext_resource type="PackedScene" uid="uid://bwiu2f4s3s8j4" path="res://scenes/shared/vfx/fire_c.tscn" id="64_ff84q"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s1hoo"]
 animations = [{
@@ -189,7 +189,7 @@ z_index = 2
 [node name="PauseMenu" parent="UI" instance=ExtResource("1_kottx")]
 
 [node name="Player" parent="." instance=ExtResource("2_h8ti8")]
-position = Vector2(425, 574)
+position = Vector2(40046, 660)
 speed = 11.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
