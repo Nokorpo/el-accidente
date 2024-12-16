@@ -8,6 +8,7 @@ static var _timer: Timer
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 var _is_active: bool = false
+var _is_visible: bool = false
 
 func _ready() -> void:
 	if _timer == null:
@@ -15,6 +16,7 @@ func _ready() -> void:
 		get_tree().root.add_child.call_deferred(_timer)
 	_timer.timeout.connect(toggle_fire)
 	_is_active = false
+	_is_visible = false
 	_timer.start.call_deferred(time_off)
 
 func toggle_fire() -> void:
@@ -25,7 +27,8 @@ func toggle_fire() -> void:
 		sprite.play("on_loop")
 		monitoring = true
 		_timer.start(time_on)
-		AudioManager.sfx_flame_thrower.play()
+		if _is_visible:
+			AudioManager.sfx_flame_thrower.play()
 	else:
 		monitoring = false
 		sprite.play("turn_off")
@@ -36,3 +39,9 @@ func toggle_fire() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		body.die()
+
+func _on_visible_on_screen_notifier_2d_screen_entered() -> void:
+	_is_visible = true
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	_is_visible = false

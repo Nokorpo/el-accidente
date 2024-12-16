@@ -20,6 +20,10 @@ func _on_enter_state() -> void:
 	await %AnimatedSprite2D.animation_finished
 	if active:
 		%AnimatedSprite2D.play("decelerating_glide")
+	if node.is_using_car:
+		AudioManager.sfx_car_decelerate.play()
+	else:
+		AudioManager.sfx_decelerate.play()
 
 func _on_exit_state() -> void:
 	_vfx.play("default")
