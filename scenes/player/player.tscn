@@ -1,8 +1,9 @@
-[gd_scene load_steps=26 format=3 uid="uid://7pnca5lreux0"]
+[gd_scene load_steps=27 format=3 uid="uid://7pnca5lreux0"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_d1qh6"]
 [ext_resource type="SpriteFrames" uid="uid://dhak0faey7tlk" path="res://scenes/player/running_sprite_frames.tres" id="2_vgcp4"]
 [ext_resource type="SpriteFrames" uid="uid://jfvaa13kkw0" path="res://scenes/player/car_sprite_frames.tres" id="3_bq7r4"]
+[ext_resource type="Script" path="res://scenes/player/lerp_movement.gd" id="4_513b2"]
 [ext_resource type="Script" path="res://scenes/shared/state_machine/state_machine.gd" id="6_nqn7r"]
 [ext_resource type="Script" path="res://scenes/player/running_state.gd" id="6_vilqo"]
 [ext_resource type="Script" path="res://scenes/player/dash_distance.gd" id="6_xxku5"]
@@ -108,6 +109,7 @@ car_sprite_frames = ExtResource("3_bq7r4")
 unique_name_in_owner = true
 sprite_frames = ExtResource("2_vgcp4")
 animation = &"decelerating"
+script = ExtResource("4_513b2")
 
 [node name="DashDistance" type="Marker2D" parent="."]
 unique_name_in_owner = true

@@ -29,19 +29,18 @@ var _initial_camera_position: Vector2
 var _is_already_dying: bool = false
 
 var _current_floor_angle: float = 0
+var _target_position: Vector2
 
 func _ready() -> void:
 	if has_node("Camera2D"):
 		_camera = get_node("Camera2D")
 		_initial_camera_position = _camera.position
 	_checkpoint = global_position
+	_target_position = global_position
 	EventBus.reload_level.connect(respawn)
 	$AnimatedSprite2D.sprite_frames = running_sprite_frames
 	is_using_car = false
 	_is_already_dying = false
-
-func _process(_delta: float) -> void:
-	$AnimatedSprite2D.rotation = lerp($AnimatedSprite2D.rotation, _current_floor_angle, .1)
 
 func _physics_process(delta: float) -> void:
 	velocity.x = lerp( velocity.x,  speed * SPEED_FPS_MULTIPLIER * delta, .9)
