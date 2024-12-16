@@ -77,7 +77,8 @@ func change_sprite_to_car() -> void:
 	AudioManager.sfx_car_engine_start.play()
 	$AnimatedSprite2D.sprite_frames = car_sprite_frames
 	%CollisionShape2D2.disabled = false
-	$DashVFX.hide()
+	$DashVFX.position.x -= 150
+	%FootDust.position.x += 64
 	$FootSparks.position.x -= 64
 
 func stop_for_animation() -> void:

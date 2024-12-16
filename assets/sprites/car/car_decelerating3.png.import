@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfpkmyiiqskyl"
-path="res://.godot/imported/car_brake4.png-96a33a1a92ec5442dbf415610de42402.ctex"
+uid="uid://bsepj8qmd0hkl"
+path="res://.godot/imported/car_decelerating3.png-98f2e6428cc09bf8b3b166fcf77f4dfd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/car/car_brake4.png"
-dest_files=["res://.godot/imported/car_brake4.png-96a33a1a92ec5442dbf415610de42402.ctex"]
+source_file="res://assets/sprites/car/car_decelerating3.png"
+dest_files=["res://.godot/imported/car_decelerating3.png-98f2e6428cc09bf8b3b166fcf77f4dfd.ctex"]
 
 [params]
 

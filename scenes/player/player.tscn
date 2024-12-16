@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://7pnca5lreux0"]
+[gd_scene load_steps=26 format=3 uid="uid://7pnca5lreux0"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_d1qh6"]
 [ext_resource type="SpriteFrames" uid="uid://dhak0faey7tlk" path="res://scenes/player/running_sprite_frames.tres" id="2_vgcp4"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://bxe5dail8s2hg" path="res://assets/sprites/vfx/dash_vfx2.png" id="17_wcu3d"]
 [ext_resource type="Texture2D" uid="uid://cf488v7200h7b" path="res://assets/sprites/vfx/dash_vfx3.png" id="18_xcgcr"]
 [ext_resource type="Script" path="res://scenes/player/dashing_cut_short_state.gd" id="19_5bnt7"]
+[ext_resource type="Texture2D" uid="uid://dc8hkfgc486ql" path="res://assets/sprites/player/dust_particle.png" id="19_8rk6r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5b3hn"]
 radius = 57.0
@@ -90,6 +91,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_o3ld7"]
+offsets = PackedFloat32Array(0, 0.994924)
+colors = PackedColorArray(1, 1, 1, 1, 0.439049, 0.439049, 0.439049, 0)
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_d1qh6")
 speed = 15.0
@@ -99,7 +104,7 @@ car_sprite_frames = ExtResource("3_bq7r4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 sprite_frames = ExtResource("2_vgcp4")
-animation = &"decelerating_glide"
+animation = &"dash"
 
 [node name="DashDistance" type="Marker2D" parent="."]
 unique_name_in_owner = true
@@ -161,7 +166,29 @@ autoplay = "default"
 [node name="DashVFX" type="AnimatedSprite2D" parent="."]
 position = Vector2(-162, -12)
 sprite_frames = SubResource("SpriteFrames_nyr1t")
+animation = &"dash"
 autoplay = "default"
+frame = 3
+frame_progress = 1.0
+
+[node name="FootDust" type="CPUParticles2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(116, 117)
+emitting = false
+lifetime = 0.5
+fixed_fps = 24
+texture = ExtResource("19_8rk6r")
+emission_shape = 1
+emission_sphere_radius = 24.0
+direction = Vector2(1, -1)
+spread = 30.0
+initial_velocity_min = 400.0
+initial_velocity_max = 500.0
+radial_accel_min = -100.0
+radial_accel_max = 100.0
+angle_max = 360.0
+scale_amount_max = 1.5
+color_ramp = SubResource("Gradient_o3ld7")
 
 [connection signal="requested_continue" from="." to="StateMachine/StopState" method="start_running"]
 [connection signal="requested_stop_for_animation" from="." to="StateMachine/StopState" method="force_enter_stop_state"]

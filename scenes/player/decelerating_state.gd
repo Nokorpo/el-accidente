@@ -17,16 +17,19 @@ func _on_enter_state() -> void:
 	_original_speed = node.speed
 	_time_entered = Time.get_ticks_msec()
 	%AnimatedSprite2D.play("decelerating")
+	%FootDust.set_emitting(true)
 	if node.is_using_car:
 		AudioManager.sfx_car_decelerate.play()
 	else:
 		AudioManager.sfx_decelerate.play()
 	await %AnimatedSprite2D.animation_finished
-	if active:
+	%FootDust.set_emitting(false)
+	if active and %AnimatedSprite2D.sprite_frames.has_animation("decelerating_glide"):
 		%AnimatedSprite2D.play("decelerating_glide")
 
 func _on_exit_state() -> void:
 	_vfx.play("default")
+	%FootDust.set_emitting(false)
 	AudioManager.sfx_car_decelerate.stop()
 	AudioManager.sfx_decelerate.stop()
 

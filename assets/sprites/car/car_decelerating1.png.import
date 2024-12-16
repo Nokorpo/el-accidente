@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cictl77apdn4c"
-path="res://.godot/imported/car_brake1.png-c76b4c94f4eb213e57a2d199448f08c2.ctex"
+path="res://.godot/imported/car_decelerating1.png-d1420144cd0cbdf5f33370255b92e0d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/car/car_brake1.png"
-dest_files=["res://.godot/imported/car_brake1.png-c76b4c94f4eb213e57a2d199448f08c2.ctex"]
+source_file="res://assets/sprites/car/car_decelerating1.png"
+dest_files=["res://.godot/imported/car_decelerating1.png-d1420144cd0cbdf5f33370255b92e0d9.ctex"]
 
 [params]
 
