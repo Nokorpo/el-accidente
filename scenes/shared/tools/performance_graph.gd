@@ -10,7 +10,7 @@ var points: PackedVector2Array
 func _ready() -> void:
 	if not Engine.is_editor_hint() and not OS.has_feature("editor"):
 		process_mode = PROCESS_MODE_DISABLED
-		hide()
+		queue_free()
 
 func _draw() -> void:
 	if not Engine.is_editor_hint() and is_node_ready() and points.size() > 2:
