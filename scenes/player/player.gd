@@ -24,7 +24,7 @@ var is_using_car: bool = false
 var _checkpoint: Vector2 = Vector2.ZERO
 var _camera: Camera2D = null
 var _initial_camera_position: Vector2
-
+var _is_already_dying: bool = false
 
 func _ready() -> void:
 	if has_node("Camera2D"):
@@ -34,6 +34,7 @@ func _ready() -> void:
 	EventBus.reload_level.connect(respawn)
 	$AnimatedSprite2D.sprite_frames = running_sprite_frames
 	is_using_car = false
+	_is_already_dying = false
 
 func _physics_process(delta: float) -> void:
 	velocity.x = lerp( velocity.x,  speed * SPEED_FPS_MULTIPLIER * delta, .9)
@@ -53,8 +54,10 @@ func set_checkpoint(new_checkpoint: Vector2) -> void:
 	self._checkpoint = new_checkpoint
 
 func die() -> void:
-	AudioManager.sfx_transition.play()
-	EventBus.play_curtain_animation.emit()
+	if not _is_already_dying:
+		_is_already_dying = true
+		AudioManager.sfx_transition.play()
+		EventBus.play_curtain_animation.emit()
 
 func respawn() -> void:
 	global_position = _checkpoint
@@ -63,6 +66,7 @@ func respawn() -> void:
 	_camera.position = _initial_camera_position
 	
 	await get_tree().process_frame
+	_is_already_dying = false
 	_camera.position_smoothing_enabled = true
 	$StateMachine.change_state(RunningState)
 
