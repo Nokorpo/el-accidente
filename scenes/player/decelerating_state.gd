@@ -14,7 +14,6 @@ var _original_speed: float
 var _time_entered: float
 
 func _on_enter_state() -> void:
-	print(node.is_using_car)
 	_original_speed = node.speed
 	_time_entered = Time.get_ticks_msec()
 	%AnimatedSprite2D.play("decelerating")
