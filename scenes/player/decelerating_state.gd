@@ -17,6 +17,9 @@ func _on_enter_state() -> void:
 	_original_speed = node.speed
 	_time_entered = Time.get_ticks_msec()
 	%AnimatedSprite2D.play("decelerating")
+	await %AnimatedSprite2D.animation_finished
+	if active:
+		%AnimatedSprite2D.play("decelerating_glide")
 
 func _on_exit_state() -> void:
 	_vfx.play("default")
