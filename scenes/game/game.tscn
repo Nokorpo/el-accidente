@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://7asaea7mswd5"]
+[gd_scene load_steps=82 format=3 uid="uid://7asaea7mswd5"]
 
 [ext_resource type="PackedScene" uid="uid://bajeqjukfftik" path="res://scenes/menu/pause_menu.tscn" id="1_kottx"]
 [ext_resource type="PackedScene" uid="uid://cpi1lm68o7bl7" path="res://scenes/shared/vfx/touch_feedback_frame.tscn" id="1_s3sr5"]
@@ -47,10 +47,11 @@
 [ext_resource type="Texture2D" uid="uid://cci23wnj5iup0" path="res://assets/sprites/vfx/vfxspikes_4.png" id="28_1xd26"]
 [ext_resource type="Texture2D" uid="uid://dc1un4hweuogu" path="res://assets/sprites/background/front/coche_colgante.png" id="28_itrb3"]
 [ext_resource type="Texture2D" uid="uid://getqmfkxho01" path="res://assets/sprites/background/front/músicos.png" id="29_e4dia"]
+[ext_resource type="Texture2D" uid="uid://di6eujgh5s7kv" path="res://assets/sprites/background/back/story_transition2.png" id="29_qmv3h"]
 [ext_resource type="Texture2D" uid="uid://del8tiiy5ndi2" path="res://assets/sprites/vfx/vfxspikes_5.png" id="29_ytu2h"]
 [ext_resource type="Texture2D" uid="uid://mnvedi6d5irk" path="res://assets/sprites/obstacles/deer/deer_idle1.png" id="30_7q80s"]
+[ext_resource type="Texture2D" uid="uid://bqoi1je4crc05" path="res://assets/sprites/background/back/story_transition3.png" id="30_fjl1j"]
 [ext_resource type="Texture2D" uid="uid://cad6pwwq8nac1" path="res://assets/sprites/obstacles/deer/deer_idle2.png" id="31_7p4aj"]
-[ext_resource type="Texture2D" uid="uid://d3xdglvq257ol" path="res://assets/sprites/background/back/story_transition.png" id="31_wio7d"]
 [ext_resource type="Texture2D" uid="uid://cs1ltlbgt23gh" path="res://assets/sprites/obstacles/elevator_platform.png" id="39_5x1kc"]
 [ext_resource type="Texture2D" uid="uid://b46vs02g8lpko" path="res://assets/sprites/background/back/fase1_3.png" id="45_h3ped"]
 [ext_resource type="Texture2D" uid="uid://dv0lsmbgda3of" path="res://assets/sprites/background/front/bongos.png" id="51_yb13k"]
@@ -219,9 +220,9 @@ texture = ExtResource("8_lpro2")
 
 [node name="Text" type="Label" parent="Characters/Albert"]
 offset_left = -329.0
-offset_top = -341.0
+offset_top = -411.0
 offset_right = 353.0
-offset_bottom = -276.0
+offset_bottom = -220.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "what_are_you_doing_berta"
@@ -234,15 +235,15 @@ sprite_frames = SubResource("SpriteFrames_k245c")
 autoplay = "default"
 
 [node name="SpeechBubble" type="Sprite2D" parent="Characters/Karla"]
-position = Vector2(6, -288)
-scale = Vector2(1.8, 1.8)
+position = Vector2(-1.00014, -299.05)
+scale = Vector2(1.92924, 1.92924)
 texture = ExtResource("8_lpro2")
 
 [node name="Text" type="Label" parent="Characters/Karla"]
-offset_left = -340.0
-offset_top = -415.0
-offset_right = 349.0
-offset_bottom = -214.0
+offset_left = -381.0
+offset_top = -454.0
+offset_right = 374.0
+offset_bottom = -202.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "you_are_overthinking"
@@ -264,7 +265,7 @@ texture = ExtResource("8_lpro2")
 offset_left = -344.0
 offset_top = -459.0
 offset_right = 360.0
-offset_bottom = -202.0
+offset_bottom = -209.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "not_good_to_be_afraid"
@@ -439,10 +440,10 @@ scale = Vector2(1.64563, 1.5)
 texture = ExtResource("23_kk7ov")
 
 [node name="PressToStart" type="Label" parent="Intro/Text"]
-offset_left = 195.0
-offset_top = 223.25
-offset_right = 664.0
-offset_bottom = 288.25
+offset_left = 147.0
+offset_top = 174.0
+offset_right = 698.0
+offset_bottom = 337.0
 theme_override_colors/font_color = Color(0.137255, 0.141176, 0.14902, 1)
 theme_override_font_sizes/font_size = 50
 text = "press_to_start"
@@ -852,8 +853,8 @@ texture = ExtResource("19_lqmj0")
 
 [node name="Square9" type="Sprite2D" parent="Storyboard/Background"]
 modulate = Color(1, 0.956863, 0.796078, 1)
-position = Vector2(37960, 802.5)
-scale = Vector2(3.12308, 6.5)
+position = Vector2(37844, 802.5)
+scale = Vector2(1.33848, 6.5)
 texture = ExtResource("19_lqmj0")
 
 [node name="Square8" type="Sprite2D" parent="Storyboard/Background"]
@@ -864,11 +865,11 @@ texture = ExtResource("19_lqmj0")
 
 [node name="StoryboardTransition" type="Sprite2D" parent="Storyboard/Background"]
 position = Vector2(8701, 581)
-texture = ExtResource("31_wio7d")
+texture = ExtResource("29_qmv3h")
 
 [node name="StoryboardTransition2" type="Sprite2D" parent="Storyboard/Background"]
 position = Vector2(37923, 581)
-texture = ExtResource("31_wio7d")
+texture = ExtResource("30_fjl1j")
 
 [node name="BackgroundObjects" type="Node2D" parent="Storyboard"]
 
