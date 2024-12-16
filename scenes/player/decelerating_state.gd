@@ -27,7 +27,8 @@ func _on_enter_state() -> void:
 
 func _on_exit_state() -> void:
 	_vfx.play("default")
-	AudioManager.sfx_decelerate.play()
+	AudioManager.sfx_car_decelerate.stop()
+	AudioManager.sfx_decelerate.stop()
 
 func _process(_delta: float) -> void:
 	if active:
