@@ -126,7 +126,7 @@ size = Vector2(324, 112)
 size = Vector2(224, 387)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahdys"]
-size = Vector2(88, 544)
+size = Vector2(850, 825)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uvcv2"]
 size = Vector2(496.861, 443.705)
@@ -1818,6 +1818,7 @@ player = NodePath("../../Player")
 speed_increment = 16.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Climax/SpeedChangerArea3"]
+position = Vector2(381, 140.5)
 shape = SubResource("RectangleShape2D_ahdys")
 
 [node name="BlockInput" type="Node" parent="Climax/SpeedChangerArea3"]

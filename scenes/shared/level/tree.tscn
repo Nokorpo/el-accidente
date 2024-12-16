@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bsohafgi0wbf0"]
+[gd_scene load_steps=20 format=3 uid="uid://bsohafgi0wbf0"]
 
 [ext_resource type="Texture2D" uid="uid://d0xgwd2s7ldye" path="res://assets/sprites/background/front/firetree_2.png" id="1_786bl"]
 [ext_resource type="Texture2D" uid="uid://voc41ldwx0kh" path="res://assets/sprites/background/front/firetree_3.png" id="2_iq8sg"]
@@ -6,11 +6,16 @@
 [ext_resource type="Texture2D" uid="uid://cjkjr4mxicjow" path="res://assets/sprites/background/front/firetree_5.png" id="4_15g6c"]
 [ext_resource type="Texture2D" uid="uid://cmoiwoo1qdtfl" path="res://assets/sprites/background/front/firetree_1.png" id="5_4uq1n"]
 [ext_resource type="Script" path="res://scenes/shared/level/tree.gd" id="6_mx1n6"]
-[ext_resource type="Texture2D" uid="uid://clahbbxxbgunk" path="res://assets/sprites/car/car_run1.png" id="7_u1j80"]
+[ext_resource type="PackedScene" uid="uid://dvc5023xednjw" path="res://scenes/menu/main_menu.tscn" id="7_rl68d"]
 [ext_resource type="Texture2D" uid="uid://c2d6is40imp3d" path="res://assets/sprites/vfx/firec_1.png" id="8_6hleq"]
+[ext_resource type="SpriteFrames" uid="uid://jfvaa13kkw0" path="res://scenes/player/car_sprite_frames.tres" id="8_tg85y"]
 [ext_resource type="Texture2D" uid="uid://cmj42ecoctsx1" path="res://assets/sprites/vfx/firec_2.png" id="9_ty2m7"]
 [ext_resource type="Texture2D" uid="uid://bovf8r5xa56lj" path="res://assets/sprites/vfx/firec_3.png" id="10_ahwtv"]
 [ext_resource type="Texture2D" uid="uid://diqmde22x7muw" path="res://assets/sprites/vfx/firec_4.png" id="11_q6gdh"]
+[ext_resource type="Texture2D" uid="uid://b0gqbk4xvkell" path="res://assets/sprites/background/square.svg" id="12_r1olk"]
+[ext_resource type="Texture2D" uid="uid://diah673s1y72f" path="res://assets/sprites/ui/end_screen_title.png" id="13_oknei"]
+[ext_resource type="AudioStream" uid="uid://t6is7bcq1ipy" path="res://assets/sfx/car_decelerate.ogg" id="13_udna1"]
+[ext_resource type="Texture2D" uid="uid://k4kblqosuedc" path="res://assets/sprites/ui/end_screen.png" id="15_wniru"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vpoe3"]
 animations = [{
@@ -41,18 +46,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_txqsk"]
-size = Vector2(84, 840)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_se7u7"]
-size = Vector2(261, 835)
-
-[sub_resource type="Animation" id="Animation_qtk2t"]
-resource_name = "car_crash"
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_gnhwv"]
-_data = {
-"car_crash": SubResource("Animation_qtk2t")
-}
+size = Vector2(107, 840)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rvl4y"]
 animations = [{
@@ -79,39 +73,76 @@ z_index = -2
 sprite_frames = SubResource("SpriteFrames_vpoe3")
 animation = &"idle"
 script = ExtResource("6_mx1n6")
+end_scene = ExtResource("7_rl68d")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(22, 279)
+position = Vector2(-37, 279)
 shape = SubResource("RectangleShape2D_txqsk")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Area2D2" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(190.5, 277.5)
-shape = SubResource("RectangleShape2D_se7u7")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-363, 279)
+shape = SubResource("RectangleShape2D_txqsk")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_gnhwv")
-}
-
-[node name="CarRun1" type="Sprite2D" parent="."]
-z_index = 1
-position = Vector2(-147, 515.152)
-texture = ExtResource("7_u1j80")
-
-[node name="CarRun2" type="Sprite2D" parent="."]
+[node name="CrashedCar" type="AnimatedSprite2D" parent="."]
 visible = false
 z_index = 1
-position = Vector2(-13, 516)
-texture = ExtResource("7_u1j80")
+position = Vector2(-147, 515.152)
+sprite_frames = ExtResource("8_tg85y")
+animation = &"stop"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Fire" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(12, 397.152)
 rotation = 0.118607
 sprite_frames = SubResource("SpriteFrames_rvl4y")
 frame_progress = 0.541531
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="EndScreen" type="TextureRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_wniru")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/EndScreen"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("13_oknei")
+
+[node name="Flashazo" type="TextureRect" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(0.866667, 0.380392, 0.211765, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -100.0
+offset_right = -250.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.175, 1.175)
+texture = ExtResource("12_r1olk")
+
+[node name="Flashazo" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(0.866667, 0.380392, 0.211765, 1)
+z_index = 4096
+scale = Vector2(40, 40)
+texture = ExtResource("12_r1olk")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_udna1")
+volume_db = 6.0
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_flashazo"]
