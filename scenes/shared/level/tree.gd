@@ -29,6 +29,11 @@ func _on_area_2d_body_entered(body):
 		tween.tween_interval(1)
 		await tween.finished
 		end_screen.show()
+		var the_end := end_screen.get_node_or_null("TheEnd")
+		if the_end != null:
+			var new_texture := load("res://assets/sprites/ui/end_screen_title_%s.png" % TranslationServer.get_locale())
+			if new_texture != null:
+				the_end.texture = new_texture
 		
 		# back to menu
 		tween = flashazo.create_tween()
