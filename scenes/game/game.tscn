@@ -217,57 +217,60 @@ position = Vector2(9, -287)
 scale = Vector2(1.8, 1.8)
 texture = ExtResource("8_lpro2")
 
-[node name="Text Albert" type="Label" parent="Characters/Albert"]
+[node name="Text" type="Label" parent="Characters/Albert"]
 offset_left = -329.0
 offset_top = -341.0
 offset_right = 353.0
 offset_bottom = -276.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
-text = "¿Qué estás haciendo, Berta?"
+text = "what_are_you_doing_berta"
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Karla" type="AnimatedSprite2D" parent="Characters"]
 position = Vector2(5586, 823)
 sprite_frames = SubResource("SpriteFrames_k245c")
 autoplay = "default"
 
-[node name="SpeechBubble2" type="Sprite2D" parent="Characters/Karla"]
+[node name="SpeechBubble" type="Sprite2D" parent="Characters/Karla"]
 position = Vector2(6, -288)
 scale = Vector2(1.8, 1.8)
 texture = ExtResource("8_lpro2")
 
-[node name="Text Karla" type="Label" parent="Characters/Karla"]
+[node name="Text" type="Label" parent="Characters/Karla"]
 offset_left = -340.0
 offset_top = -415.0
 offset_right = 349.0
 offset_bottom = -214.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
-text = "¿No crees que estás dándole
-demasiadas vueltas a la
-causa del accidente?"
+text = "you_are_overthinking"
 horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Barbara" type="AnimatedSprite2D" parent="Characters"]
 position = Vector2(20174, 912)
 sprite_frames = SubResource("SpriteFrames_6dqdf")
 autoplay = "default"
 
-[node name="SpeechBubble3" type="Sprite2D" parent="Characters/Barbara"]
+[node name="SpeechBubble" type="Sprite2D" parent="Characters/Barbara"]
 position = Vector2(4, -304)
 scale = Vector2(1.8, 1.8)
 texture = ExtResource("8_lpro2")
 
-[node name="Text Barbara" type="Label" parent="Characters/Barbara"]
+[node name="Text" type="Label" parent="Characters/Barbara"]
 offset_left = -344.0
-offset_top = -403.0
+offset_top = -459.0
 offset_right = 360.0
 offset_bottom = -202.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
-text = "No es bueno tener miedo
-pero es bueno haberlo tenido"
+text = "not_good_to_be_afraid"
 horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="CameraOffsetChangeAreas" type="Node2D" parent="."]
 
@@ -435,36 +438,41 @@ position = Vector2(2224, 277.25)
 scale = Vector2(1.64563, 1.5)
 texture = ExtResource("23_kk7ov")
 
-[node name="Pulsa para empezar" type="Label" parent="Intro/Text"]
+[node name="PressToStart" type="Label" parent="Intro/Text"]
 offset_left = 195.0
 offset_top = 223.25
 offset_right = 664.0
 offset_bottom = 288.25
 theme_override_colors/font_color = Color(0.137255, 0.141176, 0.14902, 1)
 theme_override_font_sizes/font_size = 50
-text = "Pulsa para empezar"
+text = "press_to_start"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
-[node name="Pulsar es freno" type="Label" parent="Intro/Text"]
-offset_left = 826.0
+[node name="HoldToBreak" type="Label" parent="Intro/Text"]
+offset_left = 967.0
 offset_top = 187.0
-offset_right = 1652.0
+offset_right = 1511.0
 offset_bottom = 320.0
 theme_override_colors/font_color = Color(0.137255, 0.141176, 0.14902, 1)
 theme_override_font_sizes/font_size = 50
-text = "Mantén pulsada la 
-pantalla para frenar"
+text = "hold_to_break"
 horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
-[node name="Suelta para dash" type="Label" parent="Intro/Text"]
+[node name="ReleaseToDash" type="Label" parent="Intro/Text"]
 offset_left = 1913.0
 offset_top = 188.0
 offset_right = 2540.0
 offset_bottom = 321.0
 theme_override_colors/font_color = Color(0.137255, 0.141176, 0.14902, 1)
 theme_override_font_sizes/font_size = 48
-text = "Deja de mantener pulsado
-para hacer un dash"
+text = "release_to_dash"
 horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Storyboard" type="Node2D" parent="."]
 
