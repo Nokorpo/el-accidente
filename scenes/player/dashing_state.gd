@@ -7,8 +7,6 @@ class_name DashingState
 @export var time_to_complete_dash: float = 0.15
 @export var dash_vfx: AnimatedSprite2D
 
-@onready var sprite: AnimatedSprite2D = %AnimatedSprite2D
-
 var _target_position: Vector2
 var _target_finish_time: float
 var _time_entered: float
@@ -23,7 +21,7 @@ func _on_enter_state() -> void:
 	_time_entered = Time.get_ticks_msec()
 	node.is_affected_by_gravity = false
 	node.speed = 0
-	sprite.play("dash")
+	%AnimatedSprite2D.play("dash")
 	dash_vfx.play("dash")
 	AudioManager.sfx_dash.play()
 
@@ -41,7 +39,5 @@ func _process(_delta) -> void:
 		var elapsed_time: float = (Time.get_ticks_msec() - _time_entered)/1000
 		var percent = min(1, elapsed_time/_target_finish_time)
 		node.position.x = lerp(_original_position.x, _target_position.x, percent)
-		sprite.global_position.x = node.global_position.x
-		sprite._last_position = sprite.global_position
 		if percent >= 1:
 			state_machine.change_state(RunningState)
