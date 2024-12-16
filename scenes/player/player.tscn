@@ -185,12 +185,14 @@ emission_shape = 1
 emission_sphere_radius = 24.0
 direction = Vector2(1, -1)
 spread = 30.0
-initial_velocity_min = 400.0
-initial_velocity_max = 500.0
+initial_velocity_min = 300.0
+initial_velocity_max = 600.0
 radial_accel_min = -100.0
 radial_accel_max = 100.0
 angle_max = 360.0
-scale_amount_max = 1.5
+scale_amount_min = 1.5
+scale_amount_max = 2.5
+color = Color(0.843181, 0.698769, 0.424141, 1)
 color_ramp = SubResource("Gradient_o3ld7")
 
 [connection signal="requested_continue" from="." to="StateMachine/StopState" method="start_running"]
