@@ -1499,7 +1499,7 @@ script = ExtResource("19_70n6j")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Climax/Floors/Polygon2D32/PolygonExpander"]
 visible = false
-polygon = PackedVector2Array(0, 0, 0, 1775.99, 35690.1, 1789.95, 35690.1, 219.818, 32121.8, 219.818, 16557.6, -1001.39, 12935.7, -1001.39, 3629.59, 0)
+polygon = PackedVector2Array(0, 0, 0, 1775.99, 35976.4, 1789.95, 35976.4, 219.818, 32121.8, 219.818, 21314.9, -464.06, 13054, -446.614, 3629.59, 0)
 
 [node name="Polygon2D31" type="Polygon2D" parent="Climax/Floors"]
 position = Vector2(54368.6, 737)
