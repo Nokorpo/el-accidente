@@ -83,11 +83,11 @@ func respawn() -> void:
 	_camera.position_smoothing_enabled = false
 	_camera.global_position = _checkpoint
 	_camera.position = _initial_camera_position
+	$StateMachine.change_state(RunningState)
 	
 	await get_tree().process_frame
 	_is_already_dying = false
 	_camera.position_smoothing_enabled = true
-	$StateMachine.change_state(RunningState)
 
 # FIXME no se me ocurre otra manera de hacer estos métodos, pero joden la interfaz del player
 # haciendo que tenga muchas responsabilidades T_T
