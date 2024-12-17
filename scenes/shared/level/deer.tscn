@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cml4yw2y4r0a4"]
+[gd_scene load_steps=17 format=3 uid="uid://cml4yw2y4r0a4"]
 
 [ext_resource type="Script" path="res://scenes/shared/level/deer.gd" id="1_smako"]
 [ext_resource type="Texture2D" uid="uid://mnvedi6d5irk" path="res://assets/sprites/obstacles/deer/deer_idle1.png" id="3_kn3t4"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://do1a5n0bhw6yb" path="res://assets/sprites/obstacles/deer/deer_flee2.png" id="6_uqi07"]
 [ext_resource type="Texture2D" uid="uid://blh6hkx3q2c0j" path="res://assets/sprites/obstacles/deer/deer_flee3.png" id="7_0ytyp"]
 [ext_resource type="Texture2D" uid="uid://s8rkb81rlyq1" path="res://assets/sprites/obstacles/deer/deer_flee4.png" id="8_f8gt8"]
+[ext_resource type="PackedScene" uid="uid://bwiu2f4s3s8j4" path="res://scenes/shared/vfx/fire_c.tscn" id="8_ik3m5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bavkr"]
 animations = [{
@@ -39,9 +40,46 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_336nd"]
-radius = 86.0
-height = 314.0
+[sub_resource type="Animation" id="Animation_1qhuc"]
+resource_name = "danger"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [Color(1, 0.8, 0.8, 1), Color(1, 1, 1, 1), Color(1, 0.8, 0.8, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_dusyx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rc4ys"]
+_data = {
+"RESET": SubResource("Animation_dusyx"),
+"danger": SubResource("Animation_1qhuc")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bcsmm"]
+size = Vector2(124, 314)
 
 [sub_resource type="Animation" id="Animation_8tvwj"]
 length = 0.001
@@ -93,6 +131,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("FireA4:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_iivhk"]
 resource_name = "run"
@@ -129,8 +179,8 @@ tracks/2/path = NodePath("CollisionArea/AnimatedSprite2D:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.3, 1.4),
+"transitions": PackedFloat32Array(1, 0.5, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
@@ -142,9 +192,21 @@ tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(-1.41421, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1000, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("FireA4:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(800, 0)]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6mnqc"]
@@ -156,17 +218,27 @@ _data = {
 [node name="Deer" type="Area2D"]
 script = ExtResource("1_smako")
 
+[node name="FireA4" parent="." instance=ExtResource("8_ik3m5")]
+z_index = -1
+position = Vector2(40, 134)
+scale = Vector2(0.754151, 0.754151)
+
 [node name="CollisionArea" type="Area2D" parent="."]
 collision_mask = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionArea"]
 sprite_frames = SubResource("SpriteFrames_bavkr")
 autoplay = "default"
-frame_progress = 0.0895288
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CollisionArea/AnimatedSprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_rc4ys")
+}
+autoplay = "danger"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea"]
 position = Vector2(25, 0)
-shape = SubResource("CapsuleShape2D_336nd")
+shape = SubResource("RectangleShape2D_bcsmm")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
