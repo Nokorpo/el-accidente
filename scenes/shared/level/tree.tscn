@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bovf8r5xa56lj" path="res://assets/sprites/vfx/firec_3.png" id="10_ahwtv"]
 [ext_resource type="Texture2D" uid="uid://diqmde22x7muw" path="res://assets/sprites/vfx/firec_4.png" id="11_q6gdh"]
 [ext_resource type="Texture2D" uid="uid://b0gqbk4xvkell" path="res://assets/sprites/background/square.svg" id="12_r1olk"]
-[ext_resource type="Texture2D" uid="uid://diah673s1y72f" path="res://assets/sprites/ui/end_screen_title_es.png" id="13_oknei"]
+[ext_resource type="Texture2D" uid="uid://cow5fnyrhqp6j" path="res://assets/sprites/ui/end_screen_title_es.png" id="13_oknei"]
 [ext_resource type="AudioStream" uid="uid://t6is7bcq1ipy" path="res://assets/sfx/car_decelerate.ogg" id="13_udna1"]
 [ext_resource type="Texture2D" uid="uid://k4kblqosuedc" path="res://assets/sprites/ui/end_screen.png" id="15_wniru"]
 
@@ -70,7 +70,7 @@ animations = [{
 [node name="Arbol" type="AnimatedSprite2D"]
 z_index = -2
 sprite_frames = SubResource("SpriteFrames_vpoe3")
-animation = &"fire"
+animation = &"idle"
 script = ExtResource("6_mx1n6")
 
 [node name="Area2D" type="Area2D" parent="."]
