@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://7asaea7mswd5"]
+[gd_scene load_steps=83 format=3 uid="uid://7asaea7mswd5"]
 
 [ext_resource type="PackedScene" uid="uid://bajeqjukfftik" path="res://scenes/menu/pause_menu.tscn" id="1_kottx"]
 [ext_resource type="PackedScene" uid="uid://cpi1lm68o7bl7" path="res://scenes/shared/vfx/touch_feedback_frame.tscn" id="1_s3sr5"]
@@ -21,9 +21,9 @@
 [ext_resource type="Texture2D" uid="uid://lm0w33pgt0m5" path="res://assets/sprites/npc/barbara_idle1.png" id="11_753bg"]
 [ext_resource type="Texture2D" uid="uid://d2p40ersnb67h" path="res://assets/sprites/background/back/fase2b_2.png" id="12_38u3a"]
 [ext_resource type="Texture2D" uid="uid://r57klsm2v8ww" path="res://assets/sprites/background/back/fase3b_4.png" id="12_bnajj"]
-[ext_resource type="PackedScene" path="res://scenes/shared/level/spikes.tscn" id="12_nqo6j"]
+[ext_resource type="PackedScene" uid="uid://x4n61sjituka" path="res://scenes/shared/level/spikes.tscn" id="12_nqo6j"]
 [ext_resource type="Texture2D" uid="uid://c5owh2tsqoqb5" path="res://assets/sprites/npc/barbara_idle2.png" id="12_wvsqd"]
-[ext_resource type="PackedScene" path="res://scenes/shared/level/breaking_platform.tscn" id="13_g1vww"]
+[ext_resource type="PackedScene" uid="uid://ca1w05rwqpub7" path="res://scenes/shared/level/breaking_platform.tscn" id="13_g1vww"]
 [ext_resource type="Texture2D" uid="uid://bdwxf0r7diuea" path="res://assets/sprites/background/back/fase2b_3.png" id="13_rvqy5"]
 [ext_resource type="Texture2D" uid="uid://dkfwlu0e7yois" path="res://assets/sprites/background/back/fase2_4.png" id="14_te1nf"]
 [ext_resource type="Script" path="res://scenes/shared/level/elevator_platform.gd" id="15_4ntac"]
@@ -50,9 +50,7 @@
 [ext_resource type="Texture2D" uid="uid://getqmfkxho01" path="res://assets/sprites/background/front/músicos.png" id="29_e4dia"]
 [ext_resource type="Texture2D" uid="uid://di6eujgh5s7kv" path="res://assets/sprites/background/back/story_transition2.png" id="29_qmv3h"]
 [ext_resource type="Texture2D" uid="uid://del8tiiy5ndi2" path="res://assets/sprites/vfx/vfxspikes_5.png" id="29_ytu2h"]
-[ext_resource type="Texture2D" uid="uid://mnvedi6d5irk" path="res://assets/sprites/obstacles/deer/deer_idle1.png" id="30_7q80s"]
 [ext_resource type="Texture2D" uid="uid://bqoi1je4crc05" path="res://assets/sprites/background/back/story_transition3.png" id="30_fjl1j"]
-[ext_resource type="Texture2D" uid="uid://cad6pwwq8nac1" path="res://assets/sprites/obstacles/deer/deer_idle2.png" id="31_7p4aj"]
 [ext_resource type="Texture2D" uid="uid://cs1ltlbgt23gh" path="res://assets/sprites/obstacles/elevator_platform.png" id="39_5x1kc"]
 [ext_resource type="Texture2D" uid="uid://b46vs02g8lpko" path="res://assets/sprites/background/back/fase1_3.png" id="45_h3ped"]
 [ext_resource type="Texture2D" uid="uid://dv0lsmbgda3of" path="res://assets/sprites/background/front/bongos.png" id="51_yb13k"]
@@ -64,8 +62,9 @@
 [ext_resource type="Script" path="res://scenes/game/block_input.gd" id="58_mauon"]
 [ext_resource type="PackedScene" uid="uid://bhh7m57vhkbu3" path="res://scenes/shared/level/flame.tscn" id="62_scnoy"]
 [ext_resource type="PackedScene" uid="uid://c2we07xieyt6x" path="res://scenes/shared/vfx/fire_a.tscn" id="62_stqg0"]
-[ext_resource type="PackedScene" uid="uid://behbyiklogyu8" path="res://scenes/shared/vfx/fire_b.tscn" id="63_17udh"]
-[ext_resource type="PackedScene" uid="uid://bwiu2f4s3s8j4" path="res://scenes/shared/vfx/fire_c.tscn" id="64_ff84q"]
+[ext_resource type="PackedScene" path="res://scenes/shared/vfx/fire_b.tscn" id="63_17udh"]
+[ext_resource type="PackedScene" path="res://scenes/shared/vfx/fire_c.tscn" id="64_ff84q"]
+[ext_resource type="PackedScene" uid="uid://cml4yw2y4r0a4" path="res://scenes/shared/level/deer.tscn" id="65_1gr5p"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s1hoo"]
 animations = [{
@@ -168,19 +167,8 @@ size = Vector2(467.199, 457.375)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gwkp1"]
 size = Vector2(478.505, 315.077)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_xnj04"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("30_7q80s")
-}, {
-"duration": 1.0,
-"texture": ExtResource("31_7p4aj")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ljpoj"]
+size = Vector2(769.5, 534)
 
 [node name="Game" type="Node2D"]
 
@@ -1996,9 +1984,12 @@ position = Vector2(62753, 643)
 [node name="Flame11" parent="Climax/Obstacles" instance=ExtResource("62_scnoy")]
 position = Vector2(63804, 622)
 
-[node name="Deer" type="AnimatedSprite2D" parent="Climax/Obstacles"]
+[node name="Deer" parent="Climax/Obstacles" instance=ExtResource("65_1gr5p")]
 position = Vector2(66094, 677)
-sprite_frames = SubResource("SpriteFrames_xnj04")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Climax/Obstacles/Deer"]
+position = Vector2(-654.75, -101)
+shape = SubResource("RectangleShape2D_ljpoj")
 
 [node name="VFX" type="Node2D" parent="Climax"]
 

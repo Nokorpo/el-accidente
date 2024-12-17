@@ -1,0 +1,178 @@
+[gd_scene load_steps=13 format=3 uid="uid://cml4yw2y4r0a4"]
+
+[ext_resource type="Script" path="res://scenes/shared/level/deer.gd" id="1_smako"]
+[ext_resource type="Texture2D" uid="uid://mnvedi6d5irk" path="res://assets/sprites/obstacles/deer/deer_idle1.png" id="3_kn3t4"]
+[ext_resource type="Texture2D" uid="uid://cad6pwwq8nac1" path="res://assets/sprites/obstacles/deer/deer_idle2.png" id="4_jji1f"]
+[ext_resource type="Texture2D" uid="uid://c2jkd5s3x5m66" path="res://assets/sprites/obstacles/deer/deer_flee1.png" id="5_ahfpc"]
+[ext_resource type="Texture2D" uid="uid://do1a5n0bhw6yb" path="res://assets/sprites/obstacles/deer/deer_flee2.png" id="6_uqi07"]
+[ext_resource type="Texture2D" uid="uid://blh6hkx3q2c0j" path="res://assets/sprites/obstacles/deer/deer_flee3.png" id="7_0ytyp"]
+[ext_resource type="Texture2D" uid="uid://s8rkb81rlyq1" path="res://assets/sprites/obstacles/deer/deer_flee4.png" id="8_f8gt8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bavkr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_kn3t4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jji1f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ahfpc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_uqi07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0ytyp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_f8gt8")
+}],
+"loop": true,
+"name": &"flee",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_336nd"]
+radius = 86.0
+height = 314.0
+
+[sub_resource type="Animation" id="Animation_8tvwj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionArea/AnimatedSprite2D:scale")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionArea/AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionArea/AnimatedSprite2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CollisionArea/AnimatedSprite2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_iivhk"]
+resource_name = "run"
+length = 1.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionArea/AnimatedSprite2D:scale")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionArea/AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"flee"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionArea/AnimatedSprite2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CollisionArea/AnimatedSprite2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(800, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6mnqc"]
+_data = {
+"RESET": SubResource("Animation_8tvwj"),
+"flee": SubResource("Animation_iivhk")
+}
+
+[node name="Deer" type="Area2D"]
+script = ExtResource("1_smako")
+
+[node name="CollisionArea" type="Area2D" parent="."]
+collision_mask = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionArea"]
+sprite_frames = SubResource("SpriteFrames_bavkr")
+autoplay = "default"
+frame_progress = 0.0895288
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea"]
+position = Vector2(25, 0)
+shape = SubResource("CapsuleShape2D_336nd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6mnqc")
+}
+autoplay = "RESET"
+
+[connection signal="body_entered" from="." to="." method="_on_triggered"]
+[connection signal="body_entered" from="CollisionArea" to="." method="_on_collision_area_body_entered"]

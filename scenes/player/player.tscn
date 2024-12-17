@@ -202,3 +202,4 @@ target_position = Vector2(0, 64)
 
 [connection signal="requested_continue" from="." to="StateMachine/StopState" method="start_running"]
 [connection signal="requested_stop_for_animation" from="." to="StateMachine/StopState" method="force_enter_stop_state"]
+[connection signal="reached_maximum_slowdown" from="StateMachine/DeceleratingState" to="." method="_on_reached_maximum_slowdown"]

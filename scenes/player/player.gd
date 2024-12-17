@@ -5,6 +5,7 @@ extends CharacterBody2D
 
 signal requested_stop_for_animation
 signal requested_continue
+signal reached_maximum_slowdown
 
 const SPEED_FPS_MULTIPLIER: float = 3600
 
@@ -110,3 +111,6 @@ func disable_input() -> void:
 	state_machine.propagate_call("set_process_input", [false])
 	if state_machine.is_current_state(DeceleratingState):
 		state_machine.change_state(DashingState)
+
+func _on_reached_maximum_slowdown() -> void:
+	reached_maximum_slowdown.emit()

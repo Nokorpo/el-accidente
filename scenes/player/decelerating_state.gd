@@ -3,6 +3,8 @@ class_name DeceleratingState
 ## State for when the user is pressing the screen. The player slows down up to
 ## a minimum speed.
 
+signal reached_maximum_slowdown
+
 ## How long it takes for the character to be completely slowed down, in seconds
 @export var time_until_slowed_down: float = 0.9
 ## Player speed when completely slowed down
@@ -12,8 +14,10 @@ class_name DeceleratingState
 @export var _vfx: AnimatedSprite2D
 var _original_speed: float
 var _time_entered: float
+var _maximum_reached_emitted: bool = false
 
 func _on_enter_state() -> void:
+	_maximum_reached_emitted = false
 	_original_speed = node.speed
 	_time_entered = Time.get_ticks_msec()
 	%AnimatedSprite2D.play("decelerating")
@@ -40,6 +44,8 @@ func _process(_delta: float) -> void:
 		
 		var elapsed_time: float = (Time.get_ticks_msec() - _time_entered)/1000
 		var percent = min(1, elapsed_time/time_until_slowed_down)
+		if percent >= 1:
+			reached_maximum_slowdown.emit()
 		node.speed = lerp(_original_speed,
 			time_until_slowed_down,
 			percent)
