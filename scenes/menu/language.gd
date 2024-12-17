@@ -27,7 +27,3 @@ func _set_locale(lang_code: String) -> void:
 			TranslationServer.set_locale("en")
 		"es", _:
 			TranslationServer.set_locale("es")
-	_update_title(TranslationServer.get_locale())
-
-func _update_title(lang_code: String) -> void:
-	%Title.texture = load("res://assets/sprites/ui/main_menu_title_%s.png" % lang_code)

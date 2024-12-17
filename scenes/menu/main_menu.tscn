@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://c0i246c02q8gk" path="res://assets/sprites/ui/main_menu.png" id="1_fpx04"]
 [ext_resource type="Script" path="res://scenes/menu/main_menu.gd" id="1_km1cr"]
 [ext_resource type="PackedScene" uid="uid://7asaea7mswd5" path="res://scenes/game/game.tscn" id="2_c8g6f"]
-[ext_resource type="Texture2D" uid="uid://bic47lqk4gorf" path="res://assets/sprites/ui/main_menu_title_es.png" id="2_c701q"]
 [ext_resource type="Script" path="res://scenes/menu/language.gd" id="2_rvkaa"]
 [ext_resource type="Texture2D" uid="uid://uq8uowpq3sal" path="res://assets/sprites/ui/play_menu.svg" id="3_g0gho"]
+[ext_resource type="Texture2D" uid="uid://jfa58ld3mey6" path="res://assets/sprites/ui/main_menu_title_full.png" id="5_lra3m"]
 [ext_resource type="PackedScene" uid="uid://bfw08rk4ijmja" path="res://scenes/menu/credits/credits.tscn" id="7_u7whb"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_veald"]
@@ -108,29 +108,34 @@ text = "credits"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 9
 anchor_bottom = 1.0
-offset_right = -1061.0
-grow_horizontal = 2
+offset_right = 1010.0
 grow_vertical = 2
-theme_override_constants/margin_left = 256
+theme_override_constants/margin_left = 128
 theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 256
 theme_override_constants/margin_bottom = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 16
+theme_override_constants/separation = 64
 alignment = 1
 
 [node name="Title" type="TextureRect" parent="MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
 layout_mode = 2
-texture = ExtResource("2_c701q")
+texture = ExtResource("5_lra3m")
+expand_mode = 5
 stretch_mode = 4
 
-[node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_right = 80
+
+[node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(528, 400)
 layout_mode = 2
