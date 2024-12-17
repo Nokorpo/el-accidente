@@ -8,8 +8,9 @@ func _ready():
 	EventBus.play_curtain_animation.connect(_play_curtain_animation)
 
 func _play_curtain_animation():
-	if _animated_sprite_2d.is_playing():
-		return
+	# FIXME no descomentar, pq entonces si mueres 2 veces rapido el player deja de poder morir
+	#if _animated_sprite_2d.is_playing():
+	#	return
 	
 	var animation_duration := _animated_sprite_2d.sprite_frames.get_frame_count("next_level") \
 		/ _animated_sprite_2d.sprite_frames.get_animation_speed("next_level")
