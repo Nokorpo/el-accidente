@@ -278,7 +278,7 @@ bubble_speech = NodePath("../Text")
 bubble_sprite = NodePath("../SpeechBubble")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Characters/Karla/Area2D"]
-position = Vector2(-636, -48)
+position = Vector2(-828, -48)
 shape = SubResource("RectangleShape2D_v0jof")
 
 [node name="Barbara" type="AnimatedSprite2D" parent="Characters"]
