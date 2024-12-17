@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://di76gaqtr8ku1"]
+[gd_scene load_steps=20 format=3 uid="uid://di76gaqtr8ku1"]
 
 [ext_resource type="AudioStream" uid="uid://d0q32hftpayor" path="res://assets/sfx/dash.ogg" id="1_s0rse"]
 [ext_resource type="Script" path="res://scenes/core/audio_manager/audio_manager.gd" id="1_upyad"]
@@ -14,7 +14,10 @@
 [ext_resource type="AudioStream" uid="uid://dtm64iew2wofd" path="res://assets/sfx/flamethrower.ogg" id="13_fybju"]
 [ext_resource type="AudioStream" uid="uid://et6t6u8mft5n" path="res://assets/sfx/spotlight_break.ogg" id="14_2d1ps"]
 [ext_resource type="AudioStream" uid="uid://bea74odm7j75n" path="res://assets/sfx/spotlight_flick.ogg" id="15_ulf51"]
+[ext_resource type="AudioStream" uid="uid://cm6x3cvnad41l" path="res://assets/sfx/breaking_platform.ogg" id="16_dfxc0"]
 [ext_resource type="AudioStream" uid="uid://bw62vaugfqdk2" path="res://assets/sfx/transition.ogg" id="16_x5b64"]
+[ext_resource type="AudioStream" uid="uid://boyowwfxtikfo" path="res://assets/sfx/ui_back.ogg" id="17_857qt"]
+[ext_resource type="AudioStream" uid="uid://b5sow7dqxjcua" path="res://assets/sfx/ui_confirm.ogg" id="18_ik5op"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_b4k07"]
 random_pitch = 1.4
@@ -66,3 +69,12 @@ stream = ExtResource("15_ulf51")
 
 [node name="Transition" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_x5b64")
+
+[node name="BreakingPlatform" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_dfxc0")
+
+[node name="UIBack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_857qt")
+
+[node name="UIConfirm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_ik5op")

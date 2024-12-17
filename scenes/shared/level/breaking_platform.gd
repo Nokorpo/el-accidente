@@ -6,6 +6,7 @@ func _ready() -> void:
 func _on_area_2d_body_entered(body) -> void:
 	if body.is_in_group("player"):
 		play("breaking")
+		AudioManager.sfx_breaking_platform.play()
 
 func reset() -> void:
 	$StaticBody2D/CollisionShape2D.set_deferred("disabled", false)

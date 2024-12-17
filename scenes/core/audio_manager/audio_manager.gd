@@ -14,3 +14,6 @@ extends Node
 @onready var sfx_spotlight_break = $SpotlightBreak
 @onready var sfx_spotlight_flick = $SpotlightFlick
 @onready var sfx_transition = $Transition
+@onready var sfx_breaking_platform = $BreakingPlatform
+@onready var sfx_ui_confirm = $UIConfirm
+@onready var sfx_ui_back = $UIBack

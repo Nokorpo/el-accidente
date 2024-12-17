@@ -45,5 +45,8 @@ func set_button_texture_to_continue() -> void:
 func _on_button_toggled(toggled_on: bool) -> void:
 	if toggled_on:
 		EventBus.request_pause.emit()
+		AudioManager.sfx_ui_confirm.play()
 	else:
 		EventBus.request_continue.emit()
+		AudioManager.sfx_ui_back.play()
+		

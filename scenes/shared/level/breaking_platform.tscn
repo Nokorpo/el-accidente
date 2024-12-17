@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://g1wph10l7f0q"]
+[gd_scene load_steps=9 format=3 uid="uid://ca1w05rwqpub7"]
 
 [ext_resource type="Texture2D" uid="uid://cd0acx4jpona6" path="res://assets/sprites/obstacles/breaking_platform/breaking_platform2.png" id="1_wr2e0"]
 [ext_resource type="Texture2D" uid="uid://dgr8ys0iple7q" path="res://assets/sprites/obstacles/breaking_platform/breaking_platform3.png" id="2_1liy8"]

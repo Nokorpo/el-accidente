@@ -93,3 +93,27 @@ Original title: approving hm.wav
 Author: trimono
 License: Creative Commons 0
 Source: https://freesound.org/people/trimono/sounds/519112/
+
+---ritual_fire_dance
+Original title: De Falla, Ritual Fire Dance
+Author: Illinois Brass Band
+License: Attribution 3.0 Unported
+Source: https://freemusicarchive.org/music/Illinois_Brass_Band/Music_to_Summon_the_Spirits/De_Falla_Ritual_Fire_Dance
+
+---breaking_platform
+Original title: Rock destroy
+Author: Bertsz
+License: Creative Commons 0
+Source: https://freesound.org/people/Bertsz/sounds/524312/
+
+---ui_confirm
+Original title: PC Game UI Select
+Author: plasterbrain
+License: Creative Commons 0
+Source: https://freesound.org/people/plasterbrain/sounds/464905/
+
+---ui_back
+Original title: PC Game UI Select
+Author: plasterbrain
+License: Creative Commons 0
+Source: https://freesound.org/people/plasterbrain/sounds/464905/
