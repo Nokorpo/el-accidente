@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://di76gaqtr8ku1"]
+[gd_scene load_steps=17 format=3 uid="uid://di76gaqtr8ku1"]
 
 [ext_resource type="AudioStream" uid="uid://d0q32hftpayor" path="res://assets/sfx/dash.ogg" id="1_s0rse"]
 [ext_resource type="Script" path="res://scenes/core/audio_manager/audio_manager.gd" id="1_upyad"]
@@ -15,6 +15,11 @@
 [ext_resource type="AudioStream" uid="uid://et6t6u8mft5n" path="res://assets/sfx/spotlight_break.ogg" id="14_2d1ps"]
 [ext_resource type="AudioStream" uid="uid://bea74odm7j75n" path="res://assets/sfx/spotlight_flick.ogg" id="15_ulf51"]
 [ext_resource type="AudioStream" uid="uid://bw62vaugfqdk2" path="res://assets/sfx/transition.ogg" id="16_x5b64"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_b4k07"]
+random_pitch = 1.4
+streams_count = 1
+stream_0/stream = ExtResource("8_cavnj")
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_upyad")
@@ -39,7 +44,7 @@ stream = ExtResource("7_as752")
 volume_db = -12.0
 
 [node name="CharacterSpeech" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_cavnj")
+stream = SubResource("AudioStreamRandomizer_b4k07")
 
 [node name="Combust" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_ucu45")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://7asaea7mswd5"]
+[gd_scene load_steps=84 format=3 uid="uid://7asaea7mswd5"]
 
 [ext_resource type="PackedScene" uid="uid://bajeqjukfftik" path="res://scenes/menu/pause_menu.tscn" id="1_kottx"]
 [ext_resource type="PackedScene" uid="uid://cpi1lm68o7bl7" path="res://scenes/shared/vfx/touch_feedback_frame.tscn" id="1_s3sr5"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dqkw8wrefwcbq" path="res://assets/sprites/background/front/perchero.png" id="8_1wjlg"]
 [ext_resource type="Texture2D" uid="uid://r3x1i2ddadj6" path="res://assets/sprites/ui/speech_bubble.png" id="8_lpro2"]
 [ext_resource type="Texture2D" uid="uid://ppolqe0ioqig" path="res://assets/sprites/npc/karla_idle1.png" id="8_tb0m2"]
+[ext_resource type="Script" path="res://scenes/shared/level/speech_bubble.gd" id="8_uk8pe"]
 [ext_resource type="PackedScene" uid="uid://bvpn2yd6dqc2j" path="res://scenes/shared/level/camera_offset_area.tscn" id="9_hjerv"]
 [ext_resource type="Texture2D" uid="uid://biv1lqglmvo16" path="res://assets/sprites/npc/karla_idle2.png" id="9_t4j05"]
 [ext_resource type="Texture2D" uid="uid://b5xl615n03qki" path="res://assets/sprites/background/front/nota1.png" id="10_cxmue"]
@@ -79,6 +80,9 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v0jof"]
+size = Vector2(366, 364)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k245c"]
 animations = [{
@@ -214,11 +218,15 @@ sprite_frames = SubResource("SpriteFrames_s1hoo")
 autoplay = "default"
 
 [node name="SpeechBubble" type="Sprite2D" parent="Characters/Albert"]
+visible = false
+modulate = Color(1, 1, 1, 0)
 position = Vector2(9, -287)
 scale = Vector2(1.8, 1.8)
 texture = ExtResource("8_lpro2")
 
 [node name="Text" type="Label" parent="Characters/Albert"]
+visible = false
+modulate = Color(1, 1, 1, 0)
 offset_left = -329.0
 offset_top = -411.0
 offset_right = 353.0
@@ -229,17 +237,30 @@ text = "what_are_you_doing_berta"
 vertical_alignment = 1
 autowrap_mode = 2
 
+[node name="Area2D" type="Area2D" parent="Characters/Albert" node_paths=PackedStringArray("bubble_speech", "bubble_sprite")]
+script = ExtResource("8_uk8pe")
+bubble_speech = NodePath("../Text")
+bubble_sprite = NodePath("../SpeechBubble")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Characters/Albert/Area2D"]
+position = Vector2(-969, -99)
+shape = SubResource("RectangleShape2D_v0jof")
+
 [node name="Karla" type="AnimatedSprite2D" parent="Characters"]
 position = Vector2(5586, 823)
 sprite_frames = SubResource("SpriteFrames_k245c")
 autoplay = "default"
 
 [node name="SpeechBubble" type="Sprite2D" parent="Characters/Karla"]
+visible = false
+modulate = Color(1, 1, 1, 0)
 position = Vector2(-1.00014, -299.05)
 scale = Vector2(1.92924, 1.92924)
 texture = ExtResource("8_lpro2")
 
 [node name="Text" type="Label" parent="Characters/Karla"]
+visible = false
+modulate = Color(1, 1, 1, 0)
 offset_left = -381.0
 offset_top = -454.0
 offset_right = 374.0
@@ -251,17 +272,30 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
+[node name="Area2D" type="Area2D" parent="Characters/Karla" node_paths=PackedStringArray("bubble_speech", "bubble_sprite")]
+script = ExtResource("8_uk8pe")
+bubble_speech = NodePath("../Text")
+bubble_sprite = NodePath("../SpeechBubble")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Characters/Karla/Area2D"]
+position = Vector2(-636, -48)
+shape = SubResource("RectangleShape2D_v0jof")
+
 [node name="Barbara" type="AnimatedSprite2D" parent="Characters"]
 position = Vector2(20174, 912)
 sprite_frames = SubResource("SpriteFrames_6dqdf")
 autoplay = "default"
 
 [node name="SpeechBubble" type="Sprite2D" parent="Characters/Barbara"]
+visible = false
+modulate = Color(1, 1, 1, 0)
 position = Vector2(4, -304)
 scale = Vector2(1.8, 1.8)
 texture = ExtResource("8_lpro2")
 
 [node name="Text" type="Label" parent="Characters/Barbara"]
+visible = false
+modulate = Color(1, 1, 1, 0)
 offset_left = -344.0
 offset_top = -459.0
 offset_right = 360.0
@@ -272,6 +306,15 @@ text = "not_good_to_be_afraid"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="Area2D" type="Area2D" parent="Characters/Barbara" node_paths=PackedStringArray("bubble_speech", "bubble_sprite")]
+script = ExtResource("8_uk8pe")
+bubble_speech = NodePath("../Text")
+bubble_sprite = NodePath("../SpeechBubble")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Characters/Barbara/Area2D"]
+position = Vector2(-803, -56)
+shape = SubResource("RectangleShape2D_v0jof")
 
 [node name="CameraOffsetChangeAreas" type="Node2D" parent="."]
 
@@ -1959,6 +2002,9 @@ sprite_frames = SubResource("SpriteFrames_xnj04")
 
 [node name="VFX" type="Node2D" parent="Climax"]
 
+[connection signal="body_entered" from="Characters/Albert/Area2D" to="Characters/Albert/Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Characters/Karla/Area2D" to="Characters/Karla/Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Characters/Barbara/Area2D" to="Characters/Barbara/Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraOffsetChangeAreas/CameraOffsetArea4/CameraUp" to="CameraOffsetChangeAreas/CameraOffsetArea4" method="change_offset"]
 [connection signal="body_entered" from="CameraOffsetChangeAreas/CameraOffsetArea2/CameraUp" to="CameraOffsetChangeAreas/CameraOffsetArea2" method="change_offset"]
 [connection signal="body_entered" from="CameraOffsetChangeAreas/CameraOffsetArea2/ResetCamera" to="CameraOffsetChangeAreas/CameraOffsetArea2" method="reset_offset"]
