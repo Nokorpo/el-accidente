@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dfohbgjgsi6g0"
-path="res://.godot/imported/light.png-c3a75194a60bc947ea113e95355b66c9.ctex"
+path="res://.godot/imported/spotlight.png-bca20f2f29c1f4573baafc70ce466257.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/obstacles/light/light.png"
-dest_files=["res://.godot/imported/light.png-c3a75194a60bc947ea113e95355b66c9.ctex"]
+source_file="res://assets/sprites/obstacles/spotlight/spotlight.png"
+dest_files=["res://.godot/imported/spotlight.png-bca20f2f29c1f4573baafc70ce466257.ctex"]
 
 [params]
 

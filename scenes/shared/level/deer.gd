@@ -1,19 +1,12 @@
 extends Area2D
+## Deer obstacle
 
-@onready var already_ran_away: bool = false
-var player: Player
+var _already_ran_away := false
+var _player: Player
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	EventBus.reload_level.connect(reset)
-	reset()
-
-func reset() -> void:
-	$AnimationPlayer.play("RESET")
-	$CollisionArea.monitoring = true
-	already_ran_away = false
-	if player != null:
-		player.reached_maximum_slowdown.disconnect(run_away)
+	EventBus.reload_level.connect(_reset)
+	_reset()
 
 func _on_collision_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
@@ -21,12 +14,19 @@ func _on_collision_area_body_entered(body: Node2D) -> void:
 
 func _on_triggered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		player = body
-		get_tree().create_timer(2).timeout.connect(run_away)
-		body.reached_maximum_slowdown.connect(run_away)
+		_player = body
+		get_tree().create_timer(2.0).timeout.connect(_run_away)
+		body.reached_maximum_slowdown.connect(_run_away)
 
-func run_away() -> void:
-	if not already_ran_away:
-		already_ran_away = true
+func _reset() -> void:
+	$AnimationPlayer.play("RESET")
+	$CollisionArea.monitoring = true
+	_already_ran_away = false
+	if _player != null:
+		_player.reached_maximum_slowdown.disconnect(_run_away)
+
+func _run_away() -> void:
+	if not _already_ran_away:
+		_already_ran_away = true
 		$AnimationPlayer.play("flee")
 		$CollisionArea.monitoring = false

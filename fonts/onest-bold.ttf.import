@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dquwkgfgkdbdq"
-path="res://.godot/imported/Onest-Bold.ttf-07d934ae9206553efc6abff072c5e5e2.fontdata"
+uid="uid://d0uqpqbdc8cbr"
+path="res://.godot/imported/onest-bold.ttf-2041ec7fffba513d5bf7b1f3415609bf.fontdata"
 
 [deps]
 
-source_file="res://fonts/Onest-Bold.ttf"
-dest_files=["res://.godot/imported/Onest-Bold.ttf-07d934ae9206553efc6abff072c5e5e2.fontdata"]
+source_file="res://fonts/onest-bold.ttf"
+dest_files=["res://.godot/imported/onest-bold.ttf-2041ec7fffba513d5bf7b1f3415609bf.fontdata"]
 
 [params]
 

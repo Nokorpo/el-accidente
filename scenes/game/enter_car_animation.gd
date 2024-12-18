@@ -7,12 +7,7 @@ var _original_speed: float
 var _already_fired: bool = false
 
 func _ready() -> void:
-	EventBus.reload_level.connect(reset)
-
-func reset() -> void:
-	_player = null
-	_already_fired = false
-	car_sprite.visible = true
+	EventBus.reload_level.connect(_reset)
 
 func _process(_delta: float) -> void:
 	if _player != null and not _already_fired:
@@ -32,4 +27,8 @@ func _on_time_standing_besides_car_timeout() -> void:
 	car_sprite.visible = false
 	#_player.speed = _original_speed
 	_player.animation_finished()
-	
+
+func _reset() -> void:
+	_player = null
+	_already_fired = false
+	car_sprite.visible = true

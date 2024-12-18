@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cf36bw7f0b785"
-path="res://.godot/imported/light_piece.png-d41950b3a938f8058c4306cd65588aa8.ctex"
+uid="uid://ccyunh4prty4n"
+path="res://.godot/imported/spotlight_2.png-82fc7c4bdd66254e8e4d551d63c9f0f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/obstacles/light/light_piece.png"
-dest_files=["res://.godot/imported/light_piece.png-d41950b3a938f8058c4306cd65588aa8.ctex"]
+source_file="res://assets/sprites/obstacles/spotlight/spotlight_2.png"
+dest_files=["res://.godot/imported/spotlight_2.png-82fc7c4bdd66254e8e4d551d63c9f0f2.ctex"]
 
 [params]
 

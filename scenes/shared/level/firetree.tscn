@@ -1,35 +1,35 @@
 [gd_scene load_steps=19 format=3 uid="uid://dcdkps22trsvq"]
 
-[ext_resource type="Texture2D" uid="uid://d0xgwd2s7ldye" path="res://assets/sprites/background/front/firetree_2.png" id="1_786bl"]
-[ext_resource type="Texture2D" uid="uid://voc41ldwx0kh" path="res://assets/sprites/background/front/firetree_3.png" id="2_iq8sg"]
-[ext_resource type="Texture2D" uid="uid://de6fqih8h2mji" path="res://assets/sprites/background/front/firetree_4.png" id="3_uxxxn"]
-[ext_resource type="Texture2D" uid="uid://cjkjr4mxicjow" path="res://assets/sprites/background/front/firetree_5.png" id="4_15g6c"]
-[ext_resource type="Texture2D" uid="uid://cmoiwoo1qdtfl" path="res://assets/sprites/background/front/firetree_1.png" id="5_4uq1n"]
-[ext_resource type="Script" path="res://scenes/shared/level/tree.gd" id="6_mx1n6"]
-[ext_resource type="Texture2D" uid="uid://c2d6is40imp3d" path="res://assets/sprites/vfx/firec_1.png" id="8_6hleq"]
-[ext_resource type="SpriteFrames" uid="uid://jfvaa13kkw0" path="res://scenes/player/car_sprite_frames.tres" id="8_tg85y"]
-[ext_resource type="Texture2D" uid="uid://cmj42ecoctsx1" path="res://assets/sprites/vfx/firec_2.png" id="9_ty2m7"]
-[ext_resource type="Texture2D" uid="uid://bovf8r5xa56lj" path="res://assets/sprites/vfx/firec_3.png" id="10_ahwtv"]
-[ext_resource type="Texture2D" uid="uid://diqmde22x7muw" path="res://assets/sprites/vfx/firec_4.png" id="11_q6gdh"]
-[ext_resource type="Texture2D" uid="uid://b0gqbk4xvkell" path="res://assets/sprites/background/square.svg" id="12_r1olk"]
-[ext_resource type="Texture2D" uid="uid://cow5fnyrhqp6j" path="res://assets/sprites/ui/end_screen_title_es.png" id="13_oknei"]
-[ext_resource type="AudioStream" uid="uid://t6is7bcq1ipy" path="res://assets/sfx/car_decelerate.ogg" id="13_udna1"]
-[ext_resource type="Texture2D" uid="uid://k4kblqosuedc" path="res://assets/sprites/ui/end_screen.png" id="15_wniru"]
+[ext_resource type="Texture2D" uid="uid://d0xgwd2s7ldye" path="res://assets/sprites/background/front/firetree_2.png" id="1_id48r"]
+[ext_resource type="Texture2D" uid="uid://voc41ldwx0kh" path="res://assets/sprites/background/front/firetree_3.png" id="2_6qmeg"]
+[ext_resource type="Texture2D" uid="uid://de6fqih8h2mji" path="res://assets/sprites/background/front/firetree_4.png" id="3_cp4b3"]
+[ext_resource type="Texture2D" uid="uid://cjkjr4mxicjow" path="res://assets/sprites/background/front/firetree_5.png" id="4_eauiv"]
+[ext_resource type="Texture2D" uid="uid://cmoiwoo1qdtfl" path="res://assets/sprites/background/front/firetree_1.png" id="5_cqc4e"]
+[ext_resource type="Script" path="res://scenes/shared/level/firetree.gd" id="6_ncnj8"]
+[ext_resource type="SpriteFrames" uid="uid://jfvaa13kkw0" path="res://scenes/player/car_sprite_frames.tres" id="7_mtxph"]
+[ext_resource type="Texture2D" uid="uid://c2d6is40imp3d" path="res://assets/sprites/vfx/firec_1.png" id="8_k4kk6"]
+[ext_resource type="Texture2D" uid="uid://cmj42ecoctsx1" path="res://assets/sprites/vfx/firec_2.png" id="9_lnk24"]
+[ext_resource type="Texture2D" uid="uid://bovf8r5xa56lj" path="res://assets/sprites/vfx/firec_3.png" id="10_7xw75"]
+[ext_resource type="Texture2D" uid="uid://diqmde22x7muw" path="res://assets/sprites/vfx/firec_4.png" id="11_s6de1"]
+[ext_resource type="Texture2D" uid="uid://k4kblqosuedc" path="res://assets/sprites/ui/end_screen.png" id="12_23s4u"]
+[ext_resource type="Texture2D" uid="uid://cow5fnyrhqp6j" path="res://assets/sprites/ui/end_screen_title_es.png" id="13_a20fs"]
+[ext_resource type="Texture2D" uid="uid://b0gqbk4xvkell" path="res://assets/sprites/background/square.svg" id="14_gbwtw"]
+[ext_resource type="AudioStream" uid="uid://t6is7bcq1ipy" path="res://assets/sfx/car_decelerate.ogg" id="15_0ub84"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vpoe3"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_786bl")
+"texture": ExtResource("1_id48r")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_iq8sg")
+"texture": ExtResource("2_6qmeg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_uxxxn")
+"texture": ExtResource("3_cp4b3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_15g6c")
+"texture": ExtResource("4_eauiv")
 }],
 "loop": true,
 "name": &"fire",
@@ -37,7 +37,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_4uq1n")
+"texture": ExtResource("5_cqc4e")
 }],
 "loop": true,
 "name": &"idle",
@@ -51,27 +51,27 @@ size = Vector2(107, 840)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_6hleq")
+"texture": ExtResource("8_k4kk6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_ty2m7")
+"texture": ExtResource("9_lnk24")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_ahwtv")
+"texture": ExtResource("10_7xw75")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_q6gdh")
+"texture": ExtResource("11_s6de1")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[node name="Arbol" type="AnimatedSprite2D"]
+[node name="FireTree" type="AnimatedSprite2D"]
 z_index = -2
 sprite_frames = SubResource("SpriteFrames_vpoe3")
 animation = &"idle"
-script = ExtResource("6_mx1n6")
+script = ExtResource("6_ncnj8")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -89,7 +89,7 @@ shape = SubResource("RectangleShape2D_txqsk")
 visible = false
 z_index = 1
 position = Vector2(-147, 515.152)
-sprite_frames = ExtResource("8_tg85y")
+sprite_frames = ExtResource("7_mtxph")
 animation = &"stop"
 
 [node name="Fire" type="AnimatedSprite2D" parent="."]
@@ -109,7 +109,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("15_wniru")
+texture = ExtResource("12_23s4u")
 
 [node name="TheEnd" type="TextureRect" parent="CanvasLayer/EndScreen"]
 layout_mode = 0
@@ -118,7 +118,7 @@ offset_top = 74.0
 offset_right = 772.0
 offset_bottom = 527.0
 mouse_filter = 2
-texture = ExtResource("13_oknei")
+texture = ExtResource("13_a20fs")
 
 [node name="Flashazo" type="TextureRect" parent="CanvasLayer"]
 modulate = Color(1, 1, 1, 0)
@@ -134,17 +134,17 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.175, 1.175)
 mouse_filter = 2
-texture = ExtResource("12_r1olk")
+texture = ExtResource("14_gbwtw")
 
 [node name="Flashazo" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
 self_modulate = Color(0.866667, 0.380392, 0.211765, 1)
 z_index = 4096
 scale = Vector2(40, 40)
-texture = ExtResource("12_r1olk")
+texture = ExtResource("14_gbwtw")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("13_udna1")
+stream = ExtResource("15_0ub84")
 volume_db = 6.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

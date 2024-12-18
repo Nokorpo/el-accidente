@@ -42,7 +42,7 @@ ui_back=""
 
 [gui]
 
-theme/custom_font="res://fonts/Onest-Bold.ttf"
+theme/custom_font="res://fonts/onest-bold.ttf"
 
 [input]
 
