@@ -1744,11 +1744,11 @@ texture = ExtResource("19_lqmj0")
 position = Vector2(61304, 1221)
 
 [node name="FireA7" parent="Climax/Background" instance=ExtResource("62_stqg0")]
-z_index = 10
+z_index = 100
 position = Vector2(66714, 1221)
 
 [node name="FireA5" parent="Climax/Background" instance=ExtResource("62_stqg0")]
-z_index = 10
+z_index = 100
 position = Vector2(74178, 1296)
 scale = Vector2(1.5, 1.5)
 
@@ -1759,12 +1759,12 @@ position = Vector2(69596, 1190)
 position = Vector2(71213, 1187)
 
 [node name="FireA6" parent="Climax/Background" instance=ExtResource("64_ff84q")]
-z_index = 10
+z_index = 100
 position = Vector2(74993, 1303)
 scale = Vector2(2, 2)
 
 [node name="FireA8" parent="Climax/Background" instance=ExtResource("64_ff84q")]
-z_index = 10
+z_index = 100
 position = Vector2(39548, 1280)
 scale = Vector2(1.5, 1.5)
 
