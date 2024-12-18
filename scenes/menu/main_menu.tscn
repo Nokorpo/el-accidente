@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://7asaea7mswd5" path="res://scenes/game/game.tscn" id="2_c8g6f"]
 [ext_resource type="Script" path="res://scenes/menu/language.gd" id="2_rvkaa"]
 [ext_resource type="Texture2D" uid="uid://uq8uowpq3sal" path="res://assets/sprites/ui/play_menu.svg" id="3_g0gho"]
-[ext_resource type="Texture2D" uid="uid://jfa58ld3mey6" path="res://assets/sprites/ui/main_menu_title_full.png" id="5_lra3m"]
+[ext_resource type="Texture2D" uid="uid://codv48obdinsa" path="res://assets/sprites/ui/main_menu_title.png" id="5_vk0qe"]
 [ext_resource type="PackedScene" uid="uid://bfw08rk4ijmja" path="res://scenes/menu/credits/credits.tscn" id="7_u7whb"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_veald"]
@@ -124,9 +124,7 @@ alignment = 1
 
 [node name="Title" type="TextureRect" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("5_lra3m")
-expand_mode = 5
-stretch_mode = 4
+texture = ExtResource("5_vk0qe")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
