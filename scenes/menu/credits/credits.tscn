@@ -71,7 +71,7 @@ layout_mode = 2
 theme_override_constants/separation = 64
 alignment = 1
 
-[node name="More" type="Button" parent="VBoxContainer/HBoxContainer2"]
+[node name="SeeMore" type="Button" parent="VBoxContainer/HBoxContainer2"]
 modulate = Color(0.5, 0.5, 0.5, 1)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -79,6 +79,7 @@ mouse_default_cursor_shape = 2
 text = "view_more"
 
 [node name="Close" type="Button" parent="VBoxContainer/HBoxContainer2" groups=["ui_back"]]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(600, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -86,6 +87,7 @@ mouse_default_cursor_shape = 2
 text = "close"
 
 [node name="More" type="PanelContainer" parent="."]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
 theme = SubResource("Theme_o8y1r")
@@ -198,12 +200,13 @@ text = " Sara Krikech Alcalde"
 horizontal_alignment = 1
 
 [node name="CloseMore" type="Button" parent="More/VBoxContainer" groups=["ui_back"]]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(600, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 mouse_default_cursor_shape = 2
 text = "close"
 
-[connection signal="pressed" from="VBoxContainer/HBoxContainer2/More" to="." method="_on_more_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/SeeMore" to="." method="_on_more_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer2/Close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="More/VBoxContainer/CloseMore" to="." method="_on_close_more_pressed"]

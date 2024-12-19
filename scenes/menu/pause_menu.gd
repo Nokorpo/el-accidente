@@ -13,14 +13,14 @@ func _ready() -> void:
 	set_button_texture_to_pause()
 	background.hide()
 
-func pause_requested():
+func pause_requested() -> void:
 	pause_counter += 1
 	if pause_counter > 0 and not get_tree().paused:
 		get_tree().paused = true
 		set_button_texture_to_continue()
 		background.show()
 
-func continue_requested():
+func continue_requested() -> void:
 	pause_counter -= 1
 	if pause_counter <= 0:
 		pause_counter = 0
@@ -49,4 +49,3 @@ func _on_button_toggled(toggled_on: bool) -> void:
 	else:
 		EventBus.request_continue.emit()
 		AudioManager.sfx_ui_back.play()
-		

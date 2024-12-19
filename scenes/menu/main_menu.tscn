@@ -8,7 +8,22 @@
 [ext_resource type="Texture2D" uid="uid://codv48obdinsa" path="res://assets/sprites/ui/main_menu_title.png" id="5_vk0qe"]
 [ext_resource type="PackedScene" uid="uid://bfw08rk4ijmja" path="res://scenes/menu/credits/credits.tscn" id="7_u7whb"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_veald"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0l4ui"]
+draw_center = false
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.213511, 0.40991, 0.361978, 1)
+border_blend = true
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3skot"]
 content_margin_left = 24.0
@@ -55,7 +70,7 @@ Button/colors/font_hover_color = Color(0.204625, 0.283791, 0.288443, 1)
 Button/colors/font_hover_pressed_color = Color(0.297576, 0.400394, 0.406416, 1)
 Button/colors/font_pressed_color = Color(0.424258, 0.548688, 0.55591, 1)
 Button/font_sizes/font_size = 42
-Button/styles/focus = SubResource("StyleBoxEmpty_veald")
+Button/styles/focus = SubResource("StyleBoxFlat_0l4ui")
 Button/styles/hover = SubResource("StyleBoxFlat_3skot")
 Button/styles/normal = SubResource("StyleBoxFlat_3skot")
 Button/styles/pressed = SubResource("StyleBoxFlat_qr01m")
@@ -93,14 +108,15 @@ grow_vertical = 0
 theme_override_constants/separation = 16
 
 [node name="Language" type="Button" parent="OtherButtons"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
-focus_mode = 0
 mouse_default_cursor_shape = 2
 text = "current_language"
 script = ExtResource("2_rvkaa")
 
-[node name="Credits" type="Button" parent="OtherButtons"]
+[node name="OpenCredits" type="Button" parent="OtherButtons"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 mouse_default_cursor_shape = 2
@@ -149,4 +165,5 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 1
 
-[connection signal="pressed" from="OtherButtons/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="OtherButtons/OpenCredits" to="." method="_on_credits_pressed"]
+[connection signal="closed" from="Credits" to="." method="_on_credits_closed"]
