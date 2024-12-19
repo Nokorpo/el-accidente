@@ -354,7 +354,7 @@ polygon = PackedVector2Array(0, 0, 0, 500, 2600, 500, 2600, 0)
 position = Vector2(2653, 737)
 scale = Vector2(0.984813, 1)
 color = Color(0.196032, 0.205695, 0.224258, 1)
-polygon = PackedVector2Array(0, 63, 0, 291.342, 0, 500, 4214, 513, 4214, 213, 1514, 213)
+polygon = PackedVector2Array(0, 63, 0, 500, 4214, 500, 4214, 213, 1514, 213)
 script = ExtResource("19_70n6j")
 
 [node name="PolygonExpander" type="StaticBody2D" parent="Intro/Floors/Polygon2D2"]
@@ -399,34 +399,22 @@ rotation = 3.14159
 scale = Vector2(0.780179, -0.775827)
 texture = ExtResource("45_h3ped")
 
-[node name="Square" type="Sprite2D" parent="Intro/Background"]
-modulate = Color(0.713726, 0.827451, 0.803922, 1)
-position = Vector2(6798, 1076)
-scale = Vector2(1.95385, 1.87692)
-texture = ExtResource("19_lqmj0")
-
-[node name="Square4" type="Sprite2D" parent="Intro/Background"]
+[node name="Square1" type="Sprite2D" parent="Intro/Background"]
 modulate = Color(0.298039, 0.415686, 0.392157, 1)
-position = Vector2(3024.5, 575.5)
-scale = Vector2(2.56154, 9.96154)
-texture = ExtResource("19_lqmj0")
-
-[node name="Square5" type="Sprite2D" parent="Intro/Background"]
-modulate = Color(0.298039, 0.415686, 0.392157, 1)
-position = Vector2(1444, 576)
-scale = Vector2(22.6154, 9.96154)
+position = Vector2(1520.5, 608)
+scale = Vector2(50.3594, 19.6875)
 texture = ExtResource("19_lqmj0")
 
 [node name="Square2" type="Sprite2D" parent="Intro/Background"]
-modulate = Color(0.309804, 0.427451, 0.403922, 1)
-position = Vector2(7162, 1059)
-scale = Vector2(3.67692, 1.96923)
+modulate = Color(0.713726, 0.827451, 0.803922, 1)
+position = Vector2(6831, 1096)
+scale = Vector2(3, 4.375)
 texture = ExtResource("19_lqmj0")
 
-[node name="Square3" type="Sprite2D" parent="Intro/Background"]
-modulate = Color(0.603922, 0.717647, 0.694118, 1)
-position = Vector2(9010, 1056.5)
-scale = Vector2(3.78461, 2.03846)
+[node name="Square4" type="Sprite2D" parent="Intro/Background"]
+modulate = Color(0.309804, 0.427451, 0.403922, 1)
+position = Vector2(7195.5, 1085.5)
+scale = Vector2(8.51562, 4.70313)
 texture = ExtResource("19_lqmj0")
 
 [node name="BackgroundObjects" type="Node2D" parent="Intro"]
@@ -547,7 +535,7 @@ position = Vector2(26.0362, -420.76)
 position = Vector2(10118, 1060)
 scale = Vector2(0.216538, 0.292)
 color = Color(0.196032, 0.205695, 0.224258, 1)
-polygon = PackedVector2Array(-1052.93, 0, -1029.84, 500, 2600, 500, 2600, 243.717, 2600, 0)
+polygon = PackedVector2Array(-1052.93, 0, -1029.84, 500, 2600, 500, 2600, 0)
 script = ExtResource("19_70n6j")
 
 [node name="PolygonExpander" type="StaticBody2D" parent="Storyboard/Floors/Polygon2D4"]
@@ -560,7 +548,7 @@ polygon = PackedVector2Array(-1052.93, 0, -1029.84, 500, 2600, 500, 2600, 243.71
 position = Vector2(11410.5, 420)
 scale = Vector2(0.324045, 0.263132)
 color = Color(0.196032, 0.205695, 0.224258, 1)
-polygon = PackedVector2Array(0, 0, -23.0938, 3013.7, 2600, 3013.7, 2600, 243.717, 2600, 0)
+polygon = PackedVector2Array(0, 0, -23.0938, 3013.7, 2600, 3013.7, 2600, 0)
 script = ExtResource("19_70n6j")
 
 [node name="PolygonExpander" type="StaticBody2D" parent="Storyboard/Floors/Polygon2D5"]
@@ -852,43 +840,43 @@ position = Vector2(26666, 580)
 scale = Vector2(0.975397, 0.975397)
 texture = ExtResource("14_te1nf")
 
-[node name="Square4" type="Sprite2D" parent="Storyboard/Background"]
-modulate = Color(1, 0.945098, 0.72549, 1)
-position = Vector2(11787, 218.75)
-scale = Vector2(1.41539, 3.54231)
+[node name="Square1" type="Sprite2D" parent="Storyboard/Background"]
+modulate = Color(1, 0.956863, 0.796078, 1)
+position = Vector2(8989.5, 567)
+scale = Vector2(8.14063, 19.7187)
 texture = ExtResource("19_lqmj0")
 
-[node name="Square10" type="Sprite2D" parent="Storyboard/Background"]
+[node name="Square2" type="Sprite2D" parent="Storyboard/Background"]
 modulate = Color(1, 0.945098, 0.72549, 1)
-position = Vector2(8988.5, 574)
-scale = Vector2(4.20769, 10.2615)
+position = Vector2(11788, 183.5)
+scale = Vector2(2.53125, 7.70313)
+texture = ExtResource("19_lqmj0")
+
+[node name="Square3" type="Sprite2D" parent="Storyboard/Background"]
+modulate = Color(1, 0.956863, 0.796078, 1)
+position = Vector2(14799, 542.085)
+scale = Vector2(13.0625, 12.8776)
+texture = ExtResource("19_lqmj0")
+
+[node name="Square4" type="Sprite2D" parent="Storyboard/Background"]
+modulate = Color(1, 0.956863, 0.796078, 1)
+position = Vector2(31558.5, 1031)
+scale = Vector2(29.6719, 5.65625)
 texture = ExtResource("19_lqmj0")
 
 [node name="Square5" type="Sprite2D" parent="Storyboard/Background"]
 modulate = Color(1, 0.956863, 0.796078, 1)
-position = Vector2(14817, 653)
-scale = Vector2(6.6, 9.41154)
+position = Vector2(35093.6, 390.419)
+scale = Vector2(2.70525, 8.1119)
 texture = ExtResource("19_lqmj0")
 
 [node name="Square6" type="Sprite2D" parent="Storyboard/Background"]
 modulate = Color(1, 0.956863, 0.796078, 1)
-position = Vector2(31525, 1026.5)
-scale = Vector2(15.1539, 3.40769)
+position = Vector2(37847.5, 784)
+scale = Vector2(3.07809, 13.4375)
 texture = ExtResource("19_lqmj0")
 
 [node name="Square7" type="Sprite2D" parent="Storyboard/Background"]
-modulate = Color(1, 0.956863, 0.796078, 1)
-position = Vector2(35125, 296.5)
-scale = Vector2(1.72308, 5.17692)
-texture = ExtResource("19_lqmj0")
-
-[node name="Square9" type="Sprite2D" parent="Storyboard/Background"]
-modulate = Color(1, 0.956863, 0.796078, 1)
-position = Vector2(37844, 802.5)
-scale = Vector2(1.33848, 6.5)
-texture = ExtResource("19_lqmj0")
-
-[node name="Square8" type="Sprite2D" parent="Storyboard/Background"]
 modulate = Color(1, 0.956863, 0.796078, 1)
 position = Vector2(25321, 482.25)
 scale = Vector2(1.72308, 3.95769)
@@ -1481,7 +1469,7 @@ polygon = PackedVector2Array(0, 0, 0, 1775.99, 3629.59, 1775.99, 3629.59, 0)
 position = Vector2(42216, -101.053)
 scale = Vector2(0.587431, 0.313657)
 color = Color(0.196032, 0.205695, 0.224258, 1)
-polygon = PackedVector2Array(0, 0, -982.961, -60.4078, 0, 1775.99, 3629.59, 1775.99, 4546.2, -60.4078, 3629.59, 0)
+polygon = PackedVector2Array(-982.961, -60.4078, 0, 1775.99, 3629.59, 1775.99, 4546.2, -60.4078)
 script = ExtResource("19_70n6j")
 
 [node name="PolygonExpander" type="StaticBody2D" parent="Climax/Floors/Polygon2D29"]
@@ -1494,7 +1482,7 @@ polygon = PackedVector2Array(0, 0, -982.961, -60.4078, 0, 1775.99, 3629.59, 1775
 position = Vector2(48038.2, 5.98684)
 scale = Vector2(0.967583, 0.0991071)
 color = Color(0.196032, 0.205695, 0.224258, 1)
-polygon = PackedVector2Array(0, -1190.5, -1034.09, -1190.5, 0, 1775.99, 3629.59, 1775.99, 4595.4, -1190.5, 3629.59, -1190.5)
+polygon = PackedVector2Array(-1034.09, -1190.5, 0, 1775.99, 3629.59, 1775.99, 4595.4, -1190.5)
 script = ExtResource("19_70n6j")
 
 [node name="PolygonExpander" type="StaticBody2D" parent="Climax/Floors/Polygon2D33"]
@@ -1585,7 +1573,7 @@ polygon = PackedVector2Array(0.90625, 603.835, 0, 3161.26, 18176, 3203.88, 18184
 position = Vector2(80745, 1209.77)
 scale = Vector2(0.337099, 0.13136)
 color = Color(0.196032, 0.205695, 0.224258, 1)
-polygon = PackedVector2Array(1231.09, 0, 1222.19, -1065.59, -6577.39, -1065.59, -14007.3, -4262.37, -20519.4, -4262.37, -27837.5, -4276.57, -27832.6, 42.6165)
+polygon = PackedVector2Array(1231.09, 0, 1222.19, -1065.59, -6577.39, -1065.59, -14007.3, -4262.37, -27837.5, -4276.57, -27832.6, 42.6165)
 script = ExtResource("19_70n6j")
 
 [node name="PolygonExpander" type="StaticBody2D" parent="Climax/Floors/Polygon2D34"]
@@ -1720,24 +1708,24 @@ position = Vector2(77216.5, 508)
 scale = Vector2(0.912676, 0.912676)
 texture = ExtResource("26_rtaw7")
 
-[node name="Square10" type="Sprite2D" parent="Climax/Background"]
-modulate = Color(0.827451, 0.501961, 0.435294, 1)
-position = Vector2(62116, 576.5)
-scale = Vector2(10.5846, 9.63846)
-texture = ExtResource("19_lqmj0")
-
-[node name="Square12" type="Sprite2D" parent="Climax/Background"]
+[node name="Square1" type="Sprite2D" parent="Climax/Background"]
 modulate = Color(0.537255, 0.211765, 0.14902, 1)
 z_index = 10
-position = Vector2(39017, 523.625)
-scale = Vector2(0.630761, 3.00577)
+position = Vector2(39032.5, 529.5)
+scale = Vector2(0.79691, 5.95312)
 texture = ExtResource("19_lqmj0")
 
-[node name="Square11" type="Sprite2D" parent="Climax/Background"]
+[node name="Square2" type="Sprite2D" parent="Climax/Background"]
+modulate = Color(0.827451, 0.501961, 0.435294, 1)
+position = Vector2(62111, 415.465)
+scale = Vector2(21.4376, 14.6708)
+texture = ExtResource("19_lqmj0")
+
+[node name="Square3" type="Sprite2D" parent="Climax/Background"]
 modulate = Color(0.827451, 0.501961, 0.435294, 1)
 z_index = -10
-position = Vector2(73993.5, 292.75)
-scale = Vector2(4.57694, 5.82692)
+position = Vector2(74044, 270)
+scale = Vector2(7.24991, 14.2188)
 texture = ExtResource("19_lqmj0")
 
 [node name="FireA" parent="Climax/Background" instance=ExtResource("62_stqg0")]
