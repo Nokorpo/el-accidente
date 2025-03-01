@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://dgj0axgxcr8w8"]
+
+[ext_resource type="Texture2D" uid="uid://b4hujf0ynigxi" path="res://assets/sprites/vfx/vfxspikes_1.png" id="1_sfrcj"]
+[ext_resource type="Texture2D" uid="uid://dr76qw1ownw0c" path="res://assets/sprites/vfx/vfxspikes_2.png" id="2_o7gxy"]
+[ext_resource type="Texture2D" uid="uid://mw2iwy44n4va" path="res://assets/sprites/vfx/vfxspikes_3.png" id="3_ub1b3"]
+[ext_resource type="Texture2D" uid="uid://cci23wnj5iup0" path="res://assets/sprites/vfx/vfxspikes_4.png" id="4_j70lm"]
+[ext_resource type="Texture2D" uid="uid://del8tiiy5ndi2" path="res://assets/sprites/vfx/vfxspikes_5.png" id="5_llydu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3cwx4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sfrcj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_o7gxy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ub1b3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_j70lm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_llydu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="SpikeVFX" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_3cwx4")
+autoplay = "default"
+frame_progress = 0.00550691

@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://7asaea7mswd5"]
+[gd_scene load_steps=78 format=3 uid="uid://7asaea7mswd5"]
 
 [ext_resource type="PackedScene" uid="uid://bajeqjukfftik" path="res://scenes/menu/pause_menu.tscn" id="1_kottx"]
 [ext_resource type="PackedScene" uid="uid://cpi1lm68o7bl7" path="res://scenes/shared/vfx/touch_feedback_frame.tscn" id="1_s3sr5"]
@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://lm0w33pgt0m5" path="res://assets/sprites/npc/barbara_idle1.png" id="11_753bg"]
 [ext_resource type="Texture2D" uid="uid://d2p40ersnb67h" path="res://assets/sprites/background/back/fase2b_2.png" id="12_38u3a"]
 [ext_resource type="Texture2D" uid="uid://r57klsm2v8ww" path="res://assets/sprites/background/back/fase3b_4.png" id="12_bnajj"]
-[ext_resource type="PackedScene" path="res://scenes/shared/level/spikes.tscn" id="12_nqo6j"]
+[ext_resource type="PackedScene" uid="uid://x4n61sjituka" path="res://scenes/shared/level/spike/spike.tscn" id="12_nqo6j"]
 [ext_resource type="Texture2D" uid="uid://c5owh2tsqoqb5" path="res://assets/sprites/npc/barbara_idle2.png" id="12_wvsqd"]
 [ext_resource type="PackedScene" path="res://scenes/shared/level/breaking_platform.tscn" id="13_g1vww"]
 [ext_resource type="Texture2D" uid="uid://bdwxf0r7diuea" path="res://assets/sprites/background/back/fase2b_3.png" id="13_rvqy5"]
@@ -40,18 +40,14 @@
 [ext_resource type="Texture2D" uid="uid://cht0xkxjyjhen" path="res://assets/sprites/background/back/fase3b_1.png" id="21_lpv2t"]
 [ext_resource type="Texture2D" uid="uid://b85g63mjpxi3d" path="res://assets/sprites/background/back/fase3b_2.png" id="22_mg1hn"]
 [ext_resource type="Texture2D" uid="uid://d25nypr7swher" path="res://assets/sprites/ui/tutorial_bubble.png" id="23_kk7ov"]
-[ext_resource type="Texture2D" uid="uid://b4hujf0ynigxi" path="res://assets/sprites/vfx/vfxspikes_1.png" id="25_40qg4"]
 [ext_resource type="Texture2D" uid="uid://dip7jr04u2oe" path="res://assets/sprites/background/back/fase3b_6.png" id="26_rtaw7"]
-[ext_resource type="Texture2D" uid="uid://dr76qw1ownw0c" path="res://assets/sprites/vfx/vfxspikes_2.png" id="26_x1aa5"]
-[ext_resource type="Texture2D" uid="uid://mw2iwy44n4va" path="res://assets/sprites/vfx/vfxspikes_3.png" id="27_1skqe"]
 [ext_resource type="Texture2D" uid="uid://kf7dypvt150l" path="res://assets/sprites/background/front/cámara.png" id="27_reio1"]
-[ext_resource type="Texture2D" uid="uid://cci23wnj5iup0" path="res://assets/sprites/vfx/vfxspikes_4.png" id="28_1xd26"]
 [ext_resource type="Texture2D" uid="uid://dc1un4hweuogu" path="res://assets/sprites/background/front/coche_colgante.png" id="28_itrb3"]
 [ext_resource type="Texture2D" uid="uid://getqmfkxho01" path="res://assets/sprites/background/front/músicos.png" id="29_e4dia"]
 [ext_resource type="Texture2D" uid="uid://di6eujgh5s7kv" path="res://assets/sprites/background/back/story_transition2.png" id="29_qmv3h"]
-[ext_resource type="Texture2D" uid="uid://del8tiiy5ndi2" path="res://assets/sprites/vfx/vfxspikes_5.png" id="29_ytu2h"]
 [ext_resource type="Texture2D" uid="uid://bqoi1je4crc05" path="res://assets/sprites/background/back/story_transition3.png" id="30_fjl1j"]
 [ext_resource type="Texture2D" uid="uid://cs1ltlbgt23gh" path="res://assets/sprites/obstacles/elevator_platform.png" id="39_5x1kc"]
+[ext_resource type="PackedScene" uid="uid://dgj0axgxcr8w8" path="res://scenes/shared/vfx/spike_vfx.tscn" id="40_pe14n"]
 [ext_resource type="Texture2D" uid="uid://b46vs02g8lpko" path="res://assets/sprites/background/back/fase1_3.png" id="45_h3ped"]
 [ext_resource type="Texture2D" uid="uid://dv0lsmbgda3of" path="res://assets/sprites/background/front/bongos.png" id="51_yb13k"]
 [ext_resource type="Texture2D" uid="uid://hxq7xcp21l3u" path="res://assets/sprites/background/front/nota4.png" id="54_40vf5"]
@@ -131,29 +127,6 @@ size = Vector2(224, 387)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahdys"]
 size = Vector2(850, 825)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_3cwx4"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("25_40qg4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_x1aa5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_1skqe")
-}, {
-"duration": 1.0,
-"texture": ExtResource("28_1xd26")
-}, {
-"duration": 1.0,
-"texture": ExtResource("29_ytu2h")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uvcv2"]
 size = Vector2(496.861, 443.705)
@@ -1029,18 +1002,11 @@ position = Vector2(11361, 1081)
 z_index = 1
 position = Vector2(11361, 1177)
 
-[node name="SpikeVFX" type="AnimatedSprite2D" parent="Storyboard/Obstacles/SpikesGroup"]
+[node name="SpikeVFX" parent="Storyboard/Obstacles/SpikesGroup" instance=ExtResource("40_pe14n")]
 position = Vector2(11306, 551)
-sprite_frames = SubResource("SpriteFrames_3cwx4")
-autoplay = "default"
-frame_progress = 0.00550691
 
-[node name="SpikeVFX2" type="AnimatedSprite2D" parent="Storyboard/Obstacles/SpikesGroup"]
+[node name="SpikeVFX2" parent="Storyboard/Obstacles/SpikesGroup" instance=ExtResource("40_pe14n")]
 position = Vector2(11335, 842)
-sprite_frames = SubResource("SpriteFrames_3cwx4")
-autoplay = "default"
-frame = 4
-frame_progress = 0.635246
 
 [node name="SpikesGroup2" type="Node" parent="Storyboard/Obstacles"]
 
@@ -1064,23 +1030,14 @@ position = Vector2(12769, 278)
 z_index = 1
 position = Vector2(12769, 375)
 
-[node name="SpikeVFX3" type="AnimatedSprite2D" parent="Storyboard/Obstacles/SpikesGroup2"]
+[node name="SpikeVFX" parent="Storyboard/Obstacles/SpikesGroup2" instance=ExtResource("40_pe14n")]
 position = Vector2(12705, 137)
-sprite_frames = SubResource("SpriteFrames_3cwx4")
-autoplay = "default"
-frame_progress = 0.451435
 
-[node name="SpikeVFX4" type="AnimatedSprite2D" parent="Storyboard/Obstacles/SpikesGroup2"]
+[node name="SpikeVFX2" parent="Storyboard/Obstacles/SpikesGroup2" instance=ExtResource("40_pe14n")]
 position = Vector2(12735, 327)
-sprite_frames = SubResource("SpriteFrames_3cwx4")
-autoplay = "default"
-frame_progress = 0.451435
 
-[node name="SpikeVFX5" type="AnimatedSprite2D" parent="Storyboard/Obstacles/SpikesGroup2"]
+[node name="SpikeVFX6" parent="Storyboard/Obstacles/SpikesGroup2" instance=ExtResource("40_pe14n")]
 position = Vector2(12732, 32)
-sprite_frames = SubResource("SpriteFrames_3cwx4")
-autoplay = "default"
-frame_progress = 0.451435
 
 [node name="SpikesGroup3" type="Node" parent="Storyboard/Obstacles"]
 
@@ -1114,23 +1071,14 @@ z_index = 1
 position = Vector2(14433, 296)
 rotation = -1.57079
 
-[node name="SpikeVFX6" type="AnimatedSprite2D" parent="Storyboard/Obstacles/SpikesGroup3"]
+[node name="SpikeVFX" parent="Storyboard/Obstacles/SpikesGroup3" instance=ExtResource("40_pe14n")]
 position = Vector2(14002, 344)
-sprite_frames = SubResource("SpriteFrames_3cwx4")
-autoplay = "default"
-frame_progress = 0.451435
 
-[node name="SpikeVFX7" type="AnimatedSprite2D" parent="Storyboard/Obstacles/SpikesGroup3"]
-position = Vector2(14385, 331)
-sprite_frames = SubResource("SpriteFrames_3cwx4")
-autoplay = "default"
-frame_progress = 0.451435
-
-[node name="SpikeVFX8" type="AnimatedSprite2D" parent="Storyboard/Obstacles/SpikesGroup3"]
+[node name="SpikeVFX2" parent="Storyboard/Obstacles/SpikesGroup3" instance=ExtResource("40_pe14n")]
 position = Vector2(14184, 369)
-sprite_frames = SubResource("SpriteFrames_3cwx4")
-autoplay = "default"
-frame_progress = 0.451435
+
+[node name="SpikeVFX3" parent="Storyboard/Obstacles/SpikesGroup3" instance=ExtResource("40_pe14n")]
+position = Vector2(14385, 331)
 
 [node name="SpikesGroup4" type="Node" parent="Storyboard/Obstacles"]
 
@@ -1164,23 +1112,14 @@ z_index = 1
 position = Vector2(15433, 200)
 rotation = -1.57079
 
-[node name="SpikeVFX9" type="AnimatedSprite2D" parent="Storyboard/Obstacles/SpikesGroup4"]
+[node name="SpikeVFX" parent="Storyboard/Obstacles/SpikesGroup4" instance=ExtResource("40_pe14n")]
 position = Vector2(15000.5, 244.5)
-sprite_frames = SubResource("SpriteFrames_3cwx4")
-autoplay = "default"
-frame_progress = 0.451435
 
-[node name="SpikeVFX10" type="AnimatedSprite2D" parent="Storyboard/Obstacles/SpikesGroup4"]
-position = Vector2(15383.5, 231.5)
-sprite_frames = SubResource("SpriteFrames_3cwx4")
-autoplay = "default"
-frame_progress = 0.451435
-
-[node name="SpikeVFX11" type="AnimatedSprite2D" parent="Storyboard/Obstacles/SpikesGroup4"]
+[node name="SpikeVFX2" parent="Storyboard/Obstacles/SpikesGroup4" instance=ExtResource("40_pe14n")]
 position = Vector2(15182.5, 269.5)
-sprite_frames = SubResource("SpriteFrames_3cwx4")
-autoplay = "default"
-frame_progress = 0.451435
+
+[node name="SpikeVFX3" parent="Storyboard/Obstacles/SpikesGroup4" instance=ExtResource("40_pe14n")]
+position = Vector2(15383.5, 231.5)
 
 [node name="SpikesGroup5" type="Node" parent="Storyboard/Obstacles"]
 
@@ -1994,8 +1933,6 @@ position = Vector2(66094, 677)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Climax/Obstacles/Deer"]
 position = Vector2(-654.75, -101)
 shape = SubResource("RectangleShape2D_ljpoj")
-
-[node name="VFX" type="Node2D" parent="Climax"]
 
 [connection signal="body_entered" from="Characters/Albert/Area2D" to="Characters/Albert/Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="Characters/Karla/Area2D" to="Characters/Karla/Area2D" method="_on_body_entered"]
