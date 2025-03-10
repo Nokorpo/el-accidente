@@ -1,8 +1,8 @@
 [gd_scene load_steps=17 format=3 uid="uid://b1tu1bnym3cmy"]
 
-[ext_resource type="Script" path="res://scenes/shared/level/spotlight.gd" id="1_j4v7g"]
+[ext_resource type="Script" uid="uid://b4vfik7xnmcpk" path="res://scenes/shared/level/spotlight.gd" id="1_j4v7g"]
 [ext_resource type="Texture2D" uid="uid://cf36bw7f0b785" path="res://assets/sprites/obstacles/spotlight/spotlight_piece.png" id="2_xxrqe"]
-[ext_resource type="Shader" path="res://scenes/shared/vfx/burn_dissolve.gdshader" id="3_prb3v"]
+[ext_resource type="Shader" uid="uid://duwmw4bticxyk" path="res://scenes/shared/vfx/burn_dissolve.gdshader" id="3_prb3v"]
 [ext_resource type="Texture2D" uid="uid://ccyunh4prty4n" path="res://assets/sprites/obstacles/spotlight/spotlight_2.png" id="4_s6a34"]
 [ext_resource type="Texture2D" uid="uid://ed0exe16esvy" path="res://assets/sprites/obstacles/spotlight/spotlight_1.png" id="5_sd7oc"]
 [ext_resource type="Texture2D" uid="uid://dpriavie2m7yr" path="res://assets/sprites/obstacles/spotlight/spotlight_3.png" id="6_aplx0"]
@@ -136,8 +136,8 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_t6vwn"]
 _data = {
-"RESET": SubResource("Animation_3cicy"),
-"fall": SubResource("Animation_h517f")
+&"RESET": SubResource("Animation_3cicy"),
+&"fall": SubResource("Animation_h517f")
 }
 
 [sub_resource type="Gradient" id="Gradient_owoor"]
@@ -153,10 +153,10 @@ noise = SubResource("FastNoiseLite_3ivyp")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1m13h"]
 shader = ExtResource("3_prb3v")
+shader_parameter/dissolve_texture = SubResource("NoiseTexture2D_pw50a")
 shader_parameter/dissolve_value = 1.0
 shader_parameter/burn_size = 0.1
 shader_parameter/burn_color = Color(0.929412, 0.560784, 0.192157, 1)
-shader_parameter/dissolve_texture = SubResource("NoiseTexture2D_pw50a")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rn5aa"]
 animations = [{

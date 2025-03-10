@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://bfw08rk4ijmja"]
 
-[ext_resource type="Script" path="res://scenes/menu/credits/credits.gd" id="1_ipkvd"]
+[ext_resource type="Script" uid="uid://djpk8alc3442p" path="res://scenes/menu/credits/credits.gd" id="1_ipkvd"]
 [ext_resource type="Texture2D" uid="uid://u28jd1clllbq" path="res://scenes/menu/credits/sprites/where_talent_ignites.png" id="2_s564f"]
 [ext_resource type="Texture2D" uid="uid://brilskarcxw3e" path="res://scenes/menu/credits/sprites/nokorpo.svg" id="3_tg8of"]
 [ext_resource type="Texture2D" uid="uid://ch7at0w1hob3p" path="res://scenes/menu/credits/sprites/eu_next_generation.png" id="3_y3s7v"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bvpn2yd6dqc2j"]
 
-[ext_resource type="Script" path="res://scenes/shared/level/camera_offset_area.gd" id="1_26lya"]
+[ext_resource type="Script" uid="uid://w58dyahwpolm" path="res://scenes/shared/level/camera_offset_area.gd" id="1_26lya"]
 
 [node name="CameraOffsetArea" type="Node2D"]
 script = ExtResource("1_26lya")

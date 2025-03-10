@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cd0acx4jpona6" path="res://assets/sprites/obstacles/breaking_platform/breaking_platform2.png" id="1_wr2e0"]
 [ext_resource type="Texture2D" uid="uid://dgr8ys0iple7q" path="res://assets/sprites/obstacles/breaking_platform/breaking_platform3.png" id="2_1liy8"]
-[ext_resource type="Script" path="res://scenes/shared/level/breaking_platform.gd" id="2_51euf"]
+[ext_resource type="Script" uid="uid://beiiqur5e7lon" path="res://scenes/shared/level/breaking_platform.gd" id="2_51euf"]
 [ext_resource type="Texture2D" uid="uid://pxupeyrry401" path="res://assets/sprites/obstacles/breaking_platform/breaking_platform4.png" id="3_x1nh5"]
 [ext_resource type="Texture2D" uid="uid://cmea3gojmrstp" path="res://assets/sprites/obstacles/breaking_platform/breaking_platform1.png" id="4_ltoov"]
 

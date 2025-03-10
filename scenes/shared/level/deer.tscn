@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://cml4yw2y4r0a4"]
 
-[ext_resource type="Script" path="res://scenes/shared/level/deer.gd" id="1_smako"]
+[ext_resource type="Script" uid="uid://dp5to3tcqexx5" path="res://scenes/shared/level/deer.gd" id="1_smako"]
 [ext_resource type="Texture2D" uid="uid://mnvedi6d5irk" path="res://assets/sprites/obstacles/deer/deer_idle1.png" id="3_kn3t4"]
 [ext_resource type="Texture2D" uid="uid://cad6pwwq8nac1" path="res://assets/sprites/obstacles/deer/deer_idle2.png" id="4_jji1f"]
 [ext_resource type="Texture2D" uid="uid://c2jkd5s3x5m66" path="res://assets/sprites/obstacles/deer/deer_flee1.png" id="5_ahfpc"]
@@ -74,8 +74,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rc4ys"]
 _data = {
-"RESET": SubResource("Animation_dusyx"),
-"danger": SubResource("Animation_1qhuc")
+&"RESET": SubResource("Animation_dusyx"),
+&"danger": SubResource("Animation_1qhuc")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bcsmm"]
@@ -211,8 +211,8 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6mnqc"]
 _data = {
-"RESET": SubResource("Animation_8tvwj"),
-"flee": SubResource("Animation_iivhk")
+&"RESET": SubResource("Animation_8tvwj"),
+&"flee": SubResource("Animation_iivhk")
 }
 
 [node name="Deer" type="Area2D"]

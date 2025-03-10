@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://coo72lltnkf1b"]
 
-[ext_resource type="Script" path="res://scenes/menu/please_rotate_screen.gd" id="1_2201l"]
+[ext_resource type="Script" uid="uid://bkp0xis4t8648" path="res://scenes/menu/please_rotate_screen.gd" id="1_2201l"]
 [ext_resource type="Texture2D" uid="uid://dvthrvn8vfum8" path="res://assets/sprites/ui/rotate_screen.svg" id="2_ftawx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h6tvh"]

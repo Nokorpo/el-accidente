@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://de6fqih8h2mji" path="res://assets/sprites/background/front/firetree_4.png" id="3_cp4b3"]
 [ext_resource type="Texture2D" uid="uid://cjkjr4mxicjow" path="res://assets/sprites/background/front/firetree_5.png" id="4_eauiv"]
 [ext_resource type="Texture2D" uid="uid://cmoiwoo1qdtfl" path="res://assets/sprites/background/front/firetree_1.png" id="5_cqc4e"]
-[ext_resource type="Script" path="res://scenes/shared/level/firetree.gd" id="6_ncnj8"]
+[ext_resource type="Script" uid="uid://bephfma4lks7c" path="res://scenes/shared/level/firetree.gd" id="6_ncnj8"]
 [ext_resource type="SpriteFrames" uid="uid://jfvaa13kkw0" path="res://scenes/player/car_sprite_frames.tres" id="7_mtxph"]
 [ext_resource type="Texture2D" uid="uid://c2d6is40imp3d" path="res://assets/sprites/vfx/firec_1.png" id="8_k4kk6"]
 [ext_resource type="Texture2D" uid="uid://cmj42ecoctsx1" path="res://assets/sprites/vfx/firec_2.png" id="9_lnk24"]

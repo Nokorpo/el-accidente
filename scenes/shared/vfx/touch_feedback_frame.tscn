@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cpi1lm68o7bl7"]
 
-[ext_resource type="Shader" path="res://scenes/shared/vfx/touch_feedback_frame.gdshader" id="1_tn3pa"]
-[ext_resource type="Script" path="res://scenes/shared/vfx/touch_feedback_frame.gd" id="2_8pan1"]
+[ext_resource type="Shader" uid="uid://c7pfjktfqkgd0" path="res://scenes/shared/vfx/touch_feedback_frame.gdshader" id="1_tn3pa"]
+[ext_resource type="Script" uid="uid://7xvslimwuabs" path="res://scenes/shared/vfx/touch_feedback_frame.gd" id="2_8pan1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8w0qa"]
 shader = ExtResource("1_tn3pa")

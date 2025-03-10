@@ -8,9 +8,9 @@ class_name RunningState
 var _original_speed: float
 
 @warning_ignore("shadowed_variable")
-func _start(sm: StateMachine, node: Node) -> void:
-	super(sm, node)
-	_original_speed = node.speed
+func _start(sm: StateMachine, new_node: Node) -> void:
+	super(sm, new_node)
+	_original_speed = new_node.speed
 
 func _on_enter_state() -> void:
 	node.speed = _original_speed

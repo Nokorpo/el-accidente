@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://bhh7m57vhkbu3"]
 
-[ext_resource type="Script" path="res://scenes/shared/level/flame.gd" id="1_kmupw"]
+[ext_resource type="Script" uid="uid://ct7l1o3d6p07u" path="res://scenes/shared/level/flame.gd" id="1_kmupw"]
 [ext_resource type="Texture2D" uid="uid://ccssn4g2nyosc" path="res://assets/sprites/obstacles/fire_obstacle/fireobstacle_off.png" id="2_13jnd"]
 [ext_resource type="Texture2D" uid="uid://duw742ncv0aad" path="res://assets/sprites/obstacles/fire_obstacle/fireobstacle_on1.png" id="3_27msq"]
 [ext_resource type="Texture2D" uid="uid://detrm1eesotw3" path="res://assets/sprites/obstacles/fire_obstacle/fireobstacle_on2.png" id="4_wtws5"]
